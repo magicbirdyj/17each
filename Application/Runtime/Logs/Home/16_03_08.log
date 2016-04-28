@@ -1,0 +1,713 @@
+[ 2016-03-08T22:55:18+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0830s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0334s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0228s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `m_admin_advert` [ RunTime:0.0862s ]
+SQL: SELECT `xuhao`,`img_url`,`url` FROM `m_admin_advert` WHERE ( position='轮播上' )  [ RunTime:0.0004s ]
+SQL: SELECT `xuhao`,`img_url`,`url` FROM `m_admin_advert` WHERE ( position='轮播下' )  [ RunTime:0.0003s ]
+SQL: SELECT `xuhao`,`img_url`,`url` FROM `m_admin_advert` WHERE ( position='首页右' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0645s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.score,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=1 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.1053s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0084s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=2 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0066s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=3 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0042s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=4 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0041s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=5 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0038s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=6 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0041s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=7 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0049s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=8 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0045s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=9 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0032s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=10 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000552s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000664s ]
+NOTIC: [8] Undefined variable: get E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 73 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078749s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2016-03-08T22:55:19+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000907s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001070s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+NOTIC: [8] Undefined variable: huiyuanming E:\wamp\www\myhunll\Application\Runtime\Cache\Home\1f35679180272d72da162141f7221c2f.php 第 21 行.
+NOTIC: [8] Undefined variable: yonghu_url E:\wamp\www\myhunll\Application\Runtime\Cache\Home\1f35679180272d72da162141f7221c2f.php 第 22 行.
+NOTIC: [8] Undefined variable: tuichu_url E:\wamp\www\myhunll\Application\Runtime\Cache\Home\1f35679180272d72da162141f7221c2f.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011228s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001408s ]
+
+[ 2016-03-08T22:55:19+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: huiyuanming E:\wamp\www\myhunll\Application\Runtime\Cache\Home\1f35679180272d72da162141f7221c2f.php 第 21 行.
+NOTIC: [8] Undefined variable: yonghu_url E:\wamp\www\myhunll\Application\Runtime\Cache\Home\1f35679180272d72da162141f7221c2f.php 第 22 行.
+NOTIC: [8] Undefined variable: tuichu_url E:\wamp\www\myhunll\Application\Runtime\Cache\Home\1f35679180272d72da162141f7221c2f.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007438s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007516s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+
+[ 2016-03-08T22:55:19+08:00 ] 127.0.0.1 /Home/login/is_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:55:23+08:00 ] 127.0.0.1 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000383s ]
+NOTIC: [8] Undefined variable: infor_mima E:\wamp\www\myhunll\Application\Runtime\Cache\Home\71e023ad50fd1212773cf0a26f5ea150.php 第 57 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014241s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2016-03-08T22:55:29+08:00 ] 127.0.0.1 /Home/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `salt` FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_users` WHERE ( mobile_phone='13574506835' and password='f4fef0f9f24465fc850d03f72e7c358f' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:55:29+08:00 ] 127.0.0.1 /Home/Login/chenggong.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `salt` FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_users` WHERE ( mobile_phone='13574506835' and password='f4fef0f9f24465fc850d03f72e7c358f' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead E:\wamp\www\myhunll\Application\Home\Controller\LoginController.class.php 第 70 行.
+SQL: UPDATE `m_users` SET `last_login`='1457448929',`last_ip`='127.0.0.1' WHERE ( mobile_phone='13574506835' ) [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `shopman_id` FROM `m_users` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:55:29+08:00 ] 127.0.0.1 /Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_admin_advert` [ RunTime:0.0032s ]
+SQL: SELECT `xuhao`,`img_url`,`url` FROM `m_admin_advert` WHERE ( position='轮播上' )  [ RunTime:0.0004s ]
+SQL: SELECT `xuhao`,`img_url`,`url` FROM `m_admin_advert` WHERE ( position='轮播下' )  [ RunTime:0.0003s ]
+SQL: SELECT `xuhao`,`img_url`,`url` FROM `m_admin_advert` WHERE ( position='首页右' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0031s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.score,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=1 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0033s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=2 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0036s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=3 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0031s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=4 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0038s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=5 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0030s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=6 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0034s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=7 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0029s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=8 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0028s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=9 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0028s ]
+SQL: SELECT t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number FROM m_category t1,m_goods t2,m_users t3 WHERE ( t2.cat_id=10 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id ) ORDER BY t2.last_update desc LIMIT 8   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000589s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000692s ]
+NOTIC: [8] Undefined variable: get E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 73 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 326 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 387 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 416 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 444 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 472 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 500 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+NOTIC: [8] Undefined index: score E:\wamp\www\myhunll\Application\Runtime\Cache\Home\4e8495c7f76d7caca27531a7e2e983f7.php 第 527 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079964s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080051s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-03-08T22:55:29+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006627s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006725s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000737s ]
+
+[ 2016-03-08T22:55:29+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006870s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-03-08T22:55:29+08:00 ] 127.0.0.1 /Home/login/is_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:56:18+08:00 ] 127.0.0.1 /Home/Member/hunlirenshangjiaxinxi.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000941s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001228s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=33 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: get E:\wamp\www\myhunll\Application\Runtime\Cache\Home\8dcbe4487449ba37ea17efcc9df46383.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020731s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2016-03-08T22:56:18+08:00 ] 127.0.0.1 /Home/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006883s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2016-03-08T22:56:18+08:00 ] 127.0.0.1 /Home/login/is_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:56:18+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010272s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2016-03-08T22:56:20+08:00 ] 127.0.0.1 /Home/Member/balance.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=33 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+NOTIC: [8] Undefined variable: get E:\wamp\www\myhunll\Application\Runtime\Cache\Home\6635a094ab7914386855bc6d75dca93f.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000827s ]
+
+[ 2016-03-08T22:56:20+08:00 ] 127.0.0.1 /Home/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006930s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+
+[ 2016-03-08T22:56:21+08:00 ] 127.0.0.1 /Home/login/is_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:56:21+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006714s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-03-08T22:56:24+08:00 ] 127.0.0.1 /Home/Member/tixian.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=33 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: get E:\wamp\www\myhunll\Application\Runtime\Cache\Home\31ef36f15ca153dffb2313570174ba05.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019376s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2016-03-08T22:56:24+08:00 ] 127.0.0.1 /Home/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006908s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2016-03-08T22:56:24+08:00 ] 127.0.0.1 /Home/login/is_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-08T22:56:24+08:00 ] 127.0.0.1 /Home/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=147 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=136 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=110 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=107 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `goods_id`,`goods_name`,`yuan_price`,`price`,`goods_img` FROM `m_goods` WHERE ( goods_id=148 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
