@@ -300,7 +300,7 @@ function quxiao_shuxing($url,$value){
  //根据php的$_SERVER['HTTP_USER_AGENT'] 中各种浏览器访问时所包含各个浏览器特定的字符串来判断是属于PC还是移动端
 function checkmobile() {
  global $_G;
- $mobile = array();
+ //$mobile = array();
 //各个触控浏览器中$_SERVER['HTTP_USER_AGENT']所包含的字符串数组
  static $touchbrowser_list =array('iphone', 'android', 'phone', 'mobile', 'wap', 'netfront', 'java', 'opera mobi', 'opera mini',
     'ucweb', 'windows ce', 'symbian', 'series', 'webos', 'sony', 'blackberry', 'dopod', 'nokia', 'samsung',
