@@ -651,5 +651,8 @@ class GoodsController extends FontEndController {
         $this->ajaxReturn($data);
         exit();
     }
+    
+    
+    
 
 }
