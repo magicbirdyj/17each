@@ -4,7 +4,7 @@
 
 
 .bottom{
-    width: 100%;
+    width: 500px;
     position: fixed;
     bottom:0px;
     background-color:#F9F9F9;
@@ -32,14 +32,14 @@ margin:0px auto;
 
 .logo_fixed{
     position: fixed;
-    width:100%;
+    width:500px;
     top:0px;
     z-index: 99999;
     background-color: #DDD;
 }
 .logo{
 height:42px;
-width:500px;
+width:480px;
 margin:0px auto;
 overflow:hidden;
 padding: 5px 10px;
@@ -60,7 +60,7 @@ margin:0px 0px 0px 10px;
 box-sizing:content-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 height:38px;
 line-height:42px;
-width:293px;
+width:273px;
 border:2px solid #03BA8A;
 font-size:14px;
 float:left;
