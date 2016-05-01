@@ -71,7 +71,7 @@ HTML;
         
         
         $ismobile = checkmobile();//检查客户端是否是手机
-        if (!$ismobile) {
+        if ($ismobile) {
             C("DEFAULT_THEME", "Mobile");//默认模板主题名称
             C("TMPL_CACHE_PREFIX", "mb");//模板缓存前缀标志
         }
