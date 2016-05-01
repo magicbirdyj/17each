@@ -1,0 +1,1482 @@
+[ 2016-04-07T20:06:51+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0259s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000424s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021090s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001340s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001564s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001947s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002154s ]
+
+[ 2016-04-07T20:06:51+08:00 ] 127.0.0.1 /Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: url_to E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 10 行.
+NOTIC: [8] Undefined index: url_to E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000413s ]
+NOTIC: [8] Undefined variable: infor_mima E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\286f14c479e57cdb25987680ec610826.php 第 32 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020037s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020266s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001948s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_admin_user` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `ad_salt` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_admin_user` WHERE ( mobile_phone='13574506835' and password='f9241fc0fe6db8097a92f8f978e9586a' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/Login/chenggong.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: dlm E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: mima E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `m_admin_user` [ RunTime:0.0038s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 58 行.
+SQL: UPDATE `m_admin_user` SET `last_login`='1460030818',`last_ip`='127.0.0.1' WHERE ( mobile_phone='13574506835' ) [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `last_login` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008665s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007903s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013618s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013761s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001409s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011437s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000945s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001213s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001365s ]
+
+[ 2016-04-07T20:06:58+08:00 ] 127.0.0.1 /Admin/Index/drag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001186s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001319s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001043s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000880s ]
+
+[ 2016-04-07T20:07:00+08:00 ] 127.0.0.1 /Admin/Goodsmanage/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0062s ]
+SQL: SELECT `cat_name` FROM `m_category`  [ RunTime:0.0004s ]
+SQL: SELECT `cat_id` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0067s ]
+NOTIC: [8] Undefined index: serch E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `m_goods` WHERE ( cat_id=1 and is_delete=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0062s ]
+SQL: SELECT * FROM m_goods t1,m_users t2 WHERE ( t1.cat_id=1 and t1.is_delete=0 and t1.user_id=t2.user_id ) ORDER BY goods_id desc LIMIT 0,10   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000174s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000343s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄像 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 车队 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 跟妆 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 布置 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 演艺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 婚纱 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 酒店 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 喜铺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016303s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001773s ]
+
+[ 2016-04-07T20:07:02+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=172 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=33 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0043s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: man E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 63 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 中式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017477s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2016-04-07T20:07:02+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012767s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000762s ]
+
+[ 2016-04-07T20:07:06+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0055s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-04-07T20:07:25+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0055s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-04-07T20:10:07+08:00 ] 127.0.0.1 /Admin/Goodsmanage/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0041s ]
+SQL: SELECT `cat_name` FROM `m_category`  [ RunTime:0.0004s ]
+SQL: SELECT `cat_id` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: serch E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `m_goods` WHERE ( cat_id=1 and is_delete=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0041s ]
+SQL: SELECT * FROM m_goods t1,m_users t2 WHERE ( t1.cat_id=1 and t1.is_delete=0 and t1.user_id=t2.user_id ) ORDER BY goods_id desc LIMIT 0,10   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄像 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 车队 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 跟妆 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 布置 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 演艺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 婚纱 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 酒店 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 喜铺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000719s ]
+
+[ 2016-04-07T20:10:08+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=172 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=33 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0041s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: man E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 63 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 中式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017053s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2016-04-07T20:10:08+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024450s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000947s ]
+
+[ 2016-04-07T20:10:10+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0042s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-04-07T20:10:17+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0043s ]
+
+[ 2016-04-07T20:10:29+08:00 ] 127.0.0.1 /Admin/Goodsmanage/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0037s ]
+SQL: SELECT `cat_name` FROM `m_category`  [ RunTime:0.0004s ]
+SQL: SELECT `cat_id` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: serch E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `m_goods` WHERE ( cat_id=1 and is_delete=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0045s ]
+SQL: SELECT * FROM m_goods t1,m_users t2 WHERE ( t1.cat_id=1 and t1.is_delete=0 and t1.user_id=t2.user_id ) ORDER BY goods_id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄像 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 车队 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 跟妆 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 布置 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 演艺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 婚纱 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 酒店 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 喜铺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000871s ]
+
+[ 2016-04-07T20:10:31+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001835s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=172 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=33 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0039s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: man E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 63 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 中式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018761s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-04-07T20:10:31+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017824s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017994s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000986s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001124s ]
+
+[ 2016-04-07T20:10:33+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0196s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+
+[ 2016-04-07T20:10:50+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-04-07T20:11:06+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2016-04-07T20:11:15+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0191s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0053s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+
+[ 2016-04-07T20:11:44+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0045s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+
+[ 2016-04-07T20:12:00+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0042s ]
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 145 行.
+NOTIC: [8] Undefined index: huiyuan E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 147 行.
+
+[ 2016-04-07T20:13:09+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/172.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0047s ]
+SQL: SELECT `location` FROM `m_users` WHERE ( user_id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `server_form` FROM `m_users` WHERE ( user_id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0045s ]
+SQL: UPDATE `m_goods` SET `cat_id`='1',`area`=NULL,`user_id`='1',`goods_name`='婚礼设计 流程设计 现场督导 ',`goods_img`='/Public/Uploads/image/goods/20160311/14576949864868468673.jpg',`goods_img_qita`='a:3:{i:0;s:61:\"/Public/Uploads/image/goods/20160311/14576949927813552537.jpg\";i:1;s:61:\"/Public/Uploads/image/goods/20160311/14576949976651884737.jpg\";i:2;s:61:\"/Public/Uploads/image/goods/20160311/14576950036690622427.jpg\";}',`yuan_price`='701.00',`price`='701.00',`goods_form`=NULL,`goods_sex`='0',`shuxing`='a:1:{s:6:\"风格\";s:6:\"定制\";}',`fanxian`='0',`daijinquan`='1',`goods_desc`='<p>
+	<img src=\"http://www.17each.com/Public/Uploads/image/goods/20160311/14576865551419244835.jpg\" alt=\"\" /> 
+</p>
+<p>
+	1、提供一整套婚礼定制设计，保证你的婚礼不是和别人一模一样 设计图片如下图
+</p>
+<p>
+	2、含婚礼效果设计、婚礼流程设计、婚礼彩排、婚礼日督导
+</p>
+<p>
+	3、价格就很便宜了，请不要还价。尽量网络沟通，出去一趟的士费划不来哇。。
+</p>
+<p>
+	4、我就只提供设计图稿了，余下的摄像、摄影、主持等，你就自己在一起网找。我不推荐了
+</p>
+<p>
+	<span style=\"font-size:24px;color:#006600;\"> PS：这只是以前的效果设计图样例，我会根据你的喜好单独设计。</span> 
+</p>
+<p style=\"text-align:center;\">
+	<span><span style=\"line-height:36px;\">注意：请在一起网拍布置之前，一定得把效果图发给婚礼布置人员，看能否做到设计图的效果</span></span> 
+</p>
+<p>
+	<img src=\"/Public/Uploads/image/goods/20160311/14576951849791264574.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951855925375404.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951863005315299.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951879991878643.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951895178752685.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951908810334608.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951917799361225.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951926817648750.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951935783411572.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951945992635589.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951953275512361.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951963253791156.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951979806557041.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951992629526464.jpg\" alt=\"\" /><img src=\"/Public/Uploads/image/goods/20160311/14576951999381712661.jpg\" alt=\"\" /> 
+</p>',`last_update`='1460031189' WHERE ( goods_id=172 ) [ RunTime:0.0301s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001090s ]
+
+[ 2016-04-07T20:13:12+08:00 ] 127.0.0.1 /Admin/Goodsmanage/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0055s ]
+SQL: SELECT `cat_name` FROM `m_category`  [ RunTime:0.0003s ]
+SQL: SELECT `cat_id` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0079s ]
+NOTIC: [8] Undefined index: serch E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `m_goods` WHERE ( cat_id=1 and is_delete=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0058s ]
+SQL: SELECT * FROM m_goods t1,m_users t2 WHERE ( t1.cat_id=1 and t1.is_delete=0 and t1.user_id=t2.user_id ) ORDER BY goods_id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000351s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄像 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 车队 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 跟妆 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 布置 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 演艺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 婚纱 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 酒店 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 喜铺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017383s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017487s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-04-07T20:13:14+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0040s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 定制 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2016-04-07T20:13:15+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016514s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000995s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001185s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001329s ]
+
+[ 2016-04-07T20:13:25+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0059s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 定制 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020594s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000876s ]
+
+[ 2016-04-07T20:13:25+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000784s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+
+[ 2016-04-07T20:16:27+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0040s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 定制 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017966s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000870s ]
+
+[ 2016-04-07T20:16:27+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013779s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2016-04-07T20:16:33+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: usersmodel E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 149 行.
+
+[ 2016-04-07T20:17:15+08:00 ] 127.0.0.1 /Admin/Goodsmanage/bianji_check/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] mkdir(): No such file or directory E:\wamp\www\myhunll\Application\Common\Common\function.php 第 164 行.
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `location` FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `server_form` FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `m_goods` SET `cat_id`='1',`area`='湖南省|长沙市|雨花区',`user_id`='34',`goods_name`='红色系婚礼策划',`goods_img`='/Public/Uploads/image/goods/20160311/14576947448804795247.jpg',`goods_img_qita`='a:0:{}',`yuan_price`='880.00',`price`='681.00',`goods_form`='1',`goods_sex`='0',`shuxing`='a:1:{s:6:\"风格\";s:6:\"中式\";}',`fanxian`='0',`daijinquan`='1',`goods_desc`='<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	<img src=\"http://www.17each.com/Public/Uploads/image/goods/20160311/14576865551419244835.jpg\" alt=\"\" />1、购买我作为婚礼之后，我们和你细谈，具体你想要的婚礼效果。
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	2、我会根据你的预算，给你做资金分配，寻找合适的其他婚礼人。
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	3、其他婚礼人都购买好之后，建立微信群，把所有婚礼人拉进来，商谈，婚礼人都知道该做些什么，你可以放心。
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	4、我是独立婚礼策划师，没有办公地点，所以请理解。
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	5、出场时间：婚礼前一次、彩排一次、婚礼日一次。其他小东西基本上可以电话、微信沟通即可。
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	6、你可以放心，绝对帮你安排好！
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	<br />
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	<span style=\"color:#E53333;font-size:24px;\">PS：增加200元费用，单独设计一套布置方案图</span> 
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	<br />
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	<br />
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	<img src=\"http://www.17each.com/Public/Uploads/image/goods/20160311/14576862019487804805.jpg\" alt=\"\" /> 
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	1、策划师：680
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	2、司仪 ：880
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	http://www.17each.com/Home/Goods/index/goods_id/156.html
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	3、摄像（双机）1480
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	http://www.17each.com/Home/Goods/index/goods_id/153.html
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	4、跟妆：558
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	http://www.17each.com/Home/Goods/index/goods_id/124.html
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	5、跟拍：1280
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	http://www.17each.com/Home/Goods/index/goods_id/147.html
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	6、布置：2280
+</p>
+<p style=\"color:#666666;font-family:Arial, Helvetica, sans-serif, 新宋体;font-size:12px;\">
+	http://www.17each.com/Home/Goods/index/goods_id/163.html
+</p>
+<div>
+	<br />
+</div>
+<p>
+	<br />
+</p>',`last_update`='1460031435' WHERE ( goods_id=171 ) [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007075s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2016-04-07T20:17:19+08:00 ] 127.0.0.1 /Admin/Goodsmanage/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0057s ]
+SQL: SELECT `cat_name` FROM `m_category`  [ RunTime:0.0004s ]
+SQL: SELECT `cat_id` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0052s ]
+NOTIC: [8] Undefined index: serch E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `m_goods` WHERE ( cat_id=1 and is_delete=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0045s ]
+SQL: SELECT * FROM m_goods t1,m_users t2 WHERE ( t1.cat_id=1 and t1.is_delete=0 and t1.user_id=t2.user_id ) ORDER BY goods_id desc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄像 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 车队 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 跟妆 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 布置 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 演艺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 婚纱 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 酒店 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 喜铺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011858s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001145s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001253s ]
+
+[ 2016-04-07T20:17:20+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0039s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 定制 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000852s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001110s ]
+
+[ 2016-04-07T20:17:20+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000361s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014830s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2016-04-07T23:25:33+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001453s ]
+
+[ 2016-04-07T23:25:33+08:00 ] 127.0.0.1 /Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001206s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: url_to E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 10 行.
+NOTIC: [8] Undefined index: url_to E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000311s ]
+NOTIC: [8] Undefined variable: infor_mima E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\286f14c479e57cdb25987680ec610826.php 第 32 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011832s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001018s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001160s ]
+
+[ 2016-04-07T23:25:39+08:00 ] 127.0.0.1 /Admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `m_admin_user` [ RunTime:0.0474s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `ad_salt` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `m_admin_user` WHERE ( mobile_phone='13574506835' and password='f9241fc0fe6db8097a92f8f978e9586a' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-07T23:25:39+08:00 ] 127.0.0.1 /Admin/Login/chenggong.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: dlm E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 52 行.
+NOTIC: [8] Undefined variable: mima E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `m_admin_user` [ RunTime:0.0039s ]
+NOTIC: [2048] mktime(): You should be using the time() function instead E:\wamp\www\myhunll\Application\Admin\Controller\LoginController.class.php 第 58 行.
+SQL: UPDATE `m_admin_user` SET `last_login`='1460042739',`last_ip`='127.0.0.1' WHERE ( mobile_phone='13574506835' ) [ RunTime:0.0432s ]
+SQL: SELECT `user_id` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `user_name` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `last_login` FROM `m_admin_user` WHERE ( mobile_phone='13574506835' ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-04-07T23:25:39+08:00 ] 127.0.0.1 /Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010173s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000850s ]
+
+[ 2016-04-07T23:25:40+08:00 ] 127.0.0.1 /Admin/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002667s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047261s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047404s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001238s ]
+
+[ 2016-04-07T23:25:40+08:00 ] 127.0.0.1 /Admin/Index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080897s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081031s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2016-04-07T23:25:40+08:00 ] 127.0.0.1 /Admin/Index/drag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000796s ]
+
+[ 2016-04-07T23:25:40+08:00 ] 127.0.0.1 /Admin/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001160s ]
+
+[ 2016-04-07T23:25:42+08:00 ] 127.0.0.1 /Admin/Goodsmanage/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001135s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0049s ]
+SQL: SELECT `cat_name` FROM `m_category`  [ RunTime:0.0005s ]
+SQL: SELECT `cat_id` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0053s ]
+NOTIC: [8] Undefined index: serch E:\wamp\www\myhunll\Application\Admin\Controller\GoodsmanageController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `m_goods` WHERE ( cat_id=1 and is_delete=0 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0055s ]
+SQL: SELECT * FROM m_goods t1,m_users t2 WHERE ( t1.cat_id=1 and t1.is_delete=0 and t1.user_id=t2.user_id ) ORDER BY goods_id desc LIMIT 0,10   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000477s ]
+NOTIC: [8] Undefined variable: 司仪 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄像 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 车队 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 跟妆 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 布置 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 演艺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 婚纱 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 酒店 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+NOTIC: [8] Undefined variable: 喜铺 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\44be48c52c819b74b3b0b16f06fea967.php 第 19 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001082s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001232s ]
+
+[ 2016-04-07T23:25:44+08:00 ] 127.0.0.1 /Admin/Goodsmanage/goods_editor/goods_id/171.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000096s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `m_goods` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `m_goods` WHERE ( goods_id=171 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `m_users` WHERE ( user_id=34 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `m_category` [ RunTime:0.0045s ]
+SQL: SELECT `shuxing` FROM `m_category` WHERE ( cat_name='策划师' ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/menu.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+NOTIC: [2] file_get_contents(../Application/Admin/View/Default/Public/member_left.html): failed to open stream: No such file or directory E:\wamp\www\myhunll\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] Undefined variable: 摄影 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 24 行.
+NOTIC: [8] Undefined variable: woman E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 65 行.
+NOTIC: [8] Undefined variable: 西式 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 定制 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+NOTIC: [8] Undefined variable: 户外 E:\wamp\www\myhunll\Application\Runtime\Cache\Admin\cced33554f449b6a496b0f71c6f7ff10.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044464s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2016-04-07T23:25:44+08:00 ] 127.0.0.1 /Admin/index/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001121s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2016-04-07T23:25:53+08:00 ] 127.0.0.1 /Admin/Goodsmanage/file_jia.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' E:\wamp\www\myhunll\Application\Admin\Controller\FontEndController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `m_admin_infor` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `m_admin_infor` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\wamp\www\myhunll\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+

@@ -1,0 +1,36 @@
+[ 2016-03-26T21:45:59+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-03-26T21:47:04+08:00 ] 127.0.0.1 /Advert/advert?id=15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+ERR: 无法加载模块:Advert
+
+[ 2016-03-26T21:47:04+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000811s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-03-26T21:47:04+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-03-26T21:47:04+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-03-26T21:47:04+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+ERR: 无法加载模块:Favicon
+
