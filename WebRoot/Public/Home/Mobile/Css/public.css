@@ -3,7 +3,7 @@
 /* 默认样式设置*/
 /* -moz :火狐私有属性；-webkit :chrome、safari私有属性* -ms IE私有属性*/
 body{
-    width: 500px;
+    width: 1000px;
 }
 body,div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p,table,tr,td{padding:0px;margin:0px;}
 div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p{
