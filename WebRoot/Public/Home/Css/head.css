@@ -5,7 +5,8 @@
 
 .top{
 background-color:#F9F9F9;
-border:1px solid #2BB8AA;
+border-top:1px solid #2BB8AA;
+border-bottom:1px solid #2BB8AA;
 }
 .top .top1{
 width:1200px;
