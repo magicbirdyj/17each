@@ -17,17 +17,17 @@ margin:0px auto;
 }
 
 .bottom .bottom1 .span{
-    line-height:50px;
+    /*line-height:50px;*/
 }
 .bottom .bottom1 .span>li{
     float: left;
     display: block;
     width: 300px;
     text-align: center;
-    padding: 5px 0px;
+    padding: 10px 0px;
 }
 .bottom .bottom1 .span>li>a{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .logo_fixed{
