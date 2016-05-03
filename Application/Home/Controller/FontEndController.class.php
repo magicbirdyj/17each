@@ -102,6 +102,7 @@ HTML;
         }
     }
     
+    
     public function get_page($count,$page_size){
         $page=new \Think\Page($count,$page_size);//创建一个page类  参数1是数据总条数，参数2是一页显示的条数
         $page->setConfig('header','<span class="rows">共 %TOTAL_PAGE% 页</span>');
