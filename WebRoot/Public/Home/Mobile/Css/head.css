@@ -13,7 +13,6 @@
     z-index: 99999;
 }
 .bottom .bottom1{
-width: 540px;
 margin:0px auto;
 }
 
@@ -21,7 +20,7 @@ margin:0px auto;
     /*line-height:50px;*/
 }
 .bottom .bottom1 .span>li{
-    width: 135px;
+    width: 25%;
     float: left;
     display: block;
     text-align: center;
@@ -61,7 +60,7 @@ margin:0px 0px 0px 10px;
 box-sizing:content-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 height:38px;
 line-height:42px;
-width:5.6rem;
+width:4.4rem;
 border:2px solid #03BA8A;
 font-size:14px;
 float:left;
