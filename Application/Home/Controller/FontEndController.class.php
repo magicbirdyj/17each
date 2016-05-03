@@ -74,9 +74,10 @@ HTML;
         $ismobile = checkmobile();//检查客户端是否是手机
 
         if($_SERVER['HTTP_HOST']==='m.17each.com'){
-            C("DEFAULT_THEME", "Mobile");//默认模板主题名称
+            //C("DEFAULT_THEME", "Mobile");//默认模板主题名称
             C("TMPL_CACHE_PREFIX", "mb");//模板缓存前缀标志
         }else if ($ismobile) {
+            //$this->redirect("m.17each.com"); 
             header("location: http://m.17each.com");
         }
         
@@ -101,7 +102,6 @@ HTML;
         return $info;
         }
     }
-    
     
     public function get_page($count,$page_size){
         $page=new \Think\Page($count,$page_size);//创建一个page类  参数1是数据总条数，参数2是一页显示的条数

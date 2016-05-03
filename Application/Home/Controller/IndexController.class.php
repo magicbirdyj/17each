@@ -181,10 +181,5 @@ class IndexController extends FontEndController {
     }
     
     
-    public function info(){
-        phpinfo();
-    }
-    
-    
 
 }
