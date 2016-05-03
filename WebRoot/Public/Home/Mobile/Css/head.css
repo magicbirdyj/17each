@@ -4,7 +4,7 @@
 
 
 .bottom{
-    width: 1200px;
+    width: 100%;
     position: fixed;
     bottom:0px;
     background-color:#F9F9F9;
@@ -12,7 +12,6 @@
     z-index: 99999;
 }
 .bottom .bottom1{
-width:1200px;
 margin:0px auto;
 }
 
@@ -20,9 +19,9 @@ margin:0px auto;
     /*line-height:50px;*/
 }
 .bottom .bottom1 .span>li{
+    width: 25%;
     float: left;
     display: block;
-    width: 300px;
     text-align: center;
     padding: 10px 0px;
 }
@@ -32,7 +31,7 @@ margin:0px auto;
 
 .logo_fixed{
     position: fixed;
-    width:1200px;
+    width:100%;
     top:0px;
     z-index: 99999;
     background-color: #DDD;
@@ -116,7 +115,7 @@ margin-top: 6px;
 
 .menu{
 height:40px;
-width:500px;
+width:10rem;
 margin:0px auto;
 margin-top: 52px;
 }
@@ -132,7 +131,7 @@ line-height:40px;
 font-weight:400;
 }
 .menu_r{
-width:1200px;
+width:10rem;;
 margin:0px auto;
 height:40px;
 line-height:40px;
