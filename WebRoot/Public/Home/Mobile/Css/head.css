@@ -12,6 +12,7 @@
     z-index: 99999;
 }
 .bottom .bottom1{
+width: 540px;
 margin:0px auto;
 }
 
@@ -19,7 +20,7 @@ margin:0px auto;
     /*line-height:50px;*/
 }
 .bottom .bottom1 .span>li{
-    width: 25%;
+    width: 135px;
     float: left;
     display: block;
     text-align: center;
