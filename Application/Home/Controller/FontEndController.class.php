@@ -70,13 +70,20 @@ HTML;
         }
         
         
-        //var_dump($_SERVER);
+        
         $ismobile = checkmobile();//检查客户端是否是手机
+        
         if ($ismobile) {
-            C("DEFAULT_THEME", "Mobile");//默认模板主题名称
-            //C("TMPL_CACHE_PREFIX", "mb");//模板缓存前缀标志
+            //$this->redirect("m.17each.com"); 
+            header("location: http://m.17each.com");
         }
-        $this->assign("ismobile", $ismobile);
+        
+        
+        if($_SERVER['HTTP_HOST']==='m.17each.com'){
+            C("DEFAULT_THEME", "Mobile");//默认模板主题名称
+            C("TMPL_CACHE_PREFIX", "mb");//模板缓存前缀标志
+        }
+        
     }
     
     public function upload($path){
