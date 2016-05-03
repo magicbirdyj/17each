@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="/Public/Home/Css/category.css">
 <script src="/Public/Common/Js/jquery.min.js"></script> 
 <script src="/Public/Common/Js/function.js"></script> 
-<title>婚啦啦_分类商品</title>
+<title>一起网_分类商品</title>
 </head>
 <body>
 
@@ -78,7 +78,7 @@
 </div>
 <div class="logor">
 
-<div class="chengnuo_content">
+<div class="head_chengnuo_content">
     <a id='17weixin'>
         <img class="weixin_tubiao" src="/Public/Home/Images/public/weixin_tubiao.jpg" />
         <img class="weixin_erweima" id='weixin_erweima' src="/Public/Home/Images/public/17_weixin.jpg" />

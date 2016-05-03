@@ -70,6 +70,7 @@ HTML;
         }
         
         
+        //var_dump($_SERVER);
         $ismobile = checkmobile();//检查客户端是否是手机
         if ($ismobile) {
             C("DEFAULT_THEME", "Mobile");//默认模板主题名称
