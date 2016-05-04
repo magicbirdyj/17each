@@ -5,7 +5,7 @@
 
 .bottom{
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom:0px;
     background-color:#F9F9F9;
     border-top: 1px solid #2BB8AA;
