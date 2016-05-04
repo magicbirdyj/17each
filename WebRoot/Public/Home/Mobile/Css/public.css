@@ -8,6 +8,7 @@ html{
 body,div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p,table,tr,td{padding:0px;margin:0px;}
 div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p{
     overflow:hidden;
+    border: none;
 }
 input{box-sizing: content-box;}
 img{border:none;}
