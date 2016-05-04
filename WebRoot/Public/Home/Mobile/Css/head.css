@@ -6,7 +6,7 @@
 .bottom{
     width: 100%;
     position: absolute;
-    top:100px;
+    top:0px;
     background-color:#F9F9F9;
     border-top: 1px solid #2BB8AA;
     border-bottom: 1px solid #2BB8AA;
@@ -29,7 +29,7 @@ margin:0px auto;
 
 .logo_fixed{
     position: absolute;
-    top:0px;
+    top:200px;
     width:100%;
     z-index: 99999;
     background-color: #DDD;
