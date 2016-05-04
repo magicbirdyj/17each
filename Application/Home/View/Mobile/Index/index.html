@@ -6,19 +6,14 @@
 <body>
 <include file='Public/top'/>
 
-<div style="width:411px;height: 2000px;margin: 50px auto;background-color: #00FFDB;">随便写随便写随便写随便写随便写随便写随便写</div>
+<div style="width:411px;height: 2000px;margin: 0px auto;margin-bottom: 50px;background-color: #00FFDB;">随便写随便写随便写随便写随便写随便写随便写</div>
 
 <include file='Public/bottom'/>
 
 
 <script>
     $(window).resize(function(){
-        alert('aaa');
+        alert($(document).width());
     });
-    $(window).bind('scroll',function(){
-        posfixed();
-    });
-    function posfixed() {
-        $('.bottom').css("bottom", (0-$(window).scrollTop() )+ "px");
-    }
+
 </script>
