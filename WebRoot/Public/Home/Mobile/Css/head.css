@@ -27,6 +27,7 @@ margin:0px auto;
 }
 
 .logo_fixed{
+    position: relative;
     width:100%;
     z-index: 99999;
     background-color: #DDD;
