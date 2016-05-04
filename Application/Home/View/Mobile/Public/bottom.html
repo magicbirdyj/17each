@@ -1,0 +1,19 @@
+<div class="bottom">
+<div class="bottom1">
+
+    <ul class="span" />
+        <li><a href="<{:U('Index/index')}>">首页</a></li>
+        <li><a   href="<{:U('Member/index')}>">我的一起网</a></li>
+        <li><a  href="<{:U('Member/cart')}>">购物车</a></li>
+        <li><a  href="<{:U('Member/hunlirenshangjiaxinxi')}>">我是婚礼人</a></li>
+    </ul>
+    
+</div>
+</div>
+
+
+<script  type="text/javascript">
+    $(window).bind('scroll',function(){
+        $('.bottom').css('bottom',(0-$(window).scrollTop())+'px');
+    });
+</script>
