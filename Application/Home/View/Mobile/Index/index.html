@@ -4,7 +4,15 @@
 
 </head>
 <body>
-<include file='Public/menu'/>
-<div style="margin: 50px auto;width: 10rem;background-color: #00FFDB;height: 3000px;">
-    随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六随便一二三四五六
-</div>
+<include file='Public/top'/>
+<div style="width:411px;height: 2000px;margin: 50px auto;background-color: #00FFDB;">随便写随便写随便写随便写随便写随便写随便写</div>
+<include file='Public/bottom'/>
+
+<script>
+    $(window).bind('scroll',function(){
+        posfixed()
+    });
+    function posfixed() {
+        $('.bottom').css("bottom", (0-$(window).scrollTop() )+ "px");
+    }
+</script>

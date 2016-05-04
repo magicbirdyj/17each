@@ -5,7 +5,7 @@
 
 .bottom{
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     background-color:#F9F9F9;
     border-top: 1px solid #2BB8AA;
@@ -16,9 +16,6 @@
 margin:0px auto;
 }
 
-.bottom .bottom1 .span{
-    /*line-height:50px;*/
-}
 .bottom .bottom1 .span>li{
     width: 25%;
     float: left;
@@ -31,9 +28,7 @@ margin:0px auto;
 }
 
 .logo_fixed{
-    position: fixed;
     width:100%;
-    top:0px;
     z-index: 99999;
     background-color: #DDD;
 }
