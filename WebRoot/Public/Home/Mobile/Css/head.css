@@ -6,18 +6,19 @@
 .bottom{
     width: 100%;
     position: absolute;
-    top:0px;
+    bottom:0px;
     background-color:#F9F9F9;
     border-top: 1px solid #2BB8AA;
     border-bottom: 1px solid #2BB8AA;
     z-index: 99999;
 }
 .bottom .bottom1{
+    width: 411px;
 margin:0px auto;
 }
 
 .bottom .bottom1 .span>li{
-    width: 25%;
+    width: 102px;
     float: left;
     display: block;
     text-align: center;
@@ -29,7 +30,7 @@ margin:0px auto;
 
 .logo_fixed{
     position: absolute;
-    top:200px;
+    top:0px;
     width:100%;
     z-index: 99999;
     background-color: #DDD;
