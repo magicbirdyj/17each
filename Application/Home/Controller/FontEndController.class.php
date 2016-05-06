@@ -78,7 +78,7 @@ HTML;
             C("TMPL_CACHE_PREFIX", "mb");//模板缓存前缀标志
         }else if ($ismobile) {
             //$this->redirect("m.17each.com"); 
-            header("location: http://m.17each.com");
+            //header("location: http://m.17each.com");
         }
         
     }
