@@ -1,16 +1,15 @@
 
 
 
-<a name="top"></a>
 
-<div data-role="header" class="logo_fixed">
+<div  id="logo_header" data-role="header">
 <div class="logo"><!--logo-->
     <a href="<{:U('Index/index')}>" class="logol">一起网</a>
 <div class="serch">
     <form name="searchform" action="<{:U('Index/search')}>" method="get">
-        <input class="inputsr" type="text" name="sp" value="<{$get['sp']}>" placeholder="西式 策划" maxlength="100" />
-<input class="submitsr" type="submit" id='sr' value="搜索" />
-</form>
+        <input class="inputsr" type="text" name="sp" value="<{$get['sp']}>" placeholder="西式 策划" maxlength="100" data-role="none"  />
+        <input class="submitsr" type="submit" id='sr' value="搜索" data-role="none"  />
+    </form>
 </div>
 
 </div><!--//logo-->

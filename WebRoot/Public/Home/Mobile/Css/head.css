@@ -1,74 +1,55 @@
 /* CSS Document */
 
-
-
-
-.bottom{
-    width: 100%;
-    position: fixed;
-    bottom:0px;
-    border-top: 1px solid #2BB8AA;
-    border-bottom: 1px solid #2BB8AA;
-    z-index: 99999;
-}
-.bottom .bottom1{
-    width: 10rem;
-    margin:0px auto;
-}
-
-.bottom .bottom1 .span>li{
-    width: 2.5rem;
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 15px 0px;
-}
-.bottom .bottom1 .span>li>a{
-    font-size: 16px;
-}
-
-.logo_fixed{
+#logo_header{
     background-color: #03BA8A;
 }
 .logo{
 height:40px;
-width:9.5rem;
+width:96%;
 margin:0px auto;
 overflow:hidden;
-padding: 5px 0.25rem;
+padding: 10px 2%;
 }
 
 .logo .logol{
+box-sizing:content-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 line-height:40px;
 float:left;
 display: block;
 color: #FFF;
-font-size: 16px;
+font-size: 1em;
+width: 17%;
+text-align: center;
+
 }
 .logo .serch{
 float:left;
-margin:0px 0px 0px 10px;
+margin-left: 3%;
+width:80%;
 }
 
 .logo .inputsr{
-box-sizing:content-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
+box-sizing:border-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 height:38px;
 line-height:42px;
-width:6.4rem;
-font-size:14px;
+width:80%;
+font-size:1em;
 float:left;
 padding:0px 5px;
 border: none;
+border-radius:5px 0px 0px 5px;
 }
 .logo .submitsr{
+    box-sizing:border-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 height:38px;
-width:56px;
+width:20%;
 background:#00FFDB;
 border:0px none;
 float:left;
-font-size:14px;
+font-size:1em;
 color:#FFFFFF;
 cursor:pointer;
+border-radius:0px 5px 5px 0px;
 }
 
 
