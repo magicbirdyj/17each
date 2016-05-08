@@ -14,38 +14,41 @@ padding: 10px 2%;
 .logo .logol{
 box-sizing:content-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 line-height:40px;
-float:left;
 display: block;
 color: #FFF;
 font-size: 1em;
-width: 17%;
+width: 50px;
 text-align: center;
-
+margin-right: 5%;
+float: left;
 }
 .logo .serch{
-float:left;
-margin-left: 3%;
-width:80%;
+display: block;
 }
+
+
+
 
 .logo .inputsr{
 box-sizing:border-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 height:38px;
 line-height:42px;
-width:80%;
 font-size:1em;
-float:left;
 padding:0px 5px;
 border: none;
 border-radius:5px 0px 0px 5px;
+width: 100%;
 }
+
+
+
 .logo .submitsr{
-    box-sizing:border-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
+box-sizing:border-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
 height:38px;
-width:20%;
-background:#00FFDB;
+width:50px;
+background:#DDDDDD;
 border:0px none;
-float:left;
+float:right;
 font-size:1em;
 color:#FFFFFF;
 cursor:pointer;

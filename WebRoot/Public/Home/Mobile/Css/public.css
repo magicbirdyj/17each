@@ -2,18 +2,20 @@
 
 /* 默认样式设置*/
 /* -moz :火狐私有属性；-webkit :chrome、safari私有属性* -ms IE私有属性*/
+
+
 body,div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p,table,tr,td{padding:0px;margin:0px;}
 div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p{
     overflow:hidden;
     border: none;
 }
-input{box-sizing: content-box;}
 img{border:none;}
 body{
 font: normal 100% Helvetica, Arial, sans-serif;
 color:#666;
 font-family:Arial, Helvetica, sans-serif,新宋体;
 text-align:center;
+background-color: #f0efed;
 }
 div{text-align:left;}
 ul li{list-style:none;}

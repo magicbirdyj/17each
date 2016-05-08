@@ -6,9 +6,9 @@
 <div class="logo"><!--logo-->
     <a href="<{:U('Index/index')}>" class="logol">一起网</a>
 <div class="serch">
-    <form name="searchform" action="<{:U('Index/search')}>" method="get">
-        <input class="inputsr" type="text" name="sp" value="<{$get['sp']}>" placeholder="西式 策划" maxlength="100" data-role="none"  />
+    <form name="searchform" action="<{:U('Index/search')}>" method="get" id="searchform">
         <input class="submitsr" type="submit" id='sr' value="搜索" data-role="none"  />
+        <div><input class="inputsr" type="text" name="sp" value="<{$get['sp']}>" placeholder="西式 策划" maxlength="100" data-role="none"  /></div>
     </form>
 </div>
 
