@@ -43,7 +43,11 @@
           </div>
       </div>
       </div>
-      <div style="width: 100%;margin-top: 10px;"><img src="/Public/Uploads/image/admin/20160221/14560335786984476150.gif" style="width:100%" /></div>
+      <div style="margin-top: 10px;">
+          <volist name="lunbo_shang" id="vo"> 
+              <img class="lunbo_img" src="<{$vo['img_url']}>" style="float: left;width: 100%"/>
+          </volist> 
+      </div>
       
   </div>
 <!--content结束-->
