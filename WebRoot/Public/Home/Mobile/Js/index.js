@@ -8,7 +8,7 @@ window.onload=function(){
     var times,left,right;
         
 
-     lunbo_start();
+     //lunbo_start();
      //向左滑动触发
      $(".lunbo_div").bind("swipeleft",function(event){
          event.stopPropagation();
