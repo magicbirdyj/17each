@@ -15,7 +15,6 @@ font: normal 100% Helvetica, Arial, sans-serif;
 color:#666;
 font-family:Arial, Helvetica, sans-serif,新宋体;
 text-align:center;
-background-color: #f0efed;
 }
 div{text-align:left;}
 ul li{list-style:none;}
@@ -104,4 +103,16 @@ color:#2BB8AA;
 .shenglue{
     text-overflow:ellipsis;/*超出部分省略号*/
     white-space: nowrap;/*强制文本一行输出*/
+}
+.ui-content{
+    background-color: #f0efed;
+}
+
+.ui-content .ui-grid-c{
+    background-color: #FFF;
+}
+
+.ui-page .ui-content{
+    padding: 0em;
+    margin-bottom: 57.85px;
 }
