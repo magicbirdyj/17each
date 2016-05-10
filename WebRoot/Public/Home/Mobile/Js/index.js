@@ -6,13 +6,15 @@ window.onload=function(){
 
      lunbo_start();
      //向左滑动触发
-     $(".lunbo_div").on("swipeleft",function(event){
+     $(".lunbo_div").bind("swipeleft",function(event){
          event.stopPropagation();
+         event.preventDefault();
          huadong_l();
         });
      //向右滑动触发
-     $(".lunbo_div").on("swiperight",function(event){
+     $(".lunbo_div").bind("swiperight",function(event){
           event.stopPropagation();
+          event.preventDefault();
           huadong_r();
         });
 
