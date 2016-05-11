@@ -155,7 +155,7 @@
 <a target="_blank" href="<{:U('Goods/index',array('goods_id'=>$vo['goods_id']))}>"><{$vo['goods_name']}></a></div>
 <div class="shopping_tr2">
 <div class="shopping_title_name"><{$vo['cat_name']}></div>
-<{$vo['user_name']}>
+<span><{$vo['user_name']}></span>
 <div class="shopping_didian"><img src="__PUBLIC_HOME__/Images/index/didian.png"  /><div><{$vo['area']|str_replace='省'.$a,' ',###|str_replace='市'.$a,' ',###}></div></div>
 </div><!--第二行信息-->
 <div class="shopping_pricepj">
@@ -417,7 +417,7 @@
 </volist>
     
 </div><!--shangpindkj_content-->
-<div class="shangpin_foot"><a href="<{:U('Category/index',array('cid'=>9))}>" target="_blank">更多舞美请点击</a></div>
+<div class="shangpin_foot"><a href="<{:U('Category/index',array('cid'=>9))}>" target="_blank">更多婚纱礼服请点击</a></div>
 </div><!--shangpindkj-->
 <!--                              舞美  模    块   结         束    -->
 <!--                              酒店  模    块   开         始                                        -->

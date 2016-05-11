@@ -292,11 +292,12 @@ padding:10px 15px 0px 15px;
 }
 .shopping_tr2 .shopping_title_name{margin-top:0px;}
 .shopping_tr2 span{
-font-size:14px;
+    overflow: hidden;
+font-size:12px;
 display:inline-block;
 text-overflow:ellipsis;/*超出部分省略号*/
 white-space: nowrap;/*强制文本一行输出*/
-width: 80px;
+width: 60px;
 }
 .shopping_tr2 div{float:left;}
 
@@ -304,11 +305,15 @@ width: 80px;
 margin-right:7px;
 width:11px;
 height:17px;
+float: left;
 }
 .shopping .shopping_didian{float:right;}
 .shopping .shopping_didian div{
-float:right;
 margin-top:2px;
+text-overflow:ellipsis;/*超出部分省略号*/
+white-space: nowrap;/*强制文本一行输出*/
+max-width: 126px;
+overflow: hidden;
 }
 .shopping_pricepj{
 height:44px;
