@@ -1,32 +1,30 @@
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/ux_1462708907_6850014/iconfont.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/lunbo.css">
 </head>
 <body>
 
-    <div data-role="page">
     
     
   <include file='Public/top'/>
 
-  <div data-role="content"  >
+  <div class="ui-content"  >
       
       <!--分类导航-->
       <div class="ui-grid-c">
-          <div class="ui-block-a"><a><span class="menu_yuan iconfont tb_home">&#xe60d;</span><span>首页</span></a></div>
-          <div class="ui-block-b"><a><span class="menu_yuan iconfont tb_cehuashi">&#xe614;</span><span>策划师</span></a></div>
-          <div class="ui-block-c"><a><span class="menu_yuan iconfont tb_siyi">&#xe61a;</span><span>司仪</span></a></div>
-          <div class="ui-block-d"><a><span class="menu_yuan iconfont tb_buzhi">&#xe7bb;</span><span>布置</span></a></div>
-          <div class="ui-block-a"><a><span class="menu_yuan iconfont tb_shexiang">&#xe6c0;</span><span>摄像</span></a></div>
-          <div class="ui-block-b"><a><span class="menu_yuan iconfont tb_sheying">&#xe6c3;</span><span>摄影</span></a></div>
-          <div class="ui-block-c"><a><span class="menu_yuan iconfont tb_genzhuang">&#xe79d;</span><span>跟妆</span></a></div>
-          <div class="ui-block-d"><a><span class="menu_yuan iconfont tb_chedui">&#xe628;</span><span>车队</span></a></div>
-          <div class="ui-block-a"><a><span class="menu_yuan iconfont tb_yanyi">&#xe605;</span><span>演艺</span></a></div>
-          <div class="ui-block-b"><a><span class="menu_yuan iconfont tb_hunsha">&#xe609;</span><span>婚纱</span></a></div>
-          <div class="ui-block-c"><a><span class="menu_yuan iconfont tb_jiudian">&#x3433;</span><span>酒店</span></a></div>
-          <div class="ui-block-d"><a><span class="menu_yuan iconfont tb_xipu">&#xe658;</span><span>喜铺</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_home">&#xe60d;</span><span>首页</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_cehuashi">&#xe614;</span><span>策划师</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_siyi">&#xe61a;</span><span>司仪</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_buzhi">&#xe7bb;</span><span>布置</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_shexiang">&#xe6c0;</span><span>摄像</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_sheying">&#xe6c3;</span><span>摄影</span></a></div>
+          <div ><a><span class="menu_yuan iconfont tb_genzhuang">&#xe79d;</span><span>跟妆</span></a></div>
+          <div ><a><span class="menu_yuan iconfont tb_chedui">&#xe628;</span><span>车队</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_yanyi">&#xe605;</span><span>演艺</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_hunsha">&#xe609;</span><span>婚纱</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_jiudian">&#x3433;</span><span>酒店</span></a></div>
+          <div><a><span class="menu_yuan iconfont tb_xipu">&#xe658;</span><span>喜铺</span></a></div>
       </div>
       <!--分类导航结束-->
-      <div class="lunbo_div" id="lunbo_div">
+      <div class="lunbo_div" id="lunbo_div" style="margin-left: -300%;">
           <volist name="lunbo_shang" id="vo"> 
               <a href="<{:U($vo['url'])}>"><img class="lunbo_img" src="<{$vo['img_url']}>" /></a>
           </volist> 
@@ -234,23 +232,9 @@
 
   
   
-  
-  <div class="footer">
-      <div data-role="footer">
-          <div data-role="navbar">
-              <ul>
-                  <li><a href="#" data-icon="home">首页</a></li>
-                  <li><a href="#" data-icon="star">婚礼人</a></li>
-                  <li><a href="#" data-icon="grid">购物车</a></li>
-                  <li><a href="#" data-icon="info">我的</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
 
   
-  
-</div>  
+
     <script src="__PUBLIC_HOME__/Mobile/Js/index.js" type="text/javascript"></script>
     <script src="__PUBLIC_HOME__/Mobile/Js/lunbo.js" type="text/javascript"></script>
     

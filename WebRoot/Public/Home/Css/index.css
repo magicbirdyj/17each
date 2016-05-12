@@ -100,33 +100,20 @@ overflow:hidden;
 float:left;
 z-index:0;
 }
-.lunbo_m0{
-width:735px;
-height:300px;
-position: relative;
-overflow:hidden;
-float:left;
-z-index:0;
-}
 .lunbo_m{
-width:735px;
 height:300px;
-position: relative;
 overflow:hidden;
-float:left;
-z-index:1;
+
+z-index:0;
+width: 600%;
+margin-left: -300%;
 }
 
-.lunbo_m_gd{
-width:735px;
-height:300px;
-float:left;
-position:absolute;
-}
 
-.lunbo_m_gd a{
+.lunbo_m a{
 float:left;
-border:none;}
+border:none;
+}
 .icon{
 z-index:3;
 position: absolute;
@@ -148,37 +135,23 @@ height: 100px;
 }
 
 
-.lunbo_mx0{
-width:735px;
+.lunbo_mx{
+width: 400%;
+margin-left: -200%;
 height:200px;
-position: relative;
 overflow:hidden;
 float:left;
 z-index:0;
 }
-.lunbo_mx{
-width:735px;
-height:200px;
-position: relative;
-overflow:hidden;
-float:left;
-z-index:1;
-}
 
-.lunbo_mx_gd{
-width:735px;
-height:200px;
-float:left;
-position:absolute;
-}
-.lunbo_mx_gd a{
+.lunbo_mx a{
 float:left;
 border:none;
 }
 .iconx{
 z-index:3;
 position: absolute;
-top: 50px;
+bottom: 50px;
 cursor: pointer;
 background-image:url(../Images/index/sprite.png);
 display:none;

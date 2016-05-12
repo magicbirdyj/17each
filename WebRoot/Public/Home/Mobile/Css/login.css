@@ -1,94 +1,55 @@
 /* CSS Document */
-.zhuce_top{
-width:1200px;
-height:60px;
-margin:0px auto;
-padding-top:15px;
+body{
+    background-color: #F0F0F0;
 }
-.zhuce_top a{float:left;}
-.zhuce_top_spanl{
-font-size:22px;
-height:60px;
-line-height:60px;
-padding-left:10px;
-}
-.zhuce_top_r{
-float:right;
-}
-.zhuce_top_divr{
-font-size:16px;
-height:60px;
-line-height:60px;
-padding-right:10px;
-float:left;
-}
-.zhuce_top_r a{
-width:48px;
-height:28px;
-line-height:28px;
-text-align:center;
-background-color:#03BA8A;
-border:1px solid #03BA8A;
-float:right;
-margin-top:15px;
-display:block;
-color:#FFFFFF;
-font-size:13px;
-}
-.zhuce_top_r a:hover{
-color:#FFFFFF;
-background-color:#00FFDB;
+.login_head{
+    font-size: 1.25em;
+    padding: 10px 0px;
+    background-color: #F7F7F8;
+    border-bottom: 1px solid #C8C8C8;
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
 }
 
 
-.zhuce_hr{
-border:1px solid #03BA8A;
-}
-.zhuce1_div_form{
-margin:40px 0px;
-}
-.zhuce1_box{
-    float: left;
-    margin-top: 50px;
+
+
+
+
+#infor_login{
+    width: 100%;
+    font-size: 12px;
+    position: absolute;
+    top:51px;
+    display: block;
+    text-align: center;
 }
 .zhuce1_tr{
     position:relative;
 }
-.zhuce1_tr div{float:left;}
-.zhuce1_tr_td1{
-font-size:14px;
-width:100px;
-height:28px;
-text-align:right;
-line-height:28px;
-padding:3px 0px;
-margin-top:20px;
-color:#333;
-}
+
+
 .zhuce1_tr_td2{
-width:210px;
-height:28px;
-line-height:28px;
-border:1px solid #AAA;
-padding:2px 4px;
-margin-top:20px;
-font-size:14px;
-padding-left: 33px;
+border-bottom: 1px solid #DDD;
+box-sizing: border-box;
+width:100%;
+padding:16px 8px;
+font-size:1em;
+padding-left: 38px;
+background-color: #FFF;
+    color: #6C6C6C;
 }
-.zhuce1_yanzhengma{
-    margin-left: 110px;
-    margin-top: 10px;
-    margin-right: 10px;
-    cursor:pointer;
-}
+
 .a_xyb{
+box-sizing: border-box;
 display:block;
-width:249px;
-height:38px;
-line-height:38px;
+width:100%;
+height:50px;
+line-height:50px;
 background-color:#03BA8A;
 text-align:center;
-margin:20px 0px 20px 0px;
+margin:20px 0px 0px 0px;
 border:1px solid #03BA8A;
 color:#FFFFFF;
 font-size:18px;
@@ -98,35 +59,32 @@ cursor:pointer;
 color:#FFFFFF;
 background-color:#00FFDB;
 }
-.login_head{
-    font-size: 14px;
-    position:relative;
-    top:10px;
-}
+
 .icon {
     position: absolute;
     display: inline-block;
     width: 18px;
     height: 18px;
-    top: 28px;
+    top: 14px;
     left: 9px;
     line-height: 18px;
     vertical-align: text-top;
 }
 .icon-user {
     background-position: -298px -141px;
-    background-image: url("../../Common/Images/login_icon.png");
+    background-image: url("../../../Common/Images/login_icon.png");
 }
 .icon-password{
     background-position: -150px -217px;
-    background-image: url("../../Common/Images/login_icon.png");
+    background-image: url("../../../Common/Images/login_icon.png");
 }
-.login_left{
-    width:850px;
-    height: 400px;
-    float: left;
-}
-.login_left img{
-    margin: 0px auto;
+
+
+#zhuce{
     display: block;
+    float: right;
+    margin-top: 15px;
+    padding: 0px 5px;
+    color: #03BA8A;
+    
 }

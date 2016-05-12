@@ -2,10 +2,7 @@
 
 /* 默认样式设置*/
 /* -moz :火狐私有属性；-weblit :chrome、safari私有属性* -ms IE私有属性*/
-.body{
-    width: 1200px;
-    margin: 10px auto;
-}
+
 .body .left{
     width:243px;
     float: left;

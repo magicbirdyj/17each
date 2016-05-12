@@ -9,16 +9,16 @@ $.ajaxSetup({
 obj_form.shoujihao.onfocus=function (){yzshouji_foucs();}
 obj_form.shoujihao.onblur=function (){yzshouji_blur();}
 obj_form.yanzhengma.onfocus=function (){yanzhengma_foucs();}
-//obj_form.yanzhengma.onblur=function (){yanzhengma_blur();}
-document.getElementById("tyxy").onclick=function (){tyxy_click();}
+
+
 function yzshouji_foucs(){
-	var obj=document.getElementById("infor_shoujihao");
+	var obj=document.getElementById("infor");
 	obj.style.cssText="color:#666;";
 	obj.innerHTML="请输入你的手机号码";
 	}
 function yzshouji_blur(){
-	var obj=document.getElementById("infor_shoujihao");
-	if(obj_form.shoujihao.value==""){
+	var obj=document.getElementById("infor");
+	if(obj_form.shoujihao.value===""){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="手机号码为空，请输入";
 		return false;
@@ -46,9 +46,9 @@ function yzshouji_blur(){
                         shoujihao=msg;
                         if(msg==='1'){
                             obj.style.cssText="color:red;";
-                            obj.innerHTML="手机号已经被注册，请重新填写";
+                            obj.innerHTML="手机号已被注册，请重新填写";
                             }else if(msg==='0'){
-                                obj.innerHTML="&radic;";
+                                obj.innerHTML="手机号可用 &radic;";
                                 }else{
                                     obj.innerHTML="系统错误，请重试";
                                 }
@@ -63,12 +63,12 @@ function yzshouji_blur(){
 	}
 
 function yanzhengma_foucs(){
-	var obj=document.getElementById("infor_yanzhengma");
+	var obj=document.getElementById("infor");
 	obj.style.cssText="color:#666;";
-	obj.innerHTML="请输入以下图片中的数字";
+	obj.innerHTML="请输入图片中的验证码";
 	}
 function yanzhengma_blur(){
-    var obj=document.getElementById("infor_yanzhengma");
+    var obj=document.getElementById("infor");
     if($('input[name=yanzhengma]').val()===''){
         obj.style.cssText="color:red;";
         obj.innerHTML="验证码为空，请输入验证码";
@@ -87,7 +87,7 @@ function yanzhengma_blur(){
         }
         else if(msg===-1){
             obj.style.cssText="color:red;";
-            obj.innerHTML="验证码已过期，请点击图片刷新";
+            obj.innerHTML="验证码过期，请点击图片刷新";
         }
         else if(msg===1){
             obj.innerHTML="&radic;";
@@ -97,24 +97,16 @@ function yanzhengma_blur(){
     if(yanzhengma===1){
         return true;
     }else{
-        return false;
+        return false; 
     }
 }
 
 $('#zhuce1_xiayibu').bind('click',function(event){
     event.preventDefault();
-    var a=yanzhengma_blur();
-    var b=yzshouji_blur();
-    if(a&&b){
-	obj_form.submit();
-        return false;
-    }else{
-            return false;
-    }
+    checkForm();
 });
-function checkForm(obj){
-	yzshouji_blur();
-	if(yanzhengma_blur()&&yzshouji_blur()){
+function checkForm(){
+	if(yzshouji_blur()&&yanzhengma_blur()){
 		obj_form.submit();
                 return false;
 	}else{
@@ -122,11 +114,7 @@ function checkForm(obj){
         }
   }
   
-  //点击同意协议
-function tyxy_click(){
-	document.getElementById("zcxy").style.cssText="display:none;";
-	return false;
-	}
+
         
         
         

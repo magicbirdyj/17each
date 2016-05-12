@@ -1,19 +1,25 @@
 /* 默认样式设置*/
 /* -moz :火狐私有属性；-weblit :chrome、safari私有属性* -ms IE私有属性*/
-
-.ui-content .ui-grid-c .ui-block-a, 
-.ui-content .ui-grid-c .ui-block-b, 
-.ui-content .ui-grid-c .ui-block-c,
-.ui-content .ui-grid-c .ui-block-d
+.ui-content .ui-grid-c{
+    overflow: hidden;
+}
+.ui-content .ui-grid-c div
 {
 text-align: center;
 padding:10px 0px;
 font-size: 0.75em;
+width: 25%;
+margin: 0;
+border: 0;
+float: left;
+box-sizing: border-box;
+overflow: hidden;
 }
 .ui-grid-c a{
     display: block;
 }
 .ui-grid-c .menu_yuan{
+    text-shadow: 0 1px 0 #f3f3f3;
     display: block;
     margin: auto;
     width: 40px;

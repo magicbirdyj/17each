@@ -4,15 +4,16 @@
 var obj_form=document.zhuce;
 var login;
 
-obj_form.shoujihao.onfocus=function (){yzshouji_foucs();};
+obj_form.shoujihao.onfocus=function (){yzshouji_foucs('请输入您的登陆账号');};
 obj_form.shoujihao.onblur=function (){yzshouji_blur();};
-function yzshouji_foucs(){
-	var obj=document.getElementById("infor_shoujihao");
+function yzshouji_foucs(text){
+    var text;
+	var obj=document.getElementById("infor_login");
 	obj.style.cssText="color:#666;";
-	obj.innerHTML="请输入你的登录号码";
+	obj.innerHTML=text;
 	}
 function yzshouji_blur(){
-	var obj=document.getElementById("infor_shoujihao");
+	var obj=document.getElementById("infor_login");
 	if(obj_form.shoujihao.value==""){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="登录号码为空，请输入";
@@ -22,7 +23,7 @@ function yzshouji_blur(){
 			obj.innerHTML="不正确，请输入正确的手机号码";
 			return false;
 			}else {
-                            obj.innerHTML="&radic;";
+                            obj.innerHTML="账号格式正确";
                             return true;
                         }
 		
@@ -32,7 +33,7 @@ function yzshouji_blur(){
         
 function login(obj){
 	if(yzshouji_blur()){
-            obj=document.getElementById("info_login");
+            obj=document.getElementById("infor_login");
             var data={
                 shoujihao:$('input[name=shoujihao]').val(),
                 mima:$('input[name=mima]').val(),

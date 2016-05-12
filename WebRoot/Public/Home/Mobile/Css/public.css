@@ -112,7 +112,8 @@ color:#2BB8AA;
     background-color: #FFF;
 }
 
-.ui-page .ui-content{
+.ui-content{
     padding: 0em;
-    margin-bottom: 57.85px;
+    margin-bottom: 47.4px;
+    border-width: 0;
 }

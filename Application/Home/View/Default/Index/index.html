@@ -89,26 +89,28 @@
 </div>
 <div class="lunbo_mm" >
 <!--                        轮         播          上                            -->
-<div class="lunbo_m0"  id="lunbo_m0">
 <div class="lunbo_m"  id="lunbo_m">
-<div class="lunbo_m_gd" id="lunbo_m_gd">
+
 <volist name="lunbo_shang" id="vo"> 
     <a href="<{:U($vo['url'])}>"><img  src="<{$vo['img_url']}>" /></a>
 </volist>
-</div>
-</div>
+<volist name="lunbo_shang" id="vo"> 
+    <a href="<{:U($vo['url'])}>"><img  src="<{$vo['img_url']}>" /></a>
+</volist>
+
 <div class="icon icon_left" id="icon_l"  ></div>
 <div class="icon icon_right" id="icon_r"  ></div>
 </div><!--轮播上-->
 <!--                        轮         播          下                            -->
-<div class="lunbo_mx0"  id="lunbo_mx0">
 <div class="lunbo_mx"  id="lunbo_mx">
-<div class="lunbo_mx_gd" id="lunbo_mx_gd">
+
 <volist name="lunbo_xia" id="vo"> 
 <a href="<{:U($vo['url'])}>"><img  src="<{$vo['img_url']}>" /></a>
 </volist>
-</div>
-</div>
+<volist name="lunbo_xia" id="vo"> 
+<a href="<{:U($vo['url'])}>"><img  src="<{$vo['img_url']}>" /></a>
+</volist>
+
 <div class="iconx icon_left" id="iconx_l"  ></div>
 <div class="iconx icon_right" id="iconx_r" ></div>
 </div>                                  <!--轮播下-->

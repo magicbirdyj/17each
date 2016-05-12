@@ -68,6 +68,8 @@
             if(index_this===1){
                 $('.lunbo_div').css('margin-left','-400%');
             }
+            $('.choose div span').eq(index_this).addClass("bg_red").siblings().
+            removeClass("bg_red");
         });
         
         
