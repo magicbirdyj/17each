@@ -48,8 +48,10 @@ function yzshouji_blur(){
                             obj.style.cssText="color:red;";
                             obj.innerHTML="手机号已被注册，请重新填写";
                             }else if(msg==='0'){
+                                obj.style.cssText="color:#666;";
                                 obj.innerHTML="手机号可用 &radic;";
                                 }else{
+                                    obj.style.cssText="color:red;";
                                     obj.innerHTML="系统错误，请重试";
                                 }
                         }
@@ -90,7 +92,8 @@ function yanzhengma_blur(){
             obj.innerHTML="验证码过期，请点击图片刷新";
         }
         else if(msg===1){
-            obj.innerHTML="&radic;";
+            obj.style.cssText="color:#666;";
+            obj.innerHTML="验证码正确&radic;";
         }
     });
     }

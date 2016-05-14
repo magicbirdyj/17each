@@ -69,8 +69,8 @@ function shoujiyanzheng_blur(){
 
 $('input[name="btn_sjyz"]').bind('click',btn_sjyz_click);
 function btn_sjyz_click(){
-    i=30;
-    setit=setInterval("yanshi_30()",1000);
+    i=60;
+    setit=setInterval("yanshi_60()",1000);
     var url='/Home/zhuce/send_message.html';
     var data={
             shoujihao:$('#dlm_sjh').text(),
@@ -91,7 +91,7 @@ function btn_sjyz_click(){
     });
 }
 
-function yanshi_30(){
+function yanshi_60(){
     if(i>-1){
         $('input[name="btn_sjyz"]').unbind('click');
         $('input[name="btn_sjyz"]').attr('disabled',true);
@@ -165,8 +165,7 @@ function shezhimima_foucs(){
 	obj.innerHTML="设置您的密码，建议使用英文与数字结合";
 	}
 	
-function shezhimima_blur(){
-	querenmima_blur();	
+function shezhimima_blur(){	
 	var obj=document.getElementById("infor_shezhimima");
 	if(obj_form.shezhimima.value==""){
 		obj.style.cssText="color:red;";
@@ -178,12 +177,10 @@ function shezhimima_blur(){
 			obj.innerHTML="密码小于5个字符或者大于32个字符";
 			return false;
 			}
-		else if(!querenmima_blur()){
+		else{
 			obj.innerHTML="&radic;";
-			return false;
+			return true;
 			}
-		else {
-			return true;}
 	}
 function shezhimima_keyup(){
 	var obj=document.getElementById("mimaxiaoguo");
@@ -253,7 +250,8 @@ $('#zhuce1_xiayibu').bind('click',function(){
     var a=huiyuanming_blur();
     var b=shezhimima_blur();
     var c=shoujiyanzheng_blur();
-    if(a&&b&&c){
+    var d=querenmima_blur();
+    if(a&&b&&c&&d){
         obj_form.submit();
         return false;
     }else{ 

@@ -31,7 +31,7 @@ class ZhuceController extends FontEndController {
                 $this->error('您中途打开了另一个注册页面，请重新填写信息',U('zhuce/index'),3);
             }
         }else{
-            $this->error('非法操作，请从注册页面进入',U('index/index'),3);
+            $this->error('请从注册页面进入',U('index/index'),1);
 
         }
     }
@@ -94,7 +94,7 @@ class ZhuceController extends FontEndController {
                $this->error('您中途打开了另一个注册页面，请重新填写信息',U('zhuce/index'),3);
             }
         }else{
-            $this->error('非法操作，请从注册页面进入',U('index/index'),3);
+            $this->error('请从注册页面进入',U('index/index'),3);
 
         }
         
@@ -245,11 +245,12 @@ class ZhuceController extends FontEndController {
 
     public function getCode(){
         $config =    array(   
-            'expire'      =>    30,    //验证码有效期
-            'fontSize'    =>    16,    // 验证码字体大小   
+            'expire'      =>    120,    //验证码有效期
+            'fontSize'    =>    18,    // 验证码字体大小   
             'length'      =>    4,     // 验证码位数   
             'imageW'    =>    160, // 验证码宽度 设置为0为自动计算
             'imageH'    =>    34, // 验证码高度 设置为0为自动计算
+            'useNoise'=> false,//关闭杂点
         );
        $Verify = new \Think\Verify($config);
        $Verify->entry();
@@ -281,7 +282,7 @@ class ZhuceController extends FontEndController {
 
      
     public function send_message(){
-        if($_POST['check']=='send_message'){
+        if($_POST['check']==='send_message'){
             $shoujihao=$_POST['shoujihao'];
             vendor('taobaoali.TopSdk');//引入第三方类库
             date_default_timezone_set('Asia/Shanghai'); 

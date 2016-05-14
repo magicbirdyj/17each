@@ -1,10 +1,11 @@
 
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/zhuce.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_zhuce/iconfont.css">
 </head>
 
 <body>
      <div class="zhuce_head">填写账户信息</div>
-     <span id="infor"></span>
+     <span id="infor" class="infor"></span>
     <form name="zhuce"  method="post" action="<{:U('zhuce/zhuce3')}>">
         <input type="hidden" name="hidden" value="<{$time2}>" />
 <div class="zhuce1_tr">
@@ -13,7 +14,7 @@
 </div><!--第一行-->
 
 <div class="zhuce1_tr">
-
+<i class="iconfont tb_duanxin icon">&#xe625;</i>
 <input type="text" name="shoujiyanzheng" class="zhuce1_tr_td2" placeholder="短信动态码"/>
 
 </div><!--第二行-->
@@ -31,7 +32,7 @@
 <div class="mimaxiaoguo" id="mimaxiaoguo">
 <div class="mimaxiaoguo_fenlei">弱</div>
 <div class="mimaxiaoguo_fenlei">中</div>
-<div class="mimaxiaoguo_fenlei" style="margin-right: 0px;">强</div>
+<div class="mimaxiaoguo_fenlei" id="mimaxiaoguo_last">强</div>
 </div><!--密码效果-->
 
 <div class="zhuce1_tr">
