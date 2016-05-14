@@ -1,8 +1,8 @@
 // JavaScript Document
-    //var control = navigator.control || {};
-    //if (control.gesture) {
-        //control.gesture(false);
-        //}
+    var control = navigator.control || {};
+    if (control.gesture) {
+        control.gesture(false);
+        }
     var index_this=0;//index_this是当前显示的图片index
     var times,left,right;
         
