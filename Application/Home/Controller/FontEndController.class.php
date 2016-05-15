@@ -76,6 +76,7 @@ HTML;
         if($_SERVER['HTTP_HOST']==='m.17each.com'||$_SERVER['HTTP_HOST']==='m.myhunll.com'){
             C("DEFAULT_THEME", "Mobile");//默认模板主题名称
             C("TMPL_CACHE_PREFIX", "mb");//模板缓存前缀标志
+            $this->assign("title",$webinfor['web_name'].'-触屏版');//给标题赋值
         }
         
     }

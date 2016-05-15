@@ -1086,7 +1086,7 @@ class MemberController extends FontEndController {
         creat_file('.'.$url.'thumb');//创建文件夹（如果存在不会创建）
         $image->thumb(300, 200,\Think\Image::IMAGE_THUMB_NORTHWEST)->save('.'.$url.'thumb/'.$name);
     }
-    public function ceshi(){
+    private function ceshi(){
         $goodsmodel=D('Goods');
         $List=$goodsmodel->getField('goods_img',true);
         var_dump($List);

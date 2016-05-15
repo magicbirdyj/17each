@@ -1,4 +1,5 @@
 // JavaScript Document
+var obj=document.getElementById("infor");
 var arr_province=["请选择省市","北京市","天津市","上海市","重庆市","河北省","山西省","内蒙古","辽宁省","吉林省","黑龙江省","江苏省","浙江省","安徽省","福建省","江西省","山东省","河南省","湖北省","湖南省","广东省","广西","海南省","四川省","贵州省","云南省","西藏","陕西省","甘肃省","青海省","宁夏","新疆"];//,"香港","澳门","台湾省"];
 var arr_city=[
 ["请选择市区"],
@@ -185,7 +186,6 @@ radio_select(obj_radio_fuwuxingshi[0]);
 
 
 function province_onchange(index){
-	var obj=document.getElementById("span_select");
 	obj.innerHTML="";
 	province_index=index;
 	select_city.length=0;
@@ -208,8 +208,7 @@ function city_onchange(index){
 
 
 function radio_select(obj){
-	var obj_info=document.getElementById("infor_name");
-	obj_info.innerHTML="";
+	obj.innerHTML="";
 	switch(obj.value){
 		case "个人" :
 		document.getElementById("radio_1").style.cssText="display:block;";
@@ -235,7 +234,6 @@ function radio_select(obj){
 		}
 	}
 function checkbox(obj){
-	var obj1=document.getElementById("span_checkbox");
 	obj1.innerHTML="";
 	t=0;
 	for(var i=0;i<arr_obj.length;i++){
@@ -251,12 +249,10 @@ function checkbox(obj){
 			}
 	}
 function address_juti_onfocus(){
-	var obj=document.getElementById("infor_address_juti");
 	obj.style.cssText="color:#666;";
 	obj.innerHTML="请输入您的详细地址";
 	}
 function address_juti_onblur(){
-	var obj=document.getElementById("infor_address_juti");
 	if(obj_address_juti.value==""){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="您的详细地址为空";
@@ -269,12 +265,11 @@ function address_juti_onblur(){
 	}
 	
 function contact_onfocus(name_self){
-	var obj=document.getElementById("infor_"+name_self);
 	obj.style.cssText="color:#666;";
-	if(name_self=="contact_qq"){
+	if(name_self==="contact_qq"){
 		obj.innerHTML="请输入您的QQ号";
 		}
-		else if(name_self=="contact_weixin"){
+		else if(name_self==="contact_weixin"){
 		obj.innerHTML="请输入您的微信号";
 			}
 		else{
@@ -283,7 +278,6 @@ function contact_onfocus(name_self){
 	}
 
 function contact_qq_onblur(){
-	var obj=document.getElementById("infor_contact_qq");
 	if(obj_contact_qq.value==""){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="您的QQ为空";
@@ -300,7 +294,6 @@ function contact_qq_onblur(){
 			}
 	}
 function contact_weixin_onblur(){
-	var obj=document.getElementById("infor_contact_weixin");
 	if(obj_contact_weixin.value==""){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="您的微信为空";
@@ -313,7 +306,6 @@ function contact_weixin_onblur(){
 	}
 function contact_email_onblur(){
 	var arr=["com","cn","net"];
-	var obj=document.getElementById("infor_contact_email");
 	//var index1=obj_contact_email.value.lastIndexOf("@");
 	//var str1=obj_contact_email.value.substr(index1+1);
 	//var index2=str1.lastIndexOf(".");
@@ -334,7 +326,6 @@ function contact_email_onblur(){
 			} 
 	}
 function name_onfocus(){
-	var obj=document.getElementById("infor_name");
 	obj.style.cssText="color:#666;";
 	if(obj_radio_fuwuxingshi[0].checked){
 		obj.innerHTML="请输入您的真实姓名";
@@ -347,7 +338,6 @@ function name_onfocus(){
 				}
 	}
 function name_onblur(){
-	var obj=document.getElementById("infor_name");
 	if(document.zhuce.name.value==""){
 		obj.style.cssText="color:red;";
 		if(obj_radio_fuwuxingshi[0].checked){
@@ -367,7 +357,6 @@ function name_onblur(){
 			}
 	}
 function check_seleck(){
-	var obj=document.getElementById("span_select");
 	if(select_province.selectedIndex==0){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="未选择所在城市";
@@ -379,7 +368,6 @@ function check_seleck(){
 		}
 	}
 function check_checkbox(){
-	var obj=document.getElementById("span_checkbox");
 	if(t==0){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="未选择服务内容";
@@ -401,30 +389,22 @@ function xiayibu_onclick(){
         alert('微信二维码图片因超过5M或其它原因未上传成功,请重新上传');
         return false;
     }
-	var c1=check_file_image($(obj_file_touxiang),$("#span_touxiang"),false);
-	//var c2=check_file_image($(obj_file_shenfenzheng),$("#span_shenfenzheng"),false);
-        var c2=true;
-	//var c3=check_file_image(obj_file_yingyezhizhao,2);
-	var c4=address_juti_onblur();
-	var c5=contact_qq_onblur();
-	var c6=contact_weixin_onblur();
-	var c7=name_onblur();
-	var c8=check_seleck();
-	var c9=check_checkbox();
-        var c10=text_blue($('#shop_introduce'),$('#infor_shop_introduce'));
 
-        if(c1&&c2&&c4&&c5&&c6&&c7&&c8&&c9&&c10){
+	//var c2=check_file_image($(obj_file_shenfenzheng),$("#span_shenfenzheng"),false);
+        //var c2=true;
+	//var c3=check_file_image(obj_file_yingyezhizhao,2);
+        if(check_file_image($(obj_file_touxiang),$("#infor"),false)&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&cname_onblur()&&ccheck_seleck()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'))){
             obj_form.submit();
         }
         return false;
     }
     
 $('#shop_introduce').bind('focus',function(){
-    $('#infor_shop_introduce').html('（请填写详细的店铺介绍，将显示在商品页面右侧）');
-    $('#infor_shop_introduce').css('color','#666');
+    $('#infor').html('（请填写详细的店铺介绍，将显示在商品页面右侧）');
+    $('#infor').css('color','#666');
 });
 $('#shop_introduce').bind('blur',function(){
-    return text_blue($('#shop_introduce'),$('#infor_shop_introduce'));
+    return text_blue($('#shop_introduce'),$('#infor'));
 });
 
 
