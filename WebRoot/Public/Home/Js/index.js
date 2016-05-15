@@ -10,12 +10,7 @@ if(navigator.appName!=="Microsoft Internet Explorer"){
         
     start_lunbo();
 
-    $('.shopping_img img').each(function(i,item){
-        if($(item).height()<191){
-            $(item).css('height','191px');
-            $(item).css('width','auto');
-        }
-    });
+
   
 
 document.getElementById("lunbo_m").onmouseover=function(){lunbo_icon_over('icon');};

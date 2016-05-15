@@ -184,6 +184,10 @@ class MemberController extends FontEndController {
         );
         $result_add=$goodsmodel->add($row);
         if($result_add){
+            $index=strripos($goods_img,"/");
+            $img_url=substr($goods_img,0,$index+1);
+            $img_name=substr($goods_img,$index+1);
+            $this->thumb($img_url,$img_name);//创建商品展示图片的缩略图
             $this->success('恭喜您，商品发布成功了',U('Member/goods_list'),3);
         }
     }
@@ -196,7 +200,7 @@ class MemberController extends FontEndController {
         $this->ajaxReturn($data);
     }
 
-
+    
 
     
     public function goods_list(){
@@ -1075,6 +1079,25 @@ class MemberController extends FontEndController {
         }
     }
     
+    
+    private function thumb($url,$name){
+        $image = new \Think\Image(); 
+        $image->open('.'.$url.$name);
+        creat_file('.'.$url.'thumb');//创建文件夹（如果存在不会创建）
+        $image->thumb(300, 200,\Think\Image::IMAGE_THUMB_NORTHWEST)->save('.'.$url.'thumb/'.$name);
+    }
+    private function ceshi(){
+        $goodsmodel=D('Goods');
+        $List=$goodsmodel->getField('goods_img',true);
+        var_dump($List);
+        foreach ($List as $value) {
+            $index=strripos($value,"/");
+            $img_url=substr($value,0,$index+1);
+            $img_name=substr($value,$index+1);
+            $this->thumb($img_url,$img_name);//创建商品展示图片的缩略图
+        }
+    }
+            
 }
 
 

@@ -16,60 +16,70 @@ class IndexController extends FontEndController {
         //获取策划类最新的八个商品信息
         $goodsmodel=D('Goods');
         $cehua=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=1 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.score,t2.buy_number')->select();
+        $this->get_thumb($cehua);
         $this->assign('cehua',$cehua);
         $this->assign('a','|');
 
         
         //获取司仪类最新的八个商品信息
         $siyi=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=2 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($siyi);
         $this->assign('siyi',$siyi);
         $this->assign('a','|');
 
         
         //获取布置类最新的八个商品信息
         $buzhi=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=3 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($buzhi);
         $this->assign('buzhi',$buzhi);
         $this->assign('a','|');
 
         
         //获取摄像类最新的八个商品信息
         $shexiang=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=4 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($shexiang);
         $this->assign('shexiang',$shexiang);
         $this->assign('a','|');
 
         
         //获取摄影类最新的八个商品信息
         $sheying=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=5 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($sheying);
         $this->assign('sheying',$sheying);
         $this->assign('a','|');
 
         
         //获取跟妆类最新的八个商品信息
         $genzhuang=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=6 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($genzhuang);
         $this->assign('genzhuang',$genzhuang);
         $this->assign('a','|');
 
         
         //获取车队类最新的八个商品信息
         $chedui=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=7 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($chedui);
         $this->assign('chedui',$chedui);
         $this->assign('a','|');
 
         
         //获取演艺类最新的八个商品信息
         $yanyi=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=8 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($yanyi);
         $this->assign('yanyi',$yanyi);
         $this->assign('a','|');
 
         
         //获取婚纱租赁类最新的八个商品信息
         $wumei=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=9 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($wumei);
         $this->assign('wumei',$wumei);
         $this->assign('a','|');
 
         
         //获取酒店类最新的八个商品信息
         $jiudian=$goodsmodel->table('m_category t1,m_goods t2,m_users t3')->where("t2.cat_id=10 and t2.is_delete=0 and t2.cat_id=t1.cat_id and t2.user_id=t3.user_id")->limit(8)->order('t2.last_update desc')->field('t2.goods_id,t2.area,t2.user_id,t2.goods_name,t2.price,t2.yuan_price,t2.goods_img,t2.comment_number,t1.cat_name,t3.user_name,t2.goods_id,t2.buy_number')->select();
+        $this->get_thumb($jiudian);
         $this->assign('jiudian',$jiudian);
         $this->assign('a','|');
         
@@ -180,6 +190,13 @@ class IndexController extends FontEndController {
         exit();
     }
     
-    
+    private function get_thumb(&$arr){
+        foreach ($arr as &$value) {   
+            $index=strripos($value['goods_img'],"/");
+            $img_url=substr($value['goods_img'],0,$index+1);
+            $img_name=substr($value['goods_img'],$index+1);
+            $value['goods_img']=$img_url.'thumb/'.$img_name;
+        }
+    }
 
 }
