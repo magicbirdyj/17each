@@ -69,8 +69,8 @@ function shoujiyanzheng_blur(){
 
 $('input[name="btn_sjyz"]').bind('click',btn_sjyz_click);
 function btn_sjyz_click(){
-    i=60;
-    setit=setInterval("yanshi_60()",1000);
+    i=30;
+    setit=setInterval("yanshi()",1000);
     var url='/Home/zhuce/send_message.html';
     var data={
             shoujihao:$('#dlm_sjh').text(),
@@ -91,7 +91,7 @@ function btn_sjyz_click(){
     });
 }
 
-function yanshi_60(){
+function yanshi(){
     if(i>-1){
         $('input[name="btn_sjyz"]').unbind('click');
         $('input[name="btn_sjyz"]').attr('disabled',true);

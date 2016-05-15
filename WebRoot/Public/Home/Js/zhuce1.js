@@ -6,11 +6,11 @@ var yanzhengma,shoujihao;
 $.ajaxSetup({ 
     async : false 
 });     
-obj_form.shoujihao.onfocus=function (){yzshouji_foucs();}
-obj_form.shoujihao.onblur=function (){yzshouji_blur();}
-obj_form.yanzhengma.onfocus=function (){yanzhengma_foucs();}
+obj_form.shoujihao.onfocus=function (){yzshouji_foucs();};
+obj_form.shoujihao.onblur=function (){yzshouji_blur();};
+obj_form.yanzhengma.onfocus=function (){yanzhengma_foucs();};
 //obj_form.yanzhengma.onblur=function (){yanzhengma_blur();}
-document.getElementById("tyxy").onclick=function (){tyxy_click();}
+document.getElementById("tyxy").onclick=function (){tyxy_click();};
 function yzshouji_foucs(){
 	var obj=document.getElementById("infor_shoujihao");
 	obj.style.cssText="color:#666;";

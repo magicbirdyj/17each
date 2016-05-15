@@ -3,7 +3,6 @@ namespace Home\Controller;
 use Home\Controller;
 class IndexController extends FontEndController {
     public function index(){ 
-        $this->assign("title","一起网");
         unset($_SESSION['ref']);
         //广告图片获取
         $advertmodel=D('admin_advert');

@@ -19,15 +19,13 @@ body{
     font-size: 14px;
     text-align: center;
     position: fixed;
-    top:48px;
-    display: block;
+    top:45px;
     overflow: hidden;
     text-overflow:ellipsis;/*超出部分省略号*/
     white-space: nowrap;/*强制文本一行输出*/
 }
 
 .zhuce1_tr{
-    position:relative;
     width: 100%;
 }
 
