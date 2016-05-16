@@ -449,7 +449,7 @@ function file_jia_change(obj){
                             alert('图片因超过5M或其它原因未上传成功,请重新上传');
                             return false;
                         }
-                        
+                        creat_img($('#'+id),String(img_url));
                         return true;
                     },  
                     error: function(){
