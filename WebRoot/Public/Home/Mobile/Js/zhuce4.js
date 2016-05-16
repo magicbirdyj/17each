@@ -431,6 +431,7 @@ function file_jia_change(obj){
                     type: 'post',  
                     dataType:"json",
                     async : true,
+                    timeout: 300000,//300秒响应最大时间
                     success: function(msg){
                         if(msg.result==='error'){
                             alert(msg.error);
@@ -452,7 +453,7 @@ function file_jia_change(obj){
                     },  
                     error: function(error){
                         
-                        alert(error);
+                        writeObj(error);
                         return false;
                     }  
                 });  
@@ -484,3 +485,14 @@ $('body').on('click','.div_goods_img a',function(){
     $(this).parent().remove();
 
 });
+
+
+
+function writeObj(obj){ 
+ var description = ""; 
+ for(var i in obj){ 
+  var property=obj[i]; 
+  description+=i+" = "+property+"\n"; 
+ } 
+ alert(description); 
+} 
