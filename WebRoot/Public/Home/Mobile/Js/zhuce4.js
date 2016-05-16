@@ -450,8 +450,9 @@ function file_jia_change(obj){
                         }
                         return true; 
                     },  
-                    error: function(){  
-                        alert('上传文件出错');
+                    error: function(error){
+                        
+                        alert(error);
                         return false;
                     }  
                 });  
