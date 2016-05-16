@@ -424,12 +424,11 @@ $('#file_erweima').bind('click',function(){
 
 //文件上传控件内容改变时的ajax上传函数
 function file_jia_change(obj){
-    var suc;
     var id=obj.attr('name');  
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",
-                    async : false,
+                    async : true,
                     timeout: 300000,//300秒响应最大时间
                     success: function(msg){
                         if(msg.result==='error'){
@@ -450,31 +449,8 @@ function file_jia_change(obj){
                             alert('图片因超过5M或其它原因未上传成功,请重新上传');
                             return false;
                         }
-                        var data={
-                            id:id,
-                            img_url:img_url 
-                        }
-                        var url='/Home/Zhuce/ajax_thumb.html';
-                        $.ajax({
-                            type:'post',
-                            url:url,
-                            data:data,
-                            datatype:'json',
-                            async : false,
-                             success:function(msg1){
-                                 creat_img($('#'+id),String(msg1));
-                                 suc=true;
-                             },
-                             error:function(error){
-                                 suc=false;
-                                 writeObj(error);
-                             }
-                        });
-                        if(suc){
-                            return true;
-                        }else{
-                            return false;
-                        }
+                        
+                        return true;
                     },  
                     error: function(){
                         alert('上传图片失败');
@@ -482,20 +458,22 @@ function file_jia_change(obj){
                     }  
                 });  
 }
+
+
+
+
 //创建个img标签并且插入obj前面
 
 function creat_img(obj,img_url){
-    var index=img_url.lastIndexOf('/');
-    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
+    //var index=img_url.lastIndexOf('/');
+   // var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
     obj.before(str);
     obj.css('display','none');//隐藏添加图片按钮
 
-    if(obj.attr('id')==='file_touxiang'){
-        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url_thumb);
-    }else{
-        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
-    }
+   
+    $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
+    
     
 };
 
