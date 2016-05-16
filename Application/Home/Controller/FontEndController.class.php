@@ -94,7 +94,8 @@ HTML;
     $upload = new \Think\Upload($config);// 实例化上传类
     $info   =   $upload->upload();
     if(!$info) {
-        $this->error($upload->getError());
+        //$this->error($upload->getError());
+        var_dump($upload->getError());
         exit();
     }else{// 上传成功,返回文件信息
         return $info;
