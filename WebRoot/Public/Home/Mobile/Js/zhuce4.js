@@ -424,9 +424,7 @@ $('#file_erweima').bind('click',function(){
 
 //文件上传控件内容改变时的ajax上传函数
 function file_jia_change(obj){
-    var id=obj.attr('name');
-    //$("#form_"+id).submit();
-    //return 0;
+    var id=obj.attr('name');  
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",
@@ -434,7 +432,8 @@ function file_jia_change(obj){
                     timeout: 300000,//300秒响应最大时间
                     success: function(msg){
                         if(msg.result==='error'){
-                            alert(msg.error);
+                            //alert(msg.error);//测试error才用
+                            alert('图片超过5M的大小限制，请重新选择图片');
                             return false;
                         }
                         var img_url='';
@@ -445,15 +444,30 @@ function file_jia_change(obj){
                         }else{
                             img_url=msg.file_erweima;
                         }
-                        creat_img($('#'+id),String(img_url));
+                        
                         if(String(img_url)==="undefined"){
                             alert('图片因超过5M或其它原因未上传成功,请重新上传');
+                            return false;
                         }
+                        var data={
+                            id:id,
+                            img_url:img_url 
+                        }
+                        var url='/Home/Zhuce/ajax_thumb.html';
+                        $.ajax({
+                            type:'post',
+                            url:url,
+                            data:data,
+                            datatype:'json',
+                             success:function(msg1){
+                                 creat_img($('#'+id),String(msg1));
+                             }
+                        });
+                        
                         return true; 
                     },  
                     error: function(error){
-                        
-                        writeObj(error);
+                        alert('上传图片失败');
                         return false;
                     }  
                 });  
@@ -473,7 +487,6 @@ function creat_img(obj,img_url){
         $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
     }
     
-
 };
 
 //动态生成的元素添加事件

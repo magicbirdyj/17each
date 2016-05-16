@@ -246,26 +246,28 @@ class ZhuceController extends FontEndController {
             'file_shenfenzheng'=>UPLOAD.$file_info[1]['file_shenfenzheng']['savepath'].$file_info[1]['file_shenfenzheng']['savename'],
             'file_erweima'=>UPLOAD.$file_info[1]['file_erweima']['savepath'].$file_info[1]['file_erweima']['savename']
         );
-        foreach ($data as $key=>$value) {
-            if($value!=='Public/Uploads/'){
-                $index=strripos($value,"/");
-                $img_url=substr($value,0,$index+1);
-                $img_name=substr($value,$index+1);
-                if($key==='file_touxiang'){
-                    $this->thumb('/'.$img_url,$img_name,'touxiang');//创建图片的缩略图
-                }else{
-                    $this->thumb('/'.$img_url,$img_name,'sfz');//创建图片的缩略图
-                }
-            }
-        }
+        
         $this->ajaxReturn($data,'JSON');
+    }
+    public function ajax_thumb(){
+        $id=$_POST['id'];
+        $value=$_POST['img_url'];
+        $index=strripos($value,"/");
+        $img_url=substr($value,0,$index+1);
+        $img_name=substr($value,$index+1);
+        if($id==='file_touxiang'){
+            $this->thumb('/'.$img_url,$img_name,true);//创建图片的缩略图
+        }else{
+            $this->thumb('/'.$img_url,$img_name,false);//创建图片的缩略图
+        }
+        $this->ajaxReturn($value,'JSON');
     }
 
     private function thumb($url,$name,$leixing){
         $image = new \Think\Image(); 
         $image->open('.'.$url.$name);
         creat_file('.'.$url.'thumb');//创建文件夹（如果存在不会创建）
-        if($leixing==='touxiang'){
+        if($leixing){
             $image->thumb(200, 200,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.$url.'thumb/'.$name);
         }else{
             $image->thumb(100, 100,\Think\Image::IMAGE_THUMB_FILLED)->save('.'.$url.'thumb/'.$name);
