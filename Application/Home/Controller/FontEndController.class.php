@@ -95,10 +95,13 @@ HTML;
     $info   =   $upload->upload();
     if(!$info) {
         //$this->error($upload->getError());
-        var_dump($upload->getError());
-        exit();
+        $a[0]='error';
+        $a[1]=$upload->getError();
+        return $a;
     }else{// 上传成功,返回文件信息
-        return $info;
+        $a[0]='success';
+        $a[1]=$info;
+        return $a;
         }
     }
     

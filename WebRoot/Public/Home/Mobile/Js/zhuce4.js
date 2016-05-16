@@ -425,13 +425,17 @@ $('#file_erweima').bind('click',function(){
 //文件上传控件内容改变时的ajax上传函数
 function file_jia_change(obj){
     var id=obj.attr('name');
-    $("#form_"+id).submit();
-    return 0;
+    //$("#form_"+id).submit();
+    //return 0;
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",
                     async : true,
                     success: function(msg){
+                        if(msg.result==='error'){
+                            alert(msg.error);
+                            return false;
+                        }
                         var img_url='';
                         if(id==='file_touxiang'){
                             img_url=msg.file_touxiang;

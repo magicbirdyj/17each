@@ -232,14 +232,14 @@ class ZhuceController extends FontEndController {
 
     public function file_jia(){
         $file_info=$this->upload('image/temp/');//获取上传文件信息
-        if(!$file_info){
-            //var_dump($upload->getError());
-            exit();
-        }else{
-            var_dump($file_info);
+        if($file_info[0]==='error'){
+            $data=array(
+                'result'=>'error',
+                'error'=>$file_info[1]
+            );
+            $this->ajaxReturn($data,'JSON');
             exit();
         }
-        exit();
         //获取图片URL
         $data=array(
             'file_touxiang'=>UPLOAD.$file_info['file_touxiang']['savepath'].$file_info['file_touxiang']['savename'],
