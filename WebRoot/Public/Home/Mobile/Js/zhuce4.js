@@ -424,6 +424,7 @@ $('#file_erweima').bind('click',function(){
 
 //文件上传控件内容改变时的ajax上传函数
 function file_jia_change(obj){
+    var suc;
     var id=obj.attr('name');  
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
@@ -459,14 +460,23 @@ function file_jia_change(obj){
                             url:url,
                             data:data,
                             datatype:'json',
+                            async : false,
                              success:function(msg1){
                                  creat_img($('#'+id),String(msg1));
+                                 suc=true;
+                             },
+                             error:function(error){
+                                 suc=false;
+                                 writeObj(error);
                              }
                         });
-                        
-                        return true; 
+                        if(suc){
+                            return true;
+                        }else{
+                            return false;
+                        }
                     },  
-                    error: function(error){
+                    error: function(){
                         alert('上传图片失败');
                         return false;
                     }  
@@ -500,7 +510,7 @@ $('body').on('click','.div_goods_img a',function(){
 });
 
 
-
+// js打印iobject
 function writeObj(obj){ 
  var description = ""; 
  for(var i in obj){ 

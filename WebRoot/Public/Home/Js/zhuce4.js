@@ -484,7 +484,7 @@ function file_jia_change(obj){
                         
                         return true; 
                     },  
-                    error: function(error){
+                    error: function(){
                         alert('上传图片失败');
                         return false;
                     }  
