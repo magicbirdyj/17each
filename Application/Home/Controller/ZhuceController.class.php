@@ -242,9 +242,9 @@ class ZhuceController extends FontEndController {
         }
         //获取图片URL
         $data=array(
-            'file_touxiang'=>UPLOAD.$file_info['file_touxiang']['savepath'].$file_info['file_touxiang']['savename'],
-            'file_shenfenzheng'=>UPLOAD.$file_info['file_shenfenzheng']['savepath'].$file_info['file_shenfenzheng']['savename'],
-            'file_erweima'=>UPLOAD.$file_info['file_erweima']['savepath'].$file_info['file_erweima']['savename']
+            'file_touxiang'=>UPLOAD.$file_info[1]['file_touxiang']['savepath'].$file_info[1]['file_touxiang']['savename'],
+            'file_shenfenzheng'=>UPLOAD.$file_info[1]['file_shenfenzheng']['savepath'].$file_info[1]['file_shenfenzheng']['savename'],
+            'file_erweima'=>UPLOAD.$file_info[1]['file_erweima']['savepath'].$file_info[1]['file_erweima']['savename']
         );
         foreach ($data as $key=>$value) {
             if($value!=='Public/Uploads/'){
