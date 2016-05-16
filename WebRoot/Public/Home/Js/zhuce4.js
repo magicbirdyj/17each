@@ -446,7 +446,7 @@ function file_jia_change(obj){
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",
-                    async : false,
+                    async : true,
                     success: function(msg){
                         var img_url='';
                         if(id==='file_touxiang'){

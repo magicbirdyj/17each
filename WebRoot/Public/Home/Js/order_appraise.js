@@ -142,7 +142,7 @@ function file_jia_change(){
     $("#form_file_jia").ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",
-                    async : false,
+                    async : true,
                     success: function(msg){  
                         var img_url=msg.src;
                         creat_img($('#file_jia'),img_url);
