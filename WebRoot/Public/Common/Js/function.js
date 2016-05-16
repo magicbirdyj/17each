@@ -48,6 +48,7 @@ function text_blue(obj,obj_info){
         obj_info.html('含有非法字符：'+is_feifa(obj.val()));
         return false;
     }else{
+        obj_info.css('color','#666');
         obj_info.html('&radic;');
         return true;
     }

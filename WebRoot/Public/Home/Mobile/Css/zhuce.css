@@ -13,7 +13,7 @@ body{
 }
 
 .infor{
-    padding: 10px 0px;
+    padding: 9px 0px;
     background-color: #F0F0F0;
     width: 100%;
     font-size: 14px;
@@ -23,10 +23,12 @@ body{
     overflow: hidden;
     text-overflow:ellipsis;/*超出部分省略号*/
     white-space: nowrap;/*强制文本一行输出*/
+    z-index: 999;
 }
 
 .zhuce1_tr{
     width: 100%;
+    position: relative;
 }
 
 
@@ -180,6 +182,7 @@ text-align:center;
     background-color: #FFF;
     width: 100%;
     padding: 0% 5%;
+    position: relative;
 }
 .zhuce4_tr_td1{
 width: 25%;
@@ -311,4 +314,12 @@ display: inline-block;
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.zhuce4_tr_td2 .tb_qq,.zhuce4_tr_td2 .tb_weixin,.zhuce4_tr_td2 .tb_email{
+    top:10px;
+    font-size: 20px;
+    color: #666;
+}
+.zhuce4_tr_td2 .tb_email{
+    font-size: 24px;
 }

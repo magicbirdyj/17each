@@ -106,8 +106,7 @@ var obj_file_touxiang=document.form_file_touxiang.file_touxiang;
 var obj_file_shenfenzheng=document.form_file_shenfenzheng.file_shenfenzheng;
 //var obj_file_yingyezhizhao=document.zhuce.file_yingyezhizhao;
 var obj_radio_fuwuxingshi=document.zhuce.radio_fuwuxingshi;
-var obj_zhuce4_checkbox=document.getElementById("zhuce4_checkbox");
-var arr_obj=obj_zhuce4_checkbox.getElementsByTagName("input");
+
 var t=0;
 var select_province=document.zhuce.address_province;
 var select_city=document.zhuce.address_city;
@@ -174,14 +173,16 @@ for(var i=0;i<arr_county[0][0].length;i++){
 
 
 
-for(var i=0;i<arr_obj.length;i++){
-	arr_obj[i].onclick=function(){return checkbox(this);};
+for(var i=0;i<$(':checkbox').length;i++){
+	$(':checkbox').eq(i).bind('click',function(event){
+           if(!checkbox()){
+                event.preventDefault();
+           }
+        });
 	}
 document.zhuce.radio_sex[0].checked=true;
 obj_radio_fuwuxingshi[0].checked=true;
-for(var i=0;i<arr_obj.length;i++){
-		arr_obj[i].checked=false;
-		}
+
 radio_select(obj_radio_fuwuxingshi[0]);
 
 
@@ -233,11 +234,10 @@ function radio_select(obj){
 		//break;
 		}
 	}
-function checkbox(obj){
-	obj1.innerHTML="";
-	t=0;
-	for(var i=0;i<arr_obj.length;i++){
-		if(arr_obj[i].checked==true){
+function checkbox(){
+	var t=0;
+	for(var i=0;i<$(':checkbox').length;i++){
+		if($(':checkbox').eq(i).is(':checked')){
 			t++;
 			}
 		}
@@ -393,7 +393,9 @@ function xiayibu_onclick(){
 	//var c2=check_file_image($(obj_file_shenfenzheng),$("#span_shenfenzheng"),false);
         //var c2=true;
 	//var c3=check_file_image(obj_file_yingyezhizhao,2);
-        if(check_file_image($(obj_file_touxiang),$("#infor"),false)&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&cname_onblur()&&ccheck_seleck()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'))){
+        if(check_file_image($(obj_file_touxiang),$("#infor"),false)&&name_onblur()&&check_seleck()&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&contact_email_onblur()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'))){
+            $('#infor').css('color','#666');
+            $('#infor').html('审核通过 &radic;');
             obj_form.submit();
         }
         return false;
@@ -451,12 +453,18 @@ function file_jia_change(obj){
 //创建个img标签并且插入obj前面
 
 function creat_img(obj,img_url){
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
+    var index=img_url.lastIndexOf('/');
+    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     obj.css('display','none');//隐藏添加图片按钮
 
+    if(obj.attr('id')==='file_touxiang'){
+        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url_thumb);
+    }else{
+        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
+    }
     
-    $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
 
 };
 
