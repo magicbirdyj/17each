@@ -237,7 +237,7 @@ function radio_select(obj){
 		}
 	}
 function checkbox(){
-	var t=0;
+	t=0;
 	for(var i=0;i<$(':checkbox').length;i++){
 		if($(':checkbox').eq(i).is(':checked')){
 			t++;
@@ -247,7 +247,7 @@ function checkbox(){
 		return true;
 		}
 		else{
-			return false;
+                    return false;
 			}
 	}
 function address_juti_onfocus(){
@@ -370,7 +370,7 @@ function check_seleck(){
 		}
 	}
 function check_checkbox(){
-	if(t==0){
+	if(t===0){
 		obj.style.cssText="color:red;";
 		obj.innerHTML="未选择服务内容";
 		return false;
@@ -395,7 +395,7 @@ function xiayibu_onclick(){
 	//var c2=check_file_image($(obj_file_shenfenzheng),$("#span_shenfenzheng"),false);
         //var c2=true;
 	//var c3=check_file_image(obj_file_yingyezhizhao,2);
-    if(touxiang_check()&&name_onblur()&&check_seleck()&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&contact_email_onblur()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'))){
+    if(touxiang_check()&&name_onblur()&&check_seleck()&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&contact_email_onblur()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'),'婚礼人介绍')){
         $('#infor').css('color','#666');
         $('#infor').html('审核通过 &radic;');
         obj_form.submit();
@@ -417,7 +417,7 @@ $('#shop_introduce').bind('focus',function(){
     $('#infor').css('color','#666');
 });
 $('#shop_introduce').bind('blur',function(){
-    return text_blue($('#shop_introduce'),$('#infor'));
+    return text_blue($('#shop_introduce'),$('#infor'),'婚礼人介绍');
 });
 
 

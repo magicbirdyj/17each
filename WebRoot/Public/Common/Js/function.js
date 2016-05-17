@@ -37,15 +37,15 @@ function text_focus(obj,str){
 }
 
 //文本框失去焦点，检查是否为空和非法（第一个参数是失去焦点的本身对象（this），第二个参数是需要显示信息的jq对象）
-function text_blue(obj,obj_info){
+function text_blue(obj,obj_info,txt){
     if(obj.val()==''){
         obj_info.css('color','red');
-        obj_info.html('为空，请输入内容');
+        obj_info.html(txt+'为空，请输入内容');
         return false;
     }else if(is_feifa(obj.val())){
         obj_info.css('color','red');
         //obj_info.html('含有非法字符=;:#&\/^$()[]{}*+?-"，请重新输入');
-        obj_info.html('含有非法字符：'+is_feifa(obj.val()));
+        obj_info.html(txt+'含有非法字符：'+is_feifa(obj.val()));
         return false;
     }else{
         obj_info.css('color','#666');
