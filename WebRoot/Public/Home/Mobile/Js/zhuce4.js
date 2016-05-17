@@ -117,20 +117,22 @@ var obj_address_juti=document.zhuce.address_juti;
 var obj_contact_qq=document.zhuce.contact_qq;
 var obj_contact_weixin=document.zhuce.contact_weixin;
 var obj_contact_email=document.zhuce.contact_email;
+var touxiang_is=false;
 
 obj_file_touxiang.onchange=function(){
-    if(check_file_image($(this),$("#span_touxiang"),true)){
+    if(check_file_image($(this),$("#infor"),true)){
         file_jia_change($(this));
     };
 };
+
 obj_file_shenfenzheng.onchange=function(){
-    if(check_file_image($(this),$("#span_shenfenzheng"),true)){
+    if(check_file_image($(this),$("#infor"),true)){
         file_jia_change($(this));
     };
     
 };
 $('input[name=file_erweima]').bind('change',function(){
-    if(check_file_image($(this),$("#span_erweima"),true)){
+    if(check_file_image($(this),$("#infor"),true)){
         file_jia_change($(this));
     };
 });
@@ -393,14 +395,23 @@ function xiayibu_onclick(){
 	//var c2=check_file_image($(obj_file_shenfenzheng),$("#span_shenfenzheng"),false);
         //var c2=true;
 	//var c3=check_file_image(obj_file_yingyezhizhao,2);
-        if(check_file_image($(obj_file_touxiang),$("#infor"),false)&&name_onblur()&&check_seleck()&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&contact_email_onblur()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'))){
-            $('#infor').css('color','#666');
-            $('#infor').html('审核通过 &radic;');
-            obj_form.submit();
-        }
-        return false;
+    if(touxiang_check()&&name_onblur()&&check_seleck()&&address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&contact_email_onblur()&&check_checkbox()&&text_blue($('#shop_introduce'),$('#infor'))){
+        $('#infor').css('color','#666');
+        $('#infor').html('审核通过 &radic;');
+        obj_form.submit();
     }
-    
+    return false;
+}
+function touxiang_check(){
+    if(!touxiang_is){
+        $('#infor').css('color','red');
+        $('#infor').html('未上传头像');
+        return false;
+    }else{
+        return true;
+    }
+}
+
 $('#shop_introduce').bind('focus',function(){
     $('#infor').html('（请填写详细的店铺介绍，将显示在商品页面右侧）');
     $('#infor').css('color','#666');
@@ -434,11 +445,14 @@ function file_jia_change(obj){
                         if(msg.result==='error'){
                             //alert(msg.error);//测试error才用
                             alert('图片超过5M的大小限制，请重新选择图片');
+                            $('#infor').css('color','red');
+                            $('#infor').html('文件上传失败');
                             return false;
                         }
                         var img_url='';
                         if(id==='file_touxiang'){
                             img_url=msg.file_touxiang;
+                            String(img_url)==="undefined"?touxiang_is=false:touxiang_is=true;
                         }else if(id==='file_shenfenzheng'){
                             img_url=msg.file_shenfenzheng;
                         }else{
@@ -447,13 +461,18 @@ function file_jia_change(obj){
                         
                         if(String(img_url)==="undefined"){
                             alert('图片因超过5M或其它原因未上传成功,请重新上传');
+                            $('#infor').css('color','red');
+                            $('#infor').html('文件上传失败');
                             return false;
                         }
                         creat_img($('#'+id),String(img_url));
                         return true;
-                    },  
-                    error: function(){
-                        alert('上传图片失败');
+                    }, 
+                    error: function(error){
+                        //alert('上传图片失败');
+                        writeObj(error);
+                        $('#infor').css('color','red');
+                        $('#infor').html('文件上传失败');
                         return false;
                     }  
                 });  
@@ -465,9 +484,9 @@ function file_jia_change(obj){
 //创建个img标签并且插入obj前面
 
 function creat_img(obj,img_url){
-    //var index=img_url.lastIndexOf('/');
-   // var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
+    var index=img_url.lastIndexOf('/');
+    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     obj.css('display','none');//隐藏添加图片按钮
 

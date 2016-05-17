@@ -117,6 +117,7 @@ var obj_address_juti=document.zhuce.address_juti;
 var obj_contact_qq=document.zhuce.contact_qq;
 var obj_contact_weixin=document.zhuce.contact_weixin;
 var obj_contact_email=document.zhuce.contact_email;
+var touxiang_is=false;
 
 obj_file_touxiang.onchange=function(){
     if(check_file_image($(this),$("#span_touxiang"),true)){
@@ -401,7 +402,7 @@ function xiayibu_onclick(){
         alert('微信二维码图片因超过5M或其它原因未上传成功,请重新上传');
         return false;
     }
-	var c1=check_file_image($(obj_file_touxiang),$("#span_touxiang"),false);
+	var c1=touxiang_check();
 	//var c2=check_file_image($(obj_file_shenfenzheng),$("#span_shenfenzheng"),false);
         var c2=true;
 	//var c3=check_file_image(obj_file_yingyezhizhao,2);
@@ -418,6 +419,16 @@ function xiayibu_onclick(){
         }
         return false;
     }
+    
+function touxiang_check(){
+    if(!touxiang_is){
+        $("#span_touxiang").css('color','red');
+        $("#span_touxiang").html('未上传头像');
+        return false;
+    }else{
+        return true;
+    }
+}
     
 $('#shop_introduce').bind('focus',function(){
     $('#infor_shop_introduce').html('（请填写详细的店铺介绍，将显示在商品页面右侧）');
@@ -457,6 +468,7 @@ function file_jia_change(obj){
                         var img_url='';
                         if(id==='file_touxiang'){
                             img_url=msg.file_touxiang;
+                            String(img_url)==="undefined"?touxiang_is=false:touxiang_is=true;
                         }else if(id==='file_shenfenzheng'){
                             img_url=msg.file_shenfenzheng;
                         }else{
@@ -467,22 +479,8 @@ function file_jia_change(obj){
                             alert('图片因超过5M或其它原因未上传成功,请重新上传');
                             return false;
                         }
-                        var data={
-                            id:id,
-                            img_url:img_url 
-                        }
-                        var url='/Home/Zhuce/ajax_thumb.html';
-                        $.ajax({
-                            type:'post',
-                            url:url,
-                            data:data,
-                            datatype:'json',
-                             success:function(msg1){
-                                 creat_img($('#'+id),String(msg1));
-                             }
-                        });
-                        
-                        return true; 
+                        creat_img($('#'+id),String(img_url));
+                        return true;
                     },  
                     error: function(){
                         alert('上传图片失败');
@@ -493,17 +491,15 @@ function file_jia_change(obj){
 //创建个img标签并且插入obj前面
 
 function creat_img(obj,img_url){
-    var index=img_url.lastIndexOf('/');
-    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
+    //var index=img_url.lastIndexOf('/');
+    //var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
     obj.before(str);
     obj.css('display','none');//隐藏添加图片按钮
 
-    if(obj.attr('id')==='file_touxiang'){
-        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url_thumb);
-    }else{
-        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
-    }
+
+    $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
+    
     
 };
 
