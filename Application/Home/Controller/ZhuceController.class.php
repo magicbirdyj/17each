@@ -28,10 +28,10 @@ class ZhuceController extends FontEndController {
                 $_SESSION['zhuce2']=$time2;
                 $_SESSION['dlm']=$_POST['shoujihao'];
             }else{
-                $this->error('您中途打开了另一个注册页面，请重新填写信息',U('zhuce/index'),3);
+                redirect(U('zhuce/index'),1,'您中途打开了另一个注册页面，将重新刷新页面');
             }
         }else{
-            $this->error('请从注册页面进入',U('index/index'),1);
+            redirect(U('index/index'),1,'请从注册页面进入');
 
         }
     }
@@ -39,7 +39,7 @@ class ZhuceController extends FontEndController {
     public function zhuce3() {
          if(!empty($_POST['hidden'])&&!empty($_SESSION['zhuce2'])){
              if($_POST['shoujiyanzheng']!==$_SESSION['send_message']){
-                 $this->error('手机验证码错误，请重新注册',U('zhuce/index'),3);
+                 redirect(U('zhuce/index'),1,'手机验证码错误，请重新注册');
                  exit();
              }
             $usersmodel=D('Users');
@@ -88,13 +88,13 @@ class ZhuceController extends FontEndController {
                             );
                     unset($_SESSION['zhuce2']);
                 }else{
-                    $this->error('注册失败，请重新注册',U('zhuce/index'),3);
+                    redirect(U('zhuce/index'),1,'注册失败，请重新注册');
                 }
             }else{
-               $this->error('您中途打开了另一个注册页面，请重新填写信息',U('zhuce/index'),3);
+               redirect(U('zhuce/index'),1,'您中途打开了另一个注册页面，将重新刷新页面');
             }
         }else{
-            $this->error('请从注册页面进入',U('index/index'),3);
+            redirect(U('index/index'),1,'请从注册页面进入');
 
         }
         
@@ -111,7 +111,7 @@ class ZhuceController extends FontEndController {
             $this->assign("title", "成为婚礼人");
             $this->display(zhuce4);
         }else{
-            $this->error('请先登录',U('Login/index'),3);
+           redirect(U('Login/index'),1,'请先登录');
         }
         
     }
@@ -257,7 +257,7 @@ class ZhuceController extends FontEndController {
         }     
 
                     
-        //$this->ajaxReturn($data,'JSON');
+        $this->ajaxReturn($data,'JSON');
     }
 
 
