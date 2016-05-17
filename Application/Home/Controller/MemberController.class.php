@@ -25,7 +25,7 @@ class MemberController extends FontEndController {
     public function  hunlirenshangjiaxinxi(){
         if($_SESSION['huiyuan']['shopman_id']==='0'){
             $_SESSION['ref']=CONTROLLER_NAME.'/'.ACTION_NAME;
-            $this->error('您不是婚礼人，将转到注册婚礼人页面',U("Zhuce/zhuce4"),3);
+            redirect(U("Zhuce/zhuce4"),2, '您不是婚礼人，将转到注册婚礼人页面');
             //header("location:". U("Zhuce/zhuce4"));
             exit();
         }

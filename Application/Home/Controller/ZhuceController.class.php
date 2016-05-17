@@ -246,14 +246,17 @@ class ZhuceController extends FontEndController {
             'file_shenfenzheng'=>UPLOAD.$file_info[1]['file_shenfenzheng']['savepath'].$file_info[1]['file_shenfenzheng']['savename'],
             'file_erweima'=>UPLOAD.$file_info[1]['file_erweima']['savepath'].$file_info[1]['file_erweima']['savename']
         );
-        $value=$data['file_touxiang'];        
-            $index=strripos($value,"/");
-            $img_url=substr($value,0,$index+1);
-            $img_name=substr($value,$index+1);
-             $this->thumb('/'.$img_url,$img_name,true);//创建图片的缩略图
         
-        $this->assign('img_src','/'.$img_url.'thumb/'.$img_name);
-        $this->display('ceshi');
+        foreach ($data as $key => $value) {
+            if($value!=='Public/Uploads/'){
+                $index=strripos($value,"/");
+                $img_url=substr($value,0,$index+1);
+                $img_name=substr($value,$index+1);
+                $this->thumb('/'.$img_url,$img_name,$key);//创建图片的缩略图
+            }
+        }     
+
+                    
         //$this->ajaxReturn($data,'JSON');
     }
 
@@ -262,7 +265,7 @@ class ZhuceController extends FontEndController {
         $image = new \Think\Image(); 
         $image->open('.'.$url.$name);
         creat_file('.'.$url.'thumb');//创建文件夹（如果存在不会创建）
-        if($leixing){
+        if($leixing==='file_touxiang'){
             $image->thumb(200, 200,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.$url.'thumb/'.$name);
         }else{
             $image->thumb(100, 100,\Think\Image::IMAGE_THUMB_FILLED)->save('.'.$url.'thumb/'.$name);

@@ -453,16 +453,18 @@ $('#file_erweima').bind('click',function(){
 
 //文件上传控件内容改变时的ajax上传函数
 function file_jia_change(obj){
-    var id=obj.attr('name');  
+    var id=obj.attr('name');
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",
                     async : true,
-                    timeout: 300000,//300秒响应最大时间
+                    //timeout: 300000,//300秒响应最大时间
                     success: function(msg){
                         if(msg.result==='error'){
                             //alert(msg.error);//测试error才用
                             alert('图片超过5M的大小限制，请重新选择图片');
+                            $('#infor').css('color','red');
+                            $('#infor').html('文件上传失败');
                             return false;
                         }
                         var img_url='';
@@ -474,16 +476,20 @@ function file_jia_change(obj){
                         }else{
                             img_url=msg.file_erweima;
                         }
-                        
+                        /*应该不再需要这段
                         if(String(img_url)==="undefined"){
                             alert('图片因超过5M或其它原因未上传成功,请重新上传');
+                            $('#infor').css('color','red');
+                            $('#infor').html('文件上传失败');
                             return false;
-                        }
+                        }*/
                         creat_img($('#'+id),String(img_url));
                         return true;
-                    },  
+                    }, 
                     error: function(){
-                        alert('上传图片失败');
+                        alert('上传图片失败,三星前置摄像头照片可能导致此错误');
+                        $('#infor').css('color','red');
+                        $('#infor').html('文件上传失败');
                         return false;
                     }  
                 });  
@@ -491,16 +497,17 @@ function file_jia_change(obj){
 //创建个img标签并且插入obj前面
 
 function creat_img(obj,img_url){
-    //var index=img_url.lastIndexOf('/');
-    //var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
+    var index=img_url.lastIndexOf('/');
+    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     obj.css('display','none');//隐藏添加图片按钮
 
-
-    $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
-    
-    
+    if(obj.attr('id')==='file_touxiang'){
+        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url_thumb);
+    }else{
+        $('input[name=member_'+obj.attr('id')+']').attr('value',img_url);
+    }
 };
 
 //动态生成的元素添加事件
@@ -509,6 +516,9 @@ $('body').on('mouseout','.div_goods_img',function(){$(this).children('a').css('d
 $('body').on('click','.div_goods_img a',function(){
     $('input[name=member_'+$(this).parent().next().attr('id')+']').attr('value','');//清空input的value
     $(this).parent().next().css('display','block');//显示添加图片按钮
+    if($(this).parent().next().attr('id')==='file_touxiang'){
+        touxiang_is=false;
+    }
     $(this).parent().remove();
 
 });
