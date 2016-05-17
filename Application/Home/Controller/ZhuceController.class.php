@@ -133,8 +133,8 @@ class ZhuceController extends FontEndController {
         //移动文件 并且改变url
         $today=substr($_POST['member_file_touxiang'],26,8);//获取到文件夹名  如20150101
         creat_file(UPLOAD.'image/member/'.$today);//创建文件夹（如果存在不会创建）
-        rename($_POST['member_file_touxiang'], str_replace('Public/Uploads/image/temp', UPLOAD.'image/member',$_POST['member_file_touxiang']));//移动文件
-        $head_url='/'.str_replace('Public/Uploads/image/temp', UPLOAD.'image/member',$_POST['member_file_touxiang']);
+        rename($_POST['member_file_touxiang'], str_replace('Public/Uploads/image/temp', UPLOAD.'image/member',str_replace('thumb/','',$_POST['member_file_touxiang'])));//移动文件
+        $head_url='/'.str_replace('Public/Uploads/image/temp', UPLOAD.'image/member',str_replace('thumb/','',$_POST['member_file_touxiang']));
        
         $today=substr($_POST['member_file_shenfenzheng'],26,8);//获取到文件夹名  如20150101
         creat_file(UPLOAD.'image/hunliren/'.$today);//创建文件夹（如果存在不会创建）
