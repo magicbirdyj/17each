@@ -435,7 +435,9 @@ $('#file_erweima').bind('click',function(){
 
 //文件上传控件内容改变时的ajax上传函数
 function file_jia_change(obj){
-    var id=obj.attr('name');  
+    var id=obj.attr('name');
+    $("#form_"+id).submit();
+    return 0;
     $("#form_"+id).ajaxSubmit({  
                     type: 'post',  
                     dataType:"json",

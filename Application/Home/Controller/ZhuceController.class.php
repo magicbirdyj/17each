@@ -252,8 +252,9 @@ class ZhuceController extends FontEndController {
             $img_name=substr($value,$index+1);
              $this->thumb('/'.$img_url,$img_name,true);//创建图片的缩略图
         
-        
-        $this->ajaxReturn($data,'JSON');
+        $this->assign('img_src','/'.$img_url.'thumb/'.$img_name);
+        $this->display('ceshi');
+        //$this->ajaxReturn($data,'JSON');
     }
 
 
