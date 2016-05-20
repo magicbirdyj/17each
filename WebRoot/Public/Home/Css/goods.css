@@ -20,7 +20,7 @@
 .touxiang{
     width: 450px;
     height: 505px;
-    //border: 1px solid red;
+    /*border: 1px solid red;*/
     float: left;
     position: relative;
 }
@@ -33,11 +33,11 @@
 }
 .datouxiang_fangda{
     position:absolute;
-    left:545px;
+    left:450px;
     width: 450px;
     height:300px;
     display: none;
-    top:245px;
+    top:53px;
     z-index: 1000;
     background-repeat: no-repeat;
 }

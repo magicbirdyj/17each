@@ -3,10 +3,7 @@ window.onload=function(){
 var index_this_s=0,index_this_x=0,left_s,right_s;//t是需要轮播图片张数,n记录一张图片走完
 var time1,time2;
 var body_scrolltop;
-if(navigator.appName!=="Microsoft Internet Explorer"){
-	//window.onblur=stop_lunbo;
-	//window.onfocus=start_lunbo;
-	}
+
         
     start_lunbo();
 

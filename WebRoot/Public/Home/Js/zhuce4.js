@@ -458,7 +458,6 @@ function file_jia_change(obj){
                     type: 'post',  
                     dataType:"json",
                     async : true,
-                    //timeout: 300000,//300秒响应最大时间
                     success: function(msg){
                         if(msg.result==='error'){
                             //alert(msg.error);//测试error才用

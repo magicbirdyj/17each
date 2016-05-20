@@ -102,17 +102,32 @@ class MemberController extends FontEndController {
         }
         //获取图片URL,分割成数组
         $arr_goods_img=explode('+img+',$content['goods_img']);
-        //移动文件 并且改变url
+        //先移动缩略图；
+        foreach ($arr_goods_img as $value) {
+            $today=substr($value,26,8);//获取到文件夹名  如20150101
+            creat_file(UPLOAD.'image/goods/'.$today);//创建文件夹（如果存在不会创建
+            creat_file(UPLOAD.'image/goods/'.$today.'/thumb');//创建文件夹（如果存在不会创建
+            $index=strripos($value,"/");
+            $img_url=substr($value,0,$index+1);
+            $img_name=substr($value,$index+1);
+            $value=$img_url.'thumb/'.$img_name;
+            rename($value, str_replace('Public/Uploads/image/temp', UPLOAD.'image/goods',$value));//移动文件
+        }
+        //再创建900*600的缩略图，并移动文件 并且改变url
         foreach ($arr_goods_img as &$value) {
             $today=substr($value,26,8);//获取到文件夹名  如20150101
-            creat_file(UPLOAD.'image/goods/'.$today);//创建文件夹（如果存在不会创建）
+            //creat_file(UPLOAD.'image/goods/'.$today);//创建文件夹（如果存在不会创建）
+            $image = new \Think\Image(); 
+            $image->open($value);
+            $image->thumb(900, 600,\Think\Image::IMAGE_THUMB_CENTER)->save(str_replace('Public/Uploads/image/temp', UPLOAD.'image/goods',$value));
+            $value=str_replace('Public/Uploads/image/temp','Public/Uploads/image/goods',$value);  
             rename($value, str_replace('Public/Uploads/image/temp', UPLOAD.'image/goods',$value));//移动文件
-            $value=str_replace('Public/Uploads/image/temp', '/'.UPLOAD.'image/goods',$value);
+            $value='/'.$value;
         }
 
-        
         //获取第一张图片URL
         $goods_img=$arr_goods_img[0];
+        
        //建立一个去掉第一张图片了的数组并序列化
        array_splice($arr_goods_img,0,1);
        $str_goods_img=serialize($arr_goods_img);
@@ -184,22 +199,37 @@ class MemberController extends FontEndController {
         );
         $result_add=$goodsmodel->add($row);
         if($result_add){
-            $index=strripos($goods_img,"/");
-            $img_url=substr($goods_img,0,$index+1);
-            $img_name=substr($goods_img,$index+1);
-            $this->thumb($img_url,$img_name);//创建商品展示图片的缩略图
             $this->success('恭喜您，商品发布成功了',U('Member/goods_list'),3);
         }
     }
     
     public function file_jia(){
         $file_info=$this->upload('image/temp/');//获取上传文件信息
+        if($file_info[0]==='error'){
+            $data=array(
+                'result'=>'error',
+                'error'=>$file_info[1]
+            );
+            $this->ajaxReturn($data,'JSON');
+            exit();
+
+        }
         //获取图片URL
         $data=array();
-        $data['src']=UPLOAD.$file_info['file_img']['savepath'].$file_info['file_img']['savename'];
-        $this->ajaxReturn($data);
+        $data['src']=UPLOAD.$file_info[1]['file_img']['savepath'].$file_info[1]['file_img']['savename'];
+        $index=strripos($data['src'],"/");
+        $img_url=substr($data['src'],0,$index+1);
+        $img_name=substr($data['src'],$index+1); 
+        $this->thumb($img_url,$img_name,300,200);//创建图片的缩略图
+        $this->ajaxReturn($data,'JSON');
     }
-
+        
+    private function thumb($url,$name,$a,$b){
+        $image = new \Think\Image(); 
+        $image->open($url.$name);
+        creat_file($url.'thumb');//创建文件夹（如果存在不会创建）
+        $image->thumb($a, $b,\Think\Image::IMAGE_THUMB_CENTER)->save($url.'thumb/'.$name);
+    }
     
 
     
@@ -1080,21 +1110,86 @@ class MemberController extends FontEndController {
     }
     
     
-    private function thumb($url,$name){
-        $image = new \Think\Image(); 
-        $image->open('.'.$url.$name);
-        creat_file('.'.$url.'thumb');//创建文件夹（如果存在不会创建）
-        $image->thumb(300, 200,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.$url.'thumb/'.$name);
+
+    public function ceshi(){
+        $goodsmodel=D('Goods');
+        $List=$goodsmodel->where('goods_id<=150')->getField('goods_img',true);
+        var_dump($List);
+        $image = new \Think\Image();
+        foreach ($List as $value) {
+            $image->open('.'.$value);
+            $today=substr($value,28,8);//获取到文件夹名  如20150101
+            creat_file(UPLOAD.'image/goods_temp');//创建文件夹（如果存在不会创建）
+            creat_file(UPLOAD.'image/goods_temp/'.$today);//创建文件夹（如果存在不会创建）
+            $image->thumb(900, 600,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.str_replace( UPLOAD.'image/goods', UPLOAD.'image/goods_temp',$value));
+        }
     }
-    private function ceshi(){
+    
+    public function ceshi2(){
+        $goodsmodel=D('Goods');
+        $List=$goodsmodel->where('goods_id>150')->getField('goods_img',true);
+        var_dump($List);
+        $image = new \Think\Image();
+        foreach ($List as $value) {
+            $image->open('.'.$value);
+            $today=substr($value,28,8);//获取到文件夹名  如20150101
+            creat_file(UPLOAD.'image/goods_temp');//创建文件夹（如果存在不会创建）
+            creat_file(UPLOAD.'image/goods_temp/'.$today);//创建文件夹（如果存在不会创建）
+            $image->thumb(900, 600,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.str_replace( UPLOAD.'image/goods', UPLOAD.'image/goods_temp',$value));
+        }
+    }
+    
+    
+    public function ceshi_qita(){
+        $goodsmodel=D('Goods');
+        $List=$goodsmodel->where('goods_id<=150')->getField('goods_img_qita',true);
+        $image = new \Think\Image(); 
+        foreach ($List as $value1) {
+            $list1=unserialize($value1);
+            var_dump($list1);
+            foreach ($list1 as $value){
+                $image->open('.'.$value);
+                $today=substr($value,28,8);//获取到文件夹名  如20150101
+                creat_file(UPLOAD.'image/goods_temp');//创建文件夹（如果存在不会创建）
+                creat_file(UPLOAD.'image/goods_temp/'.$today);//创建文件夹（如果存在不会创建）
+                $image->thumb(900, 600,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.str_replace( UPLOAD.'image/goods', UPLOAD.'image/goods_temp',$value));
+            }  
+        }
+    }
+    
+    public function ceshi_qita1(){
+        $goodsmodel=D('Goods');
+        $List=$goodsmodel->where('goods_id>150')->getField('goods_img_qita',true);
+        $image = new \Think\Image(); 
+        foreach ($List as $value1) {
+            $list1=unserialize($value1);
+            var_dump($list1);
+            foreach ($list1 as $value){
+                $image->open('.'.$value);
+                $today=substr($value,28,8);//获取到文件夹名  如20150101
+                creat_file(UPLOAD.'image/goods_temp');//创建文件夹（如果存在不会创建）
+                creat_file(UPLOAD.'image/goods_temp/'.$today);//创建文件夹（如果存在不会创建）
+                $image->thumb(900, 600,\Think\Image::IMAGE_THUMB_CENTER)->save('.'.str_replace( UPLOAD.'image/goods', UPLOAD.'image/goods_temp',$value));
+            }  
+        }
+    }
+    
+    
+    public function ceshi_thumb(){
         $goodsmodel=D('Goods');
         $List=$goodsmodel->getField('goods_img',true);
-        var_dump($List);
         foreach ($List as $value) {
+            $today=substr($value,28,8);//获取到文件夹名  如20150101
+            creat_file(UPLOAD.'image/goods_temp');//创建文件夹（如果存在不会创建）
+            creat_file(UPLOAD.'image/goods_temp/'.$today);//创建文件夹（如果存在不会创建）
+            creat_file(UPLOAD.'image/goods_temp/'.$today.'/thumb');//创建文件夹（如果存在不会创建
             $index=strripos($value,"/");
-            $img_url=substr($value,0,$index+1);
-            $img_name=substr($value,$index+1);
-            $this->thumb($img_url,$img_name);//创建商品展示图片的缩略图
+            $url=substr($value,0,$index+1);
+            $name=substr($value,$index+1); 
+            $img_url=$url.'thumb/'.$name;
+            var_dump($img_url);
+            $img_url=substr($img_url,1);
+            rename($img_url, str_replace(UPLOAD.'image/goods', UPLOAD.'image/goods_temp', $img_url));
         }
     }
             

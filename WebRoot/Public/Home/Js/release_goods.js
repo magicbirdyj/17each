@@ -127,15 +127,22 @@ function file_jia_change(){
                     dataType:"json",
                     async : true,
                     success: function(msg){
+                        if(msg.result==='error'){
+                            //alert(msg.error);//测试error才用
+                            alert('图片超过5M的大小限制，请重新选择图片');
+                            return false;
+                        }
                         var img_url=msg.src;
                         creat_img($('#file_jia'),img_url);
+                        /*应该不再需要这段
                         if(String(img_url)=== "undefined"){
                             alert('商品图片因超过5M或其它原因未上传成功,请重新上传');
-                        }
+                            return false
+                        }*/
                         return true; 
                     },  
                     error: function(){  
-                        alert('上传文件出错');
+                        alert('上传图片失败,三星前置摄像头照片可能导致此错误');
                         return false;
                     }  
                 });  
@@ -143,7 +150,9 @@ function file_jia_change(){
 //创建个img标签并且插入obj前面
 var goods_img="";
 function creat_img(obj,img_url){
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
+    var index=img_url.lastIndexOf('/');
+    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     $('#img_count').html($('.goods_img').length);
     if($('.goods_img').length>3){
