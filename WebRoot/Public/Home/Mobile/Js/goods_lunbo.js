@@ -11,26 +11,32 @@ var min_right='-'+(number-2)+'00%';
 var img_width=100/number+'%';
 $('#lunbo_div').css('width',number+'00%');
 $('.lunbo_div img').css('width',img_width);
-$('#lunbo_div').css('margin-left',margin_left);  
+$('#lunbo_div').css('margin-left',margin_left);
+if(number>2){
+    $('.choose_div').append('<span class="bg_red margin_left"></span>');
+    for(var i = 1;i < number/2; i++){
+        $('.choose_div').append('<span></span>');
+    }
+}
+    
 
-     lunbo_start();
+
      //向左滑动触发
-     $(".lunbo_div").bind("swipeleft",function(event){
+     $("#lunbo_div").bind("swipeleft",function(event){
          event.stopPropagation();
          event.preventDefault();
          huadong_l();
         });
      //向右滑动触发
-     $(".lunbo_div").bind("swiperight",function(event){
+     $("#lunbo_div").bind("swiperight",function(event){
           event.stopPropagation();
           event.preventDefault();
           huadong_r();
         });
 
-
-    function lunbo_start(){
-        times=setInterval(huadong_l,3000);
-    }
+if(number===2){
+    $('#lunbo_div').unbind();
+}
 
     function huadong_l(){
         margin_left=$('#lunbo_div')[0].style.marginLeft;
