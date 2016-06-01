@@ -1,50 +1,42 @@
 
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/public.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/goods.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/buy.css">
-<script src="__PUBLIC_COMMON__/Js/function.js"></script> 
-
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/goods.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/buy.css">
 
 </head>
 
 <body>
-<include file='Public/menu_top'/>
-<div class="buy_div">
-<div class="logo"><!--logo-->
-    <a class="logol" href="<{:U('index/index')}>"></a>
-<div class="zhuce_head">
-<div>欢迎下单:</div>
-<ul>
-<li><span>提交订单</span></li>
-<li><span class="zhuce_head_jt1">&gt;&gt;</span></li>
-<li><span class="zhuce_head_self">选择支付方式</span></li>
-<li><span class="zhuce_head_jt1">&gt;&gt;</span></li>
-<li><span>购买成功</span></li>
-</ul>
-</div>
-</div>
+
+
+<div class="buy_head">微信支付</div>
 
     <form name="qufukuang" method="get" action="<{:U('Goods/alipay')}>">
 <table class="buy_table" cellspacing="0">
 <tr class="buy_table_head">
-    <th class="shangjia">商家</th>
-    <th class="desc">项目</th>
-    <th class="price">价格</th>
-    <th class="daijin">日期</th>
-    <th class="yingfu">应付</th>
+    <td colspan="2">[<{$goods['cat_name']}>]<{$goods['goods_name']}></td>
 </tr>
-<tr class="buy_table_head buy_table_content">
-    <td class="shangjia"><{$goods['shop_name']}></td>
-    <td class="desc">[<{$goods['cat_name']}>]<{$goods['goods_name']}></td>
-    <td class="price">&yen <{$goods['price']}></td>
-    <td class="daijin"><{$goods['server_day']|date_geshi1}></td>
-    <td class="yingfu">&yen <{$goods['price']}></td>
+<tr class="buy_table_content">
+    <td class="td_l">商家：</td>
+    <td class="td_r"><{$goods['shop_name']}></td>
 </tr>
-<tr class="buy_table_head buy_table_content">
-    <td colspan="3" class="yingfu">代金卷：<{$goods['daijinjuan']}></td>
-    <td colspan="2" class="yingfu">应付金额：&yen <{$goods['dues']}></td>
+<tr class="buy_table_content">
+    <td class="td_l">价格：</td>
+    <td class="td_r">&yen <{$goods['price']}></td>
 </tr>
+<tr class="buy_table_content">
+    <td class="td_l">日期：</td>
+    <td class="td_r"><{$goods['server_day']|date_geshi1}></td>
+</tr>
+<tr class="buy_table_content">
+    <td class="td_l">代金卷：</td>
+    <td class="td_r">&yen<{$goods['daijinjuan']}></td>
+</tr>
+<tr class="buy_table_content">
+    <td class="td_l">应付金额：</td>
+    <td class="td_r yingfu">&yen <{$goods['dues']}></td>
+</tr>
+
+
 
 
 </table>
@@ -70,7 +62,7 @@
                     </div>
                     <div class="qrcode-img-explain fn-clear">
                         <img smartracker="on" seed="qrcodeImgExplain-tImagesT1bdtfXfdiXXXXXXXX" class="fn-left" src="__PUBLIC_HOME__/Images/public/saoyisao.png" alt="扫一扫标识">
-                        <div class="fn-left">打开手机支付宝<br>扫一扫继续付款</div>
+                        <div class="fn-left">打开手机微信<br>扫一扫继续付款</div>
                     </div>
                 </div>
                 <div class="botton_zhifu"><a class="button_a_lvse" href='<{:U("Goods/gmcg_wx","order_id=$order_id")}>'>支付成功，如未跳转请点击</a></div>
@@ -87,7 +79,7 @@
     
     
 
-</div>
+
 <iframe height="1" frameborder="0" width="1" style="position:absolute;top:0;left:-9999px;" src="<{:U('index/menu')}>"></iframe>
 <script type="text/javascript">
     var order_id_get="<{$order_id}>";

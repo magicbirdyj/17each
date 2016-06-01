@@ -4,7 +4,6 @@
 <script src="__PUBLIC_COMMON__/Js/function.js"></script> 
 <!--begin 日历 -->
 <link href="__PUBLIC_COMMON__/Css/calendar.css" rel="stylesheet" type="text/css"/>
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
 <script type="text/javascript" src="__PUBLIC_COMMON__/Js/calendar.js"></script>
 <!-- end 日历 -->
 </head>
@@ -455,7 +454,7 @@
     });
     //点击购买
     $('.goumai').bind('click',function(){
-        if($('input[name=server_day]').val()==''){
+        if($('input[name=server_day]').val()===''){
             $('#buy').css('display','none');
             $('#buy_clone').css('display','block');
         }else{

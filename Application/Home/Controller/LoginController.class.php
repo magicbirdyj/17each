@@ -13,6 +13,7 @@ class LoginController extends FontEndController {
         $this->assign("title", "用户登录");
         $this->assign("time", $time);
         $this->display('index');
+        
     }
 
     public function quit(){

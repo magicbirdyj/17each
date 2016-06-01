@@ -330,7 +330,7 @@ class GoodsController extends FontEndController {
             $option['total_fee'] = floatval($order['dues']);
             $option["subject"] = $order['goods_name'];
             $option['body'] = sprintf("一起网：商铺名：%s 商品名：%s 服务时间：%s", $order['shop_name'], $order['goods_name'], $order['server_day']);
-            vendor('create_direct_pay_by_xia.alipayapi'); //引入第三方类库
+            vendor('create_direct_pay_by_shouji.alipayapi'); //引入第三方类库
             $aliPay = new \AlipayOption($option, C("ALIPAY_CONFIG"));
             $button=$aliPay->alipaySubmit();
             $this->assign('button',$button);
@@ -421,7 +421,7 @@ class GoodsController extends FontEndController {
 
     public function notify() {
         error_reporting(0);
-        vendor('create_direct_pay_by_xia.lib.alipay_notify'); //引入第三方类库
+        vendor('create_direct_pay_by_shouji.lib.alipay_notify'); //引入第三方类库
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C("ALIPAY_CONFIG"));
         $verify_result = $alipayNotify->verifyNotify();

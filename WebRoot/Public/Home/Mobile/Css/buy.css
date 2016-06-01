@@ -1,53 +1,59 @@
-.buy_div{
-   width: 1200px;
-   margin: 0px auto;
+.buy_head{
+    font-size: 1.25em;
+    padding: 10px 0px;
+    background-color: #F7F7F8;
+    border-bottom: 1px solid #C8C8C8;
+    text-align: center;
+    color: #000;
 }
+
+
 .buy_table{
     border: none;
+    width: 100%;
 }
-.buy_table_head th{
-    background-color: #F7F7F7;
-    padding: 6px 20px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-}
-.buy_table_head .shangjia{
-    width: 160px;
+.buy_table_head td{
+    background-color: #f0efed;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
     text-align: left;
 }
-.buy_table_head .desc{
-    width: 510px;
-    text-align: left;
-}
-.buy_table_head .price{
-    width: 110px;
-}
-.buy_table_head .daijin{
-    width: 110px;
-}
-.buy_table_head .yingfu{
-    width: 110px;
-    text-align: right;
-}
+
+
 .buy_table_content td{
     background-color: #FFF;
-    padding: 25px 20px;
-    font-size: 14px;
-    text-align: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: left;
     border-bottom: 1px dotted #E5E5E5;
 }
+.buy_table_content .td_l{
+    width: 45%;
+}
+.buy_table_content .td_r{
+    width: 55%;
+    text-align: right;
+}
+.buy_table_content .yingfu{
+    color: #FF9712;
+    font-weight: bold;
+}
+.shuoming{
+    padding: 10px 20px;
+    color: #6bbd00!important;
+}
+
 .a_tjdd{
 display:block;
-width:140px;
-height:38px;
-line-height:38px;
+width:100%;
+padding: 15px 0px;
 background-color:#03BA8A;
 text-align:center;
-margin:20px 0px 300px 900px;
+margin:30px 0px 0px 0px;
 border:1px solid #03BA8A;
 color:#FFFFFF;
-font-size:18px;
+font-size:20px;
 cursor:pointer;
 float: right;
 }
@@ -55,6 +61,16 @@ float: right;
     background-color:#00FFDB;
     color:#FFFFFF;
 }
+.pay_method select{
+    padding: 1px 30px;
+    font-size: 16px;
+}
+
+
+
+
+
+
 .buy_div .gmcg{
     height: 248px;
     border: 1px solid #E5E5E5;
@@ -90,40 +106,39 @@ float: right;
 .wxzhifu_div{
     border-top: 3px solid #888;
     border-bottom: 3px solid #888;
+    width: 100%;
 }
 .wxzhifu_left{
-    float: left;
-    width: 900px;
-    height: 500px;
+    height: 450px;
+    width:100%;
 }
 .wxzhifu_right{
-    float: right;
-    width: 300px;
+    width: 100%;
     background-color: #E5E5E5;
-    height: 500px;
     color: #333;
 }
 .right_content{
     font-size: 16px;
     color: #333;
-    margin-top: 150px;
-    padding: 50px;
+    margin-top: 0px;
+    padding: 20px;
+    margin-bottom: 50px;
 }
 .right_content p{
-    margin: 0px 60px;
+    margin: 0px auto;
     font-weight: bold;
 }
 .left_content{
-    margin: 50px auto;
-    width: 700px;
-    height: 500px;
+    margin: 0px auto;
+    width: 100%;
+    height: 450px;
     position: relative;
 }
 .qrcode-header{
     width: auto;
     margin: 0;
     padding: 0;
-    margin-top: 75px;
+    margin-top: 15px;
     margin-bottom: 16px;
 }
 .ft-center{
