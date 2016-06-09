@@ -129,7 +129,7 @@
 
 
 <script  type="text/javascript">
-    var url="<{$url['url']}>";
+    var url=decodeURI("<{$url['url']}>");
 //选中的分类 背景更暗
 $('#fenlei_select a:contains("<{$cat_name}>")').parent().css('background-color','#f6f4f0');
 var location_1="<{$get['location']?$get['location']:'全城'}>";
@@ -188,7 +188,13 @@ if(form==='0'){
     $('#shaixuan_form>ul>li:contains("团队")').css('background-color','#06c1ae');
     $('#shaixuan_form>ul>li:contains("团队")').css('color','#FFF');
 }
-
+//匹配属性
+<volist name='shuxing' id='vo'>
+    var shuxing_name="<{$vo}>";
+    var arr_shuxing_name=shuxing_name.split('-');
+    $('.xuanxiang>li').filter(function(){return $(this).parent('.xuanxiang').prev().prev().text()===arr_shuxing_name[0]&&$(this).text()===arr_shuxing_name[1]}).css('background-color','#06c1ae');
+    $('.xuanxiang>li').filter(function(){return $(this).parent('.xuanxiang').prev().prev().text()===arr_shuxing_name[0]&&$(this).text()===arr_shuxing_name[1]}).css('color','#FFF');
+</volist>
 
 
 
