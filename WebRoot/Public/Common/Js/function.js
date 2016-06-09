@@ -106,3 +106,86 @@ function xingxing_baifenbi(score){
     score1=score1.toFixed(2)*100;
     return score1+'%';
 }
+
+//改变url参数 主要用于菜单筛选
+function change_url_canshu(url_full,canshu,value){
+    var url,index,new_url;
+    var arr_url;
+    var index_0=url_full.lastIndexOf('.html');
+    if(index_0!==-1){
+        url=url_full.substr(0,index_0);
+    }else{
+        url=url_full;
+    }
+    
+    index=url.lastIndexOf(canshu);
+    if(index!==-1){
+        url_b=url.substr(index);
+        arr_url=url_b.split('/');
+        new_url=url.replace(arr_url[1],value);
+    }else{
+        new_url=url+'/'+canshu+'/'+value;
+    }
+    
+    return new_url;
+}
+//清除url参数 主要用于菜单筛选
+function clear_url_canshu(url,canshu){
+    var index,new_url,url_b;
+    var arr_url;
+    index=url.lastIndexOf(canshu);
+    if(index!==-1){
+        url_b=url.substr(index);
+        arr_url=url_b.split('/');
+        new_url=url.replace('/'+canshu+'/'+arr_url[1],'');
+    }else{
+        new_url=url;
+    }
+    return new_url;
+}
+
+//改变url的属性参数 主要用于菜单筛选
+function change_url_shuxing(url_full,name,value){
+    var url,index,new_url;
+    var index_0=url_full.lastIndexOf('.html');
+    if(index_0!==-1){
+        url=url_full.substr(0,index_0);
+    }else{
+        url=url_full;
+    }
+    
+    index=url.lastIndexOf('shuxing');
+    if(index===-1){
+        new_url=url+'/'+'shuxing/'+name+'-'+value;
+        return new_url;
+    }
+    
+    index_1=url.lastIndexOf(name);
+    if(index_1===-1){
+        new_url=url.substr(0,index)+'shuxing/'+name+'-'+value+'__'+url.substr(index+8);
+        return new_url;
+    }
+    var url_b=url.substr(index_1);
+    var arr_url=url_b.split(/(__|\/)/);
+    new_url=url.replace(arr_url[0],name+'-'+value);
+    return new_url;
+}
+
+//清除url的属性参数 主要用于菜单筛选
+function clear_url_shuxing(url,name,value){
+    var index,new_url;
+    var mylength=(name+'-'+value).length;
+    index=url.lastIndexOf(name+'-'+value);
+    if(url.substr(index-1,1)!=='/'){
+        new_url=url.replace('__'+name+'-'+value,'');
+        return new_url;
+    }
+    if(url.substr(index+mylength,2)==='__'){
+        new_url=url.replace(name+'-'+value+'__',''); 
+    }else{
+        new_url=clear_url_canshu(url,'shuxing');
+    }
+    return new_url;
+    
+   
+}

@@ -56,10 +56,13 @@ color:#FFFFFF;
 font-size:20px;
 cursor:pointer;
 float: right;
+margin-bottom: 50px;
 }
 .a_tjdd:hover{
     background-color:#00FFDB;
     color:#FFFFFF;
+    
+    
 }
 .pay_method select{
     padding: 1px 30px;
@@ -71,17 +74,16 @@ float: right;
 
 
 
-.buy_div .gmcg{
-    height: 248px;
-    border: 1px solid #E5E5E5;
+.gmcg{
+    width: 100%;
     text-align: center;
 }
 .gmcg_xinxi{
-    margin: 100px auto;
+    margin: 50px auto;
     display: inline-block;
 }
 .gmcg_title{
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
     font-weight: bold;
 }
@@ -170,10 +172,11 @@ float: right;
 }
 .fn-left {
     float: left;
+    font-size: 16px;
 }
 .qrcode-img-explain img {
-    margin-left: 20px;
-    margin-top: 5px;
+    margin-left: 5px;
+    margin-top: 3px;
 }
 .qrcode-img-explain div {
     margin-left: 10px;
@@ -195,7 +198,6 @@ float: right;
     left: 450px;
     width: 204px;
     height: 183px;
-    //cursor: pointer;
 }
 .qrguide-area .qrguide-area-img .active {
     z-index: 10;

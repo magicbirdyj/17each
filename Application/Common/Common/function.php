@@ -216,7 +216,7 @@ function shuxing_url($url,$value){
     if($is_shuxing!==false){
         $a=substr($url,0,$is_shuxing+9);
         $b=substr($url,$is_shuxing+9 );
-        return $a.$value.'+'.$b;
+        return $a.$value.'__'.$b;
     }else{
         return $url.'/shuxing/'.$value;
     }
@@ -224,15 +224,17 @@ function shuxing_url($url,$value){
 
 //取消属性参数(第一个参数是目前url,第二个参数是属性值)
 function quxiao_shuxing($url,$value){
-    $is_jia=strpos($url,'+');
-    $is_shuxing=strpos($url,'/shuxing/');
-    if($is_jia!==false){
+    $is_jia=strpos($url,'__');
+    //$is_shuxing=strpos($url,'/shuxing/');
+    if($is_jia!==false){ 
         $weizhi=strpos($url,urlencode($value));
         $a=str_replace(urlencode($value),'',$url);
-        if(substr($a,$weizhi-1,1)==='+'){
-            return substr($a,0,$weizhi-1).substr($a,$weizhi);
+        
+
+        if(substr($a,$weizhi-2,2)==='__'){
+            return substr($a,0,$weizhi-2).substr($a,$weizhi);
         }else{
-            return substr($a,0,$weizhi).substr($a,$weizhi+1);
+            return substr($a,0,$weizhi).substr($a,$weizhi+2);
         }
     }else{
         return str_replace('/shuxing/'.urlencode($value),'',$url);
@@ -359,4 +361,29 @@ function dstrpos($string, $arr, $returnvalue = false) {
   }
  }
  return false;
+}
+
+
+
+//url改变参数
+function change_url_canshu($url_full,$canshu,$value){
+    
+    $index_0=strpos($url_full,'.html');
+    if($index_0){
+        $url=substr($url_full, 0,$index_0);
+    }else{
+        $url=$url_full;
+    }
+
+    $index=strpos($url,$canshu);
+    if($index){
+        //$url_f=  substr($url, 0,$index);
+        $url_b=  substr($url, $index);
+        $arr=  explode('/', $url_b);
+        $new=  str_replace($arr[1], $value, $url);
+    }else{
+        $new=$url.'/'.$canshu.'/'.$value;
+    }
+    return $new;
+    
 }

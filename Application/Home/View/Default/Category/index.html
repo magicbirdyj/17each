@@ -1,5 +1,5 @@
 
-
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/public.css"/>
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/category.css">
 <script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
 <script src="__PUBLIC_COMMON__/Js/function.js"></script> 
@@ -67,6 +67,7 @@
 </volist>
 </ul>
 </div>
+    
     <volist name='arr_shuxing' id='first' offset='1'>
         <div class="box_l_menu_tr" style="border-bottom: none;padding-top: 0px;">
 <ul class="menu_tr_ul menu_tr_ul_shuxing">
@@ -81,6 +82,8 @@
 </ul>
 </div>
     </volist>
+    
+    
     <if  condition="$get['location'] eq null">
     <div class="box_l_menu_tr" style="border-top: 1px dotted #DDD;">
 <div class="menu_tr_title">区域&nbsp;:</div>

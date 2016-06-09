@@ -113,7 +113,16 @@ HTML;
         $page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
         return $page;
     }
-    
+    //手机端 get_page
+    public function get_page_iphone($count,$page_size){
+        $page=new \Think\Page($count,$page_size);//创建一个page类  参数1是数据总条数，参数2是一页显示的条数
+        $page->rollPage=3;
+        $page->setConfig('header','<span class="rows">共 %TOTAL_PAGE% 页</span>');
+        $page->setConfig('prev','<上一页');
+        $page->setConfig('next','下一页>');
+        $page->setConfig('theme', '%UP_PAGE% %LINK_PAGE% %DOWN_PAGE%');
+        return $page;
+    }
 
 
 

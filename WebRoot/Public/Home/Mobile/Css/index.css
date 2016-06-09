@@ -96,13 +96,15 @@ padding: 0px 4px;
 }
 .shopping{
 box-sizing: border-box;
-width:50%;
+width:47%;
 border-left:1px solid #EEE;
 border-right:1px solid #EEE;
 border-bottom: 2px solid #EEE;
 border-top: 2px solid #EEE;
 float:left;
 font-size: 0.75em;
+margin-left: 2%;
+margin-top: 10px;
 }
 
 .shopping_img{

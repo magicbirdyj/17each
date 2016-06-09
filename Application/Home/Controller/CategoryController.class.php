@@ -10,7 +10,13 @@ namespace Home\Controller;
 use Home\Controller;
 class CategoryController extends FontEndController {
     public function index(){
+        
         if(isset($_GET['cid'])){
+            //获取所有分类
+            $categorymodel=D('category');
+            $cat_allname=$categorymodel->field('cat_id,cat_name')->select();
+            $this->assign('cat_allname',$cat_allname);
+            
             $cat_id=$_GET['cid'];
             $cat_name=$this->get_catname($cat_id);
             $this->assign('cat_name',$cat_name);
@@ -78,7 +84,7 @@ class CategoryController extends FontEndController {
             $this->assign('sex_and_form',$sex_and_form);
             //把shuxing参数给分割成数组
             if($_GET['shuxing']!==null){
-                $shuxing=explode('+',$_GET['shuxing']);
+                $shuxing=explode('__',$_GET['shuxing']);
                 $this->assign('shuxing',$shuxing);
                 
                 foreach ($shuxing as $key => $value) {
@@ -87,13 +93,16 @@ class CategoryController extends FontEndController {
                 }
             }
             
-            $categorymodel=D('category');
+            
             $data_cat=$categorymodel->where("cat_id=$cat_id")->getField('shuxing');
             $arr_shuxing0=unserialize($data_cat);//得到反序列化属性数组
+            $this->assign("arr_shuxing0",$arr_shuxing0);//给模板里面的$arr_shuxing0赋值// 手机端用 
             $shuxing_count=count($arr_shuxing0);
             $this->assign(shuxing_count,$shuxing_count);
             $arr_shuxing=  array_chunk($arr_shuxing0, 2,true);
             $this->assign("arr_shuxing",$arr_shuxing);//给模板里面的$arr_shuxing赋值
+            
+            
             $goodsmodel=D('Goods');
             if($_GET['sex']!=null){
                 $tiaojian['t1.goods_sex']=$_GET['sex'];
@@ -136,30 +145,42 @@ class CategoryController extends FontEndController {
             $count=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->count();
             $page=$this->get_page($count, 48);
             $page_foot=$page->show();//显示页脚信息
-            
+            //手机端
+            $page_iphone=$this->get_page_iphone($count, 12);
+            $page_foot_iphone=$page_iphone->show();//显示页脚信息
             
             //排序
             $order=$_GET['order'];
             if(empty($order)){
                 $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page->firstRow.','.$page->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.daijinquan desc,t1.fanxian desc,t1.buy_number desc,t1.score desc,t1.last_update desc')->select();
+                $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page_iphone->firstRow.','.$page_iphone->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.daijinquan desc,t1.fanxian desc,t1.buy_number desc,t1.score desc,t1.last_update desc')->select();
             }elseif($order==='number_desc'){
                 $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page->firstRow.','.$page->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.buy_number desc,t1.last_update desc')->select();
+                $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page_iphone->firstRow.','.$page_iphone->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.buy_number desc,t1.last_update desc')->select();
             }elseif($order==='price_desc'){
                 $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page->firstRow.','.$page->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.price desc,t1.last_update desc')->select();
+                $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page_iphone->firstRow.','.$page_iphone->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.price desc,t1.last_update desc')->select();
             }elseif($order==='pinglun_desc'){
                 $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page->firstRow.','.$page->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.score desc,t1.last_update desc')->select();
+                $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page_iphone->firstRow.','.$page_iphone->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.score desc,t1.last_update desc')->select();
             }elseif($order==='update_desc'){
                 $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page->firstRow.','.$page->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.last_update desc')->select();
+                $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($pag_iphonee->firstRow.','.$page_iphone->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.last_update desc')->select();
             }elseif($order==='price_asc'){
                 $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page->firstRow.','.$page->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.price,t1.last_update desc')->select();
+                $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.cat_id={$cat_id} and t1.user_id=t2.user_id and t1.is_delete=0")->limit($page_iphone->firstRow.','.$page_iphone->listRows)->field('t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number,t1.daijinquan,t1.fanxian')->order('t1.price,t1.last_update desc')->select();
             }
             
             $this->assign('list',$list);
             $this->assign('page_foot',$page_foot);
+            //手机端
+            $this->assign('list_iphone',$list_iphone);
+            $this->assign('page_foot_iphone',$page_foot_iphone);
 
             //获取广告商品列表
             $guanggao=$goodsmodel->where("cat_id={$cat_id}")->order('advert_cat_order')->limit(12)->field('goods_id,goods_name,goods_img,price,buy_number')->select();
             $this->assign('guanggao',$guanggao);
+
             $this->display(index);
         }
     }
