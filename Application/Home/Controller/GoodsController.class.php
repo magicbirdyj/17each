@@ -332,7 +332,9 @@ class GoodsController extends FontEndController {
             $option['body'] = sprintf("一起网：商铺名：%s 商品名：%s 服务时间：%s", $order['shop_name'], $order['goods_name'], $order['server_day']);
             vendor('create_direct_pay_by_xia.alipayapi'); //引入第三方类库
             $aliPay = new \AlipayOption($option, C("ALIPAY_CONFIG"));
-            $aliPay->parameter["service"]= "alipay.wap.create.direct.pay.by.user";
+            if($_SERVER['HTTP_HOST']==='m.17each.com'||$_SERVER['HTTP_HOST']==='m.myhunll.com'){
+                $aliPay->parameter["service"]= "alipay.wap.create.direct.pay.by.user";
+            }
             $button=$aliPay->alipaySubmit();
             $this->assign('button',$button);
             $this->display('zhifu_tiaozhuan');
@@ -422,7 +424,7 @@ class GoodsController extends FontEndController {
 
     public function notify() {
         error_reporting(0);
-        vendor('create_direct_pay_by_shouji.lib.alipay_notify'); //引入第三方类库
+        vendor('create_direct_pay_by_xia.lib.alipay_notify'); //引入第三方类库
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C("ALIPAY_CONFIG"));
         $verify_result = $alipayNotify->verifyNotify();

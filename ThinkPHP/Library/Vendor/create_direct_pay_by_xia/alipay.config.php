@@ -23,6 +23,7 @@
 $alipay_config['partner']		= '2088121986917031';
 
 //收款支付宝账号，一般情况下收款账号就是签约账号
+$alipay_config['seller_id']	= $alipay_config['partner'];
 $alipay_config['seller_email']	= 'www17each@sina.com';
 
 //安全检验码，以数字和字母组成的32位字符

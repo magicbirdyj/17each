@@ -74,7 +74,8 @@ class AlipayOption {
         $this->parameter = array(
             "service" => "create_direct_pay_by_user",
             "partner" => trim($this->alipay_config['partner']),
-            "seller_email" => trim($this->alipay_config['seller_email']),
+            "seller_id"  => trim($this->alipay_config['seller_id']),
+            "seller_email"  => trim($this->alipay_config['seller_email']),
             "payment_type" => $this->payment_type,
             "notify_url" => $this->notify_url,
             "return_url" => $this->return_url,
