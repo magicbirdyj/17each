@@ -123,3 +123,29 @@ color:#2BB8AA;
     margin-bottom: 47.4px;
     border-width: 0;
 }
+
+
+.padding{
+    padding: 15px;
+    font-size: 14px;
+}
+.fanhui{
+    position: relative;
+    z-index: 1000;
+    font-size: 20px;
+    background-color: #06c1ae;
+    text-align: center;
+    color: #FFF;
+    position: relative;
+    transition:dispaly 2s;
+    -moz-transition:dispaly 2s; /* Firefox 4 */
+    -webkit-transition:dispaly 2s; /* Safari and Chrome */
+    -o-transition:dispaly 2s; /* Opera */
+}
+.fanhui .tb_fanhui{
+    position: absolute;
+    font-size: 40px;
+    color: #FFF;
+    left: 10px;
+    top: 3px;
+}

@@ -4,31 +4,71 @@
 /* -moz :火狐私有属性；-weblit :chrome、safari私有属性* -ms IE私有属性*/
 
 .body .left{
-    width:243px;
-    float: left;
-    background-color: #F9F9F9;
+    width:100%;
     border:1px solid #EEE;
+    font-size: 14px;
 }
 .left .d1{
-    height: 45px;
-    font-size: 14px;
-    line-height: 42px;
+    font-size: 16px;
     color: #666;
     font-weight: 800;
-    padding-left: 90px;
+    padding: 10px 0px 10px 20px;
+    background-color: #f0efed;
 }
 .left .left_ul{
-    border-bottom: 1px solid #EEE;
+    
 }
 .left .left_ul li{
     color: #666;
-    padding: 5px 0px 5px 100px;
+    
+    border-bottom: 1px solid #EEE;
 }
-
+.left .left_ul li a{
+    display: block;
+    padding: 15px 10px 15px 20px;
+}
+.left .left_ul li a .tb_jiantou_r_xiao{
+    float: right;
+}
 .content .tixian_text{
     padding: 3px 10px;
     width: 60px;
 }
 .content .tixian_submit{
     margin-left: 20px;
+}
+
+.wodezhanghu_ul{
+    width: 100%;
+}
+.wodezhanghu_ul li{
+    padding: 0px 5px;
+}
+.wodezhanghu_ul li a{
+    padding: 10px 0px;
+    display: block;
+    border-bottom: 1px solid #EEE;
+    font-size: 14px;
+    line-height: 33px;
+    height: 33px;
+}
+.wodezhanghu_ul li a span{
+    display: block;
+    float: left;
+}
+.wodezhanghu_ul li .tb_wodezhanghu{
+    font-size: 30px;
+}
+.wodezhanghu_ul li .tuichu_a{
+    background-color: #fa7251;
+    text-align: center;
+    color: #FFF;
+    padding: 5px 0px;
+}
+#wodezhanghu{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    z-index: 10000;
+    left: 100%;
 }

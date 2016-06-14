@@ -2,60 +2,139 @@
 
 /* 默认样式设置*/
 /* -moz :火狐私有属性；-weblit :chrome、safari私有属性* -ms IE私有属性*/
-.right{
-    float: left;
-    width: 935px;
-    margin-left: 20px;
-}
 
-.right .right_head{
+
+.right_head{
+    width: 100%;
     background-color: #F6F6F6;
-    height: 150px;
-    line-height: 150px;
+    height: 100px;
+    line-height: 100px;
 }
 .right_head .hlr_touxiang{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     position: relative;
-    margin: 25px 0px 0px 30px;
+    margin: 20px 0px 0px 30px;
     float: left;
 }
 .hlr_touxiang .img{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     z-index: 1;
-    border-raduis:90px;
 }
 .hlr_touxiang .img_circle{
     position:absolute;
     z-index: 100;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 .right_head .hlr_name{
     float: left;
     margin-left: 30px;
+    margin-top: 15px;
+    font-size: 14px;
+    background-color: #F6F6F6;
+}
+.hlr_name div{
+    background-color: #F6F6F6;
+    line-height: 35px;
+}
+.jiantou_r{
+    background-color: #F6F6F6;
+    float:right;
+    margin-right: 10px;
+}
+.jiantou_r .tb_jiantou_r{
+    font-size: 20px;
+    color: #666;
+    font-weight: bold;
+}
+.dingdan{
+    border-top: 1px solid #DDD8CE;
+    border-bottom: 1px solid #DDD8CE;
+}
+.dingdan_1{
+    padding: 10px 10px;
+    border-bottom: 1px solid #DDD8CE;
+}
+.dingdan_tb_div{
+    float:left;
+    padding: 2px;
+    background-color: #06c1ae;
+    border-radius:5px;
+}
+.dingdan_tb_div .tb_dingdan{
+    font-size: 24px;
+    color: #FFF;
+}
+.jiantou_r_xiao{
+    float: right;
+    line-height: 30px;
+}
+.dingdan_tb_div .tb_jiantou_r_xiao{
     font-size: 16px;
 }
-.right .right_head a{
-    width: 120px;
-    height: 50px;
-    line-height: 50px;
-    display: block;
-    font-size: 18px;
-    margin-top: 50px;
-    margin-left: 100px;
-    float: left;
+.dingdan_2{
+    padding: 10px 0px;
+}
+
+.dingdan_2 ul li{
+    width: 33.33333%;
     text-align: center;
-    color: #FFFFFF;
+    float: left;
 }
-.right a:link,.right a:visited{
-    background-color: #03BA8A;
+.dingdan_2 ul li div{
+    text-align: center;
 }
-.right a:hover{
-    background-color: #00FFDB;
+.dingdan_2 ul li div span{
+    margin: 0px auto;
+    font-size: 14px;
 }
+
+.dingdan_2 ul li div .tb_dingdan_li{
+    font-size: 36px;
+    display: inline-block;
+    margin-top: 5px;
+}
+.dingdan_fenkai_tb_div{
+    position: relative;
+}
+.right_up_tb{
+    position: absolute;
+    left: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: white;
+    background: #EC5330;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .right .title{
     font-size: 16px;
     font-weight: 800;

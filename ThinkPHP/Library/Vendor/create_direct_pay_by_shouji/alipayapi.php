@@ -73,7 +73,7 @@ class AlipayOption {
         $this->_input_charset = $option["_input_charset"] ? trim(strtolower($option["_input_charset"])) : trim(strtolower($this->alipay_config['input_charset']));
 
         $this->parameter = array(
-            "service" => "create_direct_pay_by_user",
+            "service"       => "alipay.wap.create.direct.pay.by.user",
             "partner" => trim($this->alipay_config['partner']),
             "seller_email" => trim($this->alipay_config['seller_email']),
             "payment_type" => $this->payment_type,
@@ -94,6 +94,8 @@ class AlipayOption {
 
 
 public function alipaySubmit() {
+    file_put_contents("./Uploads/alipaytest.txt", print_r($this->alipay_config, true));
+     file_put_contents("./Uploads/parameter.txt", print_r($this->parameter, true));
         $alipaySubmit = new AlipaySubmit($this->alipay_config);
         $html_text = $alipaySubmit->buildRequestForm($this->parameter, "get", "确认");
         return $html_text;

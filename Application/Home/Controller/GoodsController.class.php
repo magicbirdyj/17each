@@ -330,8 +330,9 @@ class GoodsController extends FontEndController {
             $option['total_fee'] = floatval($order['dues']);
             $option["subject"] = $order['goods_name'];
             $option['body'] = sprintf("一起网：商铺名：%s 商品名：%s 服务时间：%s", $order['shop_name'], $order['goods_name'], $order['server_day']);
-            vendor('create_direct_pay_by_shouji.alipayapi'); //引入第三方类库
+            vendor('create_direct_pay_by_xia.alipayapi'); //引入第三方类库
             $aliPay = new \AlipayOption($option, C("ALIPAY_CONFIG"));
+            $aliPay->parameter["service"]= "alipay.wap.create.direct.pay.by.user";
             $button=$aliPay->alipaySubmit();
             $this->assign('button',$button);
             $this->display('zhifu_tiaozhuan');

@@ -45,4 +45,7 @@ $alipay_config['cacert']    =dirname(__FILE__).DIRECTORY_SEPARATOR.'cacert.pem';
 
 //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
 $alipay_config['transport']    = 'http';
+
+// 产品类型，无需修改
+$alipay_config['service'] = "alipay.wap.create.direct.pay.by.user";
 ?>
