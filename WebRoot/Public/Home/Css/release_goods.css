@@ -133,3 +133,9 @@ span{
 .ke-dialog-default div{
     overflow:inherit;
 } 
+
+
+/*在线编辑器里的img*/
+.ke-content img{
+    max-width: 760px;
+}

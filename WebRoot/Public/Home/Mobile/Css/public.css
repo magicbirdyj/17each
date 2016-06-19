@@ -28,7 +28,7 @@ table,td{border:none; border-collapse:collapse;}
 color:#F76120;
 }
 .green{
-    color:#2BB8AA;//浅绿色#00FFDB
+    color:#2BB8AA;/*浅绿色#00FFDB*/
 }
 /*文字自动换行*/
 .warp{
@@ -107,6 +107,7 @@ color:#2BB8AA;
 
 /*超出部分的文字用省略号代替*/
 .shenglue{
+    overflow: hidden;
     text-overflow:ellipsis;/*超出部分省略号*/
     white-space: nowrap;/*强制文本一行输出*/
 }

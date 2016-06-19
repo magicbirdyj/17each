@@ -1,8 +1,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/public.css"/>
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/member.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/order.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
-<script src="__PUBLIC_COMMON__/Js/function.js"></script>
 </head>
 
 <body>
@@ -50,11 +48,11 @@
                     <if condition="$vo['pay_status'] eq '3' ">
                         <a href="<{$vo['order_id']}>" class="button_a_lvse" style="margin-bottom: 20px;">删除订单</a>
                     </if>
-                    <a href="<{:order_status($vo['pay_status'],$vo['status'],$vo['order_id'],$vo['server_day'],$vo['goods_id'])['status_url']}>" class="button_a_lvse"><{:order_status($vo['pay_status'],$vo['status'],$vo['order_id'],$vo['server_day'],$vo['goods_id'])['status_button']}></a>
+                    <a  href="<{:order_status($vo['pay_status'],$vo['status'],$vo['order_id'],$vo['server_day'],$vo['goods_id'])['status_url']}>" class="button_a_lvse"><{:order_status($vo['pay_status'],$vo['status'],$vo['order_id'],$vo['server_day'],$vo['goods_id'])['status_button']}></a>
                     <if  condition="($vo['pay_status'] eq '0') and ($vo['status'] neq '4')">
-                        <a id='quxiao_order' class="button_a_lvse" name="<{$vo['order_id']}>" style="margin-top: 20px;">取消订单</a>
+                        <a  class="button_a_lvse quxiao_order" name="<{$vo['order_id']}>" style="margin-top: 20px;">取消订单</a>
                     </if>
-                    <if  condition="($vo['pay_status'] eq '1') and ($vo['status'] eq '1') and (shijianchuo($vo['server_day']) gt $time)">                      
+                   <if  condition="($vo['pay_status'] eq '1') and ($vo['status'] eq '1') and (shijianchuo($vo['server_day']) gt $time)">                           
                         <a id='tuikuang' class="button_a_lvse" name="<{$vo['order_id']}>" href='<{:U("Order/tuikuang",array("order_id"=>$vo["order_id"]))}>' style="margin-top: 20px;">申请退款</a>
                     </if>
                     
@@ -80,7 +78,7 @@
     $('.order_select').bind('change',function(){
         location.replace(this.value);
     });
-    $('#quxiao_order').bind('click',function(){
+    $('.quxiao_order').bind('click',function(){
         if(confirm("确定要取消订单吗？")){
             var url='/Home/Order/quxiao_order.html';
             var data={

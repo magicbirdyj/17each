@@ -1,59 +1,100 @@
 /* CSS Document */
 
 .release{
-width:935px;
-margin-left: 20px;
-float: left;
+width:100%;
+margin-bottom: 50px;
 }
-.release .div1{
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #f6f6f6;
-    padding: 10px 20px;
+.infor{
+    display: none;
+    padding: 9px 0px;
+    background-color: #F0F0F0;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    position: fixed;
+    top:45px;
+    overflow: hidden;
+    text-overflow:ellipsis;/*超出部分省略号*/
+    white-space: nowrap;/*强制文本一行输出*/
+    z-index: 999;
 }
-
+.tr{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 66px;
+}
 .tr_td1{
 text-align:right;
-margin:10px 0px;
-height:27px;
-line-height:27px;
-font-size:14px;
-padding-right:30px;;
+margin:15px 0px;
+height:36px;
+line-height:36px;
+font-size:16px;
 width:100px;
 color:#333;
-float: left;
+position: absolute;
 }
 .tr_td2{
-height:25px;
-line-height:25px;
+height:36px;
+line-height:36px;
 border:none;
-margin:10px 0px;
+margin:15px 0px;
 padding:0px;
-font-size:14px;
+font-size:16px;
+width: 100%;
+box-sizing: border-box;
+padding-left: 120px;
 }
+.release_select{
+    border:1px solid #AAA;
+    width: 90%;
+    box-sizing: border-box;
+    font-size:16px;
+    padding: 6px 0px 6px 30%;
+}
+
+
+
 .tr .text{
-    width: 250px;
-    height: 28px;
-    line-height:28px;
-    margin-top: 8px;
+    border:1px solid #AAA;
+    width: 90%;
+    box-sizing: border-box;
+    font-size:16px;
+    padding: 6px 10px;
 }
-.radio{margin-right:5px;}
-.release_select{border:1px solid #AAA;
-padding:0px 4px;
-width:100px;}
+.radio{
+    margin-right:5px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top:4px;
+}
+
+.help{
+    margin-left: 6%;
+    border: 1px solid #f90;
+    padding:7px 10px;font-size: 12px;
+    position: relative;
+    bottom: 2px;
+    color: #f90;
+    border-radius: 5px;
+}
+
+
 .zhuce1_tr span{
 font-size:14px;
 padding:0px 5px;}
 
 .release .xyb{
     display: block;
-    width:120px;
+    width:90%;
     height: 50px;
     line-height: 50px;
     font-size: 18px;
     text-align: center;
     color: #FFFFFF;
-    margin: 30px 0px 0px 50px;
+    margin: 0px auto;
+    margin-top: 20px;
 }
 .release .xyb:link,.release .xyb:visited{
     background-color: #03BA8A;
@@ -62,9 +103,7 @@ padding:0px 5px;}
     background-color: #00FFDB;
 }
 
-.tr .price_text{
-    width: 150px;
-}
+
 
 span{
     padding-left: 10px;
@@ -84,7 +123,7 @@ span{
     cursor: pointer;
     float: left;
     width: 43px;
-    margin: 5px;
+    margin: 0px 5px;
 }
 .file_tishi{
     height: 55px;
@@ -94,7 +133,7 @@ span{
     float: left;
     width: 43px;
     height: 43px;
-    margin: 5px;
+    margin: 0px 5px;
     border: 1px solid #EEE;
     text-align: center;
     position: relative;
@@ -133,3 +172,10 @@ span{
 .ke-dialog-default div{
     overflow:inherit;
 } 
+
+.file_tishi{
+    font-size: 12px;
+    position: absolute;
+    left: 0px;
+    top:30px;
+}

@@ -4,18 +4,18 @@
 //var obj_form=document.sv_cont;
 //var server_content=obj_form.server_content;
 $('select[name=server_content]').bind('change',function(){sc_change();});
-$(':text[name=title]').bind('focus',function(){text_focus($('#info_title'),'商品标题可以尽量多包含关键字');});
-$(':text[name=title]').bind('blur',function(){text_blue($(this),$('#info_title'));});
+$(':text[name=title]').bind('focus',function(){$('#infor').css('display','none');});
+$(':text[name=title]').bind('blur',function(){$('#infor').css('display','block');text_blue($(this),$('#infor'),'商品标题');});
 $('input[name=file_img]').bind('change',function(){
     if(check_file_image($(this),$('#span_touxiang'),true)){
         file_jia_change();
     };
 });
 $('#button_jia').bind('click',function(){tianjia($(this));});
-$(':text[name=price]').bind('focus',function(){text_focus($('#info_price'),'填写售价');});
-$(':text[name=price]').bind('blur',function(){price_blue($(this),$('#info_price'));});
-$(':text[name=yuan_price]').bind('focus',function(){text_focus($('#info_yuan_price'),'填写原价');});
-$(':text[name=yuan_price]').bind('blur',function(){price_blue($(this),$('#info_yuan_price'));});
+$(':text[name=price]').bind('focus',function(){$('#infor').css('display','none');});
+$(':text[name=price]').bind('blur',function(){$('#infor').css('display','block');price_blue($(this),$('#infor'));});
+$(':text[name=yuan_price]').bind('focus',function(){$('#infor').css('display','none');});
+$(':text[name=yuan_price]').bind('blur',function(){$('#infor').css('display','block');price_blue($(this),$('#infor'));});
 $('#xiayibu').bind('click',function(){fabu();});
 //动态生成的元素添加事件
 $('body').on('mouseover','.div_goods_img',function(){$(this).children('a').css('display','block');});
@@ -42,14 +42,11 @@ $('input[name=radio_sex]:eq(0)').attr('checked','checked');
     KindEditor.ready(function(K) {
         var options = {
             items:[
-        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
-        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
-        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
-        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image','multiimage',
-        'flash', 'media', 'insertfile', 'table', 'hr','emoticons', 'baidumap', 'pagebreak',
-        'anchor', 'link', 'unlink', '|', 'about'
+        'source', '|', 'preview', 'template', '|', 'justifyleft', 'justifycenter',  'insertorderedlist', 'insertunorderedlist',  'subscript',
+        'superscript', 'quickformat', '|', 'fullscreen', 'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+        'flash', 'media', 'table', 'hr', 'pagebreak',
+        'link', 'unlink', '|'
 ],
             uploadJson:"/Home/Kindeditor/editor_check",
             allowMediaUpload:false,//true时显示视音频上传按钮。
@@ -60,8 +57,8 @@ $('input[name=radio_sex]:eq(0)').attr('checked','checked');
             //afterCreate : function() {
                 //this.loadPlugin('autoheight');
             //},//自动高度
-            width:'760px',
-            height:'800px',
+            width:'100%',
+            height:'500px',
             fontSizeTable:['9px', '10px', '12px', '14px', '16px', '18px', '24px', '32px']//指定文字大小。
         };
         editor = K.create('textarea[name="content"]',options);
@@ -80,10 +77,12 @@ function price_blue(obj,obj_info){
         obj_info.html('&radic;');
         obj_info.css('color','#666');
         obj.val(parseFloat(obj.val()).toFixed(2));
+        setTimeout(infor_none,5000);
         return true;
     }else{
         obj_info.css('color','red');
         obj_info.html('不符合规范，请填入正确价格，如100.00');
+        setTimeout(infor_none,5000);
         return false;
     }
 }
@@ -97,20 +96,15 @@ function price_blue(obj,obj_info){
 
 
 function fabu(){
+    $('#info').css('display','block');
     //text_blue($('input[name=title]'),$('#info_title'));
     var aa=$('input[name=goods_img]').attr('value');
     if(aa.indexOf("undefined")!==-1){
         alert('商品图片因超过5M或其它原因未上传成功');
-    }else{
-        var a=text_blue($('input[name=title]'),$('#info_title'));
-        var b=check_file_image($('input[name=file_img]'),$('#span_touxiang'),false);
-        var c=price_blue($('input[name=price]'),$('#info_price'));
-        var d=price_blue($('input[name=yuan_price]'),$('#info_yuan_price'));
-        if(a&&b&&c&&d){
-            $('form[name=release_goods]').submit();
-        }
+    }else if(text_blue($('input[name=title]'),$('#infor'),'商品标题')&&check_file_image($('input[name=file_img]'),$('#infor'),false)&&price_blue($('input[name=price]'),$('#infor'))&&price_blue($('input[name=yuan_price]'),$('#infor'))){
+        $('form[name=release_goods]').submit();
+        
     }
-    
     return false;
 }
 
@@ -127,15 +121,17 @@ function file_jia_change(){
                     dataType:"json",
                     async : true,
                     success: function(msg){
+                        if(msg.result==='error'){
+                            //alert(msg.error);//测试error才用
+                            alert('图片超过5M的大小限制，请重新选择图片');
+                            return false;
+                        }
                         var img_url=msg.src;
                         creat_img($('#file_jia'),img_url);
-                        if(String(img_url)=== "undefined"){
-                            alert('商品图片因超过5M或其它原因未上传成功,请重新上传');
-                        }
                         return true; 
                     },  
                     error: function(){  
-                        alert('上传文件出错');
+                        alert('上传图片失败,三星前置摄像头照片可能导致此错误');
                         return false;
                     }  
                 });  
@@ -157,3 +153,8 @@ function creat_img(obj,img_url){
     $('input[name=goods_img]').attr('value',goods_img);
 };
 
+
+
+function infor_none(){
+    $('#infor').css('display','none');
+}
