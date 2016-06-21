@@ -196,10 +196,31 @@ class OrderController extends FontEndController {
     }
     public function file_jia(){
         $file_info=$this->upload('image/temp/');//获取上传文件信息
+        if($file_info[0]==='error'){
+            $data=array(
+                'result'=>'error',
+                'error'=>$file_info[1]
+            );
+            $this->ajaxReturn($data,'JSON');
+            exit();
+
+        }
         //获取图片URL
         $data=array();
-        $data['src']=UPLOAD.$file_info['file_img']['savepath'].$file_info['file_img']['savename'];
-        $this->ajaxReturn($data);
+        $data['src']=UPLOAD.$file_info[1]['file_img']['savepath'].$file_info[1]['file_img']['savename'];
+        $index=strripos($data['src'],"/");
+        $img_url=substr($data['src'],0,$index+1);
+        $img_name=substr($data['src'],$index+1); 
+        $this->thumb($img_url,$img_name,300,300);//创建图片的缩略图
+        $data['src_thumb']=$img_url.'thumb/'.$img_name;
+        $this->ajaxReturn($data,'JSON');
+    }
+        
+    private function thumb($url,$name,$a,$b){
+        $image = new \Think\Image(); 
+        $image->open($url.$name);
+        creat_file($url.'thumb');//创建文件夹（如果存在不会创建）
+        $image->thumb($a, $b)->save($url.'thumb/'.$name);
     }
     
     public function appraise_success(){

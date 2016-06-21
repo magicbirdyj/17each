@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/*
  $('.pingjia_xingxing>img').bind('mouseover',function(){
      switch($(this).attr('id')){
          case '1_1':
@@ -71,7 +71,7 @@
  $('.pingjia_xingxing>img').bind('mouseout',function(){
       $(this).parent().prev('div').css('display','none');
  });
- 
+ */
  //上传文件必须是图片
 $('input[name=file_img]').bind('change',function(){
     if(check_file_image($(this),$('#file_img_info'),true)){
@@ -143,24 +143,27 @@ function file_jia_change(){
                     type: 'post',  
                     dataType:"json",
                     async : true,
-                    success: function(msg){  
-                        var img_url=msg.src;
-                        creat_img($('#file_jia'),img_url);
-                        if(String(img_url)=== "undefined"){
-                            alert('图片因超过5M或其它原因未上传成功,请重新上传');
+                    success: function(msg){
+                        if(msg.result==='error'){
+                            //alert(msg.error);//测试error才用
+                            alert('图片超过5M的大小限制，请重新选择图片');
+                            return false;
                         }
+                        var img_url=msg.src;
+                        var img_url_thumb=msg.src_thumb;
+                        creat_img($('#file_jia'),img_url,img_url_thumb);
                         return true; 
                     },  
                     error: function(){  
-                        alert('上传文件出错');
+                        alert('上传图片失败,三星前置摄像头照片可能导致此错误');
                         return false;
                     }  
                 });  
 }
 //创建个img标签并且插入obj前面
 var goods_img="";
-function creat_img(obj,img_url){
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
+function creat_img(obj,img_url,img_url_thumb){
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     $('#img_count').html($('.goods_img').length);
     if($('.goods_img').length>3){

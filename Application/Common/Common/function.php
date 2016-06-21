@@ -187,7 +187,7 @@ function order_status($pay_status,$status,$order_id,$server_day,$goods_id){
             if(shijianchuo($server_day) > time()){
                  return array('status'=>'等待商家服务','status_button'=>'等待商家服务','status_url'=>"javascript:void(0)");
             }else{
-                return array('status'=>$server_day,'status_button'=>'确认服务完成','status_url'=>"/Home/Order/queren/order_id/{$order_id}.html");
+                return array('status'=>'等待确认完成','status_button'=>'确认服务完成','status_url'=>"/Home/Order/queren/order_id/{$order_id}.html");
             }
         }else if($status==='2'){
             return array('status'=>'待评价','status_button'=>'去评价','status_url'=>"/Home/Order/appraise/order_id/{$order_id}.html");

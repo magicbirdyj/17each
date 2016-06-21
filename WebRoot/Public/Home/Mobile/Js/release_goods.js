@@ -16,7 +16,7 @@ $(':text[name=price]').bind('focus',function(){$('#infor').css('display','none')
 $(':text[name=price]').bind('blur',function(){$('#infor').css('display','block');price_blue($(this),$('#infor'));});
 $(':text[name=yuan_price]').bind('focus',function(){$('#infor').css('display','none');});
 $(':text[name=yuan_price]').bind('blur',function(){$('#infor').css('display','block');price_blue($(this),$('#infor'));});
-$('#xiayibu').bind('click',function(){fabu();});
+$('#fabu').bind('click',function(){fabu();});
 //动态生成的元素添加事件
 $('body').on('mouseover','.div_goods_img',function(){$(this).children('a').css('display','block');});
 $('body').on('mouseout','.div_goods_img',function(){$(this).children('a').css('display','none');});
@@ -36,17 +36,20 @@ $('body').on('click','.div_goods_img a',function(){
 //给性别radio一个默认值
 $('input[name=radio_sex]:eq(0)').attr('checked','checked');
 
-    //引入在线编辑器
+ //引入在线编辑器
     var editor;
     KindEditor.options.filterMode = false;
     KindEditor.ready(function(K) {
         var options = {
             items:[
-        'source', '|', 'preview', 'template', '|', 'justifyleft', 'justifycenter',  'insertorderedlist', 'insertunorderedlist',  'subscript',
-        'superscript', 'quickformat', '|', 'fullscreen', 'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
-        'flash', 'media', 'table', 'hr', 'pagebreak',
-        'link', 'unlink', '|'
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image','multiimage',
+        'flash', 'media', 'insertfile', 'table', 'hr','emoticons', 'baidumap', 'pagebreak',
+        'anchor', 'link', 'unlink', '|', 'about'
 ],
             uploadJson:"/Home/Kindeditor/editor_check",
             allowMediaUpload:false,//true时显示视音频上传按钮。
@@ -58,13 +61,12 @@ $('input[name=radio_sex]:eq(0)').attr('checked','checked');
                 //this.loadPlugin('autoheight');
             //},//自动高度
             width:'100%',
-            height:'500px',
+            height:'450px',
             fontSizeTable:['9px', '10px', '12px', '14px', '16px', '18px', '24px', '32px']//指定文字大小。
         };
         editor = K.create('textarea[name="content"]',options);
        
-    });
-
+    });    
 
 function sc_change(){
     $('form[name=sv_cont]').submit();
@@ -127,7 +129,8 @@ function file_jia_change(){
                             return false;
                         }
                         var img_url=msg.src;
-                        creat_img($('#file_jia'),img_url);
+                        var img_url_thumb=msg.src_thumb;
+                        creat_img($('#file_jia'),img_url,img_url_thumb);
                         return true; 
                     },  
                     error: function(){  
@@ -138,8 +141,8 @@ function file_jia_change(){
 }
 //创建个img标签并且插入obj前面
 var goods_img="";
-function creat_img(obj,img_url){
-    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url+' /><a title="删除"></a></div>';
+function creat_img(obj,img_url,img_url_thumb){
+    var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     $('#img_count').html($('.goods_img').length);
     if($('.goods_img').length>3){
@@ -157,4 +160,34 @@ function creat_img(obj,img_url){
 
 function infor_none(){
     $('#infor').css('display','none');
+}
+
+
+
+
+$('#xiayibu').bind('click',xiayibu);
+function xiayibu(){
+    $('#info').css('display','block');
+    var aa=$('input[name=goods_img]').attr('value');
+    if(aa.indexOf("undefined")!==-1){
+        alert('商品图片因超过5M或其它原因未上传成功');
+    }else if(text_blue($('input[name=title]'),$('#infor'),'商品标题')&&check_file_image($('input[name=file_img]'),$('#infor'),false)&&price_blue($('input[name=price]'),$('#infor'))&&price_blue($('input[name=yuan_price]'),$('#infor'))){
+        $('#fanhui_1').css('display','none');
+        $('.tr').css('display','none');
+        $('.xuxian').css('display','none');
+        $('#xiayibu').css('display','none');
+        $('#spms').css('display','block');
+        $('#bianjiqi').css('display','block');
+        scroll(0,0);
+    }
+    return false;
+}
+
+$('#fanhui_2').bind('click',fanhui);
+function fanhui(){
+    $('#fanhui_1').css('display','block');
+    $('.tr').css('display','block');
+    $('.xuxian').css('display','block');
+    $('#xiayibu').css('display','block');
+    $('#spms').css('display','none');
 }

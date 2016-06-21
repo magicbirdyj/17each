@@ -61,7 +61,7 @@ $('input[name=radio_sex]:eq(0)').attr('checked','checked');
                 //this.loadPlugin('autoheight');
             //},//自动高度
             width:'760px',
-            height:'800px',
+            height:'450px',
             fontSizeTable:['9px', '10px', '12px', '14px', '16px', '18px', '24px', '32px']//指定文字大小。
         };
         editor = K.create('textarea[name="content"]',options);
@@ -133,7 +133,7 @@ function file_jia_change(){
                             return false;
                         }
                         var img_url=msg.src;
-                        creat_img($('#file_jia'),img_url);
+                        creat_img($('#file_jia'),img_url,img_url_thumb);
                         /*应该不再需要这段
                         if(String(img_url)=== "undefined"){
                             alert('商品图片因超过5M或其它原因未上传成功,请重新上传');
@@ -149,9 +149,8 @@ function file_jia_change(){
 }
 //创建个img标签并且插入obj前面
 var goods_img="";
-function creat_img(obj,img_url){
+function creat_img(obj,img_url,img_url_thumb){
     var index=img_url.lastIndexOf('/');
-    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
     var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     $('#img_count').html($('.goods_img').length);

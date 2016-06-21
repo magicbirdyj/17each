@@ -1,35 +1,12 @@
 /* CSS Document */
 
 .view{
-    width: 1148px;
-    padding: 25px;
-    border: 1px solid #EEE;
-    min-height: 400px;
-    margin: 15px auto;
+    width: 100%;
+    margin-bottom: 50px;
     position: relative;
 }
 
-.view_h2{
-    font-size: 24px;
-    border-bottom: 1px solid #DDD;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    color: #111;
-    font-weight: 800;
-}
-.view_h2 .h2_span{
-    position: absolute;
-    top: 40px;
-    right: 25px;
-    font-size: 14px;
-    font-weight: 400;
-}
-.span_a{
-    color: #03BA8A;
-}
-.span_a:hover{
-    text-decoration: underline;
-}
+
 
 
 
@@ -37,11 +14,10 @@
 .d2{
     border: 1px solid #E5E5E5;
     overflow: hidden;
-    margin-top: 10px;
 }
 .d2 .d2_title{
-    padding: 5px 8px;
-    font-size: 14px;
+    padding: 10px 8px;
+    font-size: 18px;
     font-weight: 700;
     color: #333;
     background: #EEE;
@@ -49,88 +25,93 @@
 .d2 .d2_content{
     padding: 8px  10px;
 }
-.d2_content div{
-    margin-top: 10px;
-}
 .d2_content span{
-    width: 217px;
+    width: 100%;
     text-align: left;
-    margin-right: 10px;
     display: inline-block;
+    padding: 5px 0px;
+    
 }
-.d2 .d2_table{
-    padding: 8px 10px;
+
+
+
+.order_row{
+    box-sizing: border-box;
+    padding: 10px 10px;
+    width: 100%;
+    position: relative;
+    display: block;
 }
-.d2_table table{
-    border-collapse: collapse;
-    border-spacing: 0px;
-}
-.d2_table table th{
-    text-align: center;
-    font-weight: 700;
-    padding: 3px 5px;
+.order_row>div{
+    box-sizing: border-box;
+    float: left;
+    /*border:1px solid #EEE;*/
     font-size: 12px;
-    color: #666;
-    width:142px;
-}
-.d2_table table td{
     text-align: center;
-    padding: 3px 5px;
-    font-size: 12px;
-    color: #666;
-    width:142px;
+    padding: 0px 1px;
 }
-.d2_table .left{
+.order_row .td_l{
+    width: 105px;
+    position: absolute;
+}
+.td_l .picture{
+    float: left;
+    width: 105px;
+    margin-right: 20px;
+    height: 70px;
+}
+.picture img{
+    width:105px;
+    height: 70px;
+}
+
+.order_row .td_r{
+    padding-left: 115px;
+    width: 100%;
+    min-height: 70px;
+}
+.td_r .info_name{
+    width: 100%;
     text-align: left;
-    width:80px;
+    font-size: 14px;
+    padding: 2px 0px;
 }
-.d2_table .teshu{
-    text-align: left;
-    width: 276px;
-}
-.d2_table .img_goods{
-    width:60px;
-    height: 40px;
-}
+
+
+
+
+
 
 .pingjia_title{
-    margin-top: 20px;
-    font-size: 16px;
-    background: #EFEFEF;
-    padding: 5px 50px;
+    padding: 10px 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    background: #EEE;
 }
 .pingjia{
-    border: 1px solid #F7E4A5;
-    padding: 40px 0px 0px 100px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 10px;
 }
 
-.pingjia_img{
-    width: 150px;
-    height: 100px;
-}
-.pingjia_goodstitle{
-    width: 150px;
-    margin-top: 5px;
-    color: #03BA8A;
-    font-size: 14px;
-}
+
+
 .pingjia_top{
-    margin-bottom: 80px;
+    margin-bottom: 10px;
 }
-.pingjia_top_left{
-    float: left;
-    width: 150px;
-}
+
 .pingjia_box{
-    margin-left: 50px;
+    width: 100%;
+    box-sizing: border-box;
     border: 1px solid #DAF1FC;
     padding: 3px;
-    float: left;
     background: #EEF8FD;
 }
 .pingjia_textarea{
+    width: 100%;
+    box-sizing: border-box;
     padding: 8px;
-    width: 700px;
     border: 1px solid #CCC;
     height: 150px;
     outline: 0px none;
@@ -143,8 +124,7 @@
 }
 .pingjia .hr{
     position:relative;
-    left: -100px;
-    width: 1148px;
+    width: 100%;
     border-top:1px dashed ;
 }
 .des_title{
@@ -154,29 +134,26 @@
     width: 130px;
     text-align: center;
     font-size: 14px;
-    margin-top: 60px;
-    float: left;
+    margin-top: 20px;
     /*position: absolute;
     left: 98px;
     top: 65px;*/
 }
 .des_ul{
-    float: left;
-    margin: 50px 0px 0px 80px;
-    padding-bottom: 50px;
+    margin: 10px 10px;
 }
 .des_ul ul li{
     margin: 5px 0px;
     padding: 0px;
 }
 .des_ul .pingjia_text{
-    font-size: 14px;
+    font-size: 16px;
     display: inline-block;
     height: 23px;
     line-height: 23px;
 }
 .des_ul .pingjia_xingxing{
-    margin-left: 5px;
+    margin-left: 20px;
     font-size: 14px;
     display: inline-block;
     height: 23px;
@@ -184,10 +161,15 @@
     position:relative;
     top:3px;
 }
+.pingjia_xingxing img{
+    margin-left: 5px;
+}
 .des_ul .pingjia_last{
     font-size: 14px;
-    display: inline-block;
-    margin-left: 10px;
+    border: 1px solid #03BA8A;
+    width: 262px;
+    padding: 5px;
+    background-color: #ffffff;
 }
 .pingjia_last strong{
     color: #F60;
@@ -195,26 +177,9 @@
 }
 
 .yingcang{
-    position:absolute;
-    border: 1px solid #03BA8A;
-    width: 180px;
-    padding: 5px;
-    background-color: #ffffff;
-    z-index: 100;
     display: none;
 }
-.yc_1{
-    top:80px;
-    left: 280px;
-}
-.yc_2{
-    top:110px;
-    left: 280px;
-}
-.yc_3{
-    top:140px;
-    left: 280px;
-}
+
 .yingcang strong{
     display: block;
     color: #F60;
@@ -234,8 +199,12 @@
 }
 
 .button_a_lvse{
-    margin:20px 400px;
-    padding: 10px 30px;;
+    margin:10px 5%;
+    padding: 10px 0px;;
+    width: 90%;
+    text-align: center;
+    box-sizing: border-box;
+    color: #FFF;
 }
 
 .tr_td1{

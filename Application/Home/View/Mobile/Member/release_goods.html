@@ -9,7 +9,7 @@
 
 <body>
     <div class="release">
-        <div class="fanhui padding"><a href="<{:U('index/index')}>"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>发布商品</div>
+        <div class="fanhui padding" id='fanhui_1'><a href="<{:U('Member/index')}>"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>发布商品</div>
         <div id="infor" class="infor" style="color: #666;"></div>
       
         <form name="sv_cont" method="post" action="<{:U('Member/release_goods')}>" >
@@ -23,13 +23,13 @@
                 </select>
                 </div>
             </div>
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+            <div class='xuxian'></div>
             <!--<input name="sc_hidden" value="server_content" type="hidden"/>-->    
         </form>
         
         
         
-        <form name="release_goods" method="post" enctype="multipart/form-data" action="<{:U('Member/release_check')}>" onsubmit="editor.sync()">
+        <form name="release_goods" method="post" enctype="multipart/form-data" action="<{:U('Member/release_check')}>" >
             <input name="server_content" value="<{$server_content}>" type="hidden"/> 
             <input name="goods_img" value="" type="hidden"/> 
             <div class="tr">
@@ -39,7 +39,7 @@
                 <span id="info_title"></span>
                 </div>
             </div>
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+            <div class='xuxian'></div>
         
         
             <div  class="tr" id="insert_img">
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+            <div class='xuxian'></div>
                
             
 
@@ -67,7 +67,7 @@
                     <input name="radio_sex" type="radio" class="radio" value="1" />女
                 </div>
             </div><!--第二行-->
-            <div style="width:400px;height:0px;border-top:1px dashed #666;<{$css}>"></div>
+            <div class='xuxian' style="<{$css}>"></div>
             
             
             <div class="tr">
@@ -78,7 +78,7 @@
                 <span id="info_price"></span>
                 </div>
             </div>
-<div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+<div class='xuxian'></div>
             <div class="tr">
                 <div class="tr_td1">原价</div>
                 <div class="tr_td2">
@@ -87,7 +87,7 @@
                 <span id="info_yuan_price"></span>
                 </div>
             </div>
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+            <div class='xuxian'></div>
             
             <volist name="arr_shuxing" id="vo">
             <div class="tr">
@@ -101,7 +101,7 @@
                 </div>
             </div>
             </volist>
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+            <div class='xuxian'></div>
             
             <div class="tr">
                 <div class="tr_td1">参加代金券</div>
@@ -112,7 +112,7 @@
                     <a href="<{:U('Company/index','name=daijinquan')}>" id="daijinquan_help" class='help'>查看详情</a>
                 </div>
             </div>
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
+            <div class='xuxian'></div>
             <div class="tr">
                 <div class="tr_td1">参加返现</div>
                 <div class='tr_td2'>
@@ -126,19 +126,26 @@
                     <a href="<{:U('Company/index','name=fanxian')}>" id="fanxian_help" class='help'>查看详情</a>
                 </div>
             </div>
-            <div style="width:400px;height:0px;border-top:1px dashed #666;"></div>
-            <div class="tr">
-                <div class="tr_td1">商品描述</div>
-            </div>
-            <div class="tr">
-                <textarea id="content" name="content" style="width:760px;height:300px;visibility:hidden;">
+            <div class='xuxian'></div>
+
+            
+            <a href="javascript:void(0)" id="xiayibu" class="xyb">下一步</a>
+            
+            <div  id='spms'>
+                <div class="fanhui padding" id='fanhui_2'><a href="jiavascript:void(0)"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>商品详情</div>
+                <div class="tr" id="bianjiqi">
+                    <textarea id="content" name="content" style="width:90%;height:300px;visibility:hidden;">
                     
-                </textarea>
+                    </textarea>
+      
+                </div>
+                
+                <a href="javascript:void(0)" id="fabu" class="xyb">立刻发布</a>
       
             </div>
             
             
-            <a href="javascript:void(0)" id="xiayibu" class="xyb">立刻发布</a>
+            
         </form>
     </div>
     

@@ -241,6 +241,7 @@ class MemberController extends FontEndController {
         $img_url=substr($data['src'],0,$index+1);
         $img_name=substr($data['src'],$index+1); 
         $this->thumb($img_url,$img_name,300,200);//创建图片的缩略图
+        $data['src_thumb']=$img_url.'thumb/'.$img_name;
         $this->ajaxReturn($data,'JSON');
     }
         

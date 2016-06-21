@@ -431,6 +431,9 @@ class GoodsController extends FontEndController {
 //        file_put_contents("./notify.txt", print_r($_POST,true),FILE_APPEND);
         $out_trade_no = $_POST['out_trade_no'];
         $trade_no = $_POST['trade_no'];
+        //var_dump($out_trade_no);
+        //var_dump($trade_no);
+        //exit();
         if ($verify_result) {//验证成功
             $ordermodel = D('Order');
             $order = $ordermodel->where("order_no='{$out_trade_no}' and deleted=0 ")->find();
