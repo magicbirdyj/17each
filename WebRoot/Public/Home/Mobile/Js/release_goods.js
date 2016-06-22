@@ -3,6 +3,10 @@
 //onblur
 //var obj_form=document.sv_cont;
 //var server_content=obj_form.server_content;
+
+
+
+
 $('select[name=server_content]').bind('change',function(){sc_change();});
 $(':text[name=title]').bind('focus',function(){$('#infor').css('display','none');});
 $(':text[name=title]').bind('blur',function(){$('#infor').css('display','block');text_blue($(this),$('#infor'),'商品标题');});
@@ -42,14 +46,7 @@ $('input[name=radio_sex]:eq(0)').attr('checked','checked');
     KindEditor.ready(function(K) {
         var options = {
             items:[
-        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
-        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
-        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
-        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image','multiimage',
-        'flash', 'media', 'insertfile', 'table', 'hr','emoticons', 'baidumap', 'pagebreak',
-        'anchor', 'link', 'unlink', '|', 'about'
+        'image', 'media',  'link'
 ],
             uploadJson:"/Home/Kindeditor/editor_check",
             allowMediaUpload:false,//true时显示视音频上传按钮。
@@ -65,7 +62,10 @@ $('input[name=radio_sex]:eq(0)').attr('checked','checked');
             fontSizeTable:['9px', '10px', '12px', '14px', '16px', '18px', '24px', '32px']//指定文字大小。
         };
         editor = K.create('textarea[name="content"]',options);
-       
+       //给编辑器图标加文字
+        $('.ke-icon-image').html('添加图片');
+        $('.ke-icon-media').html('添加视频');
+        $('.ke-icon-link').html('添加链接');
     });    
 
 function sc_change(){
@@ -76,7 +76,6 @@ function price_blue(obj,obj_info){
     var reg=/^\d+\.?\d{0,2}$/gi;
     var result= reg.test(obj.val());
     if(result){
-        obj_info.html('&radic;');
         obj_info.css('color','#666');
         obj.val(parseFloat(obj.val()).toFixed(2));
         setTimeout(infor_none,5000);
@@ -191,3 +190,5 @@ function fanhui(){
     $('#xiayibu').css('display','block');
     $('#spms').css('display','none');
 }
+
+

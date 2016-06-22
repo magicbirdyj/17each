@@ -16,7 +16,7 @@ KindEditor.plugin('link', function(K) {
 					//url
 					'<div class="ke-dialog-row">' +
 					'<label for="keUrl" style="width:60px;">' + lang.url + '</label>' +
-					'<input class="ke-input-text" type="text" id="keUrl" name="url" value="" style="width:260px;" /></div>' +
+					'<input class="ke-input-text" type="text" id="keUrl" name="url" value="" style="width:200px;" /></div>' +
 					//type
 					'<div class="ke-dialog-row"">' +
 					'<label for="keType" style="width:60px;">' + lang.linkType + '</label>' +
@@ -25,7 +25,7 @@ KindEditor.plugin('link', function(K) {
 					'</div>',
 				dialog = self.createDialog({
 					name : name,
-					width : 450,
+					width : 300,
 					title : self.lang(name),
 					body : html,
 					yesBtn : {
