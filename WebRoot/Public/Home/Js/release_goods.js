@@ -3,6 +3,8 @@
 //onblur
 //var obj_form=document.sv_cont;
 //var server_content=obj_form.server_content;
+//创建个img标签并且插入obj前面
+var goods_img="";
 $('select[name=server_content]').bind('change',function(){sc_change();});
 $(':text[name=title]').bind('focus',function(){text_focus($('#info_title'),'商品标题可以尽量多包含关键字');});
 $(':text[name=title]').bind('blur',function(){text_blue($(this),$('#info_title'));});
@@ -11,7 +13,7 @@ $('input[name=file_img]').bind('change',function(){
         file_jia_change();
     };
 });
-$('#button_jia').bind('click',function(){tianjia($(this));});
+
 $(':text[name=price]').bind('focus',function(){text_focus($('#info_price'),'填写售价');});
 $(':text[name=price]').bind('blur',function(){price_blue($(this),$('#info_price'));});
 $(':text[name=yuan_price]').bind('focus',function(){text_focus($('#info_yuan_price'),'填写原价');});
@@ -24,6 +26,7 @@ $('body').on('click','.div_goods_img a',function(){
     $('#file_jia').css('display','block');
     $(this).parent().remove();
     var img_url=$(this).prev().attr('src').substr(1);
+    img_url=img_url.replace('/thumb','');
     goods_img=goods_img.replace(img_url+'+img+','');
     goods_img=goods_img.replace(img_url,'');
     $('input[name=goods_img]').attr('value',goods_img);
@@ -102,8 +105,8 @@ function fabu(){
     if(aa.indexOf("undefined")!==-1){
         alert('商品图片因超过5M或其它原因未上传成功');
     }else{
-        var a=text_blue($('input[name=title]'),$('#info_title'));
-        var b=check_file_image($('input[name=file_img]'),$('#span_touxiang'),false);
+        var a=text_blue($('input[name=title]'),$('#info_title'),'商品标题');
+        var b=check_file($('input[name=goods_img]'),$('#span_touxiang'));
         var c=price_blue($('input[name=price]'),$('#info_price'));
         var d=price_blue($('input[name=yuan_price]'),$('#info_yuan_price'));
         if(a&&b&&c&&d){
@@ -133,6 +136,7 @@ function file_jia_change(){
                             return false;
                         }
                         var img_url=msg.src;
+                        var img_url_thumb=msg.src_thumb;
                         creat_img($('#file_jia'),img_url,img_url_thumb);
                         /*应该不再需要这段
                         if(String(img_url)=== "undefined"){
@@ -147,8 +151,7 @@ function file_jia_change(){
                     }  
                 });  
 }
-//创建个img标签并且插入obj前面
-var goods_img="";
+
 function creat_img(obj,img_url,img_url_thumb){
     var index=img_url.lastIndexOf('/');
     var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';

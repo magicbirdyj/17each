@@ -39,20 +39,17 @@ function text_focus(obj,str){
 //文本框失去焦点，检查是否为空和非法（第一个参数是失去焦点的本身对象（this），第二个参数是需要显示信息的jq对象）
 function text_blue(obj,obj_info,txt){
     if(obj.val()==''){
-        obj_info.css('display','block');
         obj_info.css('color','red');
         obj_info.html(txt+'为空，请输入内容');
         setTimeout(infor_none,5000);
         return false;
     }else if(is_feifa(obj.val())){
-        obj_info.css('display','block');
         obj_info.css('color','red');
         //obj_info.html('含有非法字符=;:#&\/^$()[]{}*+?-"，请重新输入');
         obj_info.html(txt+'含有非法字符：'+is_feifa(obj.val()));
         setTimeout(infor_none,5000);
         return false;
     }else{
-        obj_info.css('display','block');
         obj_info.css('color','#666');
         obj_info.html('&radic;');
         setTimeout(infor_none,5000);
@@ -65,17 +62,13 @@ function check_file_image(obj_file,obj_info,flag){
 	var arr_image=["jpg","jpeg","png","gif",'swf','bmp'];
 	var str_suffix=obj_file.val().substr(obj_file.val().lastIndexOf(".")+1).toLowerCase();//获取后缀
         if(str_suffix==false){
-            obj_info.css('display','block');
             obj_info.css('color','red');
             obj_info.html("未上传文件，请上传图片");
-            setTimeout(infor_none,5000);
             return false;
         }
 	for(var i=0;i<arr_image.length;i++){
 		if(str_suffix==arr_image[i]){
-                    obj_info.css('display','block');
-                    obj_info.css('color','#666');
-                    setTimeout(infor_none,5000);
+                    obj_info.html("");
                     return true;
                     break;
 			}
@@ -84,10 +77,8 @@ function check_file_image(obj_file,obj_info,flag){
                     alert("文件类型不允许上传，请选择图片格式");
                     obj_file.val('');
                 }
-            obj_info.css('display','block');
             obj_info.css('color','red');
             obj_info.html("文件类型不允许，请上传正确的图片格式");
-            setTimeout(infor_none,5000);
             return false;
 	}
 //ajax请求判断用户是否登录
@@ -204,3 +195,87 @@ function clear_url_shuxing(url,name,value){
 function infor_none(){
     $('#infor').css('display','none');
 }
+
+
+
+
+//文本框失去焦点，检查是否为空和非法（第一个参数是失去焦点的本身对象（this），第二个参数是需要显示信息的jq对象）
+function text_blue_shouji(obj,obj_info,txt){
+    if(obj.val()===''){
+        obj_info.css('display','block');
+        obj_info.css('color','red');
+        obj_info.html(txt+'为空，请输入内容');
+        setTimeout(infor_none,5000);
+        return false;
+    }else if(is_feifa(obj.val())){
+        obj_info.css('display','block');
+        obj_info.css('color','red');
+        //obj_info.html('含有非法字符=;:#&\/^$()[]{}*+?-"，请重新输入');
+        obj_info.html(txt+'含有非法字符：'+is_feifa(obj.val()));
+        setTimeout(infor_none,5000);
+        return false;
+    }else{
+        obj_info.css('display','none');
+        return true;
+    }
+}
+
+//验证图片是否上传和类型是否正确，第一个参数是文件对象，第二个参数是信息对象，第三个参数为真，则弹出对话框，为假，不弹出。  参数为JQ对象
+function check_file_image_shouji(obj_file,obj_info,flag){
+	var arr_image=["jpg","jpeg","png","gif",'swf','bmp'];
+	var str_suffix=obj_file.val().substr(obj_file.val().lastIndexOf(".")+1).toLowerCase();//获取后缀
+        if(str_suffix==false){
+            obj_info.css('display','block');
+            obj_info.css('color','red');
+            obj_info.html("未上传文件，请上传图片");
+            setTimeout(infor_none,5000);
+            return false;
+        }
+	for(var i=0;i<arr_image.length;i++){
+		if(str_suffix==arr_image[i]){
+                    obj_info.css('display','none');
+                    return true;
+                    break;
+			}
+		}
+                if(flag){
+                    alert("文件类型不允许上传，请选择图片格式");
+                    obj_file.val('');
+                }
+            obj_info.css('display','block');
+            obj_info.css('color','red');
+            obj_info.html("文件类型不允许，请上传正确的图片格式");
+            setTimeout(infor_none,5000);
+            return false;
+}
+function check_file(obj_file,obj_info){
+    var a=obj_file.val();
+    if(!a){
+        obj_info.css('color','red');
+        obj_info.html("未上传文件，请上传图片");
+        return false;
+    }else{
+        obj_info.html("");
+        return true;
+    }
+}
+
+function check_file_shouji(obj_file,obj_info){
+    var a=obj_file.val();
+    if(!a){
+        obj_info.css('display','block');
+        obj_info.css('color','red');
+        obj_info.html("未上传文件，请上传图片");
+        setTimeout(infor_none,5000);
+        return false;
+    }else{
+        obj_info.css('display','none');
+        return true;
+    }
+}
+        
+        
+        
+        
+        
+        

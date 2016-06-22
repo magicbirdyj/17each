@@ -29,7 +29,7 @@
         
         
         
-        <form name="release_goods" method="post" enctype="multipart/form-data" action="<{:U('Member/release_check')}>" >
+        <form name="release_goods" method="post" enctype="multipart/form-data" action="<{:U('Member/release_check')}>" onsubmit="editor.sync()">
             <input name="server_content" value="<{$server_content}>" type="hidden"/> 
             <input name="goods_img" value="" type="hidden"/> 
             <div class="tr">
