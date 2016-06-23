@@ -1,4 +1,9 @@
-
+//给视频iframe一个正确的高
+var width_iframe=$('iframe').css('width');
+if(width_iframe){
+    var height_iframe=(parseInt(width_iframe)/650)*380+'px';
+    $('iframe').css('height',height_iframe);
+}
 
 
 

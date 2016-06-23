@@ -442,3 +442,7 @@ body{
     position: absolute;
     left:100%;
 }
+
+iframe{
+    width: 100%;
+}
