@@ -24,5 +24,5 @@
                     })  
                     
                     
-                    $('.more').trigger('click');
+                    //$('.more').trigger('click');
             });  

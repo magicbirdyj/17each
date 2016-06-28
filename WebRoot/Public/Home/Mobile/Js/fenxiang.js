@@ -158,11 +158,11 @@ var nativeShare = function (elementNode, config) {
   
     var share = this;  
     var items = document.getElementsByClassName('nativeShare');  
-    for (var i=0;i<items.length;i++) {  
+    /*for (var i=0;i<items.length;i++) {  
         items[i].onclick = function(){  
             share.share(this.getAttribute('data-app'));  
         }  
-    }  
-  
+    }  */
+  share.share('')
     return this;  
 };  
