@@ -22,4 +22,7 @@
                             $(".sharebg").remove();  
                         }, 300);  
                     })  
+                    
+                    
+                    $('.more').trigger('click');
             });  
