@@ -8,9 +8,10 @@
     z-index: 99999;
 }
 .min_menu .tb_fenxiang{
-    font-size: 30px;
+    font-size: 26px;
     color: #FFF;
     display: block;
+    margin-bottom: 3px;
 }
 .min_menu .fenxiang{
     font-size: 10px;
