@@ -29,6 +29,8 @@ class MemberController extends FontEndController {
          
         $sellectionmodel=D('Sellection');
         $status_count['sellection']=$sellectionmodel->where("user_id=$user_id")->count();
+        $cartmodel=D('Cart');
+        $status_count['cart']=$cartmodel->where("user_id=$user_id")->count();
         
         $status_count['yipingjia']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=3")->count();
         
@@ -429,7 +431,11 @@ class MemberController extends FontEndController {
         $cartmodel=D('Cart');
         $count=$cartmodel->where("user_id=$user_id")->count();
         $this->assign('count',$count);
+        if($count==0){
+            $this->error('购物车为空，返回首页',U('Index/index'),3);
+        }
         $mycart=$cartmodel->where("user_id=$user_id")->order('join_time desc')->select();
+        
         $this->assign('mycart',$mycart);
         $this->display('cart');
     }
@@ -539,7 +545,7 @@ class MemberController extends FontEndController {
         }
         $result=$_SESSION['cart_order'];
         $tiaojian1['t1.order_id']=array('in',$result);
-        $order=$ordermodel->table("m_order t1,m_goods t2,m_category t3")->where($tiaojian1)->where('t1.goods_id=t2.goods_id and t2.cat_id=t3.cat_id')->field('t1.shop_name,t3.cat_name,t1.goods_name,t2.price,t1.server_day')->select();
+        $order=$ordermodel->table("m_order t1,m_goods t2,m_category t3")->where($tiaojian1)->where('t1.goods_id=t2.goods_id and t2.cat_id=t3.cat_id')->field('t1.shop_name,t3.cat_name,t1.goods_name,t2.price,t1.server_day,t2.goods_img')->select();
         
         $price=0.00;
         foreach ($order as $value){
@@ -957,7 +963,14 @@ class MemberController extends FontEndController {
     }
     
     public function goods_sold(){
+        if($_SESSION['huiyuan']['shopman_id']==='0'){
+            $_SESSION['ref']=CONTROLLER_NAME.'/'.ACTION_NAME;
+            redirect(U("Zhuce/zhuce4"),1, '您不是婚礼人，将转到注册婚礼人页面');
+            //header("location:". U("Zhuce/zhuce4"));
+            exit();
+        }
          $status=$_GET['status'];
+         $this->assign('canshu',$_GET['status']);
          $this->assign('title','已售商品');
          $ordermodel=D('Order');
          $user_id=$_SESSION['huiyuan']['user_id'];
@@ -973,7 +986,7 @@ class MemberController extends FontEndController {
              $this->assign(count,$count);
              $page=$this->get_page($count, 10);
              $page_foot=$page->show();//显示页脚信息
-             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name')->limit($page->firstRow.','.$page->listRows)->select();
+             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name,t1.dues')->limit($page->firstRow.','.$page->listRows)->select();
              $this->assign('list',$list);
              $this->assign('page_foot',$page_foot);
          }else if($status==='no_pay'){
@@ -983,7 +996,7 @@ class MemberController extends FontEndController {
              $count=$ordermodel->where("shop_id={$user_id} and pay_status=0 and deleted=0")->count();
              $page=$this->get_page($count, 10);
              $page_foot=$page->show();//显示页脚信息
-             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.pay_status=0 and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name')->limit($page->firstRow.','.$page->listRows)->select();
+             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.pay_status=0 and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name,t1.dues')->limit($page->firstRow.','.$page->listRows)->select();
              $this->assign('list',$list);
              $this->assign('page_foot',$page_foot);
          }else if($status==='daiqueren'){
@@ -992,7 +1005,7 @@ class MemberController extends FontEndController {
              $count=$ordermodel->where("shop_id={$user_id} and pay_status=1 and status=1 and deleted=0")->count();
              $page=$this->get_page($count, 10);
              $page_foot=$page->show();//显示页脚信息
-             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.pay_status=1 and t1.status=1 and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name')->limit($page->firstRow.','.$page->listRows)->select();
+             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.pay_status=1 and t1.status=1 and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name,t1.dues')->limit($page->firstRow.','.$page->listRows)->select();
              $this->assign('list',$list);
              $this->assign('page_foot',$page_foot);
          }else if($status==='daipingjia'){
@@ -1001,7 +1014,7 @@ class MemberController extends FontEndController {
              $count=$ordermodel->where("shop_id={$user_id} and pay_status=1 and status=2 and deleted=0")->count();
              $page=$this->get_page($count, 10);
              $page_foot=$page->show();//显示页脚信息
-             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.pay_status=1 and t1.status=2 and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name')->limit($page->firstRow.','.$page->listRows)->select();
+             $list=$ordermodel->table('m_order t1,m_goods t2,m_users t3')->where("t1.shop_id={$user_id} and t1.pay_status=1 and t1.status=2 and t1.goods_id=t2.goods_id and t1.user_id=t3.user_id and t1.deleted=0")->order('t1.created desc')->field('t1.user_id,t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t2.price,t3.mobile_phone,t3.user_name,t1.dues')->limit($page->firstRow.','.$page->listRows)->select();
              $this->assign('list',$list);
              $this->assign('page_foot',$page_foot);
          }

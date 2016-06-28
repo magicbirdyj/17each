@@ -132,6 +132,7 @@ color:#2BB8AA;
     font-size: 14px;
 }
 .fanhui{
+    margin-bottom: 20px;
     position: relative;
     z-index: 1000;
     font-size: 20px;
@@ -151,8 +152,36 @@ color:#2BB8AA;
     left: 10px;
     top: 3px;
 }
-
+/*搜索页面的css*/
+.logo .tb_fanhui{
+    font-size: 40px;
+    color: #FFF;
+    margin-top: 0px;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    top:-3px;
+}
 
 embed{
     width:100%;
 }
+
+
+.infor{
+    display: none;
+    padding: 9px 0px;
+    background-color: #F0F0F0;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    position: fixed;
+    top:45px;
+    overflow: hidden;
+    text-overflow:ellipsis;/*超出部分省略号*/
+    white-space: nowrap;/*强制文本一行输出*/
+    z-index: 999;
+}
+
+

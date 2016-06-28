@@ -467,13 +467,18 @@ function file_jia_change(obj){
                             return false;
                         }
                         var img_url='';
+                        var img_url_thumb='';
                         if(id==='file_touxiang'){
                             img_url=msg.file_touxiang;
-                            String(img_url)==="undefined"?touxiang_is=false:touxiang_is=true;
+                            img_url_thumb=msg.file_touxiang_thumb;
+                            touxiang_is=true;
+                            //String(img_url)==="undefined"?touxiang_is=false:touxiang_is=true;
                         }else if(id==='file_shenfenzheng'){
                             img_url=msg.file_shenfenzheng;
+                            img_url_thumb=msg.file_shenfenzheng_thumb;
                         }else{
                             img_url=msg.file_erweima;
+                            img_url_thumb=msg.file_erweima_thumb;
                         }
                         /*应该不再需要这段
                         if(String(img_url)==="undefined"){
@@ -482,7 +487,7 @@ function file_jia_change(obj){
                             $('#infor').html('文件上传失败');
                             return false;
                         }*/
-                        creat_img($('#'+id),String(img_url));
+                        creat_img($('#'+id),String(img_url),img_url_thumb);
                         return true;
                     }, 
                     error: function(){
@@ -495,9 +500,7 @@ function file_jia_change(obj){
 }
 //创建个img标签并且插入obj前面
 
-function creat_img(obj,img_url){
-    var index=img_url.lastIndexOf('/');
-    var img_url_thumb=img_url.substr(0,index+1)+'thumb/'+img_url.substr(index+1);
+function creat_img(obj,img_url,img_url_thumb){
     var str='<div class="div_goods_img"><img src="" class="empty_img" /><img class="goods_img" src=/'+img_url_thumb+' /><a title="删除"></a></div>';
     obj.before(str);
     obj.css('display','none');//隐藏添加图片按钮

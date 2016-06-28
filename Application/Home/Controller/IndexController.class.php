@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Home\Controller;
 class IndexController extends FontEndController {
     public function index(){ 
-        unset($_SESSION['ref']);
+        //unset($_SESSION['ref']);
         //广告图片获取
         $advertmodel=D('admin_advert');
         $lunbo_shang=$advertmodel->where("position='轮播上'")->field('xuhao,img_url,url')->select();
@@ -101,7 +101,8 @@ class IndexController extends FontEndController {
         $this->display('menu');
     }
     public function search(){
-        $this->assign("title","一起网 ".$sp);
+        $this->assign('ref',$_SESSION['ref']);
+        $this->assign("title","一起网 ".$_GET['sp']);
         $url['full']=$_SERVER['REQUEST_URI'];
         $url['full_teshu']=substr($url['full'],0,strpos($url['full'],'?')===FALSE?strlen($url['full']):strpos($url['full'],'?'));
         $url['houmian']=strstr($url['full'],'?');
@@ -171,14 +172,28 @@ class IndexController extends FontEndController {
         $count=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.user_id=t2.user_id and t1.is_delete=0")->where($search)->count();
         $page=$this->get_page($count, 48);
         $page_foot=$page->show();//显示页脚信息
+        
+        $page_iphone=$this->get_page_iphone($count, 12);
+        $page_foot_iphone=$page_iphone->show();//显示页脚信息
+        
         $list=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.user_id=t2.user_id and t1.is_delete=0")->where($search)->limit($page->firstRow.','.$page->listRows)->field('t1.cat_id,t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number')->order('t1.last_update desc')->select();
+        $list_iphone=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.user_id=t2.user_id and t1.is_delete=0")->where($search)->limit($page_iphone->firstRow.','.$page_iphone->listRows)->field('t1.cat_id,t1.goods_id,t1.area,t1.user_id,t1.goods_name,t1.price,t1.yuan_price,t1.goods_img,t1.comment_number,t2.user_name,t1.goods_id,t1.score,t1.buy_number')->order('t1.last_update desc')->select();
         $this->assign('list',$list);
         $this->assign('page_foot',$page_foot);
-        
+        //手机端
+        $this->assign('list_iphone',$list_iphone);
+        $this->assign('page_foot_iphone',$page_foot_iphone);
         //获取搜索到的商品里面，所包含的所有分类
-        $serch1['goods_name']=array('LIKE','%'.$sp_1.'%');
-        $arr_cat_id=$goodsmodel->where($search1)->getField('cat_id',true);
+        unset($tiaojian['t1.cat_id']); 
+        $arr_cat_id=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.user_id=t2.user_id and t1.is_delete=0")->where($search)->getField('cat_id',true);
         $arr_cat_id=array_unique($arr_cat_id);
+        
+        $arr_count[0]=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.user_id=t2.user_id and t1.is_delete=0")->where($search)->count();
+        foreach ($arr_cat_id as $value) {
+            $cat_id_where['t1.cat_id']=array('EQ',$value);
+            $arr_count[$value]=$goodsmodel->table('m_goods t1,m_users t2')->where($tiaojian)->where("t1.user_id=t2.user_id and t1.is_delete=0")->where($search)->where($cat_id_where)->count();
+        }
+        $this->assign('arr_count',$arr_count);
         $this->assign('arr_cat_id',$arr_cat_id);
         
         $this->display(search);
@@ -197,5 +212,16 @@ class IndexController extends FontEndController {
             $value['goods_img']=$img_url.'thumb/'.$img_name;
         }
     }
+    
+    
+    public function search_m(){
+        $this->assign('ref',$_SESSION['ref']);
+        $this->display();
+    }
+    
+    
+    
+    
+     
 
 }

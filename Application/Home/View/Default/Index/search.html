@@ -40,7 +40,7 @@
 <div class="menu_tr_title">分类&nbsp;:</div>
 <ul class="menu_tr_ul">
     <volist name='arr_cat_id' id='vo'>
-    <li><a href="<{:U($url['teshu'].'/cid/'.$vo)}><{$url['houmian']}>"><{$vo|get_catname}></a></li>
+    <li><a href="<{:U($url['teshu'].'/cid/'.$vo)}><{$url['houmian']}>"><{$vo|get_catname}>(<{$arr_count[$vo]}>)</a></li>
     </volist>
 </ul>
 </div>

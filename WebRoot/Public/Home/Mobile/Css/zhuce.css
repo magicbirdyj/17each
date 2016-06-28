@@ -12,19 +12,7 @@ body{
     margin-bottom: 30px;
 }
 
-.infor{
-    padding: 9px 0px;
-    background-color: #F0F0F0;
-    width: 100%;
-    font-size: 14px;
-    text-align: center;
-    position: fixed;
-    top:45px;
-    overflow: hidden;
-    text-overflow:ellipsis;/*超出部分省略号*/
-    white-space: nowrap;/*强制文本一行输出*/
-    z-index: 999;
-}
+
 
 .zhuce1_tr{
     width: 100%;
@@ -116,6 +104,7 @@ background-color:#EEEEEE;
 float:left;
 color:#FFFFFF;
 text-align:center;
+padding: 3px 0px;
 }
 
 #mimaxiaoguo_last{

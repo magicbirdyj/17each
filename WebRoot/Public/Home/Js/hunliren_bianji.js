@@ -119,15 +119,20 @@ var obj_contact_weixin=document.zhuce.contact_weixin;
 var obj_contact_email=document.zhuce.contact_email;
 
 obj_file_touxiang.onchange=function(){
-    check_file_image($(this),$("#span_touxiang"),true);
-    file_jia_change($(this));
+    if(check_file_image($(this),$("#span_touxiang"),true)){
+        file_jia_change($(this));
+    };
 };
 obj_file_shenfenzheng.onchange=function(){
-    check_file_image($(this),$("#span_shenfenzheng"),true);
-    file_jia_change($(this));
+    if(check_file_image($(this),$("#span_shenfenzheng"),true)){
+        file_jia_change($(this));
+    };
 };
 $('input[name=file_erweima]').bind('change',function(){
-    file_jia_change($(this));
+    if(check_file_image($(this),$("#span_shenfenzheng"),true)){
+        file_jia_change($(this));
+    }
+    
 });
 select_province.onchange=function (){province_onchange(this.selectedIndex);};
 select_city.onchange=function (){city_onchange(this.selectedIndex);};
@@ -185,7 +190,7 @@ function province_onchange(index){
 		select_city.options[i].text=arr_city[index][i];
                 select_city.options[i].value=arr_city[index][i];
 		}
-	city_onchange(0)
+	city_onchange(0);
 	}
 
 function city_onchange(index){
@@ -432,23 +437,33 @@ function file_jia_change(obj){
                     dataType:"json",
                     async : true,
                     success: function(msg){
+                        if(msg.result==='error'){
+                            //alert(msg.error);//测试error才用
+                            alert('图片超过5M的大小限制，请重新选择图片');
+                            return false;
+                        }
                         var img_url='';
+                        var img_url_thumb='';
                         if(id==='file_touxiang'){
                             img_url=msg.file_touxiang;
+                            img_url_thumb=msg.file_touxiang_thumb;
+                            $('input[name=member_'+id+']').attr('value',String(img_url_thumb));
                         }else if(id==='file_shenfenzheng'){
                             img_url=msg.file_shenfenzheng;
+                            img_url_thumb=msg.file_shenfenzheng_thumb;
+                            $('input[name=member_'+id+']').attr('value',String(img_url));
                         }else{
                             img_url=msg.file_erweima;
+                            img_url_thumb=msg.file_erweima_thumb;
+                            $('input[name=member_'+id+']').attr('value',String(img_url));
                         }
-                        $('#'+id).attr('src','/'+img_url);
-                        $('input[name=member_'+id+']').attr('value',String(img_url));
-                        if(String(img_url)==="undefined"){
-                            alert('图片因超过5M或其它原因未上传成功,请重新上传');
-                        }
+                        $('#'+id).attr('src','/'+img_url_thumb);
+                        
+                        
                         return true; 
                     },  
                     error: function(){  
-                        alert('上传文件出错');
+                        alert('上传图片失败,三星前置摄像头照片可能导致此错误');
                         return false;
                     }  
                 });  

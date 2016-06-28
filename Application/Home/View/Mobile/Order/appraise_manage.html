@@ -1,19 +1,25 @@
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/member.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/appraise_manage.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
-<script src="__PUBLIC_COMMON__/Js/function.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/member.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/appraise_manage.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_iphone/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_public/iconfont.css">
 </head>
 
 <body>
-    <include file='Public/menu'/>
-    <include file='Public/member_left' />
+    <div class="fanhui padding"><a href="javascript:history.back()"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>评价管理</div>
     <div class="release">
         <volist name="list" id="vo">
-        <div class="content"><!--内容遍历-->
-                <div class='td1'>
-                    <div class="picture"><a href="<{:U('Goods/index',array('goods_id'=>$vo['goods_id']))}>"><img src="<{$vo['goods_img']}>"></a></div>
-                    <div class="info"><a href="<{:U('Goods/index',array('goods_id'=>$vo['goods_id']))}>"><{$vo['goods_name']}></a><p class="color_999">商品日期：<{$vo['server_day']|date_geshi1=###}></p><p class="color_2BB8AA">商家：<{$vo['shop_name']}></p></div>
-                    <div>
+            <a  href="<{:U('Goods/index',array('goods_id'=>$vo['goods_id']))}>" class="div_a"><!--内容遍历-->
+            <div class="order_row">
+                <div class='td_l'>
+                    <div class="picture"><img src="<{$vo['goods_img']}>"></div>
+                </div>
+                    <div class="td_r">
+                    <div class="info_name shenglue"><{$vo['goods_name']}></div>
+                    <div class="info_name shenglue">商家：<{$vo['shop_name']}></div>
+                    <div class="info_name shenglue">订单日期：<{$vo['server_day']|date_geshi1=###}></div>
+                    </div> 
+            </div>
+                        </a>
                         <div class='des_title'>我已评价：</div>
                 <div class="des_ul">
                     <ul>
@@ -58,10 +64,10 @@
                         </li>
                     </ul>
                 </div>
-                    </div>
-                    <div class="jutipingjia"><{$vo['appraise']}></div>
+ 
+                    <div class="jutipingjia">评价内容：<{$vo['appraise']}></div>
                 </div>
-        </div>
+        
         </volist>
         
     

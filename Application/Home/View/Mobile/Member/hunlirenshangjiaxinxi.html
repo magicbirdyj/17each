@@ -1,22 +1,24 @@
 
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/member.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/hunliren_shangjiaxinxi.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
-<script src="__PUBLIC_COMMON__/Js/function.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/member.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/hunliren_shangjiaxinxi.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_iphone/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_public/iconfont.css">
 </head>
 
 <body>
-    <include file='Public/menu' />
-    <include file='Public/member_left' />
+    <div class="fanhui padding"><a href="javascript:history.back()"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>商家信息</div>
     <div class="right">
-        <div class="right_head">
+        <div class="right_head" id='wode17_head'>
             <div class="hlr_touxiang">
                 <img src="<{$touxiang_url}>" class="img" />
                 <img src='__PUBLIC_HOME__/Images/public/circle_f6f6f6.png' class="img_circle" />
             </div>
-            <div class="hlr_name"><{$day_time}>， <{$userdata['user_name']}>（<{$userdata['server_content']}>）</div>
-            <a  href="<{:U('Member/release_goods')}>">发布商品</a>
+        <div class="hlr_name">
+            <div><{$day_time}>， <{$userdata['user_name']}></div>
+            <div>账户余额：0元</div>    
         </div>
+    </div>
+        
         <div class="title">
             商家资料
             <a class="bianji_a" href="<{:U('Member/hunliren_bianji')}>">编辑</a>
@@ -49,8 +51,8 @@
     
     
     
-</div>
-<iframe height="1" frameborder="0" width="1" style="position:absolute;top:0;left:-9999px;" src="<{:U('index/menu')}>"></iframe>
+
+
 </body>
 </html>
         

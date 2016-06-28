@@ -247,14 +247,28 @@ class ZhuceController extends FontEndController {
             'file_erweima'=>UPLOAD.$file_info[1]['file_erweima']['savepath'].$file_info[1]['file_erweima']['savename']
         );
         
-        foreach ($data as $key => $value) {
-            if($value!=='Public/Uploads/'){
-                $index=strripos($value,"/");
-                $img_url=substr($value,0,$index+1);
-                $img_name=substr($value,$index+1);
-                $this->thumb($img_url,$img_name,$key);//创建图片的缩略图
+
+            if($data['file_touxiang']!=='Public/Uploads/'){
+                $index=strripos($data['file_touxiang'],"/");
+                $img_url=substr($data['file_touxiang'],0,$index+1);
+                $img_name=substr($data['file_touxiang'],$index+1);
+                $this->thumb($img_url,$img_name, 'file_touxiang');//创建图片的缩略图
+                $data['file_touxiang_thumb']=$img_url.'thumb/'.$img_name;
             }
-        }     
+           if($data['file_shenfenzheng']!=='Public/Uploads/'){
+                $index=strripos($data['file_shenfenzheng'],"/");
+                $img_url=substr($data['file_shenfenzheng'],0,$index+1);
+                $img_name=substr($data['file_shenfenzheng'],$index+1);
+                $this->thumb($img_url,$img_name, 'file_shenfenzheng');//创建图片的缩略图
+                $data['file_shenfenzheng_thumb']=$img_url.'thumb/'.$img_name;
+            }
+            if($data['file_erweima']!=='Public/Uploads/'){
+                $index=strripos($data['file_erweima'],"/");
+                $img_url=substr($data['file_erweima'],0,$index+1);
+                $img_name=substr($data['file_erweima'],$index+1);
+                $this->thumb($img_url,$img_name, 'file_erweima');//创建图片的缩略图
+                $data['file_erweima_thumb']=$img_url.'thumb/'.$img_name;
+            }
 
                     
         $this->ajaxReturn($data,'JSON');

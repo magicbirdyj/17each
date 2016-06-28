@@ -1,4 +1,11 @@
+//去两边空格
+function Trim(str)
 
+         { 
+
+             return str.replace(/(^\s*)|(\s*$)/g, ""); 
+
+     }
 //时间戳转换成时间
 function getDate(tm){
     var tt=new Date(parseInt(tm) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")

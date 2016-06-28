@@ -119,27 +119,32 @@ var obj_contact_weixin=document.zhuce.contact_weixin;
 var obj_contact_email=document.zhuce.contact_email;
 
 obj_file_touxiang.onchange=function(){
-    check_file_image($(this),$("#span_touxiang"),true);
-    file_jia_change($(this));
+    if(check_file_image_shouji($(this),$("#infor"),true)){
+        file_jia_change($(this));
+    };
 };
 obj_file_shenfenzheng.onchange=function(){
-    check_file_image($(this),$("#span_shenfenzheng"),true);
-    file_jia_change($(this));
+    if(check_file_image_shouji($(this),$("#infor"),true)){
+        file_jia_change($(this));
+    };
 };
 $('input[name=file_erweima]').bind('change',function(){
-    file_jia_change($(this));
+    if(check_file_image_shouji($(this),$("#infor"),true)){
+        file_jia_change($(this));
+    }
+    
 });
 select_province.onchange=function (){province_onchange(this.selectedIndex);};
 select_city.onchange=function (){city_onchange(this.selectedIndex);};
-obj_address_juti.onfocus=function (){address_juti_onfocus();};
+
 obj_address_juti.onblur=function (){address_juti_onblur();};
-obj_contact_qq.onfocus=function (){contact_onfocus(this.name);};
+
 obj_contact_qq.onblur=function (){contact_qq_onblur();};
-obj_contact_weixin.onfocus=function (){contact_onfocus(this.name);};
+
 obj_contact_weixin.onblur=function (){contact_weixin_onblur();};
-obj_contact_email.onfocus=function (){contact_onfocus(this.name);};
+
 obj_contact_email.onblur=function (){contact_email_onblur();};
-obj_name.onfocus=function (){name_onfocus();};
+
 obj_name.onblur=function (){name_onblur();};
 document.getElementById("zhuce1_xiayibu").onclick=function (){return xiayibu_onclick();};
 
@@ -176,8 +181,7 @@ for(var i=0;i<arr_county[0][0].length;i++){
 
 
 function province_onchange(index){
-	var obj=document.getElementById("span_select");
-	obj.innerHTML="";
+        $('#infor').css("display",'none');
 	province_index=index;
 	select_city.length=0;
 	select_city.length=arr_city[index].length;
@@ -185,7 +189,7 @@ function province_onchange(index){
 		select_city.options[i].text=arr_city[index][i];
                 select_city.options[i].value=arr_city[index][i];
 		}
-	city_onchange(0)
+	city_onchange(0);
 	}
 
 function city_onchange(index){
@@ -198,33 +202,7 @@ function city_onchange(index){
 	}
 
 
-function radio_select(obj){
-	var obj_info=document.getElementById("infor_name");
-	obj_info.innerHTML="";
-	switch(obj.value){
-		case "个人" :
-		document.getElementById("radio_1").style.cssText="display:block;";
-		document.getElementById("radio_2").style.cssText="display:block;";
-		//document.getElementById("radio_3").style.cssText="display:none;";
-		document.getElementById("radio_1").getElementsByTagName("div")[0].innerHTML="真实姓名";
-		document.getElementById("radio_2").getElementsByTagName("div")[0].innerHTML="身份证照";
-		break;
-		case "工作室":
-		document.getElementById("radio_1").style.cssText="display:block;";
-		document.getElementById("radio_2").style.cssText="display:block;";
-		//document.getElementById("radio_3").style.cssText="display:none;";
-		document.getElementById("radio_1").getElementsByTagName("div")[0].innerHTML="负责人姓名";
-		document.getElementById("radio_2").getElementsByTagName("div")[0].innerHTML="负责人身份证照";
-		break;
-		//case "公司":
-		//document.getElementById("radio_1").style.cssText="display:block;";
-		//document.getElementById("radio_2").style.cssText="display:block;";
-		//document.getElementById("radio_3").style.cssText="display:block;";
-		//document.getElementById("radio_1").getElementsByTagName("div")[0].innerHTML="公司名称";
-		//document.getElementById("radio_2").getElementsByTagName("div")[0].innerHTML="法人身份证照";
-		//break;
-		}
-	}
+
 //function checkbox(obj){
 	//var obj1=document.getElementById("span_checkbox");
 	//obj1.innerHTML="";
@@ -241,111 +219,95 @@ function radio_select(obj){
 			//return false;
 			//}
 	//}
-function address_juti_onfocus(){
-	var obj=document.getElementById("infor_address_juti");
-	obj.style.cssText="color:#666;";
-	obj.innerHTML="请输入您的详细地址";
-	}
+
 function address_juti_onblur(){
-	var obj=document.getElementById("infor_address_juti");
 	if(obj_address_juti.value==""){
-		obj.style.cssText="color:red;";
-		obj.innerHTML="您的详细地址为空";
+            $('#infor').css("display",'block');
+		$('#infor').css('color','red');
+		$('#infor').html("您的详细地址为空");
+                setTimeout(infor_none,3000);
 		return false;
 		}
 		else{
-			obj.innerHTML="&radic;";
+			$('#infor').css("display",'none');
 			return true;
 			}
 	}
 	
-function contact_onfocus(name_self){
-	var obj=document.getElementById("infor_"+name_self);
-	obj.style.cssText="color:#666;";
-	if(name_self=="contact_qq"){
-		obj.innerHTML="请输入您的QQ号";
-		}
-		else if(name_self=="contact_weixin"){
-		obj.innerHTML="请输入您的微信号";
-			}
-		else{
-			obj.innerHTML="请输入您的邮箱";
-			}
-	}
+
 
 function contact_qq_onblur(){
-	var obj=document.getElementById("infor_contact_qq");
 	if(obj_contact_qq.value==""){
-		obj.style.cssText="color:red;";
-		obj.innerHTML="您的QQ为空";
+            $('#infor').css("display",'block');
+		$('#infor').css('color','red');
+		$('#infor').html("您的QQ为空");
+                setTimeout(infor_none,3000);
 		return false;
 		}
 		else if(isNaN(obj_contact_qq.value)){
-			obj.style.cssText="color:red;";
-			obj.innerHTML="您输入的qq格式不正确";
+                    $('#infor').css("display",'block');
+			$('#infor').css('color','red');
+			$('#infor').html("您输入的qq格式不正确");
+                        setTimeout(infor_none,3000);
 			return false;
 			}
 		else{
-			obj.innerHTML="&radic;";
+			$('#infor').css("display",'none');
 			return true;
 			}
 	}
 function contact_weixin_onblur(){
-	var obj=document.getElementById("infor_contact_weixin");
 	if(obj_contact_weixin.value==""){
-		obj.style.cssText="color:red;";
-		obj.innerHTML="您的微信为空";
+            $('#infor').css("display",'block');
+		$('#infor').css('color','red');
+		$('#infor').html("您的微信为空");
+                setTimeout(infor_none,3000);
 		return false;
 		}
 		else{
-			obj.innerHTML="&radic;";
+			$('#infor').css("display",'none');
 			return true;
 			}
 	}
 function contact_email_onblur(){
 	var arr=["com","cn","net"];
-	var obj=document.getElementById("infor_contact_email");
 	//var index1=obj_contact_email.value.lastIndexOf("@");
 	//var str1=obj_contact_email.value.substr(index1+1);
 	//var index2=str1.lastIndexOf(".");
 	//var str2=str1.substr(index2+1);
 	if(obj_contact_email.value==""){
-		obj.style.cssText="color:red;";
-		obj.innerHTML="您的邮箱为空";
+            $('#infor').css("display",'block');
+		$('#infor').css('color','red');
+		$('#infor').html("您的邮箱为空");
+                setTimeout(infor_none,3000);
 		return false;
 		}
 		else if(is_youxiang(obj_contact_email.value)){
-                        obj.innerHTML="&radic;";
+                        $('#infor').css("display",'none');
 			return true;
 			}
 		else{
-                        obj.style.cssText="color:red;";
-			obj.innerHTML="您输入的邮箱格式不正确";
+                    $('#infor').css("display",'block');
+                        $('#infor').css('color','red');
+			$('#infor').html("您输入的邮箱格式不正确");
+                        setTimeout(infor_none,3000);
 			return false;
 			} 
 	}
-function name_onfocus(){
-	var obj=document.getElementById("infor_name");
-	obj.style.cssText="color:#666;";
-	if(obj_radio_fuwuxingshi[0].checked){
-		obj.innerHTML="请输入您的真实姓名";
-		}
-		else if(obj_radio_fuwuxingshi[1].checked){
-			obj.innerHTML="请输入负责人的真实姓名";
-			}
-			else {
-				obj.innerHTML="请输入您公司的全称";
-				}
-	}
+
 function name_onblur(){
-	var obj=document.getElementById("infor_name");
 	if(document.zhuce.name.value==""){
-		obj.style.cssText="color:red;";
+            $('#infor').css("display",'block');
+		$('#infor').css('color','red');
 		if(obj_radio_fuwuxingshi[0].checked){
-		obj.innerHTML="您的姓名为空";
+                    $('#infor').css("display",'block');
+                    $('#infor').html("您的姓名为空");
+                    setTimeout(infor_none,3000);
 		}
 		else if(obj_radio_fuwuxingshi[1].checked){
-			obj.innerHTML="负责人的姓名为空";
+                    $('#infor').css("display",'block');
+			$('#infor').html("负责人的姓名为空");
+                        setTimeout(infor_none,3000);
 			}
 			else {
 				//obj.innerHTML="公司的名称为空";
@@ -353,19 +315,20 @@ function name_onblur(){
 		return false;
 		}
 		else{
-			obj.innerHTML="&radic;";
+			$('#infor').css("display",'none');
 			return true;
 			}
 	}
 function check_seleck(){
-	var obj=document.getElementById("span_select");
 	if(select_province.selectedIndex==0){
-		obj.style.cssText="color:red;";
-		obj.innerHTML="未选择所在城市";
+            $('#infor').css("display",'block');
+		$('#infor').css('color','red');
+		$('#infor').html("未选择所在城市");
+                setTimeout(infor_none,3000);
 		return false;
 		}
 	else{
-		obj.innerHTML="";
+		$('#infor').css("display",'none');
 		return true;
 		}
 	}
@@ -389,26 +352,17 @@ function xiayibu_onclick(){
     }else if($('input[name=member_file_erweima]').attr('value')=== "undefined"){
         alert('微信二维码图片因超过5M或其它原因未上传成功,请重新上传');
     }else{
-	var c4=address_juti_onblur();
-	var c5=contact_qq_onblur();
-	var c6=contact_weixin_onblur();
-        var c11=contact_email_onblur();
-	var c8=check_seleck();
 	//var c9=check_checkbox();
-        var c10=text_blue($('#shop_introduce'),$('#infor_shop_introduce'));
-        if(c4&&c5&&c6&&c8&&c10&&c11){
+        if(address_juti_onblur()&&contact_qq_onblur()&&contact_weixin_onblur()&&check_seleck()&&text_blue_shouji($('#shop_introduce'),$('#infor'),'婚礼人介绍')&&contact_email_onblur()){
             obj_form.submit();
         }
     }
     return false;
     }
     
-$('#shop_introduce').bind('focus',function(){
-    $('#infor_shop_introduce').html('（请填写详细的店铺介绍，将显示在商品页面右侧）');
-    $('#infor_shop_introduce').css('color','#666');
-});
+
 $('#shop_introduce').bind('blur',function(){
-    return text_blue($('#shop_introduce'),$('#infor_shop_introduce'));
+    return text_blue_shouji($('#shop_introduce'),$('#infor'),'婚礼人介绍');
 });
 
 
@@ -432,26 +386,43 @@ function file_jia_change(obj){
                     dataType:"json",
                     async : true,
                     success: function(msg){
+                        if(msg.result==='error'){
+                            //alert(msg.error);//测试error才用
+                            alert('图片超过5M的大小限制，请重新选择图片');
+                            $('#infor').css('color','red');
+                            $('#infor').html('文件上传失败');
+                            return false;
+                        }
                         var img_url='';
+                        var img_url_thumb='';
                         if(id==='file_touxiang'){
                             img_url=msg.file_touxiang;
+                            img_url_thumb=msg.file_touxiang_thumb;
+                            $('input[name=member_'+id+']').attr('value',String(img_url_thumb));
                         }else if(id==='file_shenfenzheng'){
                             img_url=msg.file_shenfenzheng;
+                            img_url_thumb=msg.file_shenfenzheng_thumb;
+                            $('input[name=member_'+id+']').attr('value',String(img_url));
                         }else{
                             img_url=msg.file_erweima;
+                            img_url_thumb=msg.file_erweima_thumb;
+                            $('input[name=member_'+id+']').attr('value',String(img_url));
                         }
-                        $('#'+id).attr('src','/'+img_url);
-                        $('input[name=member_'+id+']').attr('value',String(img_url));
-                        if(String(img_url)==="undefined"){
-                            alert('图片因超过5M或其它原因未上传成功,请重新上传');
-                        }
+                        $('#'+id).attr('src','/'+img_url_thumb);
+                        
+                        
                         return true; 
                     },  
                     error: function(){  
-                        alert('上传文件出错');
+                        alert('上传图片失败,三星前置摄像头照片可能导致此错误');
+                        $('#infor').css('color','red');
+                        $('#infor').html('文件上传失败');
                         return false;
                     }  
                 });  
 }
 
 
+function infor_none(){
+    $('#infor').css('display','none');
+}

@@ -1,23 +1,23 @@
 
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/member.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/hunliren_shangjiaxinxi.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
-<script src="__PUBLIC_COMMON__/Js/function.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/member.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/hunliren_shangjiaxinxi.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_iphone/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_public/iconfont.css">
 </head>
 
 <body>
-    <include file='Public/menu' />
-    <include file='Public/member_left' />
+    <div class="fanhui padding"><a href="<{:U('Member/index')}>"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>账户设置</div>
+    <span id='infor' class="infor" style="color: #666;"></span>
     <div class="right">
         <div class="right_head">
             <div class="hlr_touxiang">
                 <img src="<{$touxiang_url}>" class="img" />
                 <img src='__PUBLIC_HOME__/Images/public/circle_f6f6f6.png' class="img_circle" />
             </div>
-            <div class="hlr_name"><{$day_time}>， <{$userdata['user_name']}></div>
+        <div class="hlr_name">
+            <div><{$day_time}>， <{$userdata['user_name']}></div>
+            <div>账户余额：0元</div>    
         </div>
-        <div class="title">
-            账户设置
         </div>
         <div class="content">
             <ul>
@@ -27,20 +27,19 @@
                     <li>
                         输入您的支付宝账户：
                         <input class="tixian_text" type="text" name="zhifubao" style="width: 150px;" /> 
-                        <input class="zhanghushezhi_submit" type="submit" value="确定" id="submit" />
-                        <span id='zhifubao_tishi'></span>
+                        
                     </li>
+                    <input class="zhanghushezhi_submit" type="submit" value="确定" id="submit" />
                 <else />
                     <li>
                         支付宝账户: <{$userdata['zhifubao']}>
-                        <input class="zhanghushezhi_submit" type="button" value="更改账户" id="button1" style='margin-left: 10px;' />
                     </li>
-                    <li id='ggzh' >
+                    <input class="zhanghushezhi_submit" type="button" value="更改账户" id="button1" />
+                    <li id='ggzh' class='ggzh' >
                         输入您的支付宝账户：
                         <input class="tixian_text" type="text" name="zhifubao" style="width: 150px;" /> 
-                        <input class="zhanghushezhi_submit" type="submit" value="确定" id="submit" />
-                        <span id='zhifubao_tishi'></span>
                     </li>
+                    <input class="zhanghushezhi_submit ggzh" type="submit" value="确定" id="submit" />
                 </if>
                 </form>
             </ul>
@@ -55,13 +54,15 @@
     
     
     
-</div>
-<iframe height="1" frameborder="0" width="1" style="position:absolute;top:0;left:-9999px;" src="<{:U('index/menu')}>"></iframe>
+
+
 <script type="text/javascript">
-    $('#ggzh').css('display','none');
+    $('.ggzh').css('display','none');
     $('input[name=zhifubao]').bind('focus',function(){
-        $('#zhifubao_tishi').html('(请输入正确的支付宝账号，否则提现无法到账。)');
-        $('#zhifubao_tishi').css('color','#666');
+        $('#infor').css('display','block');
+        $('#infor').html('(请输入正确的支付宝账号，否则提现无法到账。)');
+        $('infor').css('color','#666');
+        setTimeout(infor_none,5000);
     });
     $('input[name=zhifubao]').bind('blur',function(){
         yanzheng_zhifubao();
@@ -74,22 +75,34 @@
     function yanzheng_zhifubao(){
         var str=$('input[name=zhifubao]').val();
         if(is_feifa(str)){
-            $('#zhifubao_tishi').html('(含有非法字符，请重新输入。)');
-            $('#zhifubao_tishi').css('color','red');
+            $('#infor').css('display','block');
+            $('#infor').html('(含有非法字符，请重新输入。)');
+            $('#infor').css('color','red');
+            setTimeout(infor_none,5000);
             return false;
         }else if(str===''){
-            $('#zhifubao_tishi').html('(为空，请输入正确的支付宝账号，否则提现无法到账。)');
-            $('#zhifubao_tishi').css('color','red');
+            $('#infor').css('display','block');
+            $('#infor').html('(为空，请输入正确的支付宝账号，否则提现无法到账。)');
+            $('#infor').css('color','red');
+            setTimeout(infor_none,5000);
             return false;
         }else{
-            $('#zhifubao_tishi').html('(请确保支付宝账号正确，否则提现无法到账。)');
-            $('#zhifubao_tishi').css('color','#666');
+            $('#infor').css('display','block');
+            $('#infor').html('(请确保支付宝账号正确，否则提现无法到账。)');
+            $('#infor').css('color','#666');
+            setTimeout(infor_none,5000);
             return true;
         }
     }
     $('#button1').bind('click',function(){
-        $('#ggzh').css('display','block');
+        $('.ggzh').css('display','block');
     });
+    
+    
+    function infor_none(event){
+        event.preventDefault();
+    $('#infor').css('display','none');
+}
 </script> 
     </body>
 </html>

@@ -1,6 +1,7 @@
 // JavaScript Document
 //onfocus
 //onblur
+$('#infor').css('display','block');
 var obj_form=document.xiugaimima;
 var yanzhengma,yuan_mima;
 $.ajaxSetup({ 
@@ -12,15 +13,11 @@ obj_form.yanzhengma.onblur=function (){yanzhengma_blur();}
 
 
 
-function yanzhengma_foucs(){
-	var obj=document.getElementById("infor_yanzhengma");
-	obj.style.cssText="color:#666;";
-	obj.innerHTML="请输入以下图片中的数字";
-	}
+
 function yanzhengma_blur(){
-    var obj=document.getElementById("infor_yanzhengma");
+    var obj=document.getElementById("infor");
     if($('input[name=yanzhengma]').val()===''){
-        obj.style.cssText="color:red;";
+        $(obj).css('color','red');
         obj.innerHTML="验证码为空，请输入验证码";
         return false;
     }else{
@@ -32,11 +29,11 @@ function yanzhengma_blur(){
     $.post(url,data,function(msg){
          yanzhengma=msg;
         if(msg===0){
-            obj.style.cssText="color:red;";
+            $(obj).css('color','red');
             obj.innerHTML="验证码错误，请重新输入";
         }
         else if(msg===-1){
-            obj.style.cssText="color:red;";
+            $(obj).css('color','red');
             obj.innerHTML="验证码已过期，请点击图片刷新";
         }
         else if(msg===1){
@@ -77,20 +74,15 @@ function yanzhengma_click(){
     }
 }
 
-//原密码获取焦点
-$('input[name=yuan_mima]').bind('focus',function(){
-    var obj=document.getElementById("infor_yuan_mima");
-    obj.style.cssText="color:#666;";
-    obj.innerHTML="输入您原来的密码";
-});
+
 //原密码失去焦点
 $('input[name=yuan_mima]').bind('blur',function(){
     yuan_mima_blur();
 });
 function yuan_mima_blur(){
-    var obj=document.getElementById("infor_yuan_mima");
+    var obj=document.getElementById("infor");
     if($('input[name=yuan_mima]').val()==""){
-        obj.style.cssText="color:red;";
+        $(obj).css('color','red');
         obj.innerHTML="密码为空，请输入您的原密码";
         return false;
         }else{
@@ -113,7 +105,7 @@ function yuan_mima_blur(){
                         if(msg==='1'){
                                 obj.innerHTML="&radic;";
                                 }else{
-                                    obj.style.color="red";
+                                    $(obj).css('color','red');
                                     obj.innerHTML="原密码错误，请重新输入";
                                 }
                         }
@@ -125,12 +117,7 @@ function yuan_mima_blur(){
             }
         }
 }
-//新密码获取焦点
-$('input[name=new_mima]').bind('focus',function(){
-    var obj=document.getElementById("infor_new_mima");
-    obj.style.cssText="color:#666;";
-    obj.innerHTML="输入您新的密码";
-});
+
 //新密码失去焦点
 $('input[name=new_mima]').bind('blur',function(){
     new_mima_blur();
@@ -138,14 +125,14 @@ $('input[name=new_mima]').bind('blur',function(){
 
 function new_mima_blur(){
     querenmima_blur();
-    var obj=document.getElementById("infor_new_mima");
+    var obj=document.getElementById("infor");
     if($('input[name=new_mima]').val()==""){
-        obj.style.cssText="color:red;";
+        $(obj).css('color','red');
         obj.innerHTML="密码为空，请输入您的密码";
         return false;
         }
         else if($('input[name=new_mima]').val().length<5||$('input[name=new_mima]').val().length>32){
-			obj.style.cssText="color:red;";
+			$(obj).css('color','red');
 			obj.innerHTML="密码小于5个字符或者大于32个字符";
 			return false;
 			}
@@ -202,12 +189,7 @@ $('input[name=new_mima]').bind('keyup',function(){
 					}
 			}
 });
-//确认密码获取焦点
-$('input[name=again_mima]').bind('focus',function(){
-    var obj=document.getElementById("infor_again_mima");
-    obj.style.cssText="color:#666;";
-    obj.innerHTML="再次输入您的新密码";
-});
+
 //确认密码失去焦点
 $('input[name=again_mima]').bind('blur',function(){
     querenmima_blur();
@@ -215,9 +197,9 @@ $('input[name=again_mima]').bind('blur',function(){
 
 
 function querenmima_blur(){
-	var obj=document.getElementById("infor_again_mima");
+	var obj=document.getElementById("infor");
 	if($('input[name=again_mima]').val()==""){
-		obj.style.cssText="color:red;";
+		$(obj).css('color','red');
 		obj.innerHTML="确认密码为空，请再次输入您的密码";
 		return false;
 		}

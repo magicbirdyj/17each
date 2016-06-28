@@ -191,6 +191,9 @@ class CategoryController extends FontEndController {
     
     private function get_catname($cat){
         switch ($cat){
+            case'':
+                return '全部';
+                break;
             case '1':
                 return '策划师';
                 break;

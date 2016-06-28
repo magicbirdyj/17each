@@ -1,32 +1,76 @@
 /* CSS Document */
 
 .release{
-width:935px;
-margin-left: 20px;
-float: left;
-}
-.td1{
-    padding: 20px 0px;
-    border-bottom: 1px solid #DDD;
-}
-.td1 .picture{
-    float: left;
-    margin-right: 10px;
-}
-.td1 .picture img{
-    width: 100px;
-    height: 66px;
+width:100%;
+margin-bottom: 50px;
 }
 
-.td1 .info{
-    font-size: 14px;
-    width: 200px;
-    float: left;
+.div_a{
+    display: block;
 }
+.order_row{
+    box-sizing: border-box;
+    padding: 10px 10px;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.order_row>div{
+    box-sizing: border-box;
+    float: left;
+    /*border:1px solid #EEE;*/
+    font-size: 12px;
+    text-align: center;
+    padding: 0px 1px;
+}
+.order_row .td_l{
+    width: 105px;
+    position: absolute;
+}
+.td_l .picture{
+    float: left;
+    width: 105px;
+    margin-right: 20px;
+    height: 70px;
+}
+.picture img{
+    width:105px;
+    height: 70px;
+}
+
+.order_row .td_r{
+    padding-left: 115px;
+    width: 100%;
+    min-height: 70px;
+}
+.td_r .info_name{
+    width: 235px;
+    text-align: left;
+    font-size: 14px;
+    padding: 2px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .des_title{
     font-size: 14px;
     float: left;
+    margin-left: 10px;
 }
 .des_ul{
     float: left;
@@ -64,6 +108,10 @@ float: left;
     font-weight:500;
 }
 .jutipingjia{
-    margin-left: 110px;
+    padding-left: 10px;
     width: 600px;
+    color: #EB8A3D;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDD8CE;
+    
 }

@@ -1,55 +1,84 @@
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/member.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/order.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
-<script src="__PUBLIC_COMMON__/Js/function.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/member.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/order.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_iphone/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_public/iconfont.css">
 </head>
 
 <body>
-    <include file='Public/menu'/>
-    <include file='Public/member_left' />
-    <div class="release">
-        <select class="order_select">
-            <option value="<{:U('Member/goods_sold')}>" <{$selected['all']}> >全部状态</option>
-            <option value="<{:U('Member/goods_sold?status=no_pay')}>" <{$selected['no_pay']}> >未付款</option>
-            <option value="<{:U('Member/goods_sold?status=daiqueren')}>" <{$selected['daiqueren']}> >待确认</option>
-            <option value="<{:U('Member/goods_sold?status=daipingjia')}>" <{$selected['daipingjia']}> >待评价</option>
-        </select>
-        <div class="kuaijietishi">快捷提示：您有
-            <a href="<{:U('Member/goods_sold')}>" class="em">全部状态（<{$status_count['all']}>）</a>
-            <a href="<{:U('Member/goods_sold?status=no_pay')}>" class="em">待付款（<{$status_count['no_pay']}>）</a>
-            <a href="<{:U('Member/goods_sold?status=daiqueren')}>" class="em">待确认（<{$status_count['daiqueren']}>）</a>
-            <a href="<{:U('Member/goods_sold?status=daipingjia')}>" class="em">待评价（<{$status_count['daipingjia']}>）</a>
+    <div class="fanhui padding"><a href="<{:U('Member/index')}>"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>已售商品</div>
+    <div class="dingdan">
+        <div class='dingdan_4'>
+            <ul>
+                <li>
+                    <a href="<{:U('Member/goods_sold')}>">
+                    <div class='dingdan_fenkai_tb_div'>
+                        <span class="iconfont tb_dingdan_li">&#xe6e0;</span>
+                        <span style='margin-left: 2px;' class="right_up_tb"><{$status_count['all']}></span>
+                    </div>
+                    <div><span>全部</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<{:U('Member/goods_sold?status=no_pay')}>">
+                    <div class='dingdan_fenkai_tb_div'>
+                        <span class="iconfont tb_dingdan_li">&#xe6e0;</span>
+                        <span style='margin-left: 2px;' class="right_up_tb"><{$status_count['no_pay']}></span>
+                    </div>
+                    <div><span>待付款</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<{:U('Member/goods_sold?status=daiqueren')}>">
+                    <div class='dingdan_fenkai_tb_div'>
+                        <span class="iconfont tb_dingdan_li">&#xe657;</span>
+                        <span style='margin-left: 2px;' class="right_up_tb"><{$status_count['daiqueren']}></span>
+                    </div>
+                    <div><span>待确认</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<{:U('Member/goods_sold?status=daipingjia')}>">
+                    <div class='dingdan_fenkai_tb_div'>
+                        <span class="iconfont tb_dingdan_li">&#xe649;</span>
+                        <span style='margin-left: 2px;' class="right_up_tb"><{$status_count['daipingjia']}></span>
+                    </div>
+                    <div><span>待评价</span></div>
+                    </a>
+                </li>
+            </ul>
         </div>
-
-        <div class="title"><!--标题行-->
-            <div class='td1'>商品</div>
-            <div class='td2'>价格</div>
-            <div class='td3'>实付款</div>
-            <div class='td4'>订单状态</div>
-            <div class='td5'>操作</div>
-        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+   
+       
         
         
         <volist name="list" id="vo">
-        <div class="content"><!--内容遍历-->
-            <div class="order_title">订单编号：
-                <a href="#"><{$vo['order_no']}></a>
-                订单更新时间：<{$vo['updated']|date='Y-m-d H：i',###}>
-            </div>
+        <a href="<{:U('Order/view',array('order_id'=>$vo['order_id']))}>"><!--内容遍历-->
             <div class="order_row">
-                <div class='td1'>
-                    <div class="picture"><a href="<{:U('Goods/index',array('goods_id'=>$vo['goods_id']))}>"><img src="<{$vo['goods_img']}>"></a></div>
-                    <div class="info"><a href="<{:U('Goods/index',array('goods_id'=>$vo['goods_id']))}>"><{$vo['goods_name']}></a><p class="color_999">商品日期：<{$vo['server_day']|date_geshi1=###}></p><p class="color_2BB8AA">买家：<{$vo['user_name']}></p></div>
+                <div class='td_l'>
+                    <div class="picture"><img src="<{$vo['goods_img']}>"></div>
                 </div>
-                <div class='td2'>&yen;<{$vo['price']}></div>
-                <div class='td3'>&yen;<{$vo['price']}></div>
-                <div class='td4'><p><{:order_status($vo['pay_status'],$vo['status'])['status']}></p><a href="<{:U('Order/view',array('order_id'=>$vo['order_id']))}>">订单详情</a></div>
-                <div class='td5'>
-                    <a class="button_a_lvse" name="<{$vo['mobile_phone']}>" style="margin-top: 20px;">联系买家</a>
+                <div class="td_r">
+                    <div class="info_name shenglue"><{$vo['goods_name']}></div>
+                    <div class="info_name shenglue">商家：<{$vo['user_name']}></div>
+                    <div class="info_name shenglue">订单日期：<{$vo['server_day']|date_geshi1=###}></div>
+                    <div class='info_name'><span>价格：&yen;<{$vo['price']}></span><span style="margin-left: 20px;">实付：&yen;<{$vo['dues']}></span></div> 
+                    <div class="info_name shenglue">订单状态：<{:order_status($vo['pay_status'],$vo['status'])['status']}></div>
                 </div>
                 
+                
+                
             </div>
-        </div>
+        </a>
+            <div class='action'>
+                    <a class="button_a_order" name="<{$vo['mobile_phone']}>" >联系买家</a>
+                </div>
         </volist>
         
     
@@ -57,11 +86,32 @@
         
         <div class="page_foot"><{$page_foot}></div>
         
-    </div>
+ 
    
 
 <iframe height="1" frameborder="0" width="1" style="position:absolute;top:0;left:-9999px;" src="<{:U('index/menu')}>"></iframe>
 <script type="text/javascript">
+    var canshu="<{$canshu}>";
+    if(canshu==='no_pay'){
+        $('.dingdan_4>ul>li:eq(1)').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(1)>a>div').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(1) *').css('color','#fff');
+    }else if(canshu==='daiqueren'){
+        $('.dingdan_4>ul>li:eq(2)').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(2)>a>div').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(2) *').css('color','#fff');
+    }else if(canshu==='daipingjia'){
+        $('.dingdan_4>ul>li:eq(3)').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(3)>a>div').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(3) *').css('color','#fff');
+    }else{
+        $('.dingdan_4>ul>li:eq(0)').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(0)>a>div').css('background-color','#f90');
+        $('.dingdan_4>ul>li:eq(0) *').css('color','#fff');
+    }
+    
+    
+    
     $('.order_select').bind('change',function(){
         location.replace(this.value);
     });

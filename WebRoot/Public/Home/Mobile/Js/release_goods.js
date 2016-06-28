@@ -8,7 +8,7 @@ $('select[name=server_content]').bind('change',function(){sc_change();});
 $(':text[name=title]').bind('focus',function(){$('#infor').css('display','none');});
 $(':text[name=title]').bind('blur',function(){$('#infor').css('display','block');text_blue_shouji($(this),$('#infor'),'商品标题');});
 $('input[name=file_img]').bind('change',function(){
-    if(check_file_image_shouji($(this),$('#span_touxiang'),true)){
+    if(check_file_image_shouji($(this),$('#infor'),true)){
         file_jia_change();
     };
 });

@@ -1,25 +1,24 @@
 
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_jiantou/iconfont.css">
 
 
-
-<div  id="logo_header" data-role="header">
+<div  id="logo_header">
 <div class="logo"><!--logo-->
     <a href="<{:U('Index/index')}>" class="logol">一起网</a>
-<div class="serch">
+<div class="search">
     <form name="searchform" action="<{:U('Index/search')}>" method="get" id="searchform">
-        <input class="submitsr" type="submit" id='sr' value="搜索" data-role="none"  />
-        <div><input class="inputsr" type="text" name="sp" value="<{$get['sp']}>" placeholder="西式 策划" maxlength="100" data-role="none"  /></div>
+        <div class="search_div">
+            <span class="iconfont tb_search">&#xe616;</span>
+            <input class="inputsr" type="text" name="sp" value="<{$get['sp']}>" placeholder="西式 策划" maxlength="100" data-role="none"  />
+        </div>
     </form>
 </div>
 
 </div><!--//logo-->
 </div>
 <script  type="text/javascript">
-    $('#sr').bind('click',function(){
-        if($('input[name=sp]').val()==''){
-            var a=$('input[name=sp]').attr('placeholder');
-            $('input[name=sp]').val(a);
-        }
+    $('.inputsr').bind('click',function(){
+        window.location.href="<{:U('Index/search_m')}>"; 
     });
     
 </script>

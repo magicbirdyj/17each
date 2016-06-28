@@ -1,29 +1,28 @@
 
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/member.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Css/hunliren_shangjiaxinxi.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
-<script src="__PUBLIC_COMMON__/Js/function.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/member.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/hunliren_shangjiaxinxi.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_iphone/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_public/iconfont.css">
 </head>
 
 <body>
-    <include file='Public/menu' />
-    <include file='Public/member_left' />
+    <div class="fanhui padding"><a href="<{:U('Member/index')}>"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe604;</span></a>我的代金券</div>
     <div class="right">
         <div class="right_head">
             <div class="hlr_touxiang">
                 <img src="<{$touxiang_url}>" class="img" />
                 <img src='__PUBLIC_HOME__/Images/public/circle_f6f6f6.png' class="img_circle" />
             </div>
-            <div class="hlr_name"><{$day_time}>， <{$userdata['user_name']}></div>
+        <div class="hlr_name">
+            <div><{$day_time}>， <{$userdata['user_name']}></div>
+            <div>账户余额：0元</div>    
         </div>
-        <div class="title">
-            会员余额
         </div>
         <div class="content">
             <ul>
                 <li>会员名： <{$userdata['user_name']}></li>
                 <li>代金券：&yen;  <{$userdata['daijinjuan']}>元</li>
-                <li>使用规则：可以使用代金券的商品，付款时可以用代金券抵现金，抵扣比例10%</li>
+                <li class='duohangxianshi'>使用规则：可以使用代金券的商品，付款时可以用代金券抵现金，抵扣比例10%</li>
             </ul>
         </div>
     </div>

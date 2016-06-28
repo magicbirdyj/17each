@@ -4,20 +4,7 @@
 width:100%;
 margin-bottom: 50px;
 }
-.infor{
-    display: none;
-    padding: 9px 0px;
-    background-color: #F0F0F0;
-    width: 100%;
-    font-size: 14px;
-    text-align: center;
-    position: fixed;
-    top:45px;
-    overflow: hidden;
-    text-overflow:ellipsis;/*超出部分省略号*/
-    white-space: nowrap;/*强制文本一行输出*/
-    z-index: 999;
-}
+
 .tr{
     width: 100%;
     box-sizing: border-box;

@@ -245,6 +245,9 @@ function quxiao_shuxing($url,$value){
 //根据cat_id得到分类名
    function get_catname($cat){
         switch ($cat){
+            case '':
+                return '全部';
+                break;
             case '1':
                 return '策划师';
                 break;
@@ -374,7 +377,7 @@ function change_url_canshu($url_full,$canshu,$value){
     }else{
         $url=$url_full;
     }
-
+    $url=urldecode($url);
     $index=strpos($url,$canshu);
     if($index){
         //$url_f=  substr($url, 0,$index);
