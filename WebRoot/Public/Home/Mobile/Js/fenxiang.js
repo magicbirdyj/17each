@@ -29,7 +29,7 @@ var nativeShare = function (elementNode, config) {
     this.img_title = config.img_title || document.title || '';  
     this.from = config.from || window.location.host || '';  
     this.ucAppList = {  
-        sinaWeibo: ['kSinaWeibo', 'SinaWeibo', 11, '新浪微博1'],  
+        sinaWeibo: ['kSinaWeibo', 'SinaWeibo', 11, '新浪微博'],  
         weixin: ['kWeixin', 'WechatFriends', 1, '微信好友'],  
         weixinFriend: ['kWeixinFriend', 'WechatTimeline', '8', '微信朋友圈'],  
         QQ: ['kQQ', 'QQ', '4', 'QQ好友'],  
