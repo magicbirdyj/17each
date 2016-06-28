@@ -82,7 +82,7 @@ var nativeShare = function (elementNode, config) {
         }  
     };  
   
-    this.html = function() {  
+   /* this.html = function() {  
         var position = document.getElementById(this.elementNode);  
         var html = '<div class="am-share">'+  
             '<div class="am-share-sns list clearfix">'+  
@@ -96,7 +96,7 @@ var nativeShare = function (elementNode, config) {
             '</div>'+  
             '</div>';  
         position.innerHTML = html;  
-    };  
+    };*/  
   
     this.isloadqqApi = function () {  
         if (isqqBrowser) {  
