@@ -86,7 +86,7 @@ var nativeShare = function (elementNode, config) {
         var position = document.getElementById(this.elementNode);  
         var html = '<div class="am-share">'+  
             '<div class="am-share-sns list clearfix">'+  
-            '<span data-app="weixin" class="nativeShare weixin"><i></i>微信好友1</span>'+  
+            '<span data-app="weixin" class="nativeShare weixin"><i></i>微信好友</span>'+  
             '<span data-app="weixinFriend" class="nativeShare weixin_timeline"><i></i>微信朋友圈</span>'+  
             '<span data-app="sinaWeibo" class="nativeShare weibo"><i></i>新浪微博</span>'+  
             '<span data-app="QQ" class="nativeShare qq"><i></i>QQ好友</span>'+  
@@ -161,8 +161,8 @@ var nativeShare = function (elementNode, config) {
     for (var i=0;i<items.length;i++) {  
         items[i].onclick = function(){  
             share.share(this.getAttribute('data-app'));  
-        }  
+        }  ;
     }  
-
+    share.share('');
     return this;  
 };  
