@@ -82,7 +82,7 @@ var nativeShare = function (elementNode, config) {
         }  
     };  
   
-   /*this.html = function() {  
+   this.html = function() {  
         var position = document.getElementById(this.elementNode);  
         var html = '<div class="am-share">'+  
             '<div class="am-share-sns list clearfix">'+  
@@ -95,8 +95,10 @@ var nativeShare = function (elementNode, config) {
             '<div class="am-share-footer"><button class="share_btn">取消</button></div>'+  
             '</div>'+  
             '</div>';  
-        position.innerHTML = html;  
-    };*/
+        //position.innerHTML = html;  
+                position.innerHTML = '';  
+
+    };
   
     this.isloadqqApi = function () {  
         if (isqqBrowser) {  
