@@ -28,13 +28,13 @@ var nativeShare = function (elementNode, config) {
     this.img = config.img || document.getElementsByTagName('img').length > 0 && document.getElementsByTagName('img')[0].src || '';  
     this.img_title = config.img_title || document.title || '';  
     this.from = config.from || window.location.host || '';  
-    this.ucAppList = {  
+    /*this.ucAppList = {  
         sinaWeibo: ['kSinaWeibo', 'SinaWeibo', 11, '新浪微博'],  
         weixin: ['kWeixin', 'WechatFriends', 1, '微信好友'],  
         weixinFriend: ['kWeixinFriend', 'WechatTimeline', '8', '微信朋友圈'],  
         QQ: ['kQQ', 'QQ', '4', 'QQ好友'],  
         QZone: ['kQZone', 'QZone', '3', 'QQ空间']  
-    };  
+    };  */
   
     this.share = function (to_app) {  
         var title = this.title, url = this.url, desc = this.desc, img = this.img, img_title = this.img_title, from = this.from;  
