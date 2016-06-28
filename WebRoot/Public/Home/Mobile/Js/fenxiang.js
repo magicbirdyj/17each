@@ -96,7 +96,7 @@ var nativeShare = function (elementNode, config) {
             '</div>'+  
             '</div>';  
         //position.innerHTML = html;  
-                position.innerHTML = '';  
+                //position.innerHTML = '';  
 
     };
   
@@ -165,6 +165,11 @@ var nativeShare = function (elementNode, config) {
             share.share(this.getAttribute('data-app'));  
         }  ;
     }  */
+    $(".am-share").removeClass("am-modal-active");  
+                        setTimeout(function() {  
+                            $(".sharebg-active").removeClass("sharebg-active");  
+                            $(".sharebg").remove();  
+                        }, 300);
     share.share('');
     return this;  
 };  
