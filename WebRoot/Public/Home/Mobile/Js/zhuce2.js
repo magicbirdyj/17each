@@ -1,5 +1,6 @@
 // JavaScript Document
 //var backurl=document.referrer;
+$('#infor').css('display','block');
 var obj_form=document.zhuce;
 var huiyuanming;
 var i;

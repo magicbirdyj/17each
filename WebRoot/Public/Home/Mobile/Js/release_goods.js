@@ -77,12 +77,12 @@ function price_blue(obj,obj_info){
         obj_info.css('display','none');
         obj_info.css('color','#666');
         obj.val(parseFloat(obj.val()).toFixed(2));
-        setTimeout(infor_none,5000);
+        setTimeout(infor_none,3000);
         return true;
     }else{
         obj_info.css('color','red');
         obj_info.html('不符合规范，请填入正确价格，如100.00');
-        setTimeout(infor_none,5000);
+        setTimeout(infor_none,3000);
         return false;
     }
 }
@@ -156,9 +156,7 @@ function creat_img(obj,img_url,img_url_thumb){
 
 
 
-function infor_none(){
-    $('#infor').css('display','none');
-}
+
 
 
 

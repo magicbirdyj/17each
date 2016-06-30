@@ -280,6 +280,11 @@ function check_file_shouji(obj_file,obj_info){
         return true;
     }
 }
+
+
+function infor_none(){
+    $('#infor').css('display','none');
+}
         
         
         
