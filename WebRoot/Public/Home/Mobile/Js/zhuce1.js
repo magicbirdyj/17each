@@ -43,9 +43,10 @@ function yzshouji_blur(){
                            $('#infor').html("检验中...");
                         },
                         success:function(msg){
+                            alert(msg);
+                            return false;
                         shoujihao=msg;
                         if(msg==='1'){
-                            
                             $('#infor').html("手机号已被注册，请重新填写");
                             setTimeout(infor_none,3000);
                             }else if(msg==='0'){
