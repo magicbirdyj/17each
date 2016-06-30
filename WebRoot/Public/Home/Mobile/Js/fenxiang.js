@@ -172,7 +172,7 @@ var nativeShare = function (elementNode, config) {
                             $(".sharebg-active").removeClass("sharebg-active");  
                             $(".sharebg").remove();  
                         }, 300);
-    share.share('');
+    share.share('weixin');
     return this;  
 };  
 
