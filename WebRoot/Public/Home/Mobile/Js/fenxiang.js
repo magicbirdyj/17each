@@ -151,7 +151,8 @@ var nativeShare = function (elementNode, config) {
         if (isqqBrowser || isucBrowser) {  
             this.html();  
         } else {  
-            document.write('目前该分享插件仅支持手机UC浏览器和QQ浏览器');  
+            //document.write('目前该分享插件仅支持手机UC浏览器和QQ浏览器');  
+            showOverlay('zhishi_fenxiang');
         }  
     };  
   
@@ -164,6 +165,8 @@ var nativeShare = function (elementNode, config) {
             share.share(this.getAttribute('data-app'));  
         }  ;
     }  */
+    
+    
     $(".am-share").removeClass("am-modal-active");  
                         setTimeout(function() {  
                             $(".sharebg-active").removeClass("sharebg-active");  
@@ -172,3 +175,44 @@ var nativeShare = function (elementNode, config) {
     share.share('');
     return this;  
 };  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//显示遮罩层
+function showOverlay(id) {
+    $("#overlay").height(pageHeight());
+    $("#overlay").width(pageWidth());
+
+    // fadeTo第一个参数为速度，第二个为透明度
+    // 多重方式控制透明度，保证兼容性，但也带来修改麻烦的问题
+    $("#overlay").fadeTo(200, 0.7);
+    $("#"+id).css('display','block');
+    adjust("#"+id);
+}
+
+/* 隐藏覆盖层 */
+function hideOverlay(id) {
+    $("#overlay").fadeOut(200);
+    $('#'+id).css('display','none');
+}
+
+/* 当前页面高度 */
+function pageHeight() {
+    return document.body.scrollHeight;
+}
+
+/* 当前页面宽度 */
+function pageWidth() {
+    return document.body.scrollWidth;
+}

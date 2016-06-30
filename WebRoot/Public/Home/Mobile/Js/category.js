@@ -55,3 +55,4 @@ function hideOverlay(id) {
 function pageHeight() {
     return $(document.body).height();
 }
+
