@@ -310,8 +310,7 @@ class ZhuceController extends FontEndController {
             $shoujihao=$_POST['shoujihao'];
             $usesmodel=D('Users');
             $data=$usesmodel->where("mobile_phone={$shoujihao}")->count();
-            $data1=$usesmodel->where("mobile_phone={$shoujihao}")->getField('user_id');
-            $this->ajaxReturn($data1);
+            $this->ajaxReturn($data);
             exit();
        }elseif($_POST['check']=='huiyuanming'){
             $huiyuanming=$_POST['huiyuanming'];
