@@ -29,7 +29,7 @@
             }); 
             
             
-  $('div:not(#min_menu)').bind('click',function(){
+  $('div:not(#min_menu):not(#my_fenxiang)').bind('click',function(){
         hideOverlay('zhishi_fenxiang');
     }); 
  

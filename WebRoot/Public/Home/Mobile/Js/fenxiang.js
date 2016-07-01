@@ -84,7 +84,7 @@ var nativeShare = function (elementNode, config) {
   
    this.html = function() {  
         var position = document.getElementById(this.elementNode);  
-        var html = '<div class="am-share">'+  
+        var html = '<div class="am-share" id="my_fenxiang">'+  
             '<div class="am-share-sns list clearfix">'+  
             '<span data-app="weixin" class="nativeShare weixin"><i></i>微信好友</span>'+  
             '<span data-app="weixinFriend" class="nativeShare weixin_timeline"><i></i>微信朋友圈</span>'+  
@@ -151,7 +151,7 @@ var nativeShare = function (elementNode, config) {
         if (isqqBrowser || isucBrowser) {
             if(isqqBrowser)
             this.html();  
-            showOverlay('');
+            showOverlay('my_fenxiang');
         } else {  
             //document.write('目前该分享插件仅支持手机UC浏览器和QQ浏览器');  
             showOverlay('zhishi_fenxiang');
