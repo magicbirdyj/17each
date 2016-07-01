@@ -42,7 +42,7 @@
 }
 
 .ui-footer a .foot_home{
-    font-size: 34px;
+    font-size: 28px;
 }
 .ui-footer a .foot_hunliren{
     font-size: 34px;
@@ -52,4 +52,6 @@
     font-size: 26px;
 }
 
-
+.ui-footer a .foot_gouwuche{
+    font-size: 28px;
+}
