@@ -84,18 +84,18 @@ var nativeShare = function (elementNode, config) {
   
    this.html = function() {  
         var position = document.getElementById(this.elementNode);  
-        /*var html = '<div class="am-share">'+  
+        var html = '<div class="am-share">'+  
             '<div class="am-share-sns list clearfix">'+  
             '<span data-app="weixin" class="nativeShare weixin"><i></i>微信好友</span>'+  
             '<span data-app="weixinFriend" class="nativeShare weixin_timeline"><i></i>微信朋友圈</span>'+  
             '<span data-app="sinaWeibo" class="nativeShare weibo"><i></i>新浪微博</span>'+  
             '<span data-app="QQ" class="nativeShare qq"><i></i>QQ好友</span>'+  
             '<span data-app="QZone" class="nativeShare qzone"><i></i>QQ空间</span>'+  
-            '<span data-app="" class="nativeShare more"><i></i>更多</span>'+  
+            /*'<span data-app="" class="nativeShare more"><i></i>更多</span>'+ */ 
             '<div class="am-share-footer"><button class="share_btn">取消</button></div>'+  
             '</div>'+  
             '</div>';  
-        position.innerHTML = html;  */
+        position.innerHTML = html;  
 
     };
   
@@ -148,7 +148,8 @@ var nativeShare = function (elementNode, config) {
             }  
         }  
         this.isloadqqApi();  
-        if (isqqBrowser || isucBrowser) {  
+        if (isqqBrowser || isucBrowser) {
+            if(isqqBrowser)
             this.html();  
         } else {  
             //document.write('目前该分享插件仅支持手机UC浏览器和QQ浏览器');  
@@ -159,12 +160,12 @@ var nativeShare = function (elementNode, config) {
     this.init();  
   
     var share = this;  
-    /*var items = document.getElementsByClassName('nativeShare');  
+    var items = document.getElementsByClassName('nativeShare');  
     for (var i=0;i<items.length;i++) {  
         items[i].onclick = function(){  
             share.share(this.getAttribute('data-app'));  
         }  ;
-    }  */
+    }  
     
     
     $(".am-share").removeClass("am-modal-active");  
