@@ -34,17 +34,17 @@ display: block;
 }
 .search .tb_search{
     position: absolute;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 40px;
     height: 40px;
-    left: 7px;
+    left: 5px;
     color: #999;
 }
 
 .logo .inputsr{
 box-sizing:border-box;/*content-box盒子模型 border-box 怪异模型 border与padding包含其中*/
-height:38px;
-line-height:42px;
+height:40px;
+line-height:40px;
 font-size:1em;
 padding:0px 30px;
 border: none;
