@@ -98,6 +98,11 @@ var nativeShare = function (elementNode, config) {
         position.innerHTML = html;  
 
     };
+    this.html_uc = function() {  
+        var position = document.getElementById(this.elementNode);  
+        
+
+    };
   
     this.isloadqqApi = function () {  
         if (isqqBrowser) {  
@@ -149,12 +154,15 @@ var nativeShare = function (elementNode, config) {
         }  
         this.isloadqqApi();  
         if (isqqBrowser || isucBrowser) {
-            if(isqqBrowser)
+            if(isqqBrowser){
             this.html();  
             showOverlay('my_fenxiang');
             $('.am-share-footer').bind('click',function(){
                 hideOverlay('none');
             });
+            }else {
+                this.html_uc();
+            }
         } else {  
             //document.write('目前该分享插件仅支持手机UC浏览器和QQ浏览器');  
             $('div:not(#min_menu)').bind('click',function(){
