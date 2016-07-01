@@ -154,6 +154,9 @@ var nativeShare = function (elementNode, config) {
             showOverlay('my_fenxiang');
         } else {  
             //document.write('目前该分享插件仅支持手机UC浏览器和QQ浏览器');  
+            $('div:not(#min_menu)').bind('click',function(){
+                hideOverlay('zhishi_fenxiang');
+            }); 
             showOverlay('zhishi_fenxiang');
         }  
     };  
