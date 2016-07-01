@@ -74,7 +74,7 @@
         -webkit-transition: -webkit-transform 300ms;  
         transition: transform 300ms;  
         width: 100%;  
-        z-index: 1110;  
+        z-index: 11100;  
     }  
       
     .am-modal-active {  
