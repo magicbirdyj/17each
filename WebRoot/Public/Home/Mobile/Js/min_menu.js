@@ -31,6 +31,12 @@
             
   $('div:not(#min_menu)').bind('click',function(){
         hideOverlay('zhishi_fenxiang');
-    });          
+    });      
+ 
+ 
+
+            
+            
+
             
             
