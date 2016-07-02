@@ -15,12 +15,11 @@ class FontEndController extends Controller {
         if(!$access_token){
             $this->get_access_token();
             $access_token=S('access_token');
-            $this->get_jsapi_ticket($access_token);
-            $jsapi_ticket=S('jsapi_ticket');
-            $wx_config=$this->get_wx_config($jsapi_ticket);
-            $this->assign('wx_config',$wx_config);
-            
         }
+        $this->get_jsapi_ticket($access_token);
+        $jsapi_ticket=S('jsapi_ticket');
+        $wx_config=$this->get_wx_config($jsapi_ticket);
+        $this->assign('wx_config',$wx_config);
                 
                 
         //判断是否需要记录当前url 数组内必须首字母大写
