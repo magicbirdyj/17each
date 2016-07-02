@@ -164,6 +164,7 @@ HTML;
                 "appId"     => APPID,
                 "nonceStr"  => $nonceStr,
                 "timestamp" => $timestamp,
+                "url"=>$url,
                 "signature" => $signature
                 );
         return $wx_config;
