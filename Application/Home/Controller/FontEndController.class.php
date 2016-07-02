@@ -156,7 +156,7 @@ HTML;
         $timestamp = time();
         $nonceStr = $this->createNonceStr();
         // 这里参数的顺序要按照 key 值 ASCII 码升序排序
-        $string = "jsapi_ticket=$jsapiTicket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
+        $string = "jsapi_ticket=$jsapi_ticket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
         $signature = sha1($string);
         $wx_config = array(
             'string'=>$string,
