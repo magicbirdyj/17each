@@ -159,7 +159,8 @@ HTML;
         $string = "jsapi_ticket=$jsapiTicket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
         $signature = sha1($string);
         $wx_config = array(
-                "appId"     => APPID,
+                'jsapi_ticket'=>$jsapi_ticket,
+                "appId"     => 'wx6231a8932405bdaf',
                 "nonceStr"  => $nonceStr,
                 "timestamp" => $timestamp,
                 "url"=>$url,
