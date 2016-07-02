@@ -135,7 +135,7 @@ HTML;
     }
     
     private function get_access_token(){
-        $token_access_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" .'wx6231a8932405bdaf'. "&secret=" .'05406ab511f4d9bd46ac09982065b102';
+        $token_access_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" .APPID. "&secret=" .APPSECRET;
         $res = file_get_contents($token_access_url); //获取文件内容或获取网络请求的内容
         $result = json_decode($res, true); //接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
         $access_token = $result['access_token'];
@@ -159,7 +159,7 @@ HTML;
         $string = "jsapi_ticket=$jsapi_ticket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
         $signature = sha1($string);
         $wx_config = array(
-                "appId"     => 'wx6231a8932405bdaf',
+                "appId"     =>APPID,
                 "nonceStr"  => $nonceStr,
                 "timestamp" => $timestamp,
                 "url"=>$url,

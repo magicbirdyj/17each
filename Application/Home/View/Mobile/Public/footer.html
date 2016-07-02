@@ -22,6 +22,7 @@
     });
     wx.ready(function () {
         wx.onMenuShareAppMessage({
+            title: '', // 分享标题
              desc: "<{$description}>", // 分享描述
         });
         wx.onMenuShareQQ({
