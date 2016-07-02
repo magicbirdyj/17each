@@ -20,7 +20,7 @@ class FontEndController extends Controller {
         $jsapi_ticket=S('jsapi_ticket');
         $wx_config=$this->get_wx_config($jsapi_ticket);
         $this->assign('wx_config',$wx_config); 
-        var_dump($wx_config);
+        //var_dump($wx_config);
         //判断是否需要记录当前url 数组内必须首字母大写
         $noref=array('Index/search_m','Index/search','Goods/page','Index/menu','Order/yanzheng_zfmm','Order/queren_success','Goods/zhifu','Goods/pinglun','Member/cart_del','Member/goods_del','Goods/jiance_pay','Goods/getUniqueOrderNo','Goods/notifyweixin','Goods/notify','Goods/gmcg_wx','Goods/sellection_join','Buy/getQRPHP','Member/xiugai_zhifumima','Member/xiugai_zhifumima_check','Member/xiugai_zhifumima_success','Member/xiugai_mima','Member/xiugai_mima_check','Member/xiugai_mima_success','Member/getCode');
         $noref_contorller=array('Zhuce','Login');
@@ -159,8 +159,6 @@ HTML;
         $string = "jsapi_ticket=$jsapi_ticket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
         $signature = sha1($string);
         $wx_config = array(
-            'string'=>$string,
-                'jsapi_ticket'=>$jsapi_ticket,
                 "appId"     => 'wx6231a8932405bdaf',
                 "nonceStr"  => $nonceStr,
                 "timestamp" => $timestamp,

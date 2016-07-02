@@ -21,15 +21,15 @@
         jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
     });
     wx.ready(function () {
-        //wx.onMenuShareAppMessage({
-             //desc: "<{$description}>", // 分享描述
-        //});
-        //wx.onMenuShareQQ({
-            //desc: "<{$description}>", // 分享描述
-        //});
-        //wx.onMenuShareQZone({
-            //desc: "<{$description}>", // 分享描述
-        //});
+        wx.onMenuShareAppMessage({
+             desc: "<{$description}>", // 分享描述
+        });
+        wx.onMenuShareQQ({
+            desc: "<{$description}>", // 分享描述
+        });
+        wx.onMenuShareQZone({
+            desc: "<{$description}>", // 分享描述
+        });
     });
     
     
