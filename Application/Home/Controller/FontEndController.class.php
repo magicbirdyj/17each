@@ -24,6 +24,7 @@ class FontEndController extends Controller {
             $this->get_jsapi_ticket($access_token);
             $jsapi_ticket=S('jsapi_ticket');
         }
+        var_dump($jsapi_ticket);
         $wx_config=$this->get_wx_config($jsapi_ticket);
         $this->assign('wx_config',$wx_config); 
         //var_dump($wx_config);
