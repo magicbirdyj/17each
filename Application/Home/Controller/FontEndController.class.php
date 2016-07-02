@@ -10,7 +10,19 @@ class FontEndController extends Controller {
         parent::__construct();
         
         header("content-type:text/html;charset=utf-8"); 
-     
+        //获取微信access_token
+        $access_token=S('access_token');
+        if(!$access_token){
+            $this->get_access_token();
+            $access_token=S('access_token');
+            $this->get_jsapi_ticket($access_token);
+            $jsapi_ticket=S('jsapi_ticket');
+            $wx_config=$this->get_wx_config($jsapi_ticket);
+            $this->assign('wx_config',$wx_config);
+            
+        }
+                
+                
         //判断是否需要记录当前url 数组内必须首字母大写
         $noref=array('Index/search_m','Index/search','Goods/page','Index/menu','Order/yanzheng_zfmm','Order/queren_success','Goods/zhifu','Goods/pinglun','Member/cart_del','Member/goods_del','Goods/jiance_pay','Goods/getUniqueOrderNo','Goods/notifyweixin','Goods/notify','Goods/gmcg_wx','Goods/sellection_join','Buy/getQRPHP','Member/xiugai_zhifumima','Member/xiugai_zhifumima_check','Member/xiugai_zhifumima_success','Member/xiugai_mima','Member/xiugai_mima_check','Member/xiugai_mima_success','Member/getCode');
         $noref_contorller=array('Zhuce','Login');
@@ -123,6 +135,49 @@ HTML;
         $page->setConfig('theme', '%UP_PAGE% %LINK_PAGE% %DOWN_PAGE%');
         return $page;
     }
+    
+    private function get_access_token(){
+        $token_access_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" . APPID . "&secret=" . APPSECRET;
+        $res = file_get_contents($token_access_url); //获取文件内容或获取网络请求的内容
+        $result = json_decode($res, true); //接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+        $access_token = $result['access_token'];
+        S('access_token',$access_token,7000);
+    }
+    
+    private function get_jsapi_ticket($access_token){
+        $jsapi_ticket_url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=" . $access_token . "&type=jsapi" ;
+        $res = file_get_contents($jsapi_ticket_url); //获取文件内容或获取网络请求的内容
+        $result = json_decode($res, true); //接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+        $jsapi_ticket = $result['ticket'];
+        S('jsapi_ticket',$jsapi_ticket);
+    }
+    
+    
+    private function get_wx_config($jsapi_ticket){
+        $url = "http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+        $timestamp = time();
+        $nonceStr = $this->createNonceStr();
+        // 这里参数的顺序要按照 key 值 ASCII 码升序排序
+        $string = "jsapi_ticket=$jsapiTicket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
+        $signature = sha1($string);
+        $wx_config = array(
+                "appId"     => APPID,
+                "nonceStr"  => $nonceStr,
+                "timestamp" => $timestamp,
+                "signature" => $signature
+                );
+        return $wx_config;
+    }
+    
+    
+    private function createNonceStr($length = 16) {
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    $str = "";
+    for ($i = 0; $i < $length; $i++) {
+      $str .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
+    }
+    return $str;
+  }
 
 
 

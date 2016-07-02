@@ -9,7 +9,7 @@
                         img_title: '我的一起网图片', //图片名称  
                         from: '17each' //来源  
                     };  
-                    var share_obj = new nativeShare('nativeShare', config);  
+                    var share_obj = new nativeShare('nativeShare', config); 
                     $(".am-share").addClass("am-modal-active");  
                     if ($(".sharebg").length > 0) {  
                         $(".sharebg").addClass("sharebg-active");  
