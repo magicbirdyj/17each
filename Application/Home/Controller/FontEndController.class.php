@@ -10,6 +10,7 @@ class FontEndController extends Controller {
         parent::__construct();
         
         header("content-type:text/html;charset=utf-8"); 
+        var_dump(APPID);
         //获取微信access_token
         $access_token=S('access_token');
         if(!$access_token){
