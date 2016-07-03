@@ -167,9 +167,34 @@
         height: 40px;  
         display: block;  
         margin: 0 auto;  
-        margin-bottom: 5px;  
+        margin-bottom: 5px;
+        line-height: 40px;
+        border-radius: 20px;
+        font-size: 28px;
     }  
+    
+    #nativeShare .list span .tb_wxhy{
+        background-color: #3DAF33;
+        color: #FFF;
+    }
+    #nativeShare .list span .tb_wxpyq{
+        color: #EDDB54;
+        font-size: 40px;
+    }
+    #nativeShare .list span .tb_xlwb{
+        background-color: #FFF66B;
+        color: #DA251C;
+    }
+    #nativeShare .list span .tb_qqhy{
+        background-color: #FDFC11;
+        color: #000000;
+    }
+    #nativeShare .list span .tb_qqkj{
+        background-color:#317EF3;
+        color:#FCC71E;
+    }
       
+    /*
     #nativeShare .weibo i {  
         background-image: url(../icon/weibo.png);  
         background-size: cover;  
@@ -198,4 +223,4 @@
     #nativeShare .more i {  
         background-image: url(../icon/more.png);  
         background-size: cover;  
-    }  
+    }  */

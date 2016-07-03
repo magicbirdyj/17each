@@ -12,6 +12,7 @@ var nativeShare = function (elementNode, config) {
         uc: {forbid: 0, allow: 1}  
     };  
     var UA = navigator.appVersion;  
+    alert(UA);
     var isqqBrowser = (UA.split("MQQBrowser/").length > 1) ? bLevel.qq.higher : bLevel.qq.forbid;  
     var isucBrowser = (UA.split("UCBrowser/").length > 1) ? bLevel.uc.allow : bLevel.uc.forbid;  
     var version = {  
@@ -86,11 +87,11 @@ var nativeShare = function (elementNode, config) {
         var position = document.getElementById(this.elementNode);  
         var html = '<div class="am-share" id="my_fenxiang">'+  
             '<div class="am-share-sns list clearfix">'+  
-            '<span data-app="weixin" class="nativeShare weixin"><i></i>微信好友</span>'+  
-            '<span data-app="weixinFriend" class="nativeShare weixin_timeline"><i></i>微信朋友圈</span>'+  
-            '<span data-app="sinaWeibo" class="nativeShare weibo"><i></i>新浪微博</span>'+  
-            '<span data-app="QQ" class="nativeShare qq"><i></i>QQ好友</span>'+  
-            '<span data-app="QZone" class="nativeShare qzone"><i></i>QQ空间</span>'+  
+            '<span data-app="weixin" class="nativeShare weixin"><i class="iconfont tb_wxhy">&#xe618;</i>微信好友</span>'+  
+            '<span data-app="weixinFriend" class="nativeShare weixin_timeline"><i class="iconfont tb_wxpyq">&#xe61f;</i>微信朋友圈</span>'+  
+            '<span data-app="sinaWeibo" class="nativeShare weibo"><i class="iconfont tb_xlwb">&#xe61c;</i>新浪微博</span>'+  
+            '<span data-app="QQ" class="nativeShare qq"><i class="iconfont tb_qqhy">&#xe61d;</i>QQ好友</span>'+  
+            '<span data-app="QZone" class="nativeShare qzone"><i class="iconfont tb_qqkj">&#xe620;</i>QQ空间</span>'+  
             /*'<span data-app="" class="nativeShare more"><i></i>更多</span>'+ */ 
             '<div class="am-share-footer"><button class="share_btn">取消</button></div>'+  
             '</div>'+  
@@ -169,6 +170,7 @@ var nativeShare = function (elementNode, config) {
                 hideOverlay('zhishi_fenxiang');
             }); 
             showOverlay('zhishi_fenxiang');
+            
         }  
     };  
   
@@ -247,60 +249,7 @@ function pageWidth() {
 
 
 
-var imgUrl = 'http://topic.xcar.com.cn/201403/ad_q3/pic/banner.jpg'; 
-var lineLink = 'http://topic.xcar.com.cn/201403/ad_q3/index.php'; 
-var descContent = "http://topic.xcar.com.cn/201403/ad_q3/index.php"; 
-var shareTitle = '【奥迪Q3开启尊享礼遇季】报名试驾，赢取精美礼品'; 
-var appid = 'wxc9937e3a66af6dc8'; 
- 
-function shareFriend() { 
-WeixinJSBridge.invoke('sendAppMessage',{ 
-"appid": appid, 
-"img_url": imgUrl, 
-"img_width": "640", 
-"img_height": "640", 
-"link": lineLink, 
-"desc": descContent, 
-"title": shareTitle 
-}, function(res) { 
-_report('send_msg', res.err_msg); 
-}) 
-} 
-function shareTimeline() { 
-WeixinJSBridge.invoke('shareTimeline',{ 
-"img_url": imgUrl, 
-"img_width": "640", 
-"img_height": "640", 
-"link": lineLink, 
-"desc": descContent, 
-"title": shareTitle 
-}, function(res) { 
-_report('timeline', res.err_msg); 
-}); 
-} 
-function shareWeibo() { 
-WeixinJSBridge.invoke('shareWeibo',{ 
-"content": descContent, 
-"url": lineLink, 
-}, function(res) { 
-_report('weibo', res.err_msg); 
-}); 
-} 
-// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。 
-document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() { 
- 
-// 发送给好友 
-WeixinJSBridge.on('menu:share:appmessage', function(argv){ 
-shareFriend(); 
-}); 
- 
-// 分享到朋友圈 
-WeixinJSBridge.on('menu:share:timeline', function(argv){ 
-shareTimeline(); 
-}); 
- 
-// 分享到微博 
-WeixinJSBridge.on('menu:share:weibo', function(argv){ 
-shareWeibo(); 
-}); 
-}, false); 
+
+
+
+
