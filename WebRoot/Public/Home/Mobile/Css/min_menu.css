@@ -5,7 +5,7 @@
     background-color: #06c1ae;
     color: #FFF;
     padding: 0px 10px;
-    z-index: 99999;
+    z-index: 9999;
 }
 .min_menu .tb_fenxiang{
     font-size: 26px;
@@ -41,7 +41,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    z-index: 100; /* 此处的图层要大于页面 */
+    z-index: 10000; /* 此处的图层要大于页面 */
     display:none;
 }
 
