@@ -12,9 +12,9 @@ var nativeShare = function (elementNode, config) {
         uc: {forbid: 0, allow: 1}  
     };  
     var UA = navigator.appVersion;  
-    alert(UA);
     var isqqBrowser = (UA.split("MQQBrowser/").length > 1) ? bLevel.qq.higher : bLevel.qq.forbid;  
     var isucBrowser = (UA.split("UCBrowser/").length > 1) ? bLevel.uc.allow : bLevel.uc.forbid;  
+    var isweixinBrowser = (UA.split("MicroMessenger/").length > 1) ? 1 : 0; 
     var version = {  
         uc: "",  
         qq: ""  
@@ -154,7 +154,7 @@ var nativeShare = function (elementNode, config) {
             }  
         }  
         this.isloadqqApi();  
-        if (isqqBrowser || isucBrowser) {
+        if ((isqqBrowser && !(isweixinBrowser)) || isucBrowser) {
             if(isqqBrowser){
             this.html();  
             showOverlay('my_fenxiang');
