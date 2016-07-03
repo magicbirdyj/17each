@@ -5,7 +5,7 @@
                     var config = {  
                         url: window.location.href, //分享url  
                         title: '一起网，您的婚礼专家： '+title, //内容标题  
-                        desc: '要“17”，不要“each”，节省50%费用，拥有梦幻婚礼不再是梦,'+'17价格：￥;'+price, //描述  
+                        desc: '要“17”，不要“each”，节省50%费用，拥有梦幻婚礼不再是梦,'+'17价格：￥'+price, //描述  
                         img: 'www.17each.com'+img, //分享的图片  
                         img_title: '我的一起网图片', //图片名称  
                         from: '17each' //来源  
