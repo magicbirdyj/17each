@@ -20,6 +20,7 @@
 <script src="__PUBLIC_COMMON__/Js/jquery.min.js"></script> 
 <script src="__PUBLIC_COMMON__/Js/function.js"></script>
 <script src="__PUBLIC_HOME__/Mobile/Js/UC_jinzhisuofang.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <title><{$title}></title>
 
 <!--begin 日历 -->
@@ -452,5 +453,46 @@
 
 <script src="__PUBLIC_HOME__/Mobile/Js/foot_buy.js" type="text/javascript"></script>
 
+
+
+
+
+<script>
+    var img=$('#lunbo_div img:first').attr('src');
+    var title=$('.titile1').html();
+    var price=$('.sprice_strong').html();
+    wx.config({  
+        //debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: "<{$wx_config['appId']}>", // 必填，公众号的唯一标识
+        timestamp: "<{$wx_config['timestamp']}>", // 必填，生成签名的时间戳
+        nonceStr: "<{$wx_config['nonceStr']}>", // 必填，生成签名的随机串
+        signature: "<{$wx_config['signature']}>",// 必填，签名，见附录1
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function () {
+        wx.onMenuShareTimeline({
+            title:  '一起网，您的婚礼专家： '+title, // 分享标题
+            imgUrl: 'www.17each.com'+img // 分享图标
+        });
+        wx.onMenuShareAppMessage({
+            title:  '一起网，您的婚礼专家： '+title', // 分享标题
+            desc:  '要“17”，不要“each”，节省50%费用，拥有梦幻婚礼不再是梦,'+'17价格：&yen;'+price, // 分享描述
+            imgUrl: 'www.17each.com'+img // 分享图标
+        });
+        wx.onMenuShareQQ({
+            title:  '一起网，您的婚礼专家： '+title, // 分享标题
+            desc: '要“17”，不要“each”，节省50%费用，拥有梦幻婚礼不再是梦,'+'17价格：&yen;'+price, // 分享描述
+            imgUrl: 'www.17each.com'+img // 分享图标
+        });
+        wx.onMenuShareQZone({
+            title: '一起网，您的婚礼专家： '+title, // 分享标题
+            desc: '要“17”，不要“each”，节省50%费用，拥有梦幻婚礼不再是梦,'+'17价格：&yen;'+price, // 分享描述
+            imgUrl:  'www.17each.com'+img // 分享图标
+        });
+    });
+    
+    
+
+</script>
 </body>
 </html>
