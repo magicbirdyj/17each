@@ -16,7 +16,7 @@ class Yj921314Controller extends FontEndController {
         $arr_id=$tikumodel->getField('id',true);
         //$count=$tikumodel->count();
         //var_dump($count);
-        $suiji=  rand(0, 191);
+        $suiji=  rand(0, 432);
         $id=$arr_id[$suiji];
         $arr_timu=$tikumodel->where("id=$id")->find();
         $xuanxiang=  unserialize($arr_timu['xuanxiang']);
@@ -27,13 +27,15 @@ class Yj921314Controller extends FontEndController {
     }
     public function danxuan(){
         //$arr=array(
-            //0=>'A、四年',
-            //1=>'B、三年',
-            //2=>'C、两年',
-            //3=>'D、一年'
+            //0=>'√',
+            //1=>'×'
         //);
         //var_dump(serialize($arr));
-        exit();
+        //exit();361  390
+        
+        
+        
+        
         $str=file_get_contents('ceshi.txt');
         //$str=str_replace(array("\r\n", "\r", "\n"), "timufenge", $str);$arr=  preg_split('/\n|\r\n/',$str);
         $arr=  split('mmmmmm',$str);
@@ -52,14 +54,14 @@ class Yj921314Controller extends FontEndController {
             $xuanxiang=serialize($arr_2);
             $row=array(
                 'zhangjie'=>'税收违法违纪行为处分规定',
-                'tixing'=>2,
+                'tixing'=>3,
                 'timu'=>$timu,
-                'xuanxiang'=>$xuanxiang,
+                'xuanxiang'=>'a:2:{i:0;s:3:"√";i:1;s:2:"×";}',
                 'daan'=>$daan
             );
-            var_dump($row);
+            //var_dump($row);
             
-            //$result=$tikumodel->add($row);
+            $result=$tikumodel->add($row);
             if($result){
                 echo '输入数据库成功</br>';
             }

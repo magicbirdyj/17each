@@ -35,7 +35,7 @@
     <div class="timu_div">
         <div class="title"><strong>【所属章节：《<{$timu['zhangjie']}>》】</strong><{$timu['timu']}></div>
         <ul class='xuanxiang_ul'>
-            <if condition="$timu['tixing'] eq '1'">
+            <if condition="($timu['tixing'] eq '1') OR ($timu['tixing'] eq '3')">
             <volist name='xuanxiang' id='vo'>
             <li>
                 <input name="danxuan" type="radio"  class="radio"  value="<{$vo}>" /> <div class="li_div"><{$vo}></div>
@@ -60,7 +60,7 @@
         var tixing="<{$timu['tixing']}>";
         var daan="<{$timu['daan']}>";
         $('#queding').bind('click',function(){
-            if(tixing==='1'){
+            if(tixing==='1'||tixing==='3'){
                 danxuan();
             }else if(tixing==='2'){
                 duoxuan();
