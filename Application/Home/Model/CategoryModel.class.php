@@ -2,9 +2,9 @@
 namespace Home\Model;
 use Think\Model;
 
-class  CategoryModel extends Model {
+class TikuModel extends Model {
     protected $fields=array(
-        'cat_id','cat_name','keywords','pid', 'sort_order', 'deleted','shuxing',
-        '_pk'=>'cat_id','_autoinc'=>true
+        'id','tixing','timu','xuanxiang', 'daan',
+        '_pk'=>'id','_autoinc'=>true
     );
 }

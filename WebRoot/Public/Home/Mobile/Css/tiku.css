@@ -1,0 +1,35 @@
+body .timu_div{
+    font-size: 18px;
+}
+.button_a_tiku{
+    margin-top: 40px;
+    width: 80%;
+    margin-left: 10%;
+    display: block;
+    text-align: center;
+    background-color: #008000;
+    color: #FFF;
+    padding: 20px 0px;
+}
+.timu_div{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+.xuanxiang_ul li{
+    padding: 15px 0px 0px 0px;
+}
+.xuanxiang_ul li_div{
+    float: left;
+    margin-left: 10px;
+}
+.radio{
+    width: 20px;
+    height: 20px;
+    float: left;
+
+}
+#next{
+    display: none;
+}
