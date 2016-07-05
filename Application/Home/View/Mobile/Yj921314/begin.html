@@ -57,12 +57,13 @@
         <div id='hedui'></div>
         <div class='button_a_tiku' id='queding'>确定</div>
         <div class='button_a_tiku' id='next'>下一题</div>
-        
+        <div id='hq_da' style="display: none"><{$timu['daan']}></div>
     </div>
 
     <script>
+        var daan=$('#hq_da').html();
         var tixing="<{$timu['tixing']}>";
-        var daan="<{$timu['daan']}>";
+        
         $('#queding').bind('click',function(){
             if(tixing==='1'||tixing==='3'){
                 danxuan();
