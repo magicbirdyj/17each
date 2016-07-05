@@ -6,17 +6,15 @@ class Yj921314Controller extends FontEndController {
         $this->display();
     }
     public function begin() {
+        $tixing=$_GET['tixing'];
+        
         $tikumodel=D('Tiku');
-        //$map['xuanxiang'] = array('LIKE','a:3%');
-        //$arr_id=$tikumodel->where($map)->select();
-        //var_dump($arr_id);
-        //exit();
-        
-        
-        $arr_id=$tikumodel->getField('id',true);
-        //$count=$tikumodel->count();
-        //var_dump($count);
-        $suiji=  rand(0, 480);
+ 
+      
+        $where['tixing']=array('in',$tixing);
+        $arr_id=$tikumodel->where($where)->getField('id',true);
+        $count=$tikumodel->where($where)->count();
+        $suiji=  rand(0, $count-1);
         $id=$arr_id[$suiji];
         $arr_timu=$tikumodel->where("id=$id")->find();
         $xuanxiang=  unserialize($arr_timu['xuanxiang']);

@@ -27,11 +27,37 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_buy/iconfont.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_17/iconfont.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/lunbo.css">
-<script src="__PUBLIC_COMMON__/Js/jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/tiku.css">
 
 </head>
 <body>
-    <a class="button_a_tiku" href="<{:U('Yj921314/begin')}>">开始做题</a>
+    <form name="tijiao"  method="get" action="<{:U('Yj921314/begin')}>" id='tijiao'>
+        <div class="timu_div">
+        <div  class="title">请选择需要练习的题型：</div>
+    <ul class='xuanxiang_ul'>
+        <li>
+        <input name="tixing[]" type="checkbox"  class="radio"  value="1" /> <div class="li_div">单选题</div>
+        </li>
+        <li><input name="tixing[]" type="checkbox"  class="radio"  value="2" /> <div class="li_div">多选题</div></li>
+        <li><input name="tixing[]" type="checkbox"  class="radio"  value="3" /> <div class="li_div">判断选题</div></li>
+        <li><input name="tixing[]" type="checkbox"  class="radio"  value="4" /> <div class="li_div">简答题</div></li>
+        <li><input name="tixing[]" type="checkbox"  class="radio"  value="5" /> <div class="li_div">案例分析题</div></li>
+    </ul>
+    <input class="button_a_tiku" value='开始做题' type="submit" id='kszt' />
+        </div>
+    </form>
+    
+    <script>
+        $('#kszt').bind('click',function(){
+            var val='';
+            $(':checkbox[name="tixing[]"]:checked').each(function(i){
+                val+=$(this).val();
+            });
+            if(!val){
+                alert('您还没选择题型，请先选择');
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
