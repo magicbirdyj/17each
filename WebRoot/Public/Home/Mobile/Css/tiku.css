@@ -33,3 +33,13 @@ body .timu_div{
 #next{
     display: none;
 }
+#hedui{
+    margin-top: 20px;
+    color: #06c1ae;
+    background-color: #EEE;
+    padding: 10px;
+    display: none;
+}
+#hedui .red{
+    color: red;
+}

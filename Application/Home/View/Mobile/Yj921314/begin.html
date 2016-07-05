@@ -33,43 +33,121 @@
 <body>
     <form name="tijiao"  method="post" action="<{:U('zhuce/zhuce3')}>">
     <div class="timu_div">
-        <div class="title"><{$timu['timu']}></div>
+        <div class="title"><strong>【所属章节：《<{$timu['zhangjie']}>》】</strong><{$timu['timu']}></div>
         <ul class='xuanxiang_ul'>
+            <if condition="$timu['tixing'] eq '1'">
             <volist name='xuanxiang' id='vo'>
             <li>
                 <input name="danxuan" type="radio"  class="radio"  value="<{$vo}>" /> <div class="li_div"><{$vo}></div>
             </li>
             </volist>
-
+            <elseif  condition="$timu['tixing'] eq '2'" />
+            <volist name='xuanxiang' id='vo'>
+            <li>
+                <input name="danxuan" type="checkbox"  class="radio"  value="<{$vo}>" /> <div class="li_div"><{$vo}></div>
+            </li>
+            </volist>
+            </if>
         </ul>
         
-        
+        <div id='hedui'></div>
         <div class='button_a_tiku' id='queding'>确定</div>
         <div class='button_a_tiku' id='next'>下一题</div>
         
     </div>
     </form>
     <script>
-        
+        var tixing="<{$timu['tixing']}>";
         var daan="<{$timu['daan']}>";
         $('#queding').bind('click',function(){
+            if(tixing==='1'){
+                danxuan();
+            }else if(tixing==='2'){
+                duoxuan();
+            }
+            });
+        $('#next').bind('click',function(){
+            location=location;
+        });
+        
+        
+        function danxuan(){
             var val=$(':radio[name=danxuan]:checked').val();
             if(!val){
                 alert('您还没选择答案，请先选择答案再按确定');
                 return false;
             }
             var my_daan=val.charAt(0);
+             $('#hedui').css('display','block');
             if(my_daan===daan){
-                alert('真棒！您做对了');
+                $('#hedui').html('真棒！您做对了');
             }else{
-                alert('您做错了，正确答案是：'+daan);
+                $('#hedui').html('<span class="red">这都做错，你是猪吗！</span>正确答案是：'+daan);
+            }
+            switch(daan){
+                case 'A':
+                    $('.li_div').eq(0).css('color','red');
+                    break;
+                case 'B':
+                    $('.li_div').eq(1).css('color','red');
+                    break;
+                case 'C':
+                    $('.li_div').eq(2).css('color','red');
+                    break;
+                case 'D':
+                    $('.li_div').eq(3).css('color','red');
+                    break;
             }
             $('#queding').css('display','none');
             $('#next').css('display','block');
-        });
-        $('#next').bind('click',function(){
-            location=location;
-        });
+        };
+        
+        function duoxuan(){
+            var val='';
+            $(':checkbox[name=danxuan]:checked').each(function(i){
+                val+=$(this).val().charAt(0);
+            });
+            if(!val){
+                alert('您还没选择答案，请先选择答案再按确定');
+                return false;
+            }
+            var my_daan=val;
+            $('#hedui').css('display','block');
+            if(my_daan===daan){
+                $('#hedui').html('真棒！您做对了');
+            }else{
+                $('#hedui').html('<span class="red">这都做错，你是猪吗！</span>正确答案是：'+daan);
+            }
+            var arr_daan=daan.split('');
+            for(var i=0;i<arr_daan.length;i++){
+                switch(arr_daan[i]){
+                case 'A':
+                    $('.li_div').eq(0).css('color','red');
+                    break;
+                case 'B':
+                    $('.li_div').eq(1).css('color','red');
+                    break;
+                case 'C':
+                    $('.li_div').eq(2).css('color','red');
+                    break;
+                case 'D':
+                    $('.li_div').eq(3).css('color','red');
+                    break;
+                case 'E':
+                    $('.li_div').eq(4).css('color','red');
+                    break;
+                case 'F':
+                    $('.li_div').eq(5).css('color','red');
+                    break;
+                
+            }
+                }
+            
+            $('#queding').css('display','none');
+            $('#next').css('display','block');
+        }
+        
+
     </script>
 </body>
 </html>

@@ -14,8 +14,9 @@ class Yj921314Controller extends FontEndController {
         
         
         $arr_id=$tikumodel->getField('id',true);
-        $count=$tikumodel->count();
-        $suiji=  rand(0, 131);
+        //$count=$tikumodel->count();
+        //var_dump($count);
+        $suiji=  rand(0, 191);
         $id=$arr_id[$suiji];
         $arr_timu=$tikumodel->where("id=$id")->find();
         $xuanxiang=  unserialize($arr_timu['xuanxiang']);
@@ -51,14 +52,14 @@ class Yj921314Controller extends FontEndController {
             $xuanxiang=serialize($arr_2);
             $row=array(
                 'zhangjie'=>'税收违法违纪行为处分规定',
-                'tixing'=>1,
+                'tixing'=>2,
                 'timu'=>$timu,
                 'xuanxiang'=>$xuanxiang,
                 'daan'=>$daan
             );
-            //var_dump($row);
+            var_dump($row);
             
-            $result=$tikumodel->add($row);
+            //$result=$tikumodel->add($row);
             if($result){
                 echo '输入数据库成功</br>';
             }
