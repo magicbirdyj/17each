@@ -34,21 +34,28 @@
     <form name="tijiao"  method="post" action="<{:U('zhuce/zhuce3')}>">
     <div class="timu_div">
         <div class="title"><strong>【所属章节：《<{$timu['zhangjie']}>》】</strong><{$timu['timu']}></div>
-        <ul class='xuanxiang_ul'>
+        
             <if condition="($timu['tixing'] eq '1') OR ($timu['tixing'] eq '3')">
+                <ul class='xuanxiang_ul'>
             <volist name='xuanxiang' id='vo'>
             <li>
                 <input name="danxuan" type="radio"  class="radio"  value="<{$vo}>" /> <div class="li_div"><{$vo}></div>
             </li>
             </volist>
+                    </ul>
             <elseif  condition="$timu['tixing'] eq '2'" />
+            <ul class='xuanxiang_ul'>
             <volist name='xuanxiang' id='vo'>
             <li>
                 <input name="danxuan" type="checkbox"  class="radio"  value="<{$vo}>" /> <div class="li_div"><{$vo}></div>
             </li>
             </volist>
+                </ul>
+            <elseif  condition="($timu['tixing'] eq '4')  OR ($timu['tixing'] eq '5')" />
+            <textarea name="jianda" class="jianda" id='jianda' > </textarea>
+            <div class="jianda_daan"><span class="red">正确答案：</span><{$timu['daan']}></div>
             </if>
-        </ul>
+        
         
         <div id='hedui'></div>
         <div class='button_a_tiku' id='queding'>确定</div>
@@ -64,6 +71,8 @@
                 danxuan();
             }else if(tixing==='2'){
                 duoxuan();
+            }else{
+                jianda();
             }
             });
         $('#next').bind('click',function(){
@@ -146,7 +155,12 @@
             $('#queding').css('display','none');
             $('#next').css('display','block');
         }
-        
+        function jianda(){
+            $('.title').css('display','none');
+            $('.jianda_daan').css('display','block');
+            $('#queding').css('display','none');
+            $('#next').css('display','block');
+        }
 
     </script>
 </body>

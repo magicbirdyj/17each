@@ -16,7 +16,7 @@ class Yj921314Controller extends FontEndController {
         $arr_id=$tikumodel->getField('id',true);
         //$count=$tikumodel->count();
         //var_dump($count);
-        $suiji=  rand(0, 432);
+        $suiji=  rand(0, 480);
         $id=$arr_id[$suiji];
         $arr_timu=$tikumodel->where("id=$id")->find();
         $xuanxiang=  unserialize($arr_timu['xuanxiang']);
@@ -45,23 +45,23 @@ class Yj921314Controller extends FontEndController {
             $daan=$arr_1[1];
             $arr_2=  preg_split('/\n|\r\n/',$arr_1[0]);
             array_pop($arr_2) ;
-            //$timu=substr($arr_2[0],strpos($arr_2[0],'、')+3);
-            $timu=substr($arr_2[0],strpos($arr_2[0],'.')+1);
+            $timu=substr($arr_2[0],strpos($arr_2[0],'、')+3);
+            //$timu=substr($arr_2[0],strpos($arr_2[0],'.')+1);
             array_shift($arr_2);
             foreach ($arr_2 as &$value2){
                 $value2=str_replace(" ","",$value2);
             }
             $xuanxiang=serialize($arr_2);
             $row=array(
-                'zhangjie'=>'税收违法违纪行为处分规定',
-                'tixing'=>3,
+                'zhangjie'=>'关于党和国家工作人员操办婚丧喜庆事宜的暂行规定',
+                'tixing'=>5,
                 'timu'=>$timu,
-                'xuanxiang'=>'a:2:{i:0;s:3:"√";i:1;s:2:"×";}',
+                'xuanxiang'=>'',
                 'daan'=>$daan
             );
-            //var_dump($row);
+            var_dump($row);
             
-            $result=$tikumodel->add($row);
+            //$result=$tikumodel->add($row);
             if($result){
                 echo '输入数据库成功</br>';
             }
