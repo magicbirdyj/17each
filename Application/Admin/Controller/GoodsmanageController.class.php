@@ -109,6 +109,10 @@ class GoodsmanageController extends FontEndController {
             $this->error('未选择商品图片');
             exit();
         }
+        if(strstr($content['goods_img'], "undefined")!==false){
+            $this->error('有未上传成功的商品图片');
+            exit();
+        }
         //获取图片URL,分割成数组
         $arr_goods_img=explode('+img+',$content['goods_img']);
         //移动文件 并且改变url
@@ -164,6 +168,8 @@ class GoodsmanageController extends FontEndController {
         }
         $goods_desc=str_replace('Public/Uploads/image/temp', UPLOAD.'image/goods', $content['content']);
         $goods_desc=  replace_a($goods_desc);
+        $goods_desc=str_replace('<embed','<iframe',$goods_desc);//把flash 的embed标签改成 iframe标签 
+        $goods_desc=str_replace('/>','></iframe>',$goods_desc);//把flash 的embed标签改成 iframe标签 
         //得到商品分类id
         $categorymodel=D('Category');
         $server_content=$content['server_content'];
