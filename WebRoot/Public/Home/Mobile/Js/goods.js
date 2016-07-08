@@ -2,7 +2,8 @@
 $('#tel_iohone').bind('click',function(event){
     var is_login=check_login();//检测是否登录
     if(is_login===0){
-        stopDefault(event);
+        //stopDefault(event);
+        event.preventDefault();
     }
 });
 
