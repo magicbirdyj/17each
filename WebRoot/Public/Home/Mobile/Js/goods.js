@@ -1,3 +1,16 @@
+
+$('#tel_iohone').bind('click',function(){
+    var is_login=check_login();//检测是否登录
+    if(is_login==0){
+        stopDefault(event);
+    }
+});
+
+
+
+
+
+
 //给视频iframe一个正确的高
 var width_iframe=$('iframe').css('width');
 if(width_iframe){
