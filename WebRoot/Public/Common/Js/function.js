@@ -286,17 +286,7 @@ function infor_none(){
     $('#infor').css('display','none');
 }
         
-//阻止浏览器默认动作
 
-    function stopDefault(e) {
-    //如果提供了事件对象，则这是一个非IE浏览器
-    if(e && e.preventDefault) {
-        e.preventDefault();//阻止默认浏览器动作(W3C)
-    } else {
-        window.event.returnValue = false;//IE中阻止函数器默认动作的方式
-    }
-    return false;
-    }
 
         
         
