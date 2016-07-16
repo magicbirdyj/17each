@@ -22,6 +22,7 @@
 <script src="__PUBLIC_HOME__/Mobile/Js/UC_jinzhisuofang.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=v305iVxoK4ydGrrhTduOKGcsQUyzAsiQ&v=1.0"></script>
+<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
 <title><{$title}></title>
 
 <!--begin 日历 -->
@@ -507,7 +508,7 @@
                 function translateCallback(point){
                     
                 alert(point.lng + "," + point.lat);
-                /*Ds.set('Latitude',point.lng);
+                Ds.set('Latitude',point.lng);
                 Ds.set('Longitude',point.lat);
                 // 百度地图API功能
                 var point1 = new BMap.Point(point.lng,point.lat);
@@ -515,7 +516,7 @@
                 gc.getLocation(point1, function(rs){
                     var addComp = rs.addressComponents;
                     alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
-                    });*/
+                    });
                 }
                 
             }
