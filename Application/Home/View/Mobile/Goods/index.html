@@ -462,7 +462,7 @@
     var img=$('#lunbo_div img:first').attr('src');
     var title=$('.titile1').html();
     var price=$('.sprice_strong').html();
-    var latitude,longitude,accuracy;
+    //var latitude,longitude,accuracy;
     wx.config({  
         //debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
         appId: "<{$wx_config['appId']}>", // 必填，公众号的唯一标识
@@ -495,19 +495,28 @@
         wx.getLocation({
             type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
             success: function (res) {
-                latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-                longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-                speed = res.speed; // 速度，以米/每秒计
-                accuracy = res.accuracy; // 位置精度
+                var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                //var speed = res.speed; // 速度，以米/每秒计
+                //var accuracy = res.accuracy; // 位置精度
                 //百度地图API功能
-                var map = new BMap.Map("l-map");
-                var point = new BMap.Point(longitude,latitude);
+                var gpspoint = new BMap.Point(longitude,latitude);
+                BMap.Convertor.translate(gpsPoint,0,translateCallback);
+                
+                //坐标转换完之后的回调函数
+                function translateCallback(point){
+                //alert(point.lng + "," + point.lat);
+                Ds.set('Latitude',point.lng);
+                Ds.set('Longitude',point.lat);
+                // 百度地图API功能
+                var point = new BMap.Point(point.lng,point.lat);
                 var gc = new BMap.Geocoder();
                 gc.getLocation(point, function(rs){
                     var addComp = rs.addressComponents;
-                    //alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
-                    alert(rs.address);
-                });
+                    alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+                    });
+                }
+                
             }
         });
         
