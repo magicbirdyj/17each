@@ -502,14 +502,13 @@
                 //var accuracy = res.accuracy; // 位置精度
                 //百度地图API功能
                 var gpspoint = new BMap.Point(longitude,latitude);
+                alert(longitude+',,,'+latitude);
                 BMap.Convertor.translate(gpspoint,0,translateCallback);
                 
                 //坐标转换完之后的回调函数
-                function translateCallback(point){
+                translateCallback=function(point){
                     
                 alert(point.lng + "," + point.lat);
-                Ds.set('Latitude',point.lng);
-                Ds.set('Longitude',point.lat);
                 // 百度地图API功能
                 var point1 = new BMap.Point(point.lng,point.lat);
                 var gc = new BMap.Geocoder();
