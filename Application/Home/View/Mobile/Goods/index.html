@@ -468,7 +468,7 @@
         timestamp: "<{$wx_config['timestamp']}>", // 必填，生成签名的时间戳
         nonceStr: "<{$wx_config['nonceStr']}>", // 必填，生成签名的随机串
         signature: "<{$wx_config['signature']}>",// 必填，签名，见附录1
-        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone','getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
     });
     wx.ready(function () {
         wx.onMenuShareTimeline({
@@ -498,13 +498,12 @@
                 longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
                 speed = res.speed; // 速度，以米/每秒计
                 accuracy = res.accuracy; // 位置精度
-                alert(latitude);
             }
         });
         
     });
     
-  
+  alert(latitude);
 
 </script>
 </body>
