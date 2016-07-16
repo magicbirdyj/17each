@@ -12,6 +12,8 @@ class FontEndController extends Controller {
         header("content-type:text/html;charset=utf-8"); 
         
         
+        
+        
         //获取微信access_token
         $access_token=S('access_token');
         if(!$access_token){
@@ -28,8 +30,7 @@ class FontEndController extends Controller {
         }
         $wx_config=$this->get_wx_config($jsapi_ticket);
         $this->assign('wx_config',$wx_config); 
-        $user_info=$this->get_user_info($access_token);
-        var_dump($user_info);
+
         
         
         
@@ -192,12 +193,6 @@ HTML;
   }
   
   
-  private function get_user_info($access_token){
-       $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" . $access_token . "&openid=OPENID&lang=zh_CN" ;
-       $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
-       $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
-       return $result;
-  }
 
 
 

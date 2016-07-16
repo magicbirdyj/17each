@@ -8,6 +8,7 @@ class LoginController extends FontEndController {
             header ( "Location: {$index_url}" ); 
             exit();
         }
+
         $time=gettime();
         $_SESSION['login']=$time;
         $this->assign("title", "用户登录");
@@ -102,6 +103,38 @@ class LoginController extends FontEndController {
         $this->ajaxReturn($data);
         exit();
     }
+    
+    
+    public function weixin_login(){
+        //获取微信用户信息并直接登陆
+        if(isset($_GET['code'])){
+            $code=$_GET['code'];
+            $openid=$this->get_wangye_openid($code);
+            $userinfo=$this->get_userinfo($openid, $access_token);
+        }
+    }
+
+
+
+
+
+
+    private function get_wangye_openid($code){
+       $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".APPID."&secret=".APPSECRET."&code=".$code."&grant_type=authorization_code" ;
+       $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
+       $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+       $wangye_openid=$result['openid'];
+       return $wangye_openid;
+  }
+  
+  private function get_userinfo($openid,$access_token){
+       $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=".$access_token."&openid=".$openid."&lang=zh_CN" ;
+       $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
+       $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+       return $result;
+  }
+  
+
 }
 
 
