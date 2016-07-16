@@ -506,7 +506,7 @@
                 BMap.Convertor.translate(gpspoint,0,translateCallback);
                 
                 //坐标转换完之后的回调函数
-                translateCallback=function(point){
+                function translateCallback(point){
                     
                 alert(point.lng + "," + point.lat);
                 // 百度地图API功能
@@ -516,7 +516,7 @@
                     var addComp = rs.addressComponents;
                     alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
                     });
-                }
+                };
                 
             }
         });
