@@ -10,6 +10,8 @@ class FontEndController extends Controller {
         parent::__construct();
         
         header("content-type:text/html;charset=utf-8"); 
+        
+        
         //获取微信access_token
         $access_token=S('access_token');
         if(!$access_token){
@@ -26,7 +28,12 @@ class FontEndController extends Controller {
         }
         $wx_config=$this->get_wx_config($jsapi_ticket);
         $this->assign('wx_config',$wx_config); 
-        //var_dump($wx_config);
+        $user_info=$this->get_user_info($access_token);
+        var_dump($user_info);
+        
+        
+        
+        
         //判断是否需要记录当前url 数组内必须首字母大写
         $noref=array('Index/search_m','Index/search','Goods/page','Index/menu','Order/yanzheng_zfmm','Order/queren_success','Goods/zhifu','Goods/pinglun','Member/cart_del','Member/goods_del','Goods/jiance_pay','Goods/getUniqueOrderNo','Goods/notifyweixin','Goods/notify','Goods/gmcg_wx','Goods/sellection_join','Buy/getQRPHP','Member/xiugai_zhifumima','Member/xiugai_zhifumima_check','Member/xiugai_zhifumima_success','Member/xiugai_mima','Member/xiugai_mima_check','Member/xiugai_mima_success','Member/getCode');
         $noref_contorller=array('Zhuce','Login');
@@ -182,6 +189,14 @@ HTML;
       $str .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
     }
     return $str;
+  }
+  
+  
+  private function get_user_info($access_token){
+       $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" . $access_token . "&openid=OPENID&lang=zh_CN" ;
+       $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
+       $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+       return $result;
   }
 
 
