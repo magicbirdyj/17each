@@ -3,6 +3,7 @@ namespace Home\Controller;
 use Home\Controller;
 class IndexController extends FontEndController {
     public function index(){ 
+        $access_token=S('access_token');
         var_dump($access_token);
         //unset($_SESSION['ref']);
         //广告图片获取
