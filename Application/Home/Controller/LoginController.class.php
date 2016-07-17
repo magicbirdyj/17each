@@ -112,7 +112,8 @@ class LoginController extends FontEndController {
             $openid=$this->get_wangye_openid($code);
             $access_token=S('access_token');
             $userinfo=$this->get_userinfo($openid,$access_token);
-            var_dump($userinfo);
+            //var_dump($userinfo);
+            $this->success('',U('Login/index'),0);
         }
     }
 

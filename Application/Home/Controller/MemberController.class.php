@@ -1147,7 +1147,40 @@ class MemberController extends FontEndController {
         }
     }
     
+    public function kefu() {
+        $access_token=S('access_token');
+        $kefu_list=$this->get_kefu_list($access_token);
+        var_dump($kefu_list);exit();
+        
+        // 1. 初始化
+        $ch = curl_init();
+        // 2. 设置选项，包括URL
+        $url="https://api.weixin.qq.com/customservice/kfsession/create?access_token=".$access_token;
+        // 参数数组
+        $data = array (
+            "kf_account" => "test1@test",
+            "openid" => "OPENID"
+        );
+        curl_setopt($ch,CURLOPT_URL,"http://www.devdo.net");
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch,CURLOPT_HEADER,0);
+        // 3. 执行并获取HTML文档内容
+        $output = curl_exec($ch);
+        if($output === FALSE ){
+        echo "CURL Error:".curl_error($ch);
+        }
+        // 4. 释放curl句柄
+        curl_close($ch);
+    }
     
+    
+    private function get_kefu_list($access_token){
+        $kefu_list_url = "https://api.weixin.qq.com/cgi-bin/customservice/getkflist?access_token=" . $access_token;
+        $res = file_get_contents($kefu_list_url); //获取文件内容或获取网络请求的内容
+        $result = json_decode($res, true); //接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+        $kefu_list = $result;
+        return $kefu_list;
+    }
 
 
             
