@@ -1149,9 +1149,8 @@ class MemberController extends FontEndController {
     
     public function kefu() {
         $access_token=S('access_token');
-        $kefu_list=$this->get_kefu_list($access_token);
-        var_dump($kefu_list);exit();
-        $kf_account='kf2001@gh_916e9dcd4bcc';
+        //$kefu_list=$this->get_kefu_list($access_token);
+        $kf_account='kf2002@gh_916e9dcd4bcc';
         $open_id="oOuHBs3DXiOreH_xtXqvbtgF1P8U";
         // 1. 初始化
         $ch = curl_init();
@@ -1162,6 +1161,7 @@ class MemberController extends FontEndController {
             "kf_account" =>"$kf_account",
             "openid" =>"$open_id"
         );
+        var_dump($data);
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt ($ch, CURLOPT_POST, 1 );
         curl_setopt ($ch, CURLOPT_HEADER, 0 );
