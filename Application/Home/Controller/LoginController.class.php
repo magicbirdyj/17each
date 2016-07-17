@@ -117,19 +117,18 @@ class LoginController extends FontEndController {
             $count=$usersmodel->where("open_id='$open_id'")->count();
             if($count==='0'){
                 $row=array(
-                    'open_id'=>$open_id,
+                    'open_id'=>"$open_id",
                     'user_name'=>$userinfo['nickname'],
                     'sex'=>$userinfo['sex'],
                     'shopman_id'=>0
                 );
                 $res=$usersmodel->add($row);
-                var_dump($res);exit();
             }
                 $user=$usersmodel->where("open_id='$open_id'")->field('user_id,user_name,shopman_id,open_id')->find();
                 $_SESSION['huiyuan']=array(
                     'user_id'=>$user['user_id'],
                     'user_name'=>$user['user_name'],
-                    'open_id'=>$open_id,
+                    'open_id'=>"$open_id",
                     'shopman_id'=>$user['shopman_id']
                      );
                 if(isset($_SESSION['ref'])){
