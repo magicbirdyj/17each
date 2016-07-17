@@ -1150,7 +1150,7 @@ class MemberController extends FontEndController {
     public function kefu() {
         $access_token=S('access_token');
         $kefu_list=$this->get_kefu_list($access_token);
-        var_dump($kefu_list);exit();
+        $kf_account='kf2001@gh_916e9dcd4bcc';
         
         // 1. 初始化
         $ch = curl_init();

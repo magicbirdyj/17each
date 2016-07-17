@@ -115,6 +115,7 @@ class LoginController extends FontEndController {
             //var_dump($userinfo);
             $usersmodel=D('Users');
             $count=$usersmodel->where("open_id='$open_id'")->count();
+            var_dump($count);exit();
             if($count==0){
                 $row=array(
                     'open_id'=>$open_id,
@@ -128,6 +129,7 @@ class LoginController extends FontEndController {
                 $_SESSION['huiyuan']=array(
                     'user_id'=>$user['id'],
                     'user_name'=>$user['user_name'],
+                    'open_id'=>$open_id,
                     'shopman_id'=>$user['shopman_id']
                      );
                 if(isset($_SESSION['ref'])){
