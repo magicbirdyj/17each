@@ -122,8 +122,7 @@ class LoginController extends FontEndController {
                     'sex'=>$userinfo['sex'],
                     'shopman_id'=>0
                 );
-                $res=$usersmodel->create($row);
-                var_dump($res);exit();
+                $res=$usersmodel->add($row);
             }
                 $user=$usersmodel->where("open_id='$open_id'")->field('user_id,user_name,shopman_id')->find();
                 $_SESSION['huiyuan']=array(
