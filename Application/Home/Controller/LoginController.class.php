@@ -116,7 +116,7 @@ class LoginController extends FontEndController {
             $usersmodel=D('Users');
             $count=$usersmodel->where("open_id='$open_id'")->count();
             var_dump($count);exit();
-            if($count==0){
+            if($count==='0'){
                 $row=array(
                     'open_id'=>$open_id,
                     'user_name'=>$userinfo['nickname'],
@@ -124,8 +124,9 @@ class LoginController extends FontEndController {
                     'shopman_id'=>0
                 );
                 $usersmodel->create($row);
-            }else{
+            }
                 $user=$usersmodel->where("open_id='$open_id'")->field('user_id,user_name,shopman_id')->find();
+                var_dump($user);exit();
                 $_SESSION['huiyuan']=array(
                     'user_id'=>$user['id'],
                     'user_name'=>$user['user_name'],
@@ -139,7 +140,7 @@ class LoginController extends FontEndController {
                     header("location:". U('index/index'));
                     exit();
                 }
-            }
+            
         }
     }
 
