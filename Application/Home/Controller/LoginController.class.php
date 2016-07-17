@@ -109,9 +109,9 @@ class LoginController extends FontEndController {
         //获取微信用户信息并直接登陆
         if(isset($_GET['code'])){
             $code=$_GET['code'];
-            $openid=$this->get_wangye_openid($code);
+            $open_id=$this->get_wangye_openid($code);
             $access_token=S('access_token');
-            $userinfo=$this->get_userinfo($openid,$access_token);
+            $userinfo=$this->get_userinfo($open_id,$access_token);
             //var_dump($userinfo);
             $usersmodel=D('Users');
             $count=$usersmodel->where("open_id=$open_id")->count();
