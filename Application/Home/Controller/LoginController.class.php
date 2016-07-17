@@ -114,7 +114,7 @@ class LoginController extends FontEndController {
             $userinfo=$this->get_userinfo($open_id,$access_token);
             //var_dump($userinfo);
             $usersmodel=D('Users');
-            $count=$usersmodel->where("open_id=$open_id")->count();
+            $count=$usersmodel->where("open_id='$open_id'")->count();
             if($count==0){
                 $row=array(
                     'open_id'=>$open_id,
@@ -124,7 +124,7 @@ class LoginController extends FontEndController {
                 );
                 $usersmodel->create($row);
             }else{
-                $user=$usersmodel->where("open_id=$open_id")->field('user_id,user_name,shopman_id')->find();
+                $user=$usersmodel->where("open_id='$open_id'")->field('user_id,user_name,shopman_id')->find();
                 $_SESSION['huiyuan']=array(
                     'user_id'=>$user['id'],
                     'user_name'=>$user['user_name'],
