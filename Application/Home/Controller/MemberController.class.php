@@ -1149,9 +1149,11 @@ class MemberController extends FontEndController {
     
     public function kefu() {
         $access_token=S('access_token');
-        $kefu_list=$this->get_kefu_list($access_token);
+        //$kefu_list=$this->get_kefu_list($access_token);
         $kf_account='kf2001@gh_916e9dcd4bcc';
         $open_id="oOuHBs3DXiOreH_xtXqvbtgF1P8U";
+        $userinfo=$this->get_userinfo($open_id,$access_token);
+        var_dump($userinfo);
         // 1. 初始化
         $ch = curl_init();
         // 2. 设置选项，包括URL
@@ -1171,7 +1173,7 @@ class MemberController extends FontEndController {
         if($output === FALSE ){
         echo "CURL Error:".curl_error($ch);
         }
-        var_dump($output);
+        print_r($output);
         // 4. 释放curl句柄
         curl_close($ch);
     }
@@ -1184,6 +1186,13 @@ class MemberController extends FontEndController {
         $kefu_list = $result;
         return $kefu_list;
     }
+    
+    private function get_userinfo($openid,$access_token){
+       $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=".$access_token."&openid=".$openid."&lang=zh_CN" ;
+       $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
+       $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+       return $result;
+  }
 
 
             
