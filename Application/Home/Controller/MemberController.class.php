@@ -1151,19 +1151,21 @@ class MemberController extends FontEndController {
         $access_token=S('access_token');
         $kefu_list=$this->get_kefu_list($access_token);
         $kf_account='kf2001@gh_916e9dcd4bcc';
-        
+        $open_id="oOuHBs3DXiOreH_xtXqvbtgF1P8U";
         // 1. 初始化
         $ch = curl_init();
         // 2. 设置选项，包括URL
         $url="https://api.weixin.qq.com/customservice/kfsession/create?access_token=".$access_token;
         // 参数数组
         $data = array (
-            "kf_account" => "test1@test",
-            "openid" => "OPENID"
+            "kf_account" => $kf_account,
+            "openid" => $open_id
         );
-        curl_setopt($ch,CURLOPT_URL,"http://www.devdo.net");
+        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt ($ch, CURLOPT_POST, 1 );
+        curl_setopt ($ch, CURLOPT_HEADER, 0 );
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch,CURLOPT_HEADER,0);
+        curl_setopt ($ch, CURLOPT_POSTFIELDS, $data);
         // 3. 执行并获取HTML文档内容
         $output = curl_exec($ch);
         if($output === FALSE ){
