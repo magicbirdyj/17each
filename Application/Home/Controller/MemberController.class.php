@@ -1171,6 +1171,7 @@ class MemberController extends FontEndController {
         if($output === FALSE ){
         echo "CURL Error:".curl_error($ch);
         }
+        var_dump($output);
         // 4. 释放curl句柄
         curl_close($ch);
     }
