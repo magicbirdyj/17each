@@ -113,7 +113,31 @@ class LoginController extends FontEndController {
             $access_token=S('access_token');
             $userinfo=$this->get_userinfo($openid,$access_token);
             //var_dump($userinfo);
-            $this->success('',U('Login/index'),0);
+            $usersmodel=D('Users');
+            $count=$usersmodel->where("open_id=$open_id")->count();
+            if($count==0){
+                $row=array(
+                    'open_id'=>$open_id,
+                    'user_name'=>$userinfo['nickname'],
+                    'sex'=>$userinfo['sex'],
+                    'shopman_id'=>0
+                );
+                $usersmodel->create($row);
+            }else{
+                $user=$usersmodel->where("open_id=$open_id")->field('user_id,user_name,shopman_id')->find();
+                $_SESSION['huiyuan']=array(
+                    'user_id'=>$user['id'],
+                    'user_name'=>$user['user_name'],
+                    'shopman_id'=>$user['shopman_id']
+                     );
+                if(isset($_SESSION['ref'])){
+                    header("location:". U($_SESSION['ref']));
+                    exit();
+                }else{
+                    header("location:". U('index/index'));
+                    exit();
+                }
+            }
         }
     }
 
