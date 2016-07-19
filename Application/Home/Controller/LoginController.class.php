@@ -9,7 +9,8 @@ class LoginController extends FontEndController {
             exit();
         }
         if(is_weixin()){
-            $this->redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=http://m.17each.com/Home/Login/weixin_login&response_type=code&scope=snsapi_base&state=1#wechat_redirect_redirect");
+            $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=http://m.17each.com/Home/Login/weixin_login&response_type=code&scope=snsapi_base&state=1#wechat_redirect_redirect";
+            header("Location:{$url}"); 
             exit();
         }
         $time=gettime();
