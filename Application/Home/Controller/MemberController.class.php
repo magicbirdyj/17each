@@ -1175,6 +1175,7 @@ class MemberController extends FontEndController {
                 "addrSign" => $addrSign
             );
             $this->assign('signPackage',$signPackage);
+            $this->display();
         }
     }
 
