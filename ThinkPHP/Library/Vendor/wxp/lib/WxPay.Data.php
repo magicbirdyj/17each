@@ -2882,7 +2882,7 @@ class WxPayJsApiPay extends WxPayDataBase
 		$data["url"] = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 		$time = time();
 		$data["timestamp"] = "$time";
-		$data["noncestr"] = "1234568";
+		$data["noncestr"] = WxPayApi::getNonceStr();
 		$data["accesstoken"] = $access_token?$access_token:$getData["access_token"];
 		ksort($data);
 		$params = $this->ToUrlParams1($data);
