@@ -7,7 +7,6 @@ use Home\Controller;
 class GoodsController extends FontEndController {
 
     public function index() {
-        $this->get_weixin_config();
         $time = gettime();
         $_SESSION['mini_login'] = $time;
         $this->assign("time", $time);
@@ -341,6 +340,9 @@ class GoodsController extends FontEndController {
             $this->display('zhifu_tiaozhuan');
         } else if ($pay_method == 2) {
             //微信
+            $user_id=$order['user_id'];
+            $usersmodel=D('Users');
+            $open_id=$usersmodel->where("user_id=$user_id")->getField('open_id');
             $paydata=array(
                 'body'=>sprintf("一起网：商铺名：%s 商品名：%s 服务时间：%s", $order['shop_name'], $order['goods_name'], $order['server_day']),
                 'total_fee'=>$order['dues'],
@@ -679,21 +681,17 @@ class GoodsController extends FontEndController {
             } else {
                 $this->error("下单失败" . $orderInfo['return_msg']);
             }
-            //获取微信js的config
-            $this->get_weixin_config();
+
 
             $this->assign("parameters", json_encode($parameters));
             $this->assign("wxJssdkConfig", $wxJssdkConfig);
             $this->assign("orderInfo", $ordersInfo);
-            var_dump($ordersInfo);wxit();
+            var_dump($ordersInfo);exit();
             $this->assign("total_fee", $paydata['total_fee']);
             $this->display('zhifuweixin_zhijie');
     }
     
     private function weixin_saomazhifu($paydata){
-            $user_id=$order['user_id'];
-                $usersmodel=D('Users');
-                $open_id=$usersmodel->where("user_id=$user_id")->getField('open_id');
                 vendor('wxp.native'); //引入第三方类库
                 $notify = new \NativePay();
                 $input = new \WxPayUnifiedOrder();
