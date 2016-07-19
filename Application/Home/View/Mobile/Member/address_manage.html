@@ -18,14 +18,8 @@
 	function editAddress(){
             var option = <{$signPackage}> ;
 		WeixinJSBridge.invoke(
-			'editAddress',{
-                            "appId": option.appId,
-                            "scope":'jsapi_address',
-                            "signType":'sha1',
-                            "addrSign": option.addrSign,
-                            "timeStamp": option.timeStamp,
-                            "nonceStr": option.nonceStr
-                        },
+			'editAddress',
+                        <{$signPackage}> ,
 			function(res){
 				var value1 = res.proviceFirstStageName;
 				var value2 = res.addressCitySecondStageName;

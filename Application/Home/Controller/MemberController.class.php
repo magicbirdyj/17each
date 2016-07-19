@@ -1172,7 +1172,9 @@ class MemberController extends FontEndController {
                 "appId"     => APPID,
                 "nonceStr"  => $nonceStr,
                 "timeStamp" => $timeStamp,
-                "addrSign" => $addrSign
+                "addrSign" => $addrSign,
+                "scope"=>'jsapi_address',
+                 "signType"=>'sha1'
             );
             $this->assign('signPackage',json_encode($signPackage));
             $this->display();
