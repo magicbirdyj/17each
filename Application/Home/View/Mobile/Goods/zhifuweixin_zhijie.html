@@ -55,14 +55,13 @@
             var jsApiParameters = <{$parameters}> ;
             function jsApiCall(){
                 WeixinJSBridge.invoke(
-                        'getBrandWCPayRequest', {
-                        "appId": jsApiParameters.appId,
-                                "timeStamp": jsApiParameters.timeStamp,
-                                "nonceStr": jsApiParameters.nonceStr,
-                                "package": jsApiParameters.package,
-                                "signType": jsApiParameters.signType,
-                                "paySign": jsApiParameters.paySign
-                        },
+                        'getBrandWCPayRequest', 
+                        {"appId": jsApiParameters.appId,
+                        "timeStamp": jsApiParameters.timeStamp,
+                        "nonceStr": jsApiParameters.nonceStr,
+                        "package": jsApiParameters.package,
+                        "signType": jsApiParameters.signType,
+                        "paySign": jsApiParameters.paySign},
                         function(res){
                             if (res.err_msg == "get_brand_wcpay_request:ok") {
                                 window.location.href="<{:U('Order/paySuccess')}>";
