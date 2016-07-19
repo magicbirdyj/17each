@@ -124,7 +124,7 @@ class JsApiPay
 	 * 
 	 * @return 返回已经拼接好的字符串
 	 */
-	function ToUrlParams1($urlObj)
+	private function ToUrlParams($urlObj)
 	{
 		$buff = "";
 		foreach ($urlObj as $k => $v)
@@ -155,7 +155,7 @@ class JsApiPay
 		$data["noncestr"] = "1234568";
 		$data["accesstoken"] = $access_token?$access_token:$getData["access_token"];
 		ksort($data);
-		$params = $this->ToUrlParams1($data);
+		$params = $this->ToUrlParams($data);
 		$addrSign = sha1($params);
 		
 		$afterData = array(
@@ -184,7 +184,7 @@ class JsApiPay
 		$urlObj["response_type"] = "code";
 		$urlObj["scope"] = "snsapi_base";
 		$urlObj["state"] = "STATE"."#wechat_redirect";
-		$bizString = $this->ToUrlParams1($urlObj);
+		$bizString = $this->ToUrlParams($urlObj);
 		return "https://open.weixin.qq.com/connect/oauth2/authorize?".$bizString;
 	}
 	

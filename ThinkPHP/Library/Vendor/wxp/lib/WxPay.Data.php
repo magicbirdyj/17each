@@ -2854,7 +2854,7 @@ class WxPayJsApiPay extends WxPayDataBase
 	 * 
 	 * @return 返回已经拼接好的字符串
 	 */
-	private function ToUrlParams($urlObj)
+	private function ToUrlParams1($urlObj)
 	{
 		$buff = "";
 		foreach ($urlObj as $k => $v)
@@ -2885,7 +2885,7 @@ class WxPayJsApiPay extends WxPayDataBase
 		$data["noncestr"] = "1234568";
 		$data["accesstoken"] = $access_token?$access_token:$getData["access_token"];
 		ksort($data);
-		$params = $this->ToUrlParams($data);
+		$params = $this->ToUrlParams1($data);
 		$addrSign = sha1($params);
 		
 		$afterData = array(
