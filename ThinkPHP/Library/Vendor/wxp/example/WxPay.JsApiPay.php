@@ -124,7 +124,7 @@ class JsApiPay
 	 * 
 	 * @return 返回已经拼接好的字符串
 	 */
-	private function ToUrlParams1($urlObj)
+	function ToUrlParams1($urlObj)
 	{
 		$buff = "";
 		foreach ($urlObj as $k => $v)
