@@ -1147,6 +1147,13 @@ class MemberController extends FontEndController {
         }
     }
     
+    public function address_manage() {
+        vendor('wxp.native'); //引入第三方类库
+        $jsapi = new \WxPayJsApiPay();
+        $editAddress = $jsapi->GetEditAddressParameters();
+        $this->assign('editAddress',$editAddress);
+        $this->display();
+    }
     public function kefu() {
         $access_token=S('access_token');
         //$kefu_list=$this->get_kefu_list($access_token);
