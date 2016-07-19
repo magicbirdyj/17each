@@ -353,7 +353,7 @@ class GoodsController extends FontEndController {
                 'open_id'=>$open_id,
                 'goods_name'=> $order['goods_name'],
                 'shop_name'=>$order['shop_name'],
-                'order_id'=>$$order_id
+                'order_id'=>$order_id
             );
             if(is_weixin()){//如果是微信浏览器 直接公众号支付，否则 扫一扫支付
                 $this->weixin_zhijiezhifu($paydata);
