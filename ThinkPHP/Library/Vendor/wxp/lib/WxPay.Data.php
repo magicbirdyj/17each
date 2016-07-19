@@ -2846,6 +2846,60 @@ class WxPayJsApiPay extends WxPayDataBase
 	{
 		return array_key_exists('paySign', $this->values);
 	}
+        
+        /**
+	 * 
+	 * 拼接签名字符串
+	 * @param array $urlObj
+	 * 
+	 * @return 返回已经拼接好的字符串
+	 */
+	private function ToUrlParams($urlObj)
+	{
+		$buff = "";
+		foreach ($urlObj as $k => $v)
+		{
+			if($k != "sign"){
+				$buff .= $k . "=" . $v . "&";
+			}
+		}
+		
+		$buff = trim($buff, "&");
+		return $buff;
+	}
+	
+	/**
+	 * 
+	 * 获取地址js参数
+	 * 
+	 * @return 获取共享收货地址js函数需要的参数，json格式可以直接做参数使用
+	 */
+	public function GetEditAddressParameters($access_token="")
+	{	
+		$getData = $this->data;
+		$data = array();
+		$data["appid"] = WxPayConfig::APPID;
+		$data["url"] = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		$time = time();
+		$data["timestamp"] = "$time";
+		$data["noncestr"] = "1234568";
+		$data["accesstoken"] = $access_token?$access_token:$getData["access_token"];
+		ksort($data);
+		$params = $this->ToUrlParams($data);
+		$addrSign = sha1($params);
+		
+		$afterData = array(
+			"addrSign" => $addrSign,
+			"signType" => "sha1",
+			"scope" => "jsapi_address",
+			"appId" => WxPayConfig::APPID,
+			"timeStamp" => $data["timestamp"],
+			"nonceStr" => $data["noncestr"]
+		);
+		$parameters = json_encode($afterData);
+		return $parameters;
+	}
+        
 }
 
 /**
