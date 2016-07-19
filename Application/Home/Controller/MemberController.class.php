@@ -1153,7 +1153,6 @@ class MemberController extends FontEndController {
         vendor('wxp.native'); //引入第三方类库
         $jsapi = new \WxPayJsApiPay();
         $editAddress = $jsapi->GetEditAddressParameters(S('access_token'));
-        var_dump($editAddress);die;
         $this->assign('editAddress',$editAddress);
         $this->display();
     }
