@@ -1166,7 +1166,7 @@ class MemberController extends FontEndController {
             $nonceStr=$this->createNonceStr();
             $timeStamp=time();
             $timeStamp="$timeStamp";
-            $string = "accesstoken=$access_token&appid=APPID&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
+            $string = "access_token=$access_token&appid=APPID&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
             $addrSign = sha1($string);
              $signPackage = array(
                 "appId"     => APPID,
