@@ -63,6 +63,7 @@
                         "signType": jsApiParameters.signType,
                         "paySign": jsApiParameters.paySign},
                         function(res){
+                            alert(res.err_msg);
                             if (res.err_msg == "get_brand_wcpay_request:ok") {
                                 window.location.href="<{:U('Order/paySuccess')}>";
                             } else{
