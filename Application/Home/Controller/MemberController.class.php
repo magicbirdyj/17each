@@ -1174,7 +1174,7 @@ class MemberController extends FontEndController {
                 "timeStamp" => $timeStamp,
                 "addrSign" => $addrSign
             );
-            $this->assign('signPackage',$signPackage);
+            $this->assign('signPackage',json_encode($signPackage));
             $this->display();
         }
     }
