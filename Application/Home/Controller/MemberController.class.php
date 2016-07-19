@@ -1163,10 +1163,10 @@ class MemberController extends FontEndController {
             $wangye=$this->get_wangye($code);
             $access_token=$wangye['access_token'];
             $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            $nonceStr=$this->createNonceStr();
+            $nonceStr=$this->createNonceStr(32);
             $timeStamp=time();
             $timeStamp="$timeStamp";
-            $string = "access_token=$access_token&appid=APPID&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
+            $string = "accesstoken=$access_token&appid=APPID&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
             $addrSign = sha1($string);
              $signPackage = array(
                 "appId"     => APPID,
