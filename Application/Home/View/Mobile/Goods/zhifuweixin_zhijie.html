@@ -55,7 +55,7 @@
                         "paySign": jsApiParameters.paySign},
                         function(res){
                             if (res.err_msg == "get_brand_wcpay_request:ok") {
-                                window.location.href="<{:U("Goods/gmcg_wx","order_id=$order_id")}>";
+                                window.location.href='<{:U("Goods/gmcg_wx","order_id=$order_id")}>';
                             } else{
                                 alert("支付失败");
                     //                setTimeout(function(){document.location.reload();},1888);
