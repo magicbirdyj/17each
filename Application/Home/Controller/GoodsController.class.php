@@ -7,6 +7,7 @@ use Home\Controller;
 class GoodsController extends FontEndController {
 
     public function index() {
+        $this->get_weixin_config();
         $time = gettime();
         $_SESSION['mini_login'] = $time;
         $this->assign("time", $time);
@@ -340,28 +341,20 @@ class GoodsController extends FontEndController {
             $this->display('zhifu_tiaozhuan');
         } else if ($pay_method == 2) {
             //微信
-            vendor('wxp.native'); //引入第三方类库
-            $notify = new \NativePay();
-            $input = new \WxPayUnifiedOrder();
-            $input->SetBody(sprintf("一起网：商铺名：%s 商品名：%s 服务时间：%s", $order['shop_name'], $order['goods_name'], $order['server_day']));
-            $input->SetAttach($order['shop_name']);
-            $input->SetOut_trade_no($order['order_no']);
-            $input->SetTotal_fee($order['dues'] * 100);
-            $input->SetTime_start(date("YmdHis"));
-            $input->SetTime_expire(date("YmdHis", time() + 600));
-            $input->SetGoods_tag($order['shop_name']);
-            $input->SetNotify_url(PAY_HOST . U("Goods/notifyweixin"));
-            $input->SetTrade_type("NATIVE");
-            $input->SetProduct_id($order['goods_id']);
-            $result = $notify->GetPayUrl($input);
-            $url2 = urlencode($result["code_url"]);
-            file_put_contents("url.txt", $url2);
-            $this->assign("goods", $order);
-            $this->assign('order_id',$order_id);
-            $this->assign("payurl", $url2);
-            $this->display("zhifuweixin");
-        } else {
-            
+            $paydata=array(
+                'body'=>sprintf("一起网：商铺名：%s 商品名：%s 服务时间：%s", $order['shop_name'], $order['goods_name'], $order['server_day']),
+                'total_fee'=>$order['dues'],
+                'notify'=>PAY_HOST . U("Goods/notifyweixin"),
+                'shop_name'=>$order['shop_name'],
+                'order_no'=>$order['order_no'],
+                'goods_id'=>$order['goods_id'],
+                'open_id'=>$open_id
+            );
+            if(is_weixin()){//如果是微信浏览器 直接公众号支付，否则 扫一扫支付
+                $this->weixin_zhijiezhifu($paydata);
+            }else{
+                $this->weixin_saomazhifu($paydata);
+            } 
         }
     }
 
@@ -656,6 +649,72 @@ class GoodsController extends FontEndController {
         }
         $this->ajaxReturn($data);
         exit();
+    }
+    
+    
+    private function weixin_zhijiezhifu($paydata){
+            vendor('wxp.lib.WxPay.Api.php'); //引入第三方类库
+            $orderInput = new \WxPayUnifiedOrder();
+            $orderInput->SetBody($paydata['body']);
+            $orderInput->SetAttach($paydata['shop_name']);
+            $orderInput->SetOut_trade_no($paydata['order_no']);
+            $orderInput->SetTotal_fee($paydata['total_fee'] * 100);
+            $orderInput->SetGoods_tag($paydata['shop_name']);
+            $orderInput->SetNotify_url($paydata['notify']);
+            $orderInput->SetTrade_type("JSAPI");
+            $orderInput->SetOpenid($paydata['open_id']);//必须为登录
+            $orderInfo = \WxPayApi::unifiedOrder($orderInput, 300);
+
+            if (is_array($orderInfo) && $orderInfo['result_code'] == 'SUCCESS' && $orderInfo['return_code'] == 'SUCCESS') {
+                $jsapi = new \WxPayJsApiPay();
+                $jsapi->SetAppid($orderInfo["appid"]);
+                $timeStamp = NOW;
+                $timeStamp = "$timeStamp";
+                $jsapi->SetTimeStamp($timeStamp);
+                $jsapi->SetNonceStr(\WxPayApi::getNonceStr());
+                $jsapi->SetPackage("prepay_id=" . $orderInfo['prepay_id']);
+                $jsapi->SetSignType("MD5");
+                $jsapi->SetPaySign($jsapi->MakeSign());
+                $parameters = $jsapi->GetValues();
+            } else {
+                $this->error("下单失败" . $orderInfo['return_msg']);
+            }
+            //获取微信js的config
+            $this->get_weixin_config();
+
+            $this->assign("parameters", json_encode($parameters));
+            $this->assign("wxJssdkConfig", $wxJssdkConfig);
+            $this->assign("orderInfo", $ordersInfo);
+            var_dump($ordersInfo);wxit();
+            $this->assign("total_fee", $paydata['total_fee']);
+            $this->display('zhifuweixin_zhijie');
+    }
+    
+    private function weixin_saomazhifu($paydata){
+        $user_id=$order['user_id'];
+                $usersmodel=D('Users');
+                $open_id=$usersmodel->where("user_id=$user_id")->getField('open_id');
+                vendor('wxp.native'); //引入第三方类库
+                $notify = new \NativePay();
+                $input = new \WxPayUnifiedOrder();
+                $input->SetBody($paydata['body']);
+                $input->SetAttach($paydata['shop_name']);
+                $input->SetOut_trade_no($order['order_no']);
+                $input->SetTotal_fee($paydata['total_fee'] * 100);
+                $input->SetTime_start(date("YmdHis"));
+                $input->SetTime_expire(date("YmdHis", time() + 600));
+                $input->SetGoods_tag($paydata['shop_name']);
+                $input->SetNotify_url($paydata['notify']);
+                $input->SetTrade_type("NATIVE");
+                $input->SetProduct_id($paydata['goods_id']);
+                $result = $notify->GetPayUrl($input);
+                $url2 = urlencode($result["code_url"]);
+                file_put_contents("url.txt", $url2);
+                $this->assign("goods", $order);
+                $this->assign('order_id',$order_id);
+                $this->assign("payurl", $url2);
+
+                $this->display("zhifuweixin_saoma");
     }
 
 }

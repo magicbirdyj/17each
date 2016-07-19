@@ -390,3 +390,12 @@ function change_url_canshu($url_full,$canshu,$value){
     return $new;
     
 }
+
+
+
+  function is_weixin() {
+    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
+        return true;
+    }
+    return false;
+}

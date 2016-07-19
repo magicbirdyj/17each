@@ -14,22 +14,7 @@ class FontEndController extends Controller {
         
         
         
-        //获取微信access_token
-        $access_token=S('access_token');
-        if(!$access_token){
-            $this->get_access_token();
-            $access_token=S('access_token');
-        }
-        $this->get_jsapi_ticket($access_token);
-        $jsapi_ticket=S('jsapi_ticket');
-        if(!$jsapi_ticket){
-            $this->get_access_token();
-            $access_token=S('access_token');
-            $this->get_jsapi_ticket($access_token);
-            $jsapi_ticket=S('jsapi_ticket');
-        }
-        $wx_config=$this->get_wx_config($jsapi_ticket);
-        $this->assign('wx_config',$wx_config); 
+        
 
         
         
@@ -148,7 +133,7 @@ HTML;
         return $page;
     }
     
-    private function get_access_token(){
+    protected function get_access_token(){
         $token_access_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" .APPID. "&secret=" .APPSECRET;
         $res = file_get_contents($token_access_url); //获取文件内容或获取网络请求的内容
         $result = json_decode($res, true); //接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
@@ -156,7 +141,7 @@ HTML;
         S('access_token',$access_token,7000);
     }
     
-    private function get_jsapi_ticket($access_token){
+    protected function get_jsapi_ticket($access_token){
         $jsapi_ticket_url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=" . $access_token . "&type=jsapi" ;
         $res = file_get_contents($jsapi_ticket_url); //获取文件内容或获取网络请求的内容
         $result = json_decode($res, true); //接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
@@ -165,7 +150,7 @@ HTML;
     }
     
     
-    private function get_wx_config($jsapi_ticket){
+    protected function get_wx_config($jsapi_ticket){
         $url = "http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
         $timestamp = time();
         $nonceStr = $this->createNonceStr();
@@ -183,7 +168,7 @@ HTML;
     }
     
     
-    private function createNonceStr($length = 16) {
+    protected function createNonceStr($length = 16) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     $str = "";
     for ($i = 0; $i < $length; $i++) {
@@ -192,7 +177,25 @@ HTML;
     return $str;
   }
   
-  
+  protected function get_weixin_config(){
+      //获取微信access_token
+        $access_token=S('access_token');
+        if(!$access_token){
+            $this->get_access_token();
+            $access_token=S('access_token');
+        }
+        $this->get_jsapi_ticket($access_token);
+        $jsapi_ticket=S('jsapi_ticket');
+        if(!$jsapi_ticket){
+            $this->get_access_token();
+            $access_token=S('access_token');
+            $this->get_jsapi_ticket($access_token);
+            $jsapi_ticket=S('jsapi_ticket');
+        }
+        $wx_config=$this->get_wx_config($jsapi_ticket);
+        $this->assign('wx_config',$wx_config); 
+        //var_dump($wx_config);
+  }
 
 
 
