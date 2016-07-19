@@ -113,7 +113,8 @@ class LoginController extends FontEndController {
         //获取微信用户信息并直接登陆
         if(isset($_GET['code'])){
             $code=$_GET['code'];
-            $open_id=$this->get_wangye_openid($code);
+            $wangye=$this->get_wangye($code);
+            $open_id=$wangye['openid'];
             $access_token=S('access_token');
             $userinfo=$this->get_userinfo($open_id,$access_token);
             //var_dump($userinfo);
@@ -151,12 +152,11 @@ class LoginController extends FontEndController {
 
 
 
-    private function get_wangye_openid($code){
+    private function get_wangye($code){
        $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".APPID."&secret=".APPSECRET."&code=".$code."&grant_type=authorization_code" ;
        $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
        $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
-       $wangye_openid=$result['openid'];
-       return $wangye_openid;
+       return $result;
   }
   
   private function get_userinfo($openid,$access_token){

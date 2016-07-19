@@ -1147,15 +1147,37 @@ class MemberController extends FontEndController {
         }
     }
     
-    public function address_manage() {
-        //vendor('wxp.example.WxPay.JsApiPay.php'); //引入第三方类库
-        //require_once VENDOR_PATH."/wxp/example/WxPay.JsApiPay.php";
-        vendor('wxp.native'); //引入第三方类库
-        $jsapi = new \WxPayJsApiPay();
-        $editAddress = $jsapi->GetEditAddressParameters(S('access_token'));
-        $this->assign('editAddress',$editAddress);
-        $this->display();
+    public function address_tiaozhuan() {
+        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=http://m.17each.com/Home/Member/address_manage&response_type=code&scope=snsapi_base&state=1#wechat_redirect_redirect";
+        header("Location:{$url}"); 
+        exit();
+        //vendor('wxp.native'); //引入第三方类库
+        //$jsapi = new \WxPayJsApiPay();
+        
+        //$this->assign('editAddress',$editAddress);
+        //$this->display();
     }
+    public function address_manage(){
+        if(isset($_GET['code'])){
+            $code=$_GET['code'];
+            $wangye=$this->get_wangye($code);
+            $access_token=$wangye['access_token'];
+            $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            $nonceStr=$tis->createNonceStr();
+            $timeStamp=time();
+            $timeStamp="$timeStamp";
+            $string = "accesstoken=$access_token&appid=APPID&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
+            $addrSign = sha1($string);
+             $signPackage = array(
+                "appId"     => APPID,
+                "nonceStr"  => $nonceStr,
+                "timeStamp" => $timeStamp,
+                "addrSign" => $addrSign
+            );
+            $this->assign('signPackage',$signPackage);
+        }
+    }
+
     public function kefu() {
         $access_token=S('access_token');
         //$kefu_list=$this->get_kefu_list($access_token);
@@ -1197,6 +1219,14 @@ class MemberController extends FontEndController {
     
     private function get_userinfo($openid,$access_token){
        $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=".$access_token."&openid=".$openid."&lang=zh_CN" ;
+       $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
+       $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
+       return $result;
+  }
+  
+  
+  private function get_wangye($code){
+       $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".APPID."&secret=".APPSECRET."&code=".$code."&grant_type=authorization_code" ;
        $res = file_get_contents($url); //获取文件内容或获取网络请求的内容
        $result = json_decode($res, true);//接受一个 JSON 格式的字符串并且把它转换为 PHP 变量
        return $result;

@@ -15,11 +15,17 @@
 
 <script type="text/javascript">
 	//获取共享地址
-	function editAddress()
-	{
+	function editAddress(){
+            var jsApiParameters = <{$signPackage}> ;
 		WeixinJSBridge.invoke(
-			'editAddress',
-			<{$editAddress}>,
+			'editAddress',{
+                            appId:jsApiParameters.appId,
+                            scope:'jsapi_address',
+                            signType:'sha1',
+                            addrSign:jsApiParameters.addrSign,
+                            timeStamp:jsApiParameters.timeStamp,
+                            nonceStr:jsApiParameters.nonceStr
+                        },
 			function(res){
 				var value1 = res.proviceFirstStageName;
 				var value2 = res.addressCitySecondStageName;
@@ -27,8 +33,7 @@
 				var value4 = res.addressDetailInfo;
 				var tel = res.telNumber;
 				
-				//alert(value1 + value2 + value3 + value4 + ":" + tel);
-                                alert(res.err_msg);
+				alert(value1 + value2 + value3 + value4 + ":" + tel);
 			}
 		);
 	}
