@@ -1167,7 +1167,6 @@ class MemberController extends FontEndController {
             $timeStamp=time();
             $timeStamp="$timeStamp";
             $string = "accesstoken=$access_token&appid=APPID&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
-            var_dump($string);exit();
             $addrSign = sha1($string);
              $signPackage = array(
                 "appId"     => APPID,
