@@ -19,12 +19,12 @@
             var jsApiParameters = <{$signPackage}> ;
 		WeixinJSBridge.invoke(
 			'editAddress',{
-                            appId:jsApiParameters.appId,
-                            scope:'jsapi_address',
-                            signType:'sha1',
-                            addrSign:jsApiParameters.addrSign,
-                            timeStamp:jsApiParameters.timeStamp,
-                            nonceStr:jsApiParameters.nonceStr
+                            "appId":jsApiParameters.appId,
+                            "scope":'jsapi_address',
+                            "signType":'sha1',
+                            "addrSign":jsApiParameters.addrSign,
+                            "timeStamp":jsApiParameters.timeStamp,
+                            "nonceStr":jsApiParameters.nonceStr
                         },
 			function(res){
 				var value1 = res.proviceFirstStageName;
