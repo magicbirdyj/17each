@@ -695,7 +695,7 @@ class GoodsController extends FontEndController {
                 $input = new \WxPayUnifiedOrder();
                 $input->SetBody($paydata['body']);
                 $input->SetAttach($paydata['shop_name']);
-                $input->SetOut_trade_no($order['order_no']);
+                $input->SetOut_trade_no($paydata['order_no']);
                 $input->SetTotal_fee($paydata['total_fee'] * 100);
                 $input->SetTime_start(date("YmdHis"));
                 $input->SetTime_expire(date("YmdHis", time() + 600));
