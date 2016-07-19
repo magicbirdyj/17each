@@ -13,10 +13,13 @@
     </div>
     
 
-<script type="text/javascript">
-    var jsApiParameters = <{$signPackage}> ;
-	//获取共享地址
-	function editAddress(){
+<script>
+            $(function(){
+                calladd();
+            });
+            var jsApiParameters = <{$signPackage}> ;
+            //获取共享地址
+            function editAddress(){
 		WeixinJSBridge.invoke(
 			'editAddress',
                         {"appId": jsApiParameters.appId,
@@ -37,7 +40,7 @@
 		);
 	}
 	
-	window.onload = function(){
+	function calladd(){
 		if (typeof WeixinJSBridge == "undefined"){
 		    if( document.addEventListener ){
 		        document.addEventListener('WeixinJSBridgeReady', editAddress, false);
