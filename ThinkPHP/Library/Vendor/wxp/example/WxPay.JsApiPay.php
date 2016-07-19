@@ -144,7 +144,7 @@ class JsApiPay
 	 * 
 	 * @return 获取共享收货地址js函数需要的参数，json格式可以直接做参数使用
 	 */
-	public function GetEditAddressParameters()
+	public function GetEditAddressParameters($access_token="")
 	{	
 		$getData = $this->data;
 		$data = array();
@@ -153,7 +153,7 @@ class JsApiPay
 		$time = time();
 		$data["timestamp"] = "$time";
 		$data["noncestr"] = "1234568";
-		$data["accesstoken"] = $getData["access_token"];
+		$data["accesstoken"] = $access_token?$access_token:$getData["access_token"];
 		ksort($data);
 		$params = $this->ToUrlParams($data);
 		$addrSign = sha1($params);
