@@ -16,15 +16,15 @@
 <script type="text/javascript">
 	//获取共享地址
 	function editAddress(){
-            var jsApiParameters = <{$signPackage}> ;
+            var option = <{$signPackage}> ;
 		WeixinJSBridge.invoke(
 			'editAddress',{
-                            "appId":jsApiParameters.appId,
+                            "appId": option.appId,
                             "scope":'jsapi_address',
                             "signType":'sha1',
-                            "addrSign":jsApiParameters.addrSign,
-                            "timeStamp":jsApiParameters.timeStamp,
-                            "nonceStr":jsApiParameters.nonceStr
+                            "addrSign": option.addrSign,
+                            "timeStamp": option.timeStamp,
+                            "nonceStr": option.nonceStr
                         },
 			function(res){
 				var value1 = res.proviceFirstStageName;
