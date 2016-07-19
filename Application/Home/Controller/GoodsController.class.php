@@ -670,7 +670,7 @@ class GoodsController extends FontEndController {
             if (is_array($orderInfo) && $orderInfo['result_code'] == 'SUCCESS' && $orderInfo['return_code'] == 'SUCCESS') {
                 $jsapi = new \WxPayJsApiPay();
                 $jsapi->SetAppid($orderInfo["appid"]);
-                $timeStamp = NOW;
+                $timeStamp = time();
                 $timeStamp = "$timeStamp";
                 $jsapi->SetTimeStamp($timeStamp);
                 $jsapi->SetNonceStr(\WxPayApi::getNonceStr());
