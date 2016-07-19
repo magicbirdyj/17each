@@ -11,7 +11,7 @@ class FontEndController extends Controller {
         
         header("content-type:text/html;charset=utf-8"); 
         
-        
+        $this->get_weixin_config();
         
         
         
