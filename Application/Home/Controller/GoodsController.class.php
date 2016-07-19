@@ -686,7 +686,6 @@ class GoodsController extends FontEndController {
             $this->assign("parameters", json_encode($parameters));
             $this->assign("wxJssdkConfig", $wxJssdkConfig);
             $this->assign("orderInfo", $ordersInfo);
-            var_dump($ordersInfo);exit();
             $this->assign("total_fee", $paydata['total_fee']);
             $this->display('zhifuweixin_zhijie');
     }
