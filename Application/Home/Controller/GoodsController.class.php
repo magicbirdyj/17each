@@ -666,7 +666,6 @@ class GoodsController extends FontEndController {
             $orderInput->SetTrade_type("JSAPI");
             $orderInput->SetOpenid($paydata['open_id']);//必须为登录
             $orderInfo = \WxPayApi::unifiedOrder($orderInput, 300);
-            var_dump($orderInfo);exit();
 
             if (is_array($orderInfo) && $orderInfo['result_code'] == 'SUCCESS' && $orderInfo['return_code'] == 'SUCCESS') {
                 $jsapi = new \WxPayJsApiPay();
@@ -686,7 +685,7 @@ class GoodsController extends FontEndController {
 
             $this->assign("parameters", json_encode($parameters));
             $this->assign("wxJssdkConfig", $wxJssdkConfig);
-            $this->assign("orderInfo", $ordersInfo);
+            var_dump($orderInfo);exit();
             $this->assign("total_fee", $paydata['total_fee']);
             $this->display('zhifuweixin_zhijie');
     }
