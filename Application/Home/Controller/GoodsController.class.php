@@ -350,7 +350,9 @@ class GoodsController extends FontEndController {
                 'shop_name'=>$order['shop_name'],
                 'order_no'=>$order['order_no'],
                 'goods_id'=>$order['goods_id'],
-                'open_id'=>$open_id
+                'open_id'=>$open_id,
+                'goods_name'=> $order['goods_name'],
+                'shop_name'=>$order['shop_name']
             );
             if(is_weixin()){//如果是微信浏览器 直接公众号支付，否则 扫一扫支付
                 $this->weixin_zhijiezhifu($paydata);
@@ -682,11 +684,9 @@ class GoodsController extends FontEndController {
                 $this->error("下单失败" . $orderInfo['return_msg']);
             }
 
-
+            $this->assign('paydata',$paydata);
             $this->assign("parameters", json_encode($parameters));
             $this->assign("total_fee", $paydata['total_fee']);
-            var_dump($orderInfo);
-            var_dump($parameters);
             $this->display('zhifuweixin_zhijie');
     }
     
