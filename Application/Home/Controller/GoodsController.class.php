@@ -653,7 +653,7 @@ class GoodsController extends FontEndController {
     
     
     private function weixin_zhijiezhifu($paydata){
-            vendor('wxp.lib.WxPay.Api.php'); //引入第三方类库
+            vendor('wxp.native'); //引入第三方类库
             $orderInput = new \WxPayUnifiedOrder();
             $orderInput->SetBody($paydata['body']);
             $orderInput->SetAttach($paydata['shop_name']);
@@ -691,7 +691,7 @@ class GoodsController extends FontEndController {
     }
     
     private function weixin_saomazhifu($paydata){
-        $user_id=$order['user_id'];
+            $user_id=$order['user_id'];
                 $usersmodel=D('Users');
                 $open_id=$usersmodel->where("user_id=$user_id")->getField('open_id');
                 vendor('wxp.native'); //引入第三方类库
