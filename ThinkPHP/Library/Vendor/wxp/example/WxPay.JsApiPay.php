@@ -155,7 +155,7 @@ class JsApiPay
 		$data["noncestr"] = "1234568";
 		$data["accesstoken"] = $access_token?$access_token:$getData["access_token"];
 		ksort($data);
-		$params = $this->ToUrlParams($data);
+		$params = $this->ToUrlParams1($data);
 		$addrSign = sha1($params);
 		
 		$afterData = array(
