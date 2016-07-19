@@ -2,18 +2,17 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/public.css"/>
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/goods.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/buy.css">
-
 </head>
 
 <body>
 
 
-<div class="fanhui padding"><a href="javascript:history.back()"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe601;</span></a>微信支付</div>
+<div class="fanhui padding"><a href="javascript:history.back()"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe603;</span></a>微信支付</div>
 
-    <form name="qufukuang" method="get" action="<{:U('Goods/alipay')}>">
+
 <table class="buy_table" cellspacing="0">
 <tr class="buy_table_head">
-    <td colspan="2">[<{$goods['cat_name']}>]<{$goods['goods_name']}></td>
+    <td colspan="2"><{$goods['goods_name']}></td>
 </tr>
 <tr class="buy_table_content">
     <td class="td_l">商家：</td>
@@ -21,27 +20,23 @@
 </tr>
 <tr class="buy_table_content">
     <td class="td_l">价格：</td>
-    <td class="td_r">&yen <{$goods['price']}></td>
+    <td class="td_r">&yen <{$goods['price']|floatval}></td>
 </tr>
-<tr class="buy_table_content">
-    <td class="td_l">日期：</td>
-    <td class="td_r"><{$goods['server_day']|date_geshi1}></td>
-</tr>
+
 <tr class="buy_table_content">
     <td class="td_l">代金卷：</td>
-    <td class="td_r">&yen<{$goods['daijinjuan']}></td>
+    <td class="td_r">&yen <{$goods['daijinquan']|floatval}></td>
 </tr>
 <tr class="buy_table_content">
     <td class="td_l">应付金额：</td>
-    <td class="td_r yingfu">&yen <{$goods['dues']}></td>
+    <td class="td_r yingfu">&yen <{$goods['dues']|floatval}></td>
 </tr>
 
 
 
 
 </table>
-        <input type="hidden" name="order_id" value="<{$order_id}>" />
-    </form>
+
     
     
     <div class="wxzhifu_div">
@@ -62,7 +57,7 @@
                     </div>
                     <div class="qrcode-img-explain fn-clear">
                         <img smartracker="on" seed="qrcodeImgExplain-tImagesT1bdtfXfdiXXXXXXXX" class="fn-left" src="__PUBLIC_HOME__/Images/public/saoyisao.png" alt="扫一扫标识">
-                        <div class="fn-left">长按识别码<br>选择识别二维码</div>
+                        <div class="fn-left">打开手机微信<br>扫一扫继续付款</div>
                     </div>
                 </div>
                 <div class="botton_zhifu"><a class="button_a_lvse" href='<{:U("Goods/gmcg_wx","order_id=$order_id")}>'>支付成功，如未跳转请点击</a></div>
@@ -80,7 +75,7 @@
     
 
 
-<iframe height="1" frameborder="0" width="1" style="position:absolute;top:0;left:-9999px;" src="<{:U('index/menu')}>"></iframe>
+
 <script type="text/javascript">
     var order_id_get="<{$order_id}>";
     var setIn_id=setInterval("jiance_pay()",3000);//1000为1秒钟
