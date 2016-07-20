@@ -1179,7 +1179,7 @@ class MemberController extends FontEndController {
 		$data["appid"] =$appid;
 		$data["url"] = $url;
 		$data["timestamp"] = $timeStamp;
-		$data["noncestr"] = "1234568";
+		$data["noncestr"] = $nonceStr;
 		$data["accesstoken"] = $access_token;
 		ksort($data);
                 $params = $this->ToUrlParams($data);
