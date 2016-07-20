@@ -1148,20 +1148,21 @@ class MemberController extends FontEndController {
     }
     
     public function address_tiaozhuan() {
-        //$a=urlencode("http://m.17each.com/Home/Member/address_manage");
-        //$url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-        //header("Location:{$url}"); 
-        //exit();
+        $a=urlencode("http://m.17each.com/Home/Member/address_manage");
+        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+        header("Location:{$url}"); 
+        exit();
 
     }
     public function address_manage(){
+        /*
         vendor('wxp.lib.WxPay#Api');
         vendor('wxp.example.WxPay#JsApiPay');
         $tools = new \JsApiPay();
         $editAddress = $tools->GetEditAddressParameters();
         $this->assign('signPackage',$editAddress);
-        $this->display();
-        /*
+        $this->display();*/
+        
         if(isset($_GET['code'])){
             $code=$_GET['code'];
             $wangye=$this->get_wangye($code);
@@ -1170,7 +1171,7 @@ class MemberController extends FontEndController {
             $nonceStr=$this->createNonceStr(32);
             $timeStamp=time();
             $timeStamp="$timeStamp";
-            $string = "accesstoken=$access_token&appid=wx6231a8932405bdaf&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
+            $string = "accesstoken=$access_token&appid=wx6231a8932405bdaf&noncestr=$nonceStr×tamp=$timeStamp&url=$url";
             var_dump($access_token);
             var_dump($string);
             $addrSign = sha1($string);
@@ -1184,7 +1185,7 @@ class MemberController extends FontEndController {
             );
             $this->assign('signPackage',json_encode($signPackage));
             $this->display();
-        }*/
+        }
     }
 
     public function kefu() {
