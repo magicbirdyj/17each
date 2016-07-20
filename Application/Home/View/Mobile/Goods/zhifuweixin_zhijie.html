@@ -65,6 +65,7 @@
             }
 
     function callpay(){
+        alert(typeof WeixinJSBridge);
         if (typeof WeixinJSBridge == "undefined"){
             if (document.addEventListener){
                 document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);

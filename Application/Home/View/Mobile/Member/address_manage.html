@@ -42,9 +42,9 @@
 	}
 	
 	function calladd(){
+            alert(typeof WeixinJSBridge);
         if (typeof WeixinJSBridge == "undefined"){
             if (document.addEventListener){
-                alert('aaa');
                 document.addEventListener('WeixinJSBridgeReady', onreadyeditAddress, false);
             } else if (document.attachEvent){
                 document.attachEvent('WeixinJSBridgeReady', onreadyeditAddress);
@@ -57,5 +57,5 @@
 	
 	</script>
 
-</body>
+</body> 
 </html>
