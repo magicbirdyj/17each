@@ -1148,7 +1148,8 @@ class MemberController extends FontEndController {
     }
     
     public function address_tiaozhuan() {
-        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=http://m.17each.com/Home/Member/address_manage&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+        $a=urlecode("http://m.17each.com/Home/Member/address_manage");
+        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
         header("Location:{$url}"); 
         exit();
         //vendor('wxp.native'); //引入第三方类库
