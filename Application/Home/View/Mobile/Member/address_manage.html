@@ -22,12 +22,7 @@
             function onreadyeditAddress(){
 		WeixinJSBridge.invoke(  
 			'editAddress',
-                        {"appId": jsApiParameters.appId,
-                        "timeStamp": jsApiParameters.timeStamp,
-                        "nonceStr": jsApiParameters.nonceStr,
-                        "scope": 'jsapi_address',
-                        "signType": 'sha1',
-                        "addrSign": jsApiParameters.addrSign},
+                        jsApiParameters,
 			function(res){
 				var value1 = res.proviceFirstStageName;
 				var value2 = res.addressCitySecondStageName;

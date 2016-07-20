@@ -1148,17 +1148,19 @@ class MemberController extends FontEndController {
     }
     
     public function address_tiaozhuan() {
-        $a=urlencode("http://m.17each.com/Home/Member/address_manage");
-        $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-        header("Location:{$url}"); 
-        exit();
-        //vendor('wxp.native'); //引入第三方类库
-        //$jsapi = new \WxPayJsApiPay();
-        
-        //$this->assign('editAddress',$editAddress);
-        //$this->display();
+        //$a=urlencode("http://m.17each.com/Home/Member/address_manage");
+        //$url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+        //header("Location:{$url}"); 
+        //exit();
+
     }
     public function address_manage(){
+                import('Vendor.wxp.example.WxPay.JsApiPay.php');
+        $tools = new \JsApiPay();
+        $editAddress = $tools->GetEditAddressParameters();
+        $this->assign('signPackage',$editAddress);
+        $this->display();
+        /*
         if(isset($_GET['code'])){
             $code=$_GET['code'];
             $wangye=$this->get_wangye($code);
@@ -1181,7 +1183,7 @@ class MemberController extends FontEndController {
             );
             $this->assign('signPackage',json_encode($signPackage));
             $this->display();
-        }
+        }*/
     }
 
     public function kefu() {
