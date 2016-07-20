@@ -21,6 +21,7 @@
             //获取共享地址
             function onreadyeditAddress(){
 		WeixinJSBridge.invoke(
+                        alert(typeof WeixinJSBridge);
 			'editAddress',
                         {"appId": jsApiParameters.appId,
                         "timeStamp": jsApiParameters.timeStamp,
@@ -44,15 +45,12 @@
 	function calladd(){
         if (typeof WeixinJSBridge == "undefined"){
             if (document.addEventListener){
-                alert('b');
                 document.addEventListener('WeixinJSBridgeReady', onreadyeditAddress, false);
             } else if (document.attachEvent){
-                alert('c');
                 document.attachEvent('WeixinJSBridgeReady', onreadyeditAddress);
                 document.attachEvent('onWeixinJSBridgeReady', onreadyeditAddress);
             }
         } else{
-            alert('d')
             onreadyeditAddress();
         }
     }

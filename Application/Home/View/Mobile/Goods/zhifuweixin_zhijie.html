@@ -45,7 +45,6 @@
             });
             var jsApiParameters = <{$parameters}> ;
             function jsApiCall(){
-                alert(typeof WeixinJSBridge);
                 WeixinJSBridge.invoke(
                         'getBrandWCPayRequest', 
                         {"appId": jsApiParameters.appId,
@@ -68,15 +67,12 @@
     function callpay(){
         if (typeof WeixinJSBridge == "undefined"){
             if (document.addEventListener){
-                alert('b');
                 document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
             } else if (document.attachEvent){
-                alert('c');
                 document.attachEvent('WeixinJSBridgeReady', jsApiCall);
                 document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
             }
         } else{
-            alert('d');
             jsApiCall();
         }
     }
