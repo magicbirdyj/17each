@@ -43,14 +43,17 @@
 	
 	function calladd(){
 		if (typeof WeixinJSBridge == "undefined"){
+                    alert('a');
 		    if( document.addEventListener ){
+                        alert('b')
 		        document.addEventListener('WeixinJSBridgeReady', editAddress, false);
 		    }else if (document.attachEvent){
+                        alert('c')
 		        document.attachEvent('WeixinJSBridgeReady', editAddress); 
 		        document.attachEvent('onWeixinJSBridgeReady', editAddress);
 		    }
 		}else{
-                    alert('aaa');
+                    alert('d');
 			editAddress();
 		}
 	};
