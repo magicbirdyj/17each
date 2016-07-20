@@ -2,7 +2,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/member.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/hunliren_shangjiaxinxi.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/Mobile/Css/iconfont/iconfont_public/iconfont.css">
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
             });
             var jsApiParameters = <{$signPackage}> ;
             //获取共享地址
-            function editAddress(){
+            function onreadyeditAddress(){
 		WeixinJSBridge.invoke(
 			'editAddress',
                         {"appId": jsApiParameters.appId,
@@ -36,24 +35,25 @@
 				var value4 = res.addressDetailInfo;
 				var tel = res.telNumber;
 				
-				alert(value1 + value2 + value3 + value4 + ":" + tel);
+				//alert(value1 + value2 + value3 + value4 + ":" + tel);
                                 //alert(res.msg);
 			}
 		);
 	}
 	
 	function calladd(){
-		if (typeof WeixinJSBridge == "undefined"){
-		    if( document.addEventListener ){
-		        document.addEventListener('WeixinJSBridgeReady', editAddress, false);
-		    }else if (document.attachEvent){
-		        document.attachEvent('WeixinJSBridgeReady', editAddress); 
-		        document.attachEvent('onWeixinJSBridgeReady', editAddress);
-		    }
-		}else{
-			editAddress();
-		}
-	};
+        if (typeof WeixinJSBridge == "undefined"){
+            if (document.addEventListener){
+                alert('aaa');
+                document.addEventListener('WeixinJSBridgeReady', onreadyeditAddress, false);
+            } else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', onreadyeditAddress);
+                document.attachEvent('onWeixinJSBridgeReady', onreadyeditAddress);
+            }
+        } else{
+            onreadyeditAddress();
+        }
+    }
 	
 	</script>
 
