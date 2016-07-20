@@ -1155,7 +1155,7 @@ class MemberController extends FontEndController {
 
     }
     public function address_manage(){
-        vendor('Vendor.wxp.example.WxPay#JsApiPay');
+        vendor('wxp.example.WxPay#JsApiPay');
         $tools = new \JsApiPay();
         $editAddress = $tools->GetEditAddressParameters();
         $this->assign('signPackage',$editAddress);
