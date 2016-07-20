@@ -8,14 +8,18 @@
     <div class="fanhui padding"><a href="<{:U('Member/index')}>"><span class="iconfont tb_fanhui"id="shangjia_info_fanhui">&#xe601;</span></a>服务地址管理</div>
     <div class="right">
 
-        <a class="button_a_lvse" id='address_manage'>管理服务地址</a>
+        <a class="button_a_lvse" id='address_shoudong'>手动添加</a>
+        <a class="button_a_lvse" id='address_weixin'>微信添加</a>
 
     </div>
     
 
 <script>
             $(function(){
-                calladd();
+                $('#address_weixin').bind('click',function(){
+                    calladd();
+                });
+                
             });
             var jsApiParameters = <{$signPackage}> ;
             //获取共享地址
@@ -29,10 +33,7 @@
 				var value3 = res.addressCountiesThirdStageName;
 				var value4 = res.addressDetailInfo;
 				var tel = res.telNumber;
-				console.log(res);
 				alert(value1 + value2 + value3 + value4 + ":" + tel);
-                                alert(res.msg);
-                                alert(res.errMsg);
                                 
 			}
 		);

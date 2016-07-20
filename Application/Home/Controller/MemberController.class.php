@@ -1183,7 +1183,6 @@ class MemberController extends FontEndController {
 		$data["accesstoken"] = $access_token;
 		ksort($data);
                 $params = $this->ToUrlParams($data);
-                var_dump($params);
                 $addrSign = sha1($params);
 		
 		$afterData = array(
