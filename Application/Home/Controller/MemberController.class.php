@@ -1195,7 +1195,7 @@ class MemberController extends FontEndController {
 		);
 		$parameters = json_encode($afterData);
             
-            $this->assign('signPackage',json_encode($parameters));
+            $this->assign('signPackage',$parameters);
             $this->display();
         }
     }
