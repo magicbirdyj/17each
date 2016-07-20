@@ -156,6 +156,7 @@ class JsApiPay
 		$data["accesstoken"] = $getData["access_token"];
 		ksort($data);
 		$params = $this->ToUrlParams($data);
+                var_dump($params);
 		$addrSign = sha1($params);
 		
 		$afterData = array(
