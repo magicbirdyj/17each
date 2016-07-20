@@ -1164,26 +1164,38 @@ class MemberController extends FontEndController {
         $this->display();*/
         
         if(isset($_GET['code'])){
+           
+		
+            
             $code=$_GET['code'];
             $wangye=$this->get_wangye($code);
             $access_token=$wangye['access_token'];
+            $appid='wx6231a8932405bdaf';
             $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $nonceStr=$this->createNonceStr(32);
             $timeStamp=time();
             $timeStamp="$timeStamp";
-            $string = "accesstoken=$access_token&appid=wx6231a8932405bdaf&noncestr=$nonceStr&timestamp=$timeStamp&url=$url";
-            var_dump($access_token);
-            var_dump($string);
-            $addrSign = sha1($string);
-             $signPackage = array(
-                "appId"     => APPID,
-                "nonceStr"  => $nonceStr,
-                "timeStamp" => $timeStamp,
-                "addrSign" => $addrSign,
-                "scope"=>'jsapi_address',
-                 "signType"=>'sha1'
-            );
-            $this->assign('signPackage',json_encode($signPackage));
+             $data = array();
+		$data["appid"] =$appid;
+		$data["url"] = $url;
+		$data["timestamp"] = $timeStamp;
+		$data["noncestr"] = "1234568";
+		$data["accesstoken"] = $access_token;
+		ksort($data);
+                $params = $this->ToUrlParams($data);
+                $addrSign = sha1($params);
+		
+		$afterData = array(
+			"addrSign" => $addrSign,
+			"signType" => "sha1",
+			"scope" => "jsapi_address",
+			"appId" => $appid,
+			"timeStamp" => $data["timestamp"],
+			"nonceStr" => $data["noncestr"]
+		);
+		$parameters = json_encode($afterData);
+            
+            $this->assign('signPackage',json_encode($parameters));
             $this->display();
         }
     }
@@ -1242,6 +1254,27 @@ class MemberController extends FontEndController {
        return $result;
   }
 
+	
+	/**
+	 * 
+	 * 拼接签名字符串
+	 * @param array $urlObj
+	 * 
+	 * @return 返回已经拼接好的字符串
+	 */
+	public function ToUrlParams($urlObj)
+	{
+		$buff = "";
+		foreach ($urlObj as $k => $v)
+		{
+			if($k != "sign"){
+				$buff .= $k . "=" . $v . "&";
+			}
+		}
+		
+		$buff = trim($buff, "&");
+		return $buff;
+	}
 
             
 }
