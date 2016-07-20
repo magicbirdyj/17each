@@ -20,8 +20,8 @@
             var jsApiParameters = <{$signPackage}> ;
             //获取共享地址
             function onreadyeditAddress(){
-		WeixinJSBridge.invoke(
-                        alert(typeof WeixinJSBridge);
+                alert(typeof WeixinJSBridge);
+		WeixinJSBridge.invoke(  
 			'editAddress',
                         {"appId": jsApiParameters.appId,
                         "timeStamp": jsApiParameters.timeStamp,
