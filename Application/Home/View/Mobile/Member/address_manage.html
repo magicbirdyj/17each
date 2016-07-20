@@ -42,15 +42,17 @@
 	}
 	
 	function calladd(){
-            alert(typeof WeixinJSBridge);
         if (typeof WeixinJSBridge == "undefined"){
             if (document.addEventListener){
+                alert('b');
                 document.addEventListener('WeixinJSBridgeReady', onreadyeditAddress, false);
             } else if (document.attachEvent){
+                alert('c');
                 document.attachEvent('WeixinJSBridgeReady', onreadyeditAddress);
                 document.attachEvent('onWeixinJSBridgeReady', onreadyeditAddress);
             }
         } else{
+            alert('d')
             onreadyeditAddress();
         }
     }
