@@ -368,13 +368,10 @@ class GoodsController extends FontEndController {
      * 
      */
     public function notifyweixin() {
-
         vendor('wxp.notify'); //引入第三方类库
-
         $notify = new \PayNotifyCallBack();
         $notify->Handle(false);
         $returnPay = $notify->getPayReturn();
-//        file_put_contents("logs/returnpau_data".time().".txt",  print_r($returnPay,true));
         if (!$returnPay || $returnPay[""]) {
             echo "FAIL";
             die;
@@ -389,11 +386,7 @@ class GoodsController extends FontEndController {
                     die;
                 }
             }
-
-
             $order_id = $order['order_id'];
-            
-
             $row = array(
                 'pay_status' => 1, //支付状态为支付
                 'updated' => mktime(),
@@ -411,6 +404,7 @@ class GoodsController extends FontEndController {
             $goodsmodel->where("goods_id=$goods_id")->setInc('buy_number');
 
             echo "success";
+            $this->redirect(U('Goods/gmcg_wx','order_id=$order_id'));
         }
     }
 
