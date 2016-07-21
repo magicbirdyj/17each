@@ -87,6 +87,12 @@ class LoginController extends FontEndController {
                     'shopman_id'=>$smid
                      );
                 unset($_SESSION[$leixing]);
+                if(is_weixin()){
+                    $a=urlencode("http://m.17each.com/Home/Login/weixin_login");
+                    $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+                    header("Location:{$url}");#wechat_redirect_redirect
+                    exit();
+                }
                 if(isset($_SESSION['ref'])){
                     header("location:". U($_SESSION['ref']));
                     exit();
@@ -111,6 +117,26 @@ class LoginController extends FontEndController {
     
     
     public function weixin_login(){
+        
+        //获取微信用户open_id 写入数据库
+        if(isset($_GET['code'])){
+            $code=$_GET['code'];
+            $wangye=$this->get_wangye($code);
+            $open_id=$wangye['openid'];
+            $usersmodel=D('Users');
+            $user_id=$_SESSION['huiyuan']['user_id'];
+            $data['open_id'] = $open_id;
+            $usersmodel->where("user_id=$user_id")->save($data);
+                if(isset($_SESSION['ref'])){
+                    header("location:". U($_SESSION['ref']));
+                    exit();
+                }else{
+                    header("location:". U('index/index'));
+                    exit();
+                }
+            
+        }
+        /*
         //获取微信用户信息并直接登陆
         if(isset($_GET['code'])){
             $code=$_GET['code'];
@@ -145,7 +171,7 @@ class LoginController extends FontEndController {
                     exit();
                 }
             
-        }
+        }*/
     }
 
 

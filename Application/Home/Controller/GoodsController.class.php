@@ -400,6 +400,7 @@ class GoodsController extends FontEndController {
             }
 
             //商品表里面购买数量加1
+            $goods_id=$order['goods_id'];
             $goodsmodel = D('Goods');
             $goodsmodel->where("goods_id=$goods_id")->setInc('buy_number');
 
@@ -460,9 +461,7 @@ class GoodsController extends FontEndController {
                 die;
             }
 
-            //商品表里面购买数量加1
-            $goodsmodel = D('Goods');
-            $goodsmodel->where("goods_id=$goods_id")->setInc('buy_number');
+            
             //用户代金卷更新
             $order=$ordermodel->where("order_id=$order_id")->field('daijinjuan,user_id')->find();
             if($order['daijinjuan']!=='0.00'){
@@ -475,6 +474,10 @@ class GoodsController extends FontEndController {
                 );
                 $usersmodel->where("user_id=$user_id")->save($users_row);
             }
+            //商品表里面购买数量加1
+            $goods_id=$order['goods_id'];
+            $goodsmodel = D('Goods');
+            $goodsmodel->where("goods_id=$goods_id")->setInc('buy_number');
             echo "success";
         } else {
             //验证失败
@@ -704,7 +707,7 @@ class GoodsController extends FontEndController {
                 $url2 = urlencode($result["code_url"]);
                 file_put_contents("url.txt", $url2);
                 $this->assign("goods", $order);
-                $this->assign('order_id',$order_id);
+                $this->assign('order_id',$paydata['order_id']);
                 $this->assign("payurl", $url2);
 
                 $this->display("zhifuweixin_saoma");
