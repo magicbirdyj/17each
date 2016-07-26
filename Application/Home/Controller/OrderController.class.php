@@ -9,7 +9,7 @@ class OrderController extends FontEndController {
          $ordermodel=D('Order');
          $user_id=$_SESSION['huiyuan']['user_id'];
          $status_count['all']=$ordermodel->where("user_id={$user_id} and deleted=0")->count();//获取全部订单条数
-         $status_count['no_pay']=$ordermodel->where("user_id={$user_id} and pay_status=0 and deleted=0")->count();//获取未付款条数
+         $status_count['no_pay']=$ordermodel->where("user_id={$user_id} and pay_status=0 and deleted=0  and status<4")->count();//获取未付款条数
          $status_count['daiqueren']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=1 and deleted=0")->count();//获取待确认条数
          $status_count['daipingjia']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=2 and deleted=0")->count();//获取待评价条数
          $this->assign(status_count,$status_count);
@@ -29,7 +29,7 @@ class OrderController extends FontEndController {
              $selected['no_pay']="selected='selected'";//选中下拉菜单的未付款
              $this->assign(selected,$selected);
              $selected['all']='selected';
-             $count=$ordermodel->where("user_id={$user_id} and pay_status=0 and deleted=0")->count();
+             $count=$ordermodel->where("user_id={$user_id} and pay_status=0 and deleted=0 status<4")->count();
              $page=$this->get_page($count, 10);
              $page_foot=$page->show();//显示页脚信息
              $list=$ordermodel->table('m_order t1,m_goods t2')->where("t1.deleted=0 and t1.user_id={$user_id} and t1.pay_status=0 and t1.goods_id=t2.goods_id")->order('t1.created desc')->field('t1.order_id,t1.order_no,t1.goods_id,t1.goods_name,t1.server_day,t1.shop_name,t1.status,t1.pay_status,t1.updated,t2.goods_img,t1.price,t1.dues')->limit($page->firstRow.','.$page->listRows)->select();

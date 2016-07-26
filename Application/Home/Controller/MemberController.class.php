@@ -21,10 +21,10 @@ class MemberController extends FontEndController {
         $this->assign("userdata",$data);
         
         $ordermodel=D('Order');
-         $status_count['all']=$ordermodel->where("user_id={$user_id}")->count();//获取全部订单条数
-         $status_count['no_pay']=$ordermodel->where("user_id={$user_id} and pay_status=0")->count();//获取未付款条数
-         $status_count['daiqueren']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=1")->count();//获取待确认条数
-         $status_count['daipingjia']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=2")->count();//获取待评价条数
+         $status_count['all']=$ordermodel->where("user_id={$user_id} and deleted=0")->count();//获取全部订单条数
+         $status_count['no_pay']=$ordermodel->where("user_id={$user_id} and pay_status=0 and deleted=0")->count();//获取未付款条数
+         $status_count['daiqueren']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=1 and deleted=0")->count();//获取待确认条数
+         $status_count['daipingjia']=$ordermodel->where("user_id={$user_id} and pay_status=1 and status=2 and deleted=0")->count();//获取待评价条数
          $this->assign(status_count,$status_count);
          
         $sellectionmodel=D('Sellection');

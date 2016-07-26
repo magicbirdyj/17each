@@ -127,6 +127,7 @@ class LoginController extends FontEndController {
             $user_id=$_SESSION['huiyuan']['user_id'];
             $data['open_id'] = $open_id;
             $usersmodel->where("user_id=$user_id")->save($data);
+            
                 if(isset($_SESSION['ref'])){
                     header("location:". U($_SESSION['ref']));
                     exit();
