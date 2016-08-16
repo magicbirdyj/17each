@@ -58,9 +58,7 @@ $('#xuanzeriqi').bind('click',function(){
     $('#div_xuanzeriqi').animate({'left':'0%'},'normal',function(){
         $('#shop').css('display','none');
     });
-    
-    
-    
+  
 });
 //点击#xuanzereiqi_fanhui返回商品页面
 $('#xuanzeriqi_fanhui').bind('click',function(){

@@ -8,12 +8,12 @@ class LoginController extends FontEndController {
             header ( "Location: {$index_url}" ); 
             exit();
         }
-        //if(is_weixin()){
-            //$a=urlencode("http://m.17each.com/Home/Login/weixin_login");
-            //$url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-            //header("Location:{$url}");#wechat_redirect_redirect
-            //exit();
-        //}
+        if(is_weixin()){
+            $a=urlencode("http://m.17each.com/Home/Login/weixin_login");
+            $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6231a8932405bdaf&redirect_uri=".$a."&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+            header("Location:{$url}");
+            exit();
+        }
         $time=gettime();
         $_SESSION['login']=$time;
         $this->assign("title", "用户登录");
@@ -117,7 +117,7 @@ class LoginController extends FontEndController {
     
     
     public function weixin_login(){
-        
+        var_dump($_GET);
         //获取微信用户open_id 写入数据库
         if(isset($_GET['code'])){
             $code=$_GET['code'];

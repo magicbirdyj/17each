@@ -31,7 +31,7 @@ function is_ip(str){
     return reg.test(str);
 }
 
-//验证是否含有非法字符，含有非法返回true，否则返回false
+//验证是否含有非法字符，含有非法返回非法字符，否则返回false
 function is_feifa(str){
     var reg = /[=;:#&\\\/\^\$\(\)\[\]\{\}\*\+\?\-\"\']+/gi;
     var result= reg.exec(str);
